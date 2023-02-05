@@ -1,30 +1,51 @@
-from flask import Flask, render_template, url_for
-from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
+from flask import Flask, render_template, request, redirect, url_for
+import psycopg2
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__,template_folder = 'template')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5433/accounts'
-db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5433/accounts'
+# db = SQLAlchemy(app)
 
-class Account(db.Model):
-    __tablename__ = 'accounts'
+# Connect to 'flask_db' database
+conn = psycopg2.connect(
+        database="flask_db",
+        user="postgres",
+        password="admin",
+        host="localhost",
+        port="5433"
+        )
 
-    id = db.Column(db.Integer, primary_key = True)
-    email = db.Column(db.String(200), nullable = False)
-    username = db.Column(db.String(50), nullable = False)
-    password = db.Column(db.String(20), nullable = False)
-    confirm_password = db.Column(db.String(20), nullable = False)
+# create a cursor to perform database operations
+cur = conn.cursor()
 
-    def __init__(id, email, password, confirm_password):
-        self.id = id
-        self.email = email
-        self.username = username
-        self.password = password
-        self.confirm_password = confirm_password
-    
-    def __repr__(self):
-        return f"<Account {self.email}>"
+# Create 'userdata' table
+cur.execute('CREATE TABLE IF NOT EXISTS userdata ('
+                'id serial PRIMARY KEY,'
+                'email varchar (150) NOT NULL,'
+                'username varchar (50) NOT NULL,'
+                'password varchar (50) NOT NULL);'
+                )
+  
+# Insert some data into the 'userdata' table
+cur.execute('INSERT INTO userdata (email, username, password)'
+                'VALUES (%s, %s, %s)',
+                ('useremail1@gmail.com',
+                'username1',
+                'userpassword1')
+                )
+  
+# commit the changes
+conn.commit()
+  
+# close the cursor and connection
+cur.close()
+conn.close()
+
+# Create an account
+@app.route('/createacc', methods=['POST'])
+
+# Log in
+@app.route('/login', methods=['POST'])
 
 # Main route of the application
 @app.route('/')
