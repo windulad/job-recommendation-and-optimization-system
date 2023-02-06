@@ -26,9 +26,9 @@ cur.execute('CREATE TABLE IF NOT EXISTS userdata ('
 # Insert some data into the 'userdata' table
 cur.execute('INSERT INTO userdata (email, username, password)'
                 'VALUES (%s, %s, %s)',
-                ('useremail1@gmail.com',
-                'username1',
-                'userpassword1')
+                ('default',
+                'default',
+                'default')
                 )
 # commit the changes
 conn.commit()
@@ -66,7 +66,7 @@ def createnewacc():
     return render_template('enterskills.html')
 
 # Log in---------------------------------------------
-@app.route('/loginacc', methods=['POST'])
+@app.route('/loginacc', methods=['POST','GET'])
 def loginacc():
     # Connect to 'flask_db' database
     conn = psycopg2.connect(
@@ -79,14 +79,27 @@ def loginacc():
     # create a cursor to perform database operations
     cur = conn.cursor()
     # Get the data from the form
-    email = request.form['email']
-    password = request.form['password']
-    # 
+    input_email = request.form['email']
+    input_password = request.form['password']
+    # Compare inputs with data in table
 
+    cur.execute("SELECT password FROM userdata WHERE email='%s'".format(input_email))
+
+
+    
+    #query="SELECT password FROM userdata WHERE email='input_email';"
+    #cur.execute(query)
+    saved_password = cur.fetchone()
+    #return input_password
+    return saved_password
+    #if request.form['password'] == password:
+        #return pwcheck
+        #return render_template("homepage.html")
+    #else:
+        #return email
     # close the cursor and connection
     cur.close()
     conn.close()
-    return render_template('enterskills.html')
 
 # Main route of the application
 @app.route('/')
