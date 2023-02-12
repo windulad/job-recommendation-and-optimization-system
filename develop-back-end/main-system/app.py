@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
 # from flask_sqlalchemy import SQLAlchemy
 
+#my edits
+
 app = Flask(__name__,template_folder = 'template')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5433/accounts'
 # db = SQLAlchemy(app)
