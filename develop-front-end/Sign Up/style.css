@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(line-background-dark-curves-wallpaper-preview.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.sign-up-form{
+    width: 350px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    padding: 60px;
+    margin: 100px auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.sign-up-form h1{
+    color: #1c8adb;
+    margin-bottom: 30px;
+}
+
+.input-box{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px -10px;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+}
+
+button{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px -10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.signup-btn{
+    background: #1c8adb;
+}
+
+a{
+    text-decoration: none;
+}
+
+hr{
+    margin-top: 20px;
+    top: 80%;
+}
+
+img{
+    width: 70px;
+    margin-top: -50px;
+}
