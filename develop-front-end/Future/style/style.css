@@ -311,78 +311,38 @@ p{
 /* Footer*/
 
 
-/*
-.footer{
-    color: black;
-    background-color: black;
-    height: 1%;
-    width: 100%;
-    align-items: center;
-    margin:auto;
-    padding-bottom: 0rem;
-    margin: 0px 0px 0px 0px;
-    cursor: pointer;
-    padding: 0px 0 0px;
 
-}
-
-
-.footer h6{
-    color: rgb(2, 2, 60);
-
-}
-
-
-
-
-.footer p{
-    color: black;
-    text-align: center;
-    padding-left: 20px;
-
-
-}
-
-#footerElements{
-    color: black;
-
-}
-
-#footerElements:hover{
-    transition: 0.1s;
-
-}
-*/
 
 
 .site-footer
 {
   background-color:#26272b;
-  padding:45px 0 20px;
+  padding:45px 0 10p;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color:#f5f0f0;
+  cursor: pointer;
 }
 .site-footer hr
 {
-  border-top-color:#bbb;
+  border-top-color:rgb(244, 244, 0);
   opacity:0.5
 }
 .site-footer hr.small
 {
   margin:20px 0
 }
-.site-footer h6
+.site-footer h5
 {
-  color:#fff;
-  font-size:16px;
+  color:rgb(255, 245, 245);
+  font-size:18px;
   text-transform:uppercase;
   margin-top:5px;
   letter-spacing:2px
 }
 .site-footer a
 {
-  color:#737373;
+  color:#faf9f9;
 }
 .site-footer a:hover
 {
@@ -400,7 +360,7 @@ p{
 }
 .footer-links a
 {
-  color:#737373
+  color:#f3e5e5
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -524,9 +484,8 @@ p{
 
 /* sign up styles */
 
-/*
 
-body{
+#signup{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -534,6 +493,7 @@ body{
     background-size: cover;
     background-position: center;
 }
+
 
 .sign-up-form{
     width: 350px;
@@ -559,7 +519,7 @@ body{
     outline: none;
 }
 
-button{
+/*button{
     color: #fff;
     width: 100%;
     padding: 10px;
@@ -569,10 +529,19 @@ button{
     border: none;
     outline: none;
     cursor: pointer;
-}
+}*/
 
-.signup-btn{
+.signup-button{
     background: #1c8adb;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px -10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 a{
