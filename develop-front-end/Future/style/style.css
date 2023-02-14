@@ -204,7 +204,7 @@ p{
 }
 
 #category1{
-    border-radius: 15px;
+    
     background-color:rgb(244, 244, 0);
     cursor: pointer;
   
@@ -217,7 +217,7 @@ p{
 }
 
 #category2{
-    border-radius: 15px;
+   
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -230,7 +230,7 @@ p{
 }
 
 #category3{
-    border-radius: 15px;
+   
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -243,7 +243,7 @@ p{
 }
 
 #category4{
-    border-radius: 15px;
+    
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -256,7 +256,7 @@ p{
 }
 
 #category5{
-    border-radius: 15px;
+    
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -269,7 +269,7 @@ p{
 }
 
 #category6{
-    border-radius: 15px;
+    
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -282,7 +282,7 @@ p{
 }
 
 #category7{
-    border-radius: 15px;
+   
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -295,7 +295,7 @@ p{
 }
 
 #category8{
-    border-radius: 15px;
+   
     background-color:rgb(244, 244, 0);
     cursor: pointer;
     
@@ -524,6 +524,7 @@ p{
 
 /* sign up styles */
 
+/*
 
 body{
     margin: 0;
