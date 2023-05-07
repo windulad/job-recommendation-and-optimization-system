@@ -7,8 +7,9 @@
 {% block body %}
 <div class="create_acc_login">
     <h1 class="create_title">Login </h1>
-    <!--Log in form goes here-->
-    <form action="/loginacc" method="post">
+
+    <!--Log in form goes here------------------------------------->
+    <form method="POST">
         <div class="input_field">
             <input type="text" name="email" placeholder="Email address">
         </div>
@@ -22,5 +23,6 @@
             <label for="terms">Don't have an account ? <a href="">Sign up</a> here</label><br>
         </div>
     </form>
+
 </div>
 {% endblock %}

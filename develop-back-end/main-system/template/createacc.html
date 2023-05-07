@@ -7,20 +7,14 @@
 {% block body %}
 <div class="create_acc_login">
     <h1 class="create_title">Create an Account</h1>
-    <!--Create an account form goes here-->
-    <form action="/createnewacc" method="post">
+
+    <!--Create an account form goes here------------------------------->
+    <form method="POST">
         <div class="input_field">
             <input type="text" name="email" placeholder="Email address">
         </div>
         <div class="input_field">
-            <input type="text" name="username" placeholder="Username">
-        </div>
-        <div class="input_field">
             <input type="password" name="password" placeholder="Password">
-        </div>
-        <div class="termsofservice">
-            <input type="checkbox" id="terms" name="terms">
-            <label for="terms">I agree all statements in <a href="">Terms of service</a></label><br>
         </div>
         <div class="signup_login">
             <input type="submit" value="Sign up">
@@ -29,5 +23,6 @@
             <label for="terms">Already have an account ? <a href="">Log in</a> here</label><br>
         </div>
     </form>
+
 </div>
 {% endblock %}
