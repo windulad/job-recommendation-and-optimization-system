@@ -78,3 +78,96 @@ input[type=submit] {
     display: flex;
     justify-content: center;
 }
+
+/*Enter skills styles*/
+.enterskills_title{
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.enterskills_subtitle{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2%;
+    margin: 1%;
+    margin-left: 3%;
+    width: 40%;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2%;
+    margin: 1%;
+    margin-right: 3%;
+    width: 40%;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.enter_skills{
+    width: 100%;
+    margin: 5% auto;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=submit] {
+    color:rgb(255, 255, 255);
+    background-color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+/*Upload CV*/
+.enter_cv{
+    width: 35%; 
+    margin: 50px auto; 
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.enter_cv_title{
+    text-align: center;
+    font-family: sans-serif;
+    margin: 8%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+::placeholder{
+    font-size: 16px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    padding: 5px 0px;
+}
+
+.input_field{
+    margin: 5%;
+    padding: 5px 5px;
+}
+
+input[type=submit] {
+    color:rgb(255, 255, 255);
+    background-color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}

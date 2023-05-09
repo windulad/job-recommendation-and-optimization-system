@@ -3,12 +3,12 @@ import sqlite3
 
 app = Flask(__name__,template_folder = 'template')
 
-# Application routing-------------------------------------
+# Index -------------------------------------
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Create account
+# Create account ----------------------------
 @app.route('/createacc', methods=['POST','GET'])
 def createacc():
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def createacc():
         request.method=='GET'
         return render_template('createacc.html')
 
-# Log in
+# Log in ------------------------------------
 @app.route('/login', methods=['POST','GET'])
 def login():
     if request.method == 'POST':
@@ -61,6 +61,16 @@ def login():
     else:
         request.method=='GET'        
         return render_template('login.html')
+
+
+# Enter CV ------------------------------------
+@app.route('/enter_cv', methods=['POST','GET'])
+def enter_cv():
+    if request.method == 'POST':
+        return render_template('homepage.html')
+    else:
+        request.method=='GET'        
+        return render_template('enter_cv.html')
 
 if __name__ == "__main__":
     app.run(debug = True)
