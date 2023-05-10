@@ -9,12 +9,15 @@
     <h1 class="enter_cv_title">Upload your CV/Resume</h1>
 
     <!--Upload resume------------------------------->
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
         <div class="input_field">
-            <input type="text" placeholder="Upload Resume">
+            {{form.file()}}
+            <!--<input type="file" name="file" placeholder="Upload Resume">-->
         </div>
         <div class="signup_login">
-            <input type="submit" value="Sign up">
+            {{form.submit()}}
+            <!--<input type="submit" value="Submit">-->
         </div>
     </form>
 
