@@ -59,6 +59,8 @@ def login():
 
         results = cursor.fetchone()
 
+        print(email, password)
+
         # Validation
         if not results:
             return render_template('login.html')
@@ -84,7 +86,7 @@ def enter_cv():
         file = form.file.data       # First grab the file
         file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
         
-        print( "File has been uploaded")
+        print("File has been uploaded")
 
         # Return skills extracted from CV
         print(cvread.CVRead('static/files/resume1.pdf'))

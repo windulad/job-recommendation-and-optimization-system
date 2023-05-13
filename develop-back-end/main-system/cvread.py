@@ -1,5 +1,6 @@
 from PyPDF2 import PdfReader
 
+# Function to extract skills from user CV / Resume
 def CVRead(filepath):
     reader = PdfReader(filepath)
     number_of_pages = len(reader.pages)
