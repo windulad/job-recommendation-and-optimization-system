@@ -4,6 +4,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 import sqlite3
+import cvread
 
 app = Flask(__name__,template_folder = 'template')
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -84,9 +85,14 @@ def enter_cv():
         file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
         
         print( "File has been uploaded")
+
+        # Return skills extracted from CV
+        print(cvread.CVRead('static/files/resume1.pdf'))
+
         return render_template('homepage.html')
 
-    return render_template('enter_cv.html', form=form)
+    else:
+        return render_template('enter_cv.html', form=form)
 
 if __name__ == "__main__":
     app.run(debug = True)
