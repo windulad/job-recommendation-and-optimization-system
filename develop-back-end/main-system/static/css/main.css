@@ -1,5 +1,4 @@
 body{
-    margin: 10px;
     font-family: sans-serif;
 }
   
@@ -170,4 +169,86 @@ input[type=submit] {
     text-align: center;
     padding: 15px 20px;
     box-sizing: border-box;
+}
+
+/* Enter manual */
+.enter_manual{
+    width: 75%; 
+    margin: 50px auto; 
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.enter_manual_title{
+    text-align: center;
+    font-family: sans-serif;
+    margin: 3%;
+}
+
+.enter_manual_subtitle{
+    text-align: center;
+    font-family: sans-serif;
+    margin: 3%;
+}
+
+.enter_manual_skills{
+    display: inline-block;
+    width: 95%; 
+    margin: 5px auto; 
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.enter_manual_label{
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 10px 5px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 10px 5px;
+    margin: 25px 5px;
+}
+
+.enter_manual_submit{
+    width: 100%;
+    margin: 2% auto;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Homepage */
+li{
+    display: inline;
+}
+
+.home_topnav{
+    background-color: rgb(49, 49, 49);
+    padding: 15px 20px;
+    list-style-type: none;
+}
+
+.home_topnav a{
+    color: #ffffff;
+    background-color: rgb(49, 49, 49);
+    padding: 15px 20px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homepage{
+    text-align: center;
 }

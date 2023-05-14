@@ -5,5 +5,20 @@
 {% endblock %}
 
 {% block body %}
-<h1>Homepage</h1>
+
+<div class="home_top">
+    <ul class="home_topnav">
+        <li><a href={{url_for('homepage')}}>Favourites</a></li>
+        <li><a href={{url_for('homepage')}}>Filters</a></li>
+        <li><a href={{url_for('homepage')}}>Profile</a></li>
+        <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
+    </ul>
+</div>
+
+<div class="homepage">
+    <h1 class="homepage_title">Home</h1>
+    <p>{{ user_skills }}</p>
+</div>
+
+
 {% endblock %}
