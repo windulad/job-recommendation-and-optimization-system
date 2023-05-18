@@ -2,8 +2,8 @@ The legality of web scraping job postings depends on the terms and conditions of
 intend to scrape. While I cannot provide an exhaustive list of websites that allow web scraping of job postings, 
 there are certain websites that generally provide more permissive conditions for scraping job data. However, 
 it's important to note that website policies can change over time, so it's always a good idea to review the
- terms of service and scraping policies of each individual website before scraping their data. Here are a few
-  popular websites known to have more permissive scraping policies for job postings:
+terms of service and scraping policies of each individual website before scraping their data. Here are a few
+popular websites known to have more permissive scraping policies for job postings:
 
 1. LinkedIn: LinkedIn provides an API called the LinkedIn Talent Solutions API that allows developers to access 
 job-related data in a structured manner. You can check their API documentation for more details on how to access
