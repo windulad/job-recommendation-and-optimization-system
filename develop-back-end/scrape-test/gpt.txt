@@ -1,0 +1,32 @@
+The legality of web scraping job postings depends on the terms and conditions of the specific websites you 
+intend to scrape. While I cannot provide an exhaustive list of websites that allow web scraping of job postings, 
+there are certain websites that generally provide more permissive conditions for scraping job data. However, 
+it's important to note that website policies can change over time, so it's always a good idea to review the
+ terms of service and scraping policies of each individual website before scraping their data. Here are a few
+  popular websites known to have more permissive scraping policies for job postings:
+
+1. LinkedIn: LinkedIn provides an API called the LinkedIn Talent Solutions API that allows developers to access 
+job-related data in a structured manner. You can check their API documentation for more details on how to access
+ job postings.
+
+2. Indeed: Indeed offers the Indeed Job Search API, which provides programmatic access to their job listing data. 
+You can review their API documentation for information on how to use the API for accessing job postings.
+
+3. SimplyHired: SimplyHired is a job search engine that aggregates job listings from various sources. They provide
+ an API called the SimplyHired Publisher Program, which allows access to their job data.
+
+Remember, even if a website allows web scraping of job postings, it's essential to comply with their terms of 
+service, API usage guidelines, and any applicable legal requirements. Additionally, keep in mind that web scraping 
+should be done in a responsible and respectful manner, ensuring the data is used for legitimate purposes and 
+respecting any restrictions or limitations imposed by the website.
+
+FlexJobs
+LinkedIn
+Indeed
+Monster
+Glassdoor
+Ladders
+Wellfound
+Getwork
+Snagajob
+SimplyHired
