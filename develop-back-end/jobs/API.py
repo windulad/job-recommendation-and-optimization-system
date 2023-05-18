@@ -1,11 +1,17 @@
+from flask import Flask, request, jsonify
 from bs4 import BeautifulSoup
 import requests
 
+app = Flask(__name__)
 
-def scrape_jobs(url):
+@app.route('/scrape_jobs', methods=['POST'])
+def scrape_jobs():
+    url = request.json['url']
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text, 'html.parser')
     jobs = soup.find_all('li', class_="clearfix job-bx wht-shd-bx")
+
+    scraped_jobs = []
 
     for job in jobs:
         published_date = job.find('span', class_='sim-posted').span.text
@@ -18,28 +24,16 @@ def scrape_jobs(url):
                 salary = salary_element.text.strip()
             else:
                 salary = 'Not specified'
-            print(f"Company name: {company_name.strip()}")
-            print(f"Required skill: {skills.strip()}")
-            print(f"Salary: {salary}")
-            print(f"More info: {more_info}")
-            print('')
+            
+            scraped_job = {
+                'company_name': company_name.strip(),
+                'skills': skills.strip(),
+                'salary': salary,
+                'more_info': more_info
+            }
+            scraped_jobs.append(scraped_job)
 
+    return jsonify(scraped_jobs)
 
-print("Enter a job you're interested in:")
-search = input(">")
-
-
-# Scraping from FlexJobs
-flexjobs_url = f"https://www.flexjobs.com/search?search={search}&location= "
-print("\nFlexJobs:")
-scrape_jobs(flexjobs_url)
-
-
-# Scraping from TimesJobs
-timesjobs_url = f"https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit" \
-                f"&txtKeywords={search}&txtLocation= "
-print("TimesJobs:")
-scrape_jobs(timesjobs_url)
-
-
-
+if __name__ == '__main__':
+    app.run()

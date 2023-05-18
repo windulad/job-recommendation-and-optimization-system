@@ -28,18 +28,13 @@ def scrape_jobs(url):
 print("Enter a job you're interested in:")
 search = input(">")
 
-
 # Scraping from FlexJobs
 flexjobs_url = f"https://www.flexjobs.com/search?search={search}&location= "
 print("\nFlexJobs:")
 scrape_jobs(flexjobs_url)
-
 
 # Scraping from TimesJobs
 timesjobs_url = f"https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit" \
                 f"&txtKeywords={search}&txtLocation= "
 print("TimesJobs:")
 scrape_jobs(timesjobs_url)
-
-
-
