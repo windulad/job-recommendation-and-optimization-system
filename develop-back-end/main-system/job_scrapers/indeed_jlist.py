@@ -1,7 +1,9 @@
 import requests
 import json
 
-url = "https://indeed12.p.rapidapi.com/jobs/search?query=software engineer&location=chicago"
+#url = "https://indeed12.p.rapidapi.com/jobs/search?query=software engineer&location=chicago"
+txt = "https://indeed12.p.rapidapi.com/jobs/search?query={position}&location={location}"
+url = txt.format(position="software engineer",location="chicago")
 
 payload = {}
 headers = {
@@ -11,12 +13,5 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, data=payload)
 
-#print(response.text)
-
-json_data = response.text
-
-json_object = json.loads(json_data)
-
-json_formatted_str = json.dumps(json_object, indent=2)
-
+json_formatted_str = json.dumps(json.loads(response.text), indent=2)
 print(json_formatted_str)
