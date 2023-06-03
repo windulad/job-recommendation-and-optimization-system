@@ -6,11 +6,11 @@
 
 {% block body %}
 
-<div class="home_top">
+<div>
     <ul class="home_topnav">
-        <li><a href={{url_for('homepage')}}>Favourites</a></li>
-        <li><a href={{url_for('homepage')}}>Filters</a></li>
-        <li><a href={{url_for('homepage')}}>Profile</a></li>
+        <li><a href={{url_for('homepage')}}>Home</a></li>
+        <li><a href={{url_for('learnpage')}}>Learn</a></li>
+        <li><a href={{url_for('profile')}}>Profile</a></li>
         <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
     </ul>
 </div>
@@ -18,9 +18,60 @@
 <div class="main">
     <h1 class="main_title">Latest Job Recommendations</h1>
     <div class="main_box">
-        <p>{{ user_skills }}</p>
+        {% for job_data in data_1 %}
+        <ul class="job_list">
+            <li class="job_title">{{ job_data[2] }}</li><br>
+            <li>{{ job_data[3] }}</li><br>
+            <li>{{ job_data[4] }}</li><br>
+            <li>{{ job_data[5] }}</li><br>
+            <li>{{ job_data[6] }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for job_data in data_2 %}
+        <ul class="job_list">
+            <li class="job_title">{{ job_data[2] }}</li><br>
+            <li>{{ job_data[3] }}</li><br>
+            <li>{{ job_data[4] }}</li><br>
+            <li>{{ job_data[5] }}</li><br>
+            <li>{{ job_data[6] }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for job_data in data_3 %}
+        <ul class="job_list">
+            <li class="job_title">{{ job_data[2] }}</li><br>
+            <li>{{ job_data[3] }}</li><br>
+            <li>{{ job_data[4] }}</li><br>
+            <li>{{ job_data[5] }}</li><br>
+            <li>{{ job_data[6] }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for job_data in data_4 %}
+        <ul class="job_list">
+            <li class="job_title">{{ job_data[2] }}</li><br>
+            <li>{{ job_data[3] }}</li><br>
+            <li>{{ job_data[4] }}</li><br>
+            <li>{{ job_data[5] }}</li><br>
+            <li>{{ job_data[6] }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for job_data in data_5 %}
+        <ul class="job_list">
+            <li class="job_title">{{ job_data[2] }}</li><br>
+            <li>{{ job_data[3] }}</li><br>
+            <li>{{ job_data[4] }}</li><br>
+            <li>{{ job_data[5] }}</li><br>
+            <li>{{ job_data[6] }}</li>
+        </ul>
+        {% endfor %}
+
+        </table>
     </div>
 </div>
+
 <!--
 <div class="sidebar">
     <h1 class="sidebar_title">Job Description</h1>
@@ -29,4 +80,5 @@
     </div>
 </div>
 -->
+
 {% endblock %}

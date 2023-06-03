@@ -1,12 +1,7 @@
-from PyPDF2 import PdfReader
+#from PyPDF2 import PdfReader
 
-# Function to extract skills from user CV / Resume
-def CVRead(filepath):
-    reader = PdfReader(filepath)
-    number_of_pages = len(reader.pages)
-    page = reader.pages[0]
-    text = page.extract_text()
-
+# Function to return positions and missing skills
+def ManualRead(user_skills):
     software_eng = [
         #Software Engineer
         "C",
@@ -78,13 +73,13 @@ def CVRead(filepath):
     ]
 
     #Check the available skills
-    match_software_eng = [skill1 for skill1 in software_eng if skill1 in text]
-    match_front_end_eng = [skill2 for skill2 in front_end_eng if skill2 in text]
-    match_back_end_eng = [skill3 for skill3 in back_end_eng if skill3 in text]
-    match_android_eng = [skill4 for skill4 in android_eng if skill4 in text]
-    match_ios_eng = [skill5 for skill5 in ios_eng if skill5 in text]
+    match_software_eng = [skill1 for skill1 in software_eng if skill1 in user_skills]
+    match_front_end_eng = [skill2 for skill2 in front_end_eng if skill2 in user_skills]
+    match_back_end_eng = [skill3 for skill3 in back_end_eng if skill3 in user_skills]
+    match_android_eng = [skill4 for skill4 in android_eng if skill4 in user_skills]
+    match_ios_eng = [skill5 for skill5 in ios_eng if skill5 in user_skills]
 
-    skills = match_software_eng+match_front_end_eng+match_back_end_eng+match_android_eng+match_ios_eng
+    #skills = match_software_eng+match_front_end_eng+match_back_end_eng+match_android_eng+match_ios_eng
 
     #Check the positions can be applied, missing skills
     positions = []
@@ -117,4 +112,4 @@ def CVRead(filepath):
         miss_skills = miss_skills + miss_skills_ios_eng
         
     #Return skills, positions
-    return(skills,positions,miss_skills)
+    return(positions,miss_skills)

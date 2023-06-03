@@ -229,28 +229,30 @@ input[type=checkbox]{
 }
 
 /* Homepage */
-li{
-    display: inline;
-}
-
 .home_topnav{
     background-color: rgb(49, 49, 49);
-    padding: 15px 20px;
+    display: block;
+    height: 50px;
     list-style-type: none;
 }
 
 .home_topnav a{
     color: #ffffff;
     background-color: rgb(49, 49, 49);
-    padding: 15px 20px;
+    display: block;
+    padding: 5px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
 }
 
+li{
+    display: inline-block;
+}
+
 .main {
-    margin-top: 25px;
+    display: inline-block;
 }
 
 .main_title{
@@ -259,14 +261,25 @@ li{
 
 .main_box{
     width: 95%; 
-    height: 72vh;
-    margin-top: 20px; 
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.job_list{
     border: 1px solid black;
     border-radius: 5px;
+    margin: 10px auto;
+    padding: 20px;
 }
+
+.job_title{
+    font-size: 30px;
+}
+
+ul li{
+    padding: 4px;
+}
+
 /*
 .sidebar {
     height: 100vh; 
@@ -298,3 +311,89 @@ li{
     border-radius: 5px;
 }
 */
+
+
+/* Learnpage */
+
+.learn {
+    display: block;
+}
+
+.learn_title{
+    text-align: center;
+}
+
+.learn_box{
+    width: 95%; 
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.course_list{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.course_title{
+    font-size: 30px;
+}
+
+
+/* Profile */
+.profile {
+    margin-top: 25px;
+    margin: 10px;
+}
+
+.profile_title{
+    text-align: center;
+}
+
+.profile_box{
+    width: 95%; 
+    margin-top: 20px; 
+    margin-left: 60px;
+    padding: 5px;
+}
+
+.update_profile{
+    width: 80%; 
+    margin: 10px auto; 
+    padding: 5px;
+}
+
+.update_profile_title{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.input_field{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+input[type=submit] {
+    color:rgb(255, 255, 255);
+    background-color: black;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px 20px;
+    box-sizing: border-box;
+}
+
+.profile_update_submit{
+    width: 100%;
+    margin: 1% auto;
+    padding: 5px 5px;
+    display: flex;
+    justify-content: center;
+}
