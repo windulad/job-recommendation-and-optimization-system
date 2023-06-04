@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="home_top">
+    <ul class="home_topnav">
+        <li><a href={{url_for('homepage')}}>Home</a></li>
+        <li><a href={{url_for('learnpage')}}>Learn</a></li>
+        <li><a href={{url_for('profile')}}>Profile</a></li>
+        <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
+    </ul>
+</div>
+
+<div class="learn">
+    <h1 class="learn_title">Latest Courses to Follow</h1>
+    <div class="learn_box">
+        {% for course_data in course %}
+        <ul class="course_list">
+            <li class="course_title">{{ course_data[1] }}</li><br>
+            <li>{{ course_data[2] }}</li><br>
+            <li>{{ course_data[3] }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
