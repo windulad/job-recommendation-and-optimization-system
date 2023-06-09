@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block body %}
+<!--
 <div class="create_acc_login">
     <h1 class="create_title">Login </h1>
 
-    <!--Log in form goes here------------------------------------->
+    Log in form goes here-----------------------------------
     <form method="POST">
         <div class="input_field">
             <input type="text" name="email" placeholder="Email address">
@@ -25,4 +26,29 @@
     </form>
 
 </div>
+-->
+
+<div class="loginBody">
+        
+    <div class="login-container">
+        <div class="loginTitle">FUTURE</div>
+
+        <form method="POST">
+            <input type="text" name="email" placeholder="Email address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="forgot-password">
+            <a href={{url_for('index')}}>Forgot Password?</a>
+        </div>
+
+        <div class="sign-up">
+            <span>Don't have an account?</span>
+            <a href={{url_for('createacc')}}>Sign Up</a>
+        </div>
+      </div>
+
+</div>
+
 {% endblock %}

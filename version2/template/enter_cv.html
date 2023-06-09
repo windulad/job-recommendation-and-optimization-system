@@ -4,23 +4,43 @@
 
 {% endblock %}
 {% block body %}
-
+<!--
 <div class="enter_cv">
     <h1 class="enter_cv_title">Upload your CV/Resume</h1>
 
-    <!--Upload resume------------------------------->
+    Upload resume---------------------------
     <form method="POST" enctype="multipart/form-data">
         {{form.hidden_tag()}}
         <div class="input_field">
             {{form.file()}}
-            <!--<input type="file" name="file" placeholder="Upload Resume">-->
         </div>
         <div class="signup_login">
             {{form.submit()}}
-            <!--<input type="submit" value="Submit">-->
         </div>
     </form>
 
 </div>
+-->
+
+
+<div class="uploadBody">
+    <div class="uplad-container">
+        <div class="uploadTitle">Upload CV/Resume</div>
+        <p>Only PDFs are allowed</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            <div class="input_field">
+                {{form.file()}}
+            </div>
+            <!--<div class="signup_login">
+                {{form.submit()}}
+            </div>-->
+            <input type="submit" id="uploadCV" value="Upload">
+        </form>
+
+    </div>
+</div>
+
 
 {% endblock %}

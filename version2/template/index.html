@@ -6,8 +6,244 @@
 
 {% block body %}
 <!--Homepage Navigation bar---------->
+<!--
 <div class="topnav">
     <a href={{url_for('createacc')}}>Sign Up</a>
     <a href={{url_for('login')}}>Log in</a>
 </div>
+-->
+	
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 text-right">
+						<p class="num">Call: +01 123 456 7890</p>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-1">
+						<div id="fh5co-logo"><a href={{url_for('index')}}>Future<span></span></a></div>
+					</div>
+					<div class="col-xs-11 text-right menu-1">
+						<ul>
+							<li class="active"><a href={{url_for('index')}}>Home</a></li>
+							<li><a href={{url_for('index')}}>Courses</a></li>
+							<li><a href={{url_for('index')}}>Discover jobs</a></li>
+							<li><a href={{url_for('index')}}>About</a></li>
+							<li><a href={{url_for('index')}}>Contact</a></li>
+							<li class="btn-cta"><a href={{url_for('login')}}><span>Login</span></a></li>
+							<li class="btn-cta"><a href={{url_for('createacc')}}><span>Sign Up</span></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</nav>
+
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(../static/images/pic1.png);" data-stellar-background-ratio="0.5">
+		
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>New to Future?</h1>
+							<h2>"Elevating Student Success: Bridging the Gap between Education and Employment."</h2>
+							<h2 style="color: #fffbfb; font-size: 24px; font-weight: bold; text-align: center;">Lets Get Started</h2>
+
+							<button id="signup"><a href={{url_for('createacc')}}>Sign Up</a></button>
+                            <button id="login"><a href={{url_for('login')}}>Login</a></button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div id="fh5co-counter" class="fh5co-counters">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 text-center animate-box">
+					<span class="fh5co-counter js-counter" data-from="0" data-to="40356" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">Students</span>
+				</div>
+				<div class="col-md-3 text-center animate-box">
+					<span class="fh5co-counter js-counter" data-from="0" data-to="30290" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">Courses</span>
+				</div>
+				<div class="col-md-3 text-center animate-box">
+					<span class="fh5co-counter js-counter" data-from="0" data-to="2039" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">Instructor</span>
+				</div>
+				<div class="col-md-3 text-center animate-box">
+					<span class="fh5co-counter js-counter" data-from="0" data-to="997585" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="fh5co-counter-label">Earnings</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div id="fh5co-project">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Thousands of online learning materials.</h2>
+					<p>Upload your CV or Resume to our platform for streamlined processing and take the next step towards your dream career. Not only will your existing skills be extracted and prominently displayed on your profile, but our platform also provides personalized recommendations to help you identify and learn the skills you may be missing. Showcase your qualifications, expertise, and eagerness to grow, all in one convenient place.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid proj-bottom">
+			<div class="row">
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-1.jpg" alt="" class="img-responsive">
+						<h3>Software Engineering</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-2.jpg" alt="" class="img-responsive">
+						<h3>Management</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-3.jpg" alt="" class="img-responsive">
+						<h3>Finance</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-9.jpg" alt="" class="img-responsive">
+						<h3>Data Science</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-5.jpg" alt="" class="img-responsive">
+						<h3>Marketing</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 fh5co-project animate-box" data-animate-effect="fadeIn">
+					<a href={{url_for('index')}}><img src="../static/images/project-6.jpg" alt="" class="img-responsive">
+						<h3>Photography</h3>
+						<span>View Course</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		
+	<div id="fh5co-started" style="background-image:url(../static/images/img_bg_2.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Lets Get Started</h2>
+					<p>Multiple methods to select your skills.</p>
+				</div>
+			</div>
+			<div class="col-lg-6 animate-box">
+				<div class="col-md-12 text-center">
+				  <p class="btn-container">
+					<a href={{url_for('enter_cv')}} class="btn btn-default btn-lg">Upload CV</a>
+				  </p>
+				  <p>Upload your CV or Resume to our platform for streamlined processing. Your skills will be extracted and displayed prominently on your profile. Showcase your qualifications and expertise effortlessly.</p>
+				</div>
+			  </div>
+			  
+			  <div class="col-lg-6 animate-box">
+				<div class="col-md-12 text-center">
+				  <p class="btn-container">
+					<a href={{url_for('enter_manual')}} class="btn btn-default btn-lg">Enter Manually</a>
+				  </p>
+				  <p>Enter your skills directly into our system through the dropdown menus. You can add multiple skills, and your skills will be displayed in your profile, which can be edited later.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		
+	
+	  
+
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-3 fh5co-widget">
+					<h4>Future</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4><a href={{url_for('index')}}>Courses</a></h4>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4><a href={{url_for('index')}}>Discover jobs</a></h4>	
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4><a href={{url_for('index')}}>About</a></h4>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<h4><a href={{url_for('index')}}>Contact Us</a></h4>
+				</div>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; Future, All Rights Reserved.</small> 
+					
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href={{url_for('index')}}><i class="icon-twitter"></i></a></li>
+							<li><a href={{url_for('index')}}><i class="icon-facebook"></i></a></li>
+							<li><a href={{url_for('index')}}><i class="icon-linkedin"></i></a></li>
+							
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href={{url_for('index')}} class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+    <!-- jQuery -->
+	<script src="../static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="../static/js/jquery.stellar.min.js"></script>
+	<!-- Carousel -->
+	<script src="../static/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="../static/js/jquery.countTo.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/magnific-popup-options.js"></script>
+	<!-- Main -->
+	<script src="../static/js/main.js"></script>
+
 {% endblock %}
