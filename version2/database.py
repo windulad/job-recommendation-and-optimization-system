@@ -140,12 +140,14 @@ command4 = """CREATE TABLE IF NOT EXISTS miss(
 
 command5 = """CREATE TABLE IF NOT EXISTS indeed(
                 positionid INTEGER NOT NULL UNIQUE primary key autoincrement,
-                position TEXT, 
+                position TEXT,
                 title TEXT, 
-                formatted_relative_time TEXT,
-                company_name TEXT,
+                url TEXT,
+                company TEXT,
                 location TEXT,
-                link TEXT
+                summary TEXT,
+                post_date TEXT,
+                salary TEXT
             )"""
 
 command6 = """CREATE TABLE IF NOT EXISTS udemy(
@@ -162,3 +164,5 @@ cursor.execute(command3)
 cursor.execute(command4)
 cursor.execute(command5)
 cursor.execute(command6)
+
+print('Success!')
