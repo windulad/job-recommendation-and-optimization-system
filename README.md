@@ -4,9 +4,9 @@
 
 ## Setting Up
 ### Requirements
-Python 3.9 or higher
-Pip 3
-Sqlite3
+Python 3.9 or higher<br>
+Pip 3<br>
+Sqlite3<br>
 
 ### Step 1 :- Clone the repository
 git clone <repo_url>
