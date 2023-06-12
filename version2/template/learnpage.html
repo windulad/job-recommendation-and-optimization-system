@@ -6,26 +6,55 @@
 
 {% block body %}
 
-<div class="home_top">
+<div>
     <ul class="home_topnav">
         <li><a href={{url_for('homepage')}}>Home</a></li>
         <li><a href={{url_for('learnpage')}}>Learn</a></li>
         <li><a href={{url_for('profile')}}>Profile</a></li>
+        <li><a href={{url_for('settings')}}>Settings</a></li>
         <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
     </ul>
 </div>
 
-<div class="learn">
-    <h1 class="learn_title">Latest Courses to Follow</h1>
-    <div class="learn_box">
-        {% for course_data in course %}
-        <ul class="course_list">
-            <li class="course_title">{{ course_data[1] }}</li><br>
-            <li>{{ course_data[2] }}</li><br>
-            <li>{{ course_data[3] }}</li>
+<div class="main">
+    <div class="search">
+        <h1 class="main_title">Latest Job Recommendations</h1>
+        <form method="POST">
+            <span class="search_field">
+                <input type="text" name="position" placeholder="Position">
+            </span>
+            <span class="search_field">
+                <input type="text" name="location" placeholder="Location">
+            </span>
+            <span class="search_field">
+                <input type="submit" value="Search">
+            </span>
+        </form>
+    </div>
+    <div class="main_box">
+        {% for data in data_0 %}
+        <ul class="job_list">
+            <li>{{ data[1] }}</li><br>                      <!--position-->
+            <li class="job_title">{{ data[2] }}</li><br>    <!--title-->
+            <li>{{ data[4] }}</li><br>                      <!--company-->
+            <li>{{ data[5] }}</li><br>                      <!--location-->
+            <li>{{ data[6] }}</li><br>                      <!--summary-->
+            <li>Apply via {{ data[0] }} <a href="{{ data[4] }}" target="_blank">Click here!</a></li><br>
+            <li>{{ data[7] }}</li><br>                      <!--post_date-->
         </ul>
+        {% endfor %}
+
+        </table>
+    </div>
+</div>
+<!--
+<div class="sidebar">
+    <h1 class="sidebar_title">Job Description</h1>
+    <div class="sidebar_box">
+        {% for position in user_positions %}
+        <li class="position">{{ position }}</li><br>
         {% endfor %}
     </div>
 </div>
-
+-->
 {% endblock %}

@@ -1,50 +1,60 @@
 import requests
-import json
+from bs4 import BeautifulSoup
+import sqlite3
 
-# GET Udemy course names
-url = "https://udemy-course-scrapper-api.p.rapidapi.com/course-names"
+def get_courses(skill):
+    base_url = "http://api.scraperapi.com"
 
-payload = {}
-headers = {
-  'X-RapidAPI-Key': 'fa0d12e07emsh6baa2c6d09bd625p10a38ajsnf6ef7df5547b',
-  'X-RapidAPI-Host': 'udemy-course-scrapper-api.p.rapidapi.com'
-}
+    payload = {
+        'api_key': '07e923bd835f70e73964ac82785227dc', 
+        'url': 'https://www.edx.org/search?q={}&tab=course'.format(skill)
+    }
+    headers = {}
 
-response_names = requests.request("GET", url, headers=headers, data=payload)
-formatted_response_names = json.dumps(json.loads(response_names.text), indent=2)
+    response = requests.get(url=base_url, params=payload)
+    return response
 
-file = open('udemy_names.json','a')
-file.write(formatted_response_names)
-file.close
+courses = get_courses('java')
 
-# GET Udemy course instructor
-url = "https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor"
+soup = BeautifulSoup(courses.text, 'html.parser')
+print(soup)
 
-payload = {}
-headers = {
-  'X-RapidAPI-Key': 'fa0d12e07emsh6baa2c6d09bd625p10a38ajsnf6ef7df5547b',
-  'X-RapidAPI-Host': 'udemy-course-scrapper-api.p.rapidapi.com'
-}
+cards = soup.find_all('div','base-card-wrapper')
+count = len(cards)
+print(count)
 
-response_instruct = requests.request("GET", url, headers=headers, data=payload)
-formatted_response_instruct = json.dumps(json.loads(response_instruct.text), indent=2)
+# def get_record(card):
+#     #job_title
+#     try:
+#         job_title = card.find('a','job-link').text.strip()
+#     except AttributeError:
+#         job_title = ''
+    
+#     #job_url
+#     try:
+#         job_url = 'https://us.jora.com' + card.h3.a.get('href')
+#     except AttributeError:
+#         job_url = ''
 
-file = open('udemy_instruct.json','a')
-file.write(formatted_response_instruct)
-file.close
+#     #job_tutor
+#     try:
+#         job_company = card.find('span','job-company').text.strip()
+#     except AttributeError:
+#         job_company = ''
 
-# GET Udemy course URL
-url = "https://udemy-course-scrapper-api.p.rapidapi.com/course-names/course-instructor/course-url"
+#     #job_post_date
+#     try:
+#         job_post_date = card.find('span','job-listed-date').text.strip()
+#     except AttributeError:
+#         job_post_date = ''
 
-payload = {}
-headers = {
-  'X-RapidAPI-Key': 'fa0d12e07emsh6baa2c6d09bd625p10a38ajsnf6ef7df5547b',
-  'X-RapidAPI-Host': 'udemy-course-scrapper-api.p.rapidapi.com'
-}
 
-response_url = requests.request("GET", url, headers=headers, data=payload)
-formatted_response_url = json.dumps(json.loads(response_url.text), indent=2)
+#     record = (job_title, job_url, job_company, job_location, job_summary, job_post_date, job_salary)
+#     return record
 
-file = open('udemy_url.json','a')
-file.write(formatted_response_url)
-file.close
+# records = []
+
+# for card in cards:
+#     record = get_record(card)
+#     records.append(record)
+#     print(record)

@@ -11,6 +11,7 @@
         <li><a href={{url_for('homepage')}}>Home</a></li>
         <li><a href={{url_for('learnpage')}}>Learn</a></li>
         <li><a href={{url_for('profile')}}>Profile</a></li>
+        <li><a href={{url_for('settings')}}>Settings</a></li>
         <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
     </ul>
 </div>
@@ -26,42 +27,5 @@
         <p>Postal Code: {{ postalcode }}</p>
     </div>
 </div>
-
-<div class="update_profile">
-    <h1 class="update_profile_title">Edit profile data</h1>
-
-    <!--Log in form goes here------------------------------------->
-    <form method="POST">
-        <div class="input_field">
-            <p>Email address</p>
-            <input type="text" name="email">
-        </div>
-        <div class="input_field">
-            <p>Username</p>
-            <input type="text" name="username">
-        </div>
-        <div class="input_field">
-            <p>Phone</p>
-            <input type="text" name="phone">
-        </div>
-        <div class="input_field">
-            <p>Street Address</p>
-            <input type="text" name="address">
-        </div>
-        <div class="input_field">
-            <p>Country</p>
-            <input type="text" name="country">
-        </div>
-        <div class="input_field">
-            <p>Postal Code</p>
-            <input type="text" name="postalcode">
-        </div>
-        <div class="profile_update_submit">
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-
-</div>
-
 
 {% endblock %}

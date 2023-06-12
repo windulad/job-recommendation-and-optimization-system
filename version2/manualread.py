@@ -92,23 +92,23 @@ def ManualRead(user_skills):
     miss_skills_ios_eng = [skill1 for skill1 in ios_eng if skill1 not in match_ios_eng]
 
     if match_software_eng:
-        positions.append('software_eng')
+        positions.append('software engineer')
         miss_skills = miss_skills + miss_skills_software_eng
 
     if match_front_end_eng:
-        positions.append('front_end_eng')
+        positions.append('front end engineer')
         miss_skills = miss_skills + miss_skills_front_end_eng
 
     if match_back_end_eng:
-        positions.append('back_end_eng')
+        positions.append('back end engineer')
         miss_skills = miss_skills + miss_skills_back_end_eng
 
     if match_android_eng:
-        positions.append('android_eng')
+        positions.append('android engineer')
         miss_skills = miss_skills + miss_skills_android_eng
 
     if match_ios_eng:
-        positions.append('ios_eng')
+        positions.append('ios engineer')
         miss_skills = miss_skills + miss_skills_ios_eng
         
     #Return skills, positions

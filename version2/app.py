@@ -6,10 +6,12 @@ import os
 import sqlite3
 import uuid
 import cvread, manualread
+from scrapersjob.jobs import Jobs
 
 app = Flask(__name__,template_folder = 'template')
 app.config['SECRET_KEY'] = 'xgyjnqbm'
 app.config['UPLOAD_FOLDER'] = 'static/files'
+DATABASE = 'database/user_data.db'
 
 # Index -------------------------------------
 @app.route('/')
@@ -21,7 +23,7 @@ def index():
 def createacc():
     if request.method == 'POST':
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Get the data from user
@@ -62,7 +64,7 @@ def createacc():
 def login():
     if request.method == 'POST':
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Get the data from user 
@@ -115,7 +117,7 @@ def enter_cv():
         print("userid:",user_id,user_fileid, "File has been uploaded")
 
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Insert the data into the table
@@ -156,7 +158,7 @@ def enter_cv():
         miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
 
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Insert the data into the table skills
@@ -223,7 +225,7 @@ def enter_manual():
         miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
 
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Insert the data into the table skills
@@ -251,61 +253,77 @@ def enter_manual():
 def homepage():
     
     user_id = session['user_id']
-    
-    # Connect to 'user_data.db' database
-    connection = sqlite3.connect('user_data.db')
-    cursor = connection.cursor()
 
-    # Retrieve stored data from 'positions' table
-    query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
-    cursor.execute(query)
-    data = cursor.fetchone()
+    if request.method == 'POST':
+        # Connect to 'user_data.db' database
+        connection = sqlite3.connect(DATABASE)
+        cursor = connection.cursor()
 
-    position_count = int(data[1])
-    user_positions = []
-    for i in range(2,position_count+2):
-        user_positions.append(data[i])
+        # Get the data from user
+        if(request.form['position']!=""):
+            position = request.form['position']
+            location = request.form['location']
 
-    print('userid:',user_id)
-    print('positions:',user_positions)
+            record = Jobs(position, location)
+            data_0 = record.jobs_jora() + record.jobs_simplyhired() + record.jobs_flexjobs()
+            return render_template("homepage.html",data_0=data_0)
 
-    # Connect to 'user_data.db' database
-    connection = sqlite3.connect('user_data.db')
-    cursor = connection.cursor()
+    else: 
+        request.method=='GET'
+        # Connect to 'user_data.db' database
+        connection = sqlite3.connect(DATABASE)
+        cursor = connection.cursor()
 
-    #Prepare for database input
-    for skill in range(position_count,5):
-        user_positions.append('')
+        # Retrieve stored data from 'positions' table
+        query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
+        cursor.execute(query)
+        data = cursor.fetchone()
 
-    position_1,position_2,position_3,position_4,position_5 = user_positions
+        position_count = int(data[1])
+        user_positions = []
+        for i in range(2,position_count+2):
+            user_positions.append(data[i])
 
-    # Retrieve stored data from 'indeed' table
-    query = "SELECT * FROM indeed WHERE position='"+position_1+"'"
-    cursor.execute(query)
-    data_1 = cursor.fetchall()
-    #print(data_1)
+        print('userid:',user_id)
+        print('positions:',user_positions)
 
-    query = "SELECT * FROM indeed WHERE position='"+position_2+"'"
-    cursor.execute(query)
-    data_2 = cursor.fetchall()
-    #print(data_2)
+        # Connect to 'user_data.db' database
+        connection = sqlite3.connect(DATABASE)
+        cursor = connection.cursor()
 
-    query = "SELECT * FROM indeed WHERE position='"+position_3+"'"
-    cursor.execute(query)
-    data_3 = cursor.fetchall()
-    #print(data_3)
+        #Prepare for database input
+        for skill in range(position_count,5):
+            user_positions.append('')
 
-    query = "SELECT * FROM indeed WHERE position='"+position_4+"'"
-    cursor.execute(query)
-    data_4 = cursor.fetchall()
-    #print(data_4)
+        position_1,position_2,position_3,position_4,position_5 = user_positions
 
-    query = "SELECT * FROM indeed WHERE position='"+position_5+"'"
-    cursor.execute(query)
-    data_5 = cursor.fetchall()
-    #print(data_5)
+        # Retrieve stored data from table
+        query = "SELECT * FROM jobs WHERE position='"+position_1+"'"
+        cursor.execute(query)
+        data_1 = cursor.fetchall()
+        #print(data_1)
 
-    return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5)
+        query = "SELECT * FROM jobs WHERE position='"+position_2+"'"
+        cursor.execute(query)
+        data_2 = cursor.fetchall()
+        #print(data_2)
+
+        query = "SELECT * FROM jobs WHERE position='"+position_3+"'"
+        cursor.execute(query)
+        data_3 = cursor.fetchall()
+        #print(data_3)
+
+        query = "SELECT * FROM jobs WHERE position='"+position_4+"'"
+        cursor.execute(query)
+        data_4 = cursor.fetchall()
+        #print(data_4)
+
+        query = "SELECT * FROM jobs WHERE position='"+position_5+"'"
+        cursor.execute(query)
+        data_5 = cursor.fetchall()
+        #print(data_5)
+
+        return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5,user_positions=user_positions)
 
 # Learnpage --------------------------------------
 @app.route('/learnpage', methods=['POST','GET'])
@@ -314,7 +332,7 @@ def learnpage():
     user_id = session['user_id']
     
     # Connect to 'user_data.db' database
-    connection = sqlite3.connect('user_data.db')
+    connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
 
     # Retrieve stored data from 'positions' table
@@ -345,7 +363,7 @@ def profile():
     user_id = session['user_id']
     
     # Connect to 'user_data.db' database
-    connection = sqlite3.connect('user_data.db')
+    connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
 
     # Retrieve stored data from 'users' table
@@ -377,7 +395,7 @@ def profile():
     # Handle the edit user data form
     if request.method == 'POST':
         # Connect to 'user_data.db' database
-        connection = sqlite3.connect('user_data.db')
+        connection = sqlite3.connect(DATABASE)
         cursor = connection.cursor()
 
         # Get the data from user
@@ -395,6 +413,44 @@ def profile():
         return render_template("profile.html",email=email,username=username,phone=phone,address=address,country=country,postalcode=postalcode,skill_count=skill_count,user_skills=user_skills)
 
     return render_template("profile.html",email=email,username=username,phone=phone,address=address,country=country,postalcode=postalcode,skill_count=skill_count,user_skills=user_skills)
+
+
+# Settings --------------------------------------
+@app.route('/settings', methods=['POST','GET'])
+def settings():
+    
+    user_id = session['user_id']
+
+    # Handle the edit user data form
+    if request.method == 'POST':
+        # Connect to 'user_data.db' database
+        connection = sqlite3.connect(DATABASE)
+        cursor = connection.cursor()
+
+        # Get the data from user
+        if(request.form['email']!=""):
+            email = request.form['email']
+
+        if(request.form['username']!=""):
+            username = request.form['username']
+
+        if(request.form['phone']!=""):
+            phone = request.form['phone']
+
+        if(request.form['address']!=""):
+            address = request.form['address']
+
+        if(request.form['country']!=""):
+            country = request.form['country']
+
+        if(request.form['postalcode']!=""):
+            postalcode = request.form['postalcode']
+
+        # Insert the data into the table
+        cursor.execute("UPDATE users SET email=?,username=?,phone=?,address=?,country=?,postalcode=? WHERE (userid)=? ",(email,username,phone,address,country,postalcode,user_id))
+        connection.commit()
+
+    return render_template("settings.html")
 
 # Log Out ---------------------------------------
 @app.route('/logout')
