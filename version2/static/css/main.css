@@ -386,25 +386,26 @@ input[type=submit] {
 
 /* Profile */
 .profile {
-    margin-top: 70px;
-    width: 100%; 
-    display: inline-block;
+    width: 50%;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .profile_title{
     text-align: center;
+    margin-top: 100px;
     height: 40%;
-    margin: 0px;
-    padding: 30px;
     width: 100%;
 }
 
 .profile_box{
     width: 100%; 
-    margin: 10px 50px;
     margin-top: 10px;
     padding: 2px;
     display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 /*Settings*/
@@ -424,7 +425,7 @@ input[type=submit] {
 }
 
 input[type=text] {
-    width: 60%;
+    width: 100%;
     padding: 12px 20px;
     margin: 0 auto;
     box-sizing: border-box;
