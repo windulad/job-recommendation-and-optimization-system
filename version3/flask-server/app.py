@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session 
-from flask_wtf import FlaskForm
+from flask import Flask, render_template, request, redirect, url_for, session
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
@@ -7,12 +6,13 @@ import sqlite3
 import uuid
 import cvread, manualread
 from scrapersjob.jobs import Jobs
-# from scraperslearn.learn import Learn
+from flask_cors import CORS
 
 app = Flask(__name__,template_folder = 'template')
 app.config['SECRET_KEY'] = 'xgyjnqbm'
 app.config['UPLOAD_FOLDER'] = 'static/files'
 DATABASE = 'database/user_data.db'
+CORS(app, origins=['http://localhost:3000'])
 
 # Index -------------------------------------
 @app.route('/')
@@ -23,43 +23,81 @@ def index():
 # Create account ----------------------------
 @app.route('/createacc', methods=['POST','GET'])
 def createacc():
-    if request.method == 'POST':
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
+    json_data = request.get_json('data')
 
-        # Get the data from user
-        if(request.form['email']!="" and request.form['password']!=""):
-            email = request.form['email']
-            password = request.form['password']
+    # Get the data from user
+    email = json_data['email']
+    password = json_data['password']
 
-            # Compare with stored data
-            query = "SELECT email FROM users WHERE email='"+email+"'"
-            cursor.execute(query)
-            data = cursor.fetchone()
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
 
-            if data:
-                return render_template('createacc.html')
-            else:
-                # Insert the data into the table
-                cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)",(email, password))
-                connection.commit()
+    # Compare with stored data
+    query = "SELECT email FROM users WHERE email='"+email+"'"
+    cursor.execute(query)
+    data = cursor.fetchone()
+
+    if data:
+        # If present in db
+        print('message: error-1: email already exists')
+        return {'message':'error-1'}
+    
+    else:
+        # If not present in db, Insert the data into the table
+        cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)",(email, password))
+        connection.commit()
+    
+        # Get user id
+        query = "SELECT userid FROM users WHERE email='"+email+"' and password= '"+password+"'"
+        user_id = cursor.execute(query)
+        data = cursor.fetchone()
+
+        data = str(data)
+        user_id = data[data.index('(')+1:data.index(',')]
+        session['user_id'] = user_id
+
+        print("userid: ",user_id," email: ",email," password: ",password)
+        return {'message':'success-1'}
+
+    # if request.method == 'POST':
+    #     # Connect to 'user_data.db' database
+    #     connection = sqlite3.connect(DATABASE)
+    #     cursor = connection.cursor()
+
+    #     # Get the data from user
+    #     if(request.get_json['email']!="" and request.get_json['password']!=""):
+    #         email = request.get_json['email']
+    #         password = request.get_json['password']
+
+    #         # Compare with stored data
+    #         query = "SELECT email FROM users WHERE email='"+email+"'"
+    #         cursor.execute(query)
+    #         data = cursor.fetchone()
+
+    #         if data:
+    #             # If present in db
+    #             return render_template('createacc.html')
+    #         else:
+    #             # If not present in db, Insert the data into the table
+    #             cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)",(email, password))
+    #             connection.commit()
             
-            # Get user id
-            query = "SELECT userid FROM users WHERE email='"+email+"' and password= '"+password+"'"
-            user_id = cursor.execute(query)
-            data = cursor.fetchone()
+    #         # Get user id
+    #         query = "SELECT userid FROM users WHERE email='"+email+"' and password= '"+password+"'"
+    #         user_id = cursor.execute(query)
+    #         data = cursor.fetchone()
 
-            data = str(data)
-            user_id = data[data.index('(')+1:data.index(',')]
-            session['user_id'] = user_id
-            print("userid: ",user_id," email: ",email," password: ",password)
+    #         data = str(data)
+    #         user_id = data[data.index('(')+1:data.index(',')]
+    #         session['user_id'] = user_id
+    #         print("userid: ",user_id," email: ",email," password: ",password)
 
-        return render_template('enterskills.html')
+    #     return render_template('enterskills.html')
 
-    else: 
-        request.method=='GET'
-        return render_template('createacc.html')
+    # else: 
+    #     request.method=='GET'
+    #     return render_template('createacc.html')
 
 # Log in ------------------------------------
 @app.route('/login', methods=['POST','GET'])
@@ -94,7 +132,7 @@ def login():
         return render_template('login.html')
 
 # Enter CV ------------------------------------
-class UploadFileForm(FlaskForm):
+class UploadFileForm():
     file = FileField("File")
     submit = SubmitField("Upload File")
 
