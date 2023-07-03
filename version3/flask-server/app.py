@@ -7,7 +7,7 @@ import sqlite3
 import uuid
 import cvread, manualread
 from scrapersjob.jobs import Jobs
-from scraperslearn.learn import Learn
+# from scraperslearn.learn import Learn
 
 app = Flask(__name__,template_folder = 'template')
 app.config['SECRET_KEY'] = 'xgyjnqbm'
