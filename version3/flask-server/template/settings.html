@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="home_top">
+    <ul class="home_topnav">
+        <li><a href={{url_for('homepage')}}>Home</a></li>
+        <li><a href={{url_for('learnpage')}}>Learn</a></li>
+        <li><a href={{url_for('profile')}}>Profile</a></li>
+        <li><a href={{url_for('settings')}}>Settings</a></li>
+        <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
+    </ul>
+</div>
+
+<div class="update_profile">
+    <h1 class="update_profile_title">Edit profile data</h1>
+
+    <!--Log in form goes here------------------------------------->
+    <form method="POST">
+        <div class="input_field">
+            <span class="update_field_title">Email address</span>
+            <span><input type="text" name="email"></span>
+        </div>
+        <div class="input_field">
+            <span>Username</span>
+            <span><input type="text" name="username"></span>
+        </div>
+        <div class="input_field">
+            <span>Phone</span>
+            <span><input type="text" name="phone"></span>         
+        </div>
+        <div class="input_field">
+            <span>Street Address</span>
+            <span><input type="text" name="address"></span> 
+        </div>
+        <div class="input_field">
+            <span>Country</span>
+            <span><input type="text" name="country"></span> 
+        </div>
+        <div class="input_field">
+            <span>Postal Code</span>
+            <span><input type="text" name="postalcode"></span> 
+        </div>
+        <div class="profile_update_submit">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+</div>
+
+
+{% endblock %}
