@@ -17,7 +17,8 @@ DATABASE = 'database/user_data.db'
 # Index -------------------------------------
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return render_template('index.html')
+    return 1
 
 # Create account ----------------------------
 @app.route('/createacc', methods=['POST','GET'])
