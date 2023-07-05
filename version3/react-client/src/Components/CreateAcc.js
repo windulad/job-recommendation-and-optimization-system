@@ -10,6 +10,9 @@ function CreateAcc(){
         password: ""
     });
 
+    const [responseData, setResponseData] = useState(null);
+    const navigate = useNavigate();
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -18,50 +21,58 @@ function CreateAcc(){
         })
     }
 
-    const [responseData, setResponseData] = useState(null);
-
-    const navigate = useNavigate();
-
     const handleSubmit = (event) => {
         event.preventDefault();
         var json_details = JSON.stringify(details);
 
         // Make the POST request to 'ENDPOINT1' using Axios
-        Axios.post(SERVER_URL+'/createacc', json_details)
-        .then(response => {
-            //console.log(json_details);
-            const value = response.data.message;
-            console.log(value)
+        try{
+            Axios.post(SERVER_URL+'/createacc', json_details)
+            .then(response => {
+                //console.log(json_details);
+                const message = response.data.message;
+                console.log(message)
 
-            setResponseData(response.data);
+                const user_id = response.data.user_id;
+                console.log(user_id)
 
-            if (value === 'error-1'){
-                navigate('/createacc');
-            }else if(value === 'success-1'){
-                navigate('/enterskills');
-            }
-        })
-        .catch(error => {
+                // Store user_id in browser storage
+                localStorage.setItem('user_id', user_id);
+
+                setResponseData(response.data);
+                
+                if (message === 'error-1'){
+                    navigate('/createacc');
+                }else if(message === 'success-1'){
+                    navigate('/home');
+                }
+            })
+        } catch(error){
             console.error(error);
-        });
-    }
+        }
+    };
 
     const handleclick3 = () => {
         navigate('/login');
     }
 
     return(
-        <div>
-            <h1>Create an Account</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Email:</label> 
-                <input type="email" name='email' onChange={handleChange} required/>
-                <label>Password:</label> 
-                <input type="password" name='password' onChange={handleChange} required/>
-                <button type="submit">Submit</button>
+        <div class="create_acc_login">
+            <h1 class="create_title">Create an Account</h1>
+            <form onSubmit={handleSubmit}> 
+                <div class="input_field">
+                    <input type="text" name='email' placeholder="Email" onChange={handleChange} required/>
+                </div>
+                <div class="input_field">
+                    <input type="password" name='password' placeholder="Password" onChange={handleChange} required/>
+                </div>
+                <div class="signup_login">
+                    <input type="submit" value="Sign up"/>
+                </div>
+                <div class="termsofservice">
+                    <label for="terms">Already have an account ? <a onClick={handleclick3}><strong>Log in</strong></a> here</label>
+                </div>
             </form>
-            <h2>Already have an account?</h2>
-            <button onClick={handleclick3}>Log in</button>
         </div>
     ) 
 }
