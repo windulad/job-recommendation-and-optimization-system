@@ -30,21 +30,24 @@ function CreateAcc(){
             Axios.post(SERVER_URL+'/createacc', json_details)
             .then(response => {
                 //console.log(json_details);
+                // message return
                 const message = response.data.message;
                 console.log(message)
 
-                const user_id = response.data.user_id;
-                console.log(user_id)
+                // session_vale return (user_id)
+                const session_value = response.data.session_value;
+                console.log(session_value)
 
+                const data = { user_id: session_value };
                 // Store user_id in browser storage
-                localStorage.setItem('user_id', user_id);
+                //localStorage.setItem('user_id', user_id);
 
                 setResponseData(response.data);
                 
                 if (message === 'error-1'){
                     navigate('/createacc');
                 }else if(message === 'success-1'){
-                    navigate('/home');
+                    navigate('/enterskills', {state: data});
                 }
             })
         } catch(error){

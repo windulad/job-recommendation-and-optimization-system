@@ -33,14 +33,16 @@ function Login(){
         Axios.post(SERVER_URL+'/login', json_details)
         .then(response => {
             //console.log(json_details);
+            // message return
             const message = response.data.message;
             console.log(message)
 
-            const user_id = response.data.user_id;
-            console.log(user_id)
+            // session_value return (user_id)
+            const session_value = response.data.session_value;
+            console.log(session_value)
 
             // Store user_id in browser storage
-            localStorage.setItem('user_id', user_id);
+            //localStorage.setItem('user_id', user_id);
 
             setResponseData(response.data);
 
