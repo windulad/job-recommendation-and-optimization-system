@@ -6,19 +6,38 @@ const SERVER_URL = 'http://127.0.0.1:5000';
 function Home(){
     const navigate = useNavigate();
 
+    const [responseData, setResponseData] = useState(null);
+
     // GET session_value from 'Entercv.js' OR 'Entermanual.js'
     const location = useLocation();
     const { state } = location;
     const session_value = state.user_id;
-    console.log(session_value)
 
-    var json_details = JSON.stringify(session_value);
+    const pass_data = {
+        value: session_value
+    }
+
+    //console.log(session_value)
+    //const data = session_value;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await Axios.post(SERVER_URL+'/homepage', json_details, { withCredentials: true });
+                const response = await Axios.post(SERVER_URL+'/homepage', pass_data, { withCredentials: true });
                 console.log(response.data);
+                // GET message from server
+                const message = response.data.message;
+                console.log(message)
+
+                // GET session_value from server(user_id)
+                const session_value = response.data.session_value;
+                console.log(session_value)
+
+                const data_set = response.data.data_set;
+                console.log(data_set)
+
+                setResponseData(response.data);
+
             } catch (error) {
                 console.error(error);
             }

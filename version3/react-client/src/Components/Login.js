@@ -45,7 +45,7 @@ function Login(){
             const data = { user_id: session_value };
 
             if (message === 'error-2'){
-                navigate('/login',  {state: data});
+                navigate('/login');
             }else if(message === 'success-2'){
                 navigate('/home',  {state: data});
             }

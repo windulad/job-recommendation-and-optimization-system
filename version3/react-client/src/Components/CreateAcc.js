@@ -42,7 +42,7 @@ function CreateAcc(){
                 const data = { user_id: session_value };
 
                 if (message === 'error-1'){
-                    navigate('/createacc',  {state: data});
+                    navigate('/createacc');
                 }else if(message === 'success-1'){
                     navigate('/enterskills', {state: data});
                 }

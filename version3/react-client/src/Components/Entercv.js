@@ -7,6 +7,8 @@ Axios.defaults.withCredentials = true;
 
 function EnterCV(){
     const [file, setFile] = useState(null);
+    const [message, setMessage] = useState('');
+
     const [responseData, setResponseData] = useState(null);
 
     const navigate = useNavigate();
@@ -15,7 +17,8 @@ function EnterCV(){
     const location = useLocation();
     const { state } = location;
     const session_value = state.user_id;
-    console.log(session_value)
+    //console.log(session_value)
+    //var json_details = JSON.stringify(session_value);
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
@@ -26,9 +29,13 @@ function EnterCV(){
 
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('user_id', session_value);
+        formData.append('message', session_value);
 
-        Axios.post(SERVER_URL+'/enter_cv', formData, { withCredentials: true })
+        Axios.post(SERVER_URL+'/enter_cv', formData, { withCredentials: true }, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        })
         .then(response => {
             // GET message from server
             const message = response.data.message;

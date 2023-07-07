@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
+import json
 import os
 import sqlite3
 import uuid
@@ -108,9 +109,7 @@ def login():
 def enter_cv():
     # Get the data from user
     file = request.files['file']
-    text = request.form['user_id']
-
-    session['session_value'] = text
+    user_id = request.form['message']
 
     if 'file' not in request.files:
         return {'message':'error-3'}
@@ -125,8 +124,6 @@ def enter_cv():
 
         # Save the file
         file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) 
-
-        user_id = session.get('session_value')
 
         # Connect to 'user_data.db' database
         connection = sqlite3.connect(DATABASE)
@@ -188,12 +185,12 @@ def enter_cv():
         # Disconnect from 'user_data.db' database
         connection.commit()
 
-        print("userid:",session.get('session_value'), user_fileid, "File has been uploaded")
+        print("userid:",user_id, user_fileid, "File has been uploaded")
 
         # Return a response to the client
         return {
             'message':'success-3',
-            'session_value': session.get('session_value')
+            'session_value': user_id
         }
 
 # # Enter Manual --------------------------------
@@ -267,79 +264,119 @@ def enter_cv():
 @app.route('/homepage', methods=['POST','GET'])
 @cross_origin(supports_credentials=True)
 def homepage():
-    
-    user_id = session['user_id']
+    json_data = request.get_json('data')
 
-    if request.method == 'POST':
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
+    # Get the data from user
+    user_id = json_data['value']
 
-        # Get the data from user
-        if(request.form['position']!=""):
-            position = request.form['position']
-            location = request.form['location']
+    # if request.method == 'POST':
+    #     # Connect to 'user_data.db' database
+    #     connection = sqlite3.connect(DATABASE)
+    #     cursor = connection.cursor()
 
-            record = Jobs(position, location)
-            data_0 = record.jobs_jora() + record.jobs_simplyhired() + record.jobs_flexjobs()
-            return render_template("homepage.html",data_0=data_0)
+    #     # Get the data from user
+    #     if(request.form['position']!=""):
+    #         position = request.form['position']
+    #         location = request.form['location']
 
-    else: 
-        request.method=='GET'
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
+    #         record = Jobs(position, location)
+    #         data_0 = record.jobs_jora() + record.jobs_simplyhired() + record.jobs_flexjobs()
+    #         return render_template("homepage.html",data_0=data_0)
 
-        # Retrieve stored data from 'positions' table
-        query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
-        cursor.execute(query)
-        data = cursor.fetchone()
+    # else: 
+        # request.method=='GET'
 
-        position_count = int(data[1])
-        user_positions = []
-        for i in range(2,position_count+2):
-            user_positions.append(data[i])
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
 
-        print('userid:',user_id)
-        print('positions:',user_positions)
+    # Retrieve stored data from 'positions' table
+    query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
+    cursor.execute(query)
+    data = cursor.fetchone()
 
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
+    position_count = int(data[1])
+    user_positions = []
+    for i in range(2,position_count+2):
+        user_positions.append(data[i])
 
-        #Prepare for database input
-        for skill in range(position_count,5):
-            user_positions.append('')
+    print('userid:',user_id)
+    print('positions:',user_positions)
 
-        position_1,position_2,position_3,position_4,position_5 = user_positions
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
 
-        # Retrieve stored data from table
-        query = "SELECT * FROM jobs WHERE position='"+position_1+"'"
-        cursor.execute(query)
-        data_1 = cursor.fetchall()
-        #print(data_1)
+    #Prepare for database input
+    for skill in range(position_count,5):
+        user_positions.append('')
 
-        query = "SELECT * FROM jobs WHERE position='"+position_2+"'"
-        cursor.execute(query)
-        data_2 = cursor.fetchall()
-        #print(data_2)
+    position_1,position_2,position_3,position_4,position_5 = user_positions
 
-        query = "SELECT * FROM jobs WHERE position='"+position_3+"'"
-        cursor.execute(query)
-        data_3 = cursor.fetchall()
-        #print(data_3)
+    # Retrieve stored data from table
+    query = "SELECT * FROM jobs WHERE position='"+position_1+"'"
+    cursor.execute(query)
+    data_1 = cursor.fetchall()
+    #print(data_1)
 
-        query = "SELECT * FROM jobs WHERE position='"+position_4+"'"
-        cursor.execute(query)
-        data_4 = cursor.fetchall()
-        #print(data_4)
+    query = "SELECT * FROM jobs WHERE position='"+position_2+"'"
+    cursor.execute(query)
+    data_2 = cursor.fetchall()
+    #print(data_2)
 
-        query = "SELECT * FROM jobs WHERE position='"+position_5+"'"
-        cursor.execute(query)
-        data_5 = cursor.fetchall()
-        #print(data_5)
+    query = "SELECT * FROM jobs WHERE position='"+position_3+"'"
+    cursor.execute(query)
+    data_3 = cursor.fetchall()
+    #print(data_3)
 
-        return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5,user_positions=user_positions)
+    query = "SELECT * FROM jobs WHERE position='"+position_4+"'"
+    cursor.execute(query)
+    data_4 = cursor.fetchall()
+    #print(data_4)
+
+    query = "SELECT * FROM jobs WHERE position='"+position_5+"'"
+    cursor.execute(query)
+    data_5 = cursor.fetchall()
+    #print(data_5)
+
+    combined_data = []
+
+    combined_data.extend(data_1)
+    combined_data.extend(data_2)
+    combined_data.extend(data_3)
+    combined_data.extend(data_4)
+    combined_data.extend(data_5)
+
+    # print(combined_data)
+    data = []
+
+    for combined_data_1 in combined_data:
+        position_id, platform, position, title, url, company, location, summary, post_date, salary = combined_data_1
+        record = {
+            'position_id': position_id,
+            'platform': platform,
+            'position': position,
+            'title': title,
+            'url': url,
+            'company': company,
+            'location': location,
+            'summary': summary,
+            'post_date': post_date,
+            'salary': salary
+        }
+        data.append(record)
+
+    json_data = json.dumps(data, indent=4)
+
+    return json_data
+
+    # return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5,user_positions=user_positions)
+    # Return a response to the client
+    # return {
+    #     'message':'success-4',
+    #     'session_value': user_id,
+    #     'data_set': json_data_list
+    # }
 
 # Learnpage --------------------------------------
 @app.route('/learnpage', methods=['POST','GET'])

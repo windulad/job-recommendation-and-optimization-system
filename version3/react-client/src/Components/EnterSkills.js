@@ -10,7 +10,7 @@ function EnterSkills(){
     const location = useLocation();
     const { state } = location;
     const session_value = state.user_id;
-    console.log(session_value)
+    //console.log(session_value)
 
     // send session_value
     const data = { user_id: session_value };
