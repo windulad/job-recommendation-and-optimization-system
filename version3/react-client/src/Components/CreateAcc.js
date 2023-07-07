@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 function CreateAcc(){
-    // POST email and password to server
     const [details, setDetails] = useState({
         email: "",
         password: ""
@@ -25,27 +24,25 @@ function CreateAcc(){
         event.preventDefault();
         var json_details = JSON.stringify(details);
 
-        // Make the POST request to 'ENDPOINT1' using Axios
+        // POST email, password to 'SERVER_URL' using Axios
         try{
             Axios.post(SERVER_URL+'/createacc', json_details)
             .then(response => {
-                //console.log(json_details);
-                // message return
+                // GET message from server
                 const message = response.data.message;
                 console.log(message)
 
-                // session_vale return (user_id)
+                // GET session_value from server(user_id)
                 const session_value = response.data.session_value;
                 console.log(session_value)
 
-                const data = { user_id: session_value };
-                // Store user_id in browser storage
-                //localStorage.setItem('user_id', user_id);
-
                 setResponseData(response.data);
-                
+
+                // POST session_value to 'Entercv.js'
+                const data = { user_id: session_value };
+
                 if (message === 'error-1'){
-                    navigate('/createacc');
+                    navigate('/createacc',  {state: data});
                 }else if(message === 'success-1'){
                     navigate('/enterskills', {state: data});
                 }

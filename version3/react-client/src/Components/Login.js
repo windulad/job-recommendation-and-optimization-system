@@ -5,7 +5,6 @@ const SERVER_URL = 'http://127.0.0.1:5000';
 
 function Login(){
     //Create an account
-    // POST email and password to server
     const [details, setDetails] = useState({
         email: "",
         password: ""
@@ -29,27 +28,26 @@ function Login(){
         event.preventDefault();
         var json_details = JSON.stringify(details);
 
-        // Make the POST request to 'ENDPOINT1' using Axios
+        // POST email, password to 'SERVER_URL' using Axios
         Axios.post(SERVER_URL+'/login', json_details)
         .then(response => {
-            //console.log(json_details);
-            // message return
+            // GET message from server
             const message = response.data.message;
             console.log(message)
 
-            // session_value return (user_id)
+            // GET session_value from server(user_id)
             const session_value = response.data.session_value;
             console.log(session_value)
 
-            // Store user_id in browser storage
-            //localStorage.setItem('user_id', user_id);
-
             setResponseData(response.data);
 
+            // POST session_value to 'Home.js'
+            const data = { user_id: session_value };
+
             if (message === 'error-2'){
-                navigate('/login');
+                navigate('/login',  {state: data});
             }else if(message === 'success-2'){
-                navigate('/home');
+                navigate('/home',  {state: data});
             }
         })
         .catch(error => {

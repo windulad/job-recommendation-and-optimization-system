@@ -1,16 +1,26 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 function EnterSkills(){
     const navigate = useNavigate();
 
+    // receive session_value
+    const location = useLocation();
+    const { state } = location;
+    const session_value = state.user_id;
+    console.log(session_value)
+
+    // send session_value
+    const data = { user_id: session_value };
+
     const handleclick4 = () => {
-        navigate('/entercv');
+        navigate('/entercv',  {state: data});
     }
 
     const handleclick5 = () => {
-        navigate('/entermanual');
+        navigate('/entermanual',  {state: data});
     }
 
     return(
