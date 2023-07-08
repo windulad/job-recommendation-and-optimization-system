@@ -300,8 +300,7 @@ def homepage():
     for i in range(2,position_count+2):
         user_positions.append(data[i])
 
-    print('userid:',user_id)
-    print('positions:',user_positions)
+    print('userid:',user_id, 'positions:',user_positions)
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
