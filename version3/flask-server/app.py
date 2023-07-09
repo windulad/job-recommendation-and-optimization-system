@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from wtforms import FileField, SubmitField
+# from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import json
 import os
 import sqlite3
 import uuid
-import cvread, manualread
+from skillcheckers.cvread import CVRead
+from skillcheckers.manualread import ManualRead
 from scrapersjob.jobs import Jobs
 from flask_cors import CORS, cross_origin
 
@@ -135,7 +136,7 @@ def enter_cv():
 
         # Return skills extracted from CV
         rel_path = 'static/files/' + user_fileid
-        user_skills,user_positions,user_miss_skills = cvread.CVRead(rel_path)
+        user_skills,user_positions,user_miss_skills = CVRead(rel_path)
 
         #Get element count
         size_user_skills = len(user_skills)
@@ -193,72 +194,90 @@ def enter_cv():
             'session_value': user_id
         }
 
-# # Enter Manual --------------------------------
-# @app.route('/enter_manual', methods=['POST','GET'])
-# def enter_manual():
+# Enter Manual --------------------------------
+@app.route('/enter_manual', methods=['POST','GET'])
+@cross_origin(supports_credentials=True)
+def enter_manual():
+    # Get the data from user
+    json_data = request.get_json('data')
     
-#     user_id = session['user_id']
+    # Get the data from user
+    user_id = json_data['session_value']
 
-#     # Upload and Validate
-#     if request.method == 'POST':
-#         # Return skills extracted from html
-#         user_skills = request.form.getlist('enter_manual_checkbox')
+    # modify keys
+    modified_data = {}
 
-#         # Return other data
-#         user_positions,user_miss_skills = manualread.ManualRead(user_skills)
+    key_replacements = {
+        "Cpp": "C++",
+        "Csharp": "C#"
+    }
 
-#         #Get element count
-#         size_user_skills = len(user_skills)
-#         size_user_positions = len(user_positions)
-#         size_user_miss_skills = len(user_miss_skills)
-
-#         print('userid:',user_id)
-#         print('skills count:',size_user_skills,'skills:',user_skills)
-#         print('position count:',size_user_positions,'positions:',user_positions)
-#         print('miss skill count:',size_user_miss_skills,'miss skills:',user_miss_skills)
-
-#         #Prepare for database input
-#         for skill in range(size_user_skills,50):
-#             user_skills.append('')
-
-#         for position in range(size_user_positions,5):
-#             user_positions.append('')
-
-#         for position in range(size_user_miss_skills,50):
-#             user_miss_skills.append('')
-
-#         # Unpack skills from user_skills list
-#         skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50 = user_skills
-
-#         #Unpack positions from user_positions list
-#         position_1,position_2,position_3,position_4,position_5 = user_positions
-
-#         #Unpack missing skills from user_miss_skills list
-#         miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
-
-#         # Connect to 'user_data.db' database
-#         connection = sqlite3.connect(DATABASE)
-#         cursor = connection.cursor()
-
-#         # Insert the data into the table skills
-#         cursor.execute("INSERT INTO skills (userid,skillcount) VALUES (?,?)",(user_id,size_user_skills))
-#         cursor.execute("UPDATE skills SET skill_1=?,skill_2=?,skill_3=?,skill_4=?,skill_5=?,skill_6=?,skill_7=?,skill_8=?,skill_9=?,skill_10=?,skill_11=?,skill_12=?,skill_13=?,skill_14=?,skill_15=?,skill_16=?,skill_17=?,skill_18=?,skill_19=?,skill_20=?,skill_21=?,skill_22=?,skill_23=?,skill_24=?,skill_25=?,skill_26=?,skill_27=?,skill_28=?,skill_29=?,skill_30=?,skill_31=?,skill_32=?,skill_33=?,skill_34=?,skill_35=?,skill_36=?,skill_37=?,skill_38=?,skill_39=?,skill_40=?,skill_41=?,skill_42=?,skill_43=?,skill_44=?,skill_45=?,skill_46=?,skill_47=?,skill_48=?,skill_49=?,skill_50=? WHERE userid=?",(skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50,user_id))
-
-#         # Insert the data into the table skills
-#         cursor.execute("INSERT INTO positions (userid,positioncount) VALUES (?,?)",(user_id,size_user_positions))
-#         cursor.execute("UPDATE positions SET position_1=?,position_2=?,position_3=?,position_4=?,position_5=? WHERE userid=?",(position_1,position_2,position_3,position_4,position_5,user_id))
-
-#         # Insert the data into the table skills
-#         cursor.execute("INSERT INTO miss (userid,missskillcount) VALUES (?,?)",(user_id,size_user_miss_skills))
-#         cursor.execute("UPDATE miss SET miss_1=?,miss_2=?,miss_3=?,miss_4=?,miss_5=?,miss_6=?,miss_7=?,miss_8=?,miss_9=?,miss_10=?,miss_11=?,miss_12=?,miss_13=?,miss_14=?,miss_15=?,miss_16=?,miss_17=?,miss_18=?,miss_19=?,miss_20=?,miss_21=?,miss_22=?,miss_23=?,miss_24=?,miss_25=?,miss_26=?,miss_27=?,miss_28=?,miss_29=?,miss_30=?,miss_31=?,miss_32=?,miss_33=?,miss_34=?,miss_35=?,miss_36=?,miss_37=?,miss_38=?,miss_39=?,miss_40=?,miss_41=?,miss_42=?,miss_43=?,miss_44=?,miss_45=?,miss_46=?,miss_47=?,miss_48=?,miss_49=?,miss_50=? WHERE userid=?",(miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50,user_id))
+    for key, value in json_data.items():
+        if key in key_replacements:
+            modified_data[key_replacements[key]] = value
+        else:
+            modified_data[key] = value
         
-#         # Disconnect from 'user_data.db' database
-#         connection.commit()
+    # Get user_skills
+    user_skills = [key for key, value in modified_data.items() if value is True]
+    
+    #Get element count
+    size_user_skills = len(user_skills)
+    
+    # Return other data
+    user_positions,user_miss_skills = ManualRead(user_skills)
 
-#         return redirect(url_for('homepage'))
+    size_user_positions = len(user_positions)
+    size_user_miss_skills = len(user_miss_skills)
 
-#     else:
-#         return render_template("enter_manual.html")
+    print('userid:',user_id)
+    print('skills count:',size_user_skills,'skills:',user_skills)
+    print('position count:',size_user_positions,'positions:',user_positions)
+    print('miss skill count:',size_user_miss_skills,'miss skills:',user_miss_skills)
+
+    #Prepare for database input
+    for skill in range(size_user_skills,50):
+        user_skills.append('')
+
+    for position in range(size_user_positions,5):
+        user_positions.append('')
+
+    for position in range(size_user_miss_skills,50):
+        user_miss_skills.append('')
+
+    # Unpack skills from user_skills list
+    skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50 = user_skills
+
+    #Unpack positions from user_positions list
+    position_1,position_2,position_3,position_4,position_5 = user_positions
+
+    #Unpack missing skills from user_miss_skills list
+    miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
+
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
+
+    # Insert the data into the table skills
+    cursor.execute("INSERT INTO skills (userid,skillcount) VALUES (?,?)",(user_id,size_user_skills))
+    cursor.execute("UPDATE skills SET skill_1=?,skill_2=?,skill_3=?,skill_4=?,skill_5=?,skill_6=?,skill_7=?,skill_8=?,skill_9=?,skill_10=?,skill_11=?,skill_12=?,skill_13=?,skill_14=?,skill_15=?,skill_16=?,skill_17=?,skill_18=?,skill_19=?,skill_20=?,skill_21=?,skill_22=?,skill_23=?,skill_24=?,skill_25=?,skill_26=?,skill_27=?,skill_28=?,skill_29=?,skill_30=?,skill_31=?,skill_32=?,skill_33=?,skill_34=?,skill_35=?,skill_36=?,skill_37=?,skill_38=?,skill_39=?,skill_40=?,skill_41=?,skill_42=?,skill_43=?,skill_44=?,skill_45=?,skill_46=?,skill_47=?,skill_48=?,skill_49=?,skill_50=? WHERE userid=?",(skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50,user_id))
+
+    # Insert the data into the table skills
+    cursor.execute("INSERT INTO positions (userid,positioncount) VALUES (?,?)",(user_id,size_user_positions))
+    cursor.execute("UPDATE positions SET position_1=?,position_2=?,position_3=?,position_4=?,position_5=? WHERE userid=?",(position_1,position_2,position_3,position_4,position_5,user_id))
+
+    # Insert the data into the table skills
+    cursor.execute("INSERT INTO miss (userid,missskillcount) VALUES (?,?)",(user_id,size_user_miss_skills))
+    cursor.execute("UPDATE miss SET miss_1=?,miss_2=?,miss_3=?,miss_4=?,miss_5=?,miss_6=?,miss_7=?,miss_8=?,miss_9=?,miss_10=?,miss_11=?,miss_12=?,miss_13=?,miss_14=?,miss_15=?,miss_16=?,miss_17=?,miss_18=?,miss_19=?,miss_20=?,miss_21=?,miss_22=?,miss_23=?,miss_24=?,miss_25=?,miss_26=?,miss_27=?,miss_28=?,miss_29=?,miss_30=?,miss_31=?,miss_32=?,miss_33=?,miss_34=?,miss_35=?,miss_36=?,miss_37=?,miss_38=?,miss_39=?,miss_40=?,miss_41=?,miss_42=?,miss_43=?,miss_44=?,miss_45=?,miss_46=?,miss_47=?,miss_48=?,miss_49=?,miss_50=? WHERE userid=?",(miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50,user_id))
+    
+    # Disconnect from 'user_data.db' database
+    connection.commit()
+
+    # Return a response to the client
+    return {
+        'message':'success-5',
+        'session_value': user_id
+    }
 
 # Homepage --------------------------------------
 @app.route('/homepage', methods=['POST','GET'])
@@ -349,6 +368,11 @@ def homepage():
     # print(combined_data)
     data = []
 
+    data.append({
+        'message':'success-4',
+        'session_value': user_id
+    })
+
     for combined_data_1 in combined_data:
         position_id, platform, position, title, url, company, location, summary, post_date, salary = combined_data_1
         record = {
@@ -367,21 +391,18 @@ def homepage():
 
     json_data = json.dumps(data, indent=4)
 
+    # return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5,user_positions=user_positions)
     return json_data
 
-    # return render_template("homepage.html",data_1=data_1,data_2=data_2,data_3=data_3,data_4=data_4,data_5=data_5,user_positions=user_positions)
-    # Return a response to the client
-    # return {
-    #     'message':'success-4',
-    #     'session_value': user_id,
-    #     'data_set': json_data_list
-    # }
 
 # Learnpage --------------------------------------
 @app.route('/learnpage', methods=['POST','GET'])
+@cross_origin(supports_credentials=True)
 def learnpage():
-    
-    user_id = session['user_id']
+    json_data = request.get_json('data')
+
+    # Get the data from user
+    user_id = json_data['value']
     
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
@@ -567,15 +588,96 @@ def learnpage():
     cursor.execute("SELECT * FROM learn WHERE skill ='"+miss_50+"'")
     learn_50 = cursor.fetchall()
 
-    return render_template("learnpage.html",learn_1=learn_1,learn_2=learn_2,learn_3=learn_3,learn_4=learn_4,learn_5=learn_5,learn_6=learn_6,learn_7=learn_7,learn_8=learn_8,learn_9=learn_9,learn_10=learn_10,learn_11=learn_11,learn_12=learn_12,learn_13=learn_13,learn_14=learn_14,learn_15=learn_15,learn_16=learn_16,learn_17=learn_17,learn_18=learn_18,learn_19=learn_19,learn_20=learn_20,learn_21=learn_21,learn_22=learn_22,learn_23=learn_23,learn_24=learn_24,learn_25=learn_25,learn_26=learn_26,learn_27=learn_27,learn_28=learn_28,learn_29=learn_29,learn_30=learn_30,learn_31=learn_31,learn_32=learn_32,learn_33=learn_33,learn_34=learn_34,learn_35=learn_35,learn_36=learn_36,learn_37=learn_37,learn_38=learn_38,learn_39=learn_39,learn_40=learn_40,learn_41=learn_41,learn_42=learn_42,learn_43=learn_43,learn_44=learn_44,learn_45=learn_45,learn_46=learn_46,learn_47=learn_47,learn_48=learn_48,learn_49=learn_49,learn_50=learn_50)
+    combined_data = []
+
+    combined_data.extend(learn_1)
+    combined_data.extend(learn_2)
+    combined_data.extend(learn_3)
+    combined_data.extend(learn_4)
+    combined_data.extend(learn_5)
+    combined_data.extend(learn_6)
+    combined_data.extend(learn_7)
+    combined_data.extend(learn_8)
+    combined_data.extend(learn_9)
+    combined_data.extend(learn_10)
+    combined_data.extend(learn_11)
+    combined_data.extend(learn_12)
+    combined_data.extend(learn_13)
+    combined_data.extend(learn_14)
+    combined_data.extend(learn_15)
+    combined_data.extend(learn_16)
+    combined_data.extend(learn_17)
+    combined_data.extend(learn_18)
+    combined_data.extend(learn_19)
+    combined_data.extend(learn_20)
+    combined_data.extend(learn_21)
+    combined_data.extend(learn_22)
+    combined_data.extend(learn_23)
+    combined_data.extend(learn_24)
+    combined_data.extend(learn_25)
+    combined_data.extend(learn_26)
+    combined_data.extend(learn_27)
+    combined_data.extend(learn_28)
+    combined_data.extend(learn_29)
+    combined_data.extend(learn_30)
+    combined_data.extend(learn_31)
+    combined_data.extend(learn_32)
+    combined_data.extend(learn_33)
+    combined_data.extend(learn_34)
+    combined_data.extend(learn_35)
+    combined_data.extend(learn_36)
+    combined_data.extend(learn_37)
+    combined_data.extend(learn_38)
+    combined_data.extend(learn_39)
+    combined_data.extend(learn_40)
+    combined_data.extend(learn_41)
+    combined_data.extend(learn_42)
+    combined_data.extend(learn_43)
+    combined_data.extend(learn_44)
+    combined_data.extend(learn_45)
+    combined_data.extend(learn_46)
+    combined_data.extend(learn_47)
+    combined_data.extend(learn_48)
+    combined_data.extend(learn_49)
+    combined_data.extend(learn_50)
+
+    # print(combined_data)
+    data = []
+
+    data.append({
+        'message':'success-6',
+        'session_value': user_id
+    })
+
+    for combined_data_1 in combined_data:
+        courseid, platform, skill, title, tutor, url = combined_data_1
+        record = {
+            'courseid': courseid,
+            'platform': platform,
+            'skill': skill,
+            'title': title,
+            'tutor': tutor,
+            'url': url
+        }
+        data.append(record)
+
+    json_data = json.dumps(data, indent=4)
+
+    # return render_template("learnpage.html",learn_1=learn_1,learn_2=learn_2,learn_3=learn_3,learn_4=learn_4,learn_5=learn_5,learn_6=learn_6,learn_7=learn_7,learn_8=learn_8,learn_9=learn_9,learn_10=learn_10,learn_11=learn_11,learn_12=learn_12,learn_13=learn_13,learn_14=learn_14,learn_15=learn_15,learn_16=learn_16,learn_17=learn_17,learn_18=learn_18,learn_19=learn_19,learn_20=learn_20,learn_21=learn_21,learn_22=learn_22,learn_23=learn_23,learn_24=learn_24,learn_25=learn_25,learn_26=learn_26,learn_27=learn_27,learn_28=learn_28,learn_29=learn_29,learn_30=learn_30,learn_31=learn_31,learn_32=learn_32,learn_33=learn_33,learn_34=learn_34,learn_35=learn_35,learn_36=learn_36,learn_37=learn_37,learn_38=learn_38,learn_39=learn_39,learn_40=learn_40,learn_41=learn_41,learn_42=learn_42,learn_43=learn_43,learn_44=learn_44,learn_45=learn_45,learn_46=learn_46,learn_47=learn_47,learn_48=learn_48,learn_49=learn_49,learn_50=learn_50)
+    return json_data
+    # Return a response to the client
+    
 
 
 # Profile --------------------------------------
 @app.route('/profile', methods=['POST','GET'])
+@cross_origin(supports_credentials=True)
 def profile():
-    
-    user_id = session['user_id']
-    
+    json_data = request.get_json('data')
+
+    # Get the data from user
+    user_id = json_data['value']
+
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
@@ -585,93 +687,92 @@ def profile():
     cursor.execute(query)
     data = cursor.fetchone()
 
+    connection.commit()
+
     email = data[1]
+    password = data[2]
     username = data[4]
     phone = data[5]
     address = data[6]
     country = data[7]
     postalcode = data[8]
 
-    # Retrieve stored data from 'skills' table
-    query = "SELECT * FROM skills WHERE userid='"+user_id+"'"
+    print('user data:',user_id, email, password, username, phone, address, country, postalcode)
+    
+    # Return a response to the client
+    return {
+        'message':'sucess-7',
+        'session_value': user_id,
+        'email': email, 
+        'password': password,
+        'username': username, 
+        'phone': phone, 
+        'address': address, 
+        'country': country, 
+        'postalcode': postalcode
+    }
+
+
+# Profile Submit --------------------------------------
+@app.route('/profilesubmit', methods=['POST','GET'])
+@cross_origin(supports_credentials=True)
+def profilesubmit():
+    json_data = request.get_json('data')
+
+    # Get the data from user
+    user_id = json_data['value']
+    email = json_data['email']
+    password = json_data['password']
+    username = json_data['username']
+    phone = json_data['phone']
+    address = json_data['address']
+    country = json_data['country']
+    postalcode = json_data['postalcode']
+
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
+
+    # Update table
+    cursor.execute("UPDATE users SET email=?,password=?,username=?,phone=?,address=?,country=?,postalcode=? WHERE (userid)=? ",(email,password,username,phone,address,country,postalcode,user_id))
+    
+    # Retrieve stored data from 'users' table
+    query = "SELECT * FROM users WHERE userid='"+user_id+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 
-    skill_count = int(data[1])
-    user_skills = []
-    for i in range(2,skill_count+2):
-        user_skills.append(data[i])
+    connection.commit()
 
-    print('user data:',user_id, email, username, phone, address, country, postalcode)
-    print('user skill count:',skill_count)
-    print('user skills:',user_skills)
+    email = data[1]
+    password = data[2]
+    username = data[4]
+    phone = data[5]
+    address = data[6]
+    country = data[7]
+    postalcode = data[8]
 
-    # Handle the edit user data form
-    if request.method == 'POST':
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
-
-        # Get the data from user
-        email = request.form['email']
-        username = request.form['username']
-        phone = request.form['phone']
-        address = request.form['address']
-        country = request.form['country']
-        postalcode = request.form['postalcode']
-
-        # Insert the data into the table
-        cursor.execute("UPDATE users SET email=?,username=?,phone=?,address=?,country=?,postalcode=? WHERE (userid)=? ",(email,username,phone,address,country,postalcode,user_id))
-        connection.commit()
-
-        return render_template("profile.html",email=email,username=username,phone=phone,address=address,country=country,postalcode=postalcode,skill_count=skill_count,user_skills=user_skills)
-
-    return render_template("profile.html",email=email,username=username,phone=phone,address=address,country=country,postalcode=postalcode,skill_count=skill_count,user_skills=user_skills)
-
-
-# Settings --------------------------------------
-@app.route('/settings', methods=['POST','GET'])
-def settings():
+    print('user data:',user_id, email, password, username, phone, address, country, postalcode)
     
-    user_id = session['user_id']
+    # Return a response to the client
+    return {
+        'message':'sucess-8',
+        'session_value': user_id,
+        'email': email, 
+        'password': password,
+        'username': username, 
+        'phone': phone, 
+        'address': address, 
+        'country': country, 
+        'postalcode': postalcode
+    }
 
-    # Handle the edit user data form
-    if request.method == 'POST':
-        # Connect to 'user_data.db' database
-        connection = sqlite3.connect(DATABASE)
-        cursor = connection.cursor()
-
-        # Get the data from user
-        if(request.form['email']!=""):
-            email = request.form['email']
-
-        if(request.form['username']!=""):
-            username = request.form['username']
-
-        if(request.form['phone']!=""):
-            phone = request.form['phone']
-
-        if(request.form['address']!=""):
-            address = request.form['address']
-
-        if(request.form['country']!=""):
-            country = request.form['country']
-
-        if(request.form['postalcode']!=""):
-            postalcode = request.form['postalcode']
-
-        # Insert the data into the table
-        cursor.execute("UPDATE users SET email=?,username=?,phone=?,address=?,country=?,postalcode=? WHERE (userid)=? ",(email,username,phone,address,country,postalcode,user_id))
-        connection.commit()
-
-    return render_template("settings.html")
 
 # Log Out ---------------------------------------
 @app.route('/logout')
 def logout():
-    session.pop('user_id',None)
-
-    return render_template("index.html")
+    #session.pop('user_id',None)
+    #return render_template("index.html")
+    return 0
 
 if __name__ == "__main__":
     app.run(debug = True)

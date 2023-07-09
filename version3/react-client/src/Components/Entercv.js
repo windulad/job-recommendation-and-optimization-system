@@ -63,10 +63,17 @@ function EnterCV(){
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="file" onChange={handleFileChange} />
-            <button type="submit">Upload</button>
-        </form>
+        <div class="enter_cv">
+            <h1 class="enter_cv_title">Upload your CV/Resume</h1>
+            <form onSubmit={handleSubmit}>
+                <div class="input_field">
+                    <input type="file" onChange={handleFileChange} />
+                </div>
+                <div class="signup_login">
+                    <input type="submit" value="Log in"/>
+                </div>
+            </form>
+        </div>
     );
 };
 
