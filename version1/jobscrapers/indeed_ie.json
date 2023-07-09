@@ -1,0 +1,158 @@
+{
+  "count": 15,
+  "hits": [
+    {
+      "company_name": "Capital One",
+      "formatted_relative_time": "Today",
+      "id": "b56bd35cd0d98581",
+      "link": "/job/b56bd35cd0d98581?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60695",
+      "pub_date_ts_milli": 1685595600000,
+      "title": "Sr. Software Engineer, iOS"
+    },
+    {
+      "company_name": "Fetch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "d58b9fa8f15459ad",
+      "link": "/job/d58b9fa8f15459ad?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60654",
+      "pub_date_ts_milli": 1669960800000,
+      "title": "iOS, Mobile Engineer, Apprenticeship"
+    },
+    {
+      "company_name": "WALGREENS",
+      "formatted_relative_time": "1 day ago",
+      "id": "4bd5c914672b5123",
+      "link": "/job/4bd5c914672b5123?locality=us",
+      "locality": "us",
+      "location": "Deerfield, IL 60015",
+      "pub_date_ts_milli": 1674021600000,
+      "title": "Software Engineer-(RxR) -Front End- Chicago-A"
+    },
+    {
+      "company_name": "Fetch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "c84231220a58043a",
+      "link": "/job/c84231220a58043a?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60654",
+      "pub_date_ts_milli": 1669960800000,
+      "title": "Android, Mobile Engineer, Apprenticeship"
+    },
+    {
+      "company_name": "Fetch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "25baefe54f30b13e",
+      "link": "/job/25baefe54f30b13e?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60654",
+      "pub_date_ts_milli": 1669960800000,
+      "title": "Senior iOS Software Engineer"
+    },
+    {
+      "company_name": "SpotHero",
+      "formatted_relative_time": "7 days ago",
+      "id": "ff310472b32474e8",
+      "link": "/job/ff310472b32474e8?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1685077200000,
+      "title": "Senior Mobile Engineer, iOS"
+    },
+    {
+      "company_name": "Recruiting From Scratch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "f4e9f969d54dfbb8",
+      "link": "/job/f4e9f969d54dfbb8?locality=us",
+      "locality": "us",
+      "location": "Evanston, IL 60208",
+      "pub_date_ts_milli": 1681966800000,
+      "title": "Senior iOS Engineer, Startup"
+    },
+    {
+      "company_name": "U.S. Bank National Association",
+      "formatted_relative_time": "30+ days ago",
+      "id": "27d7533c0ee349f4",
+      "link": "/job/27d7533c0ee349f4?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60659",
+      "pub_date_ts_milli": 1675317600000,
+      "title": "Lead software engineer (iOS and Android)"
+    },
+    {
+      "company_name": "Hallsten Innovations",
+      "formatted_relative_time": "30+ days ago",
+      "id": "8db6c7132464a0b1",
+      "link": "/job/8db6c7132464a0b1?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1574748000000,
+      "title": "Software Engineer, Mobile Applications (Android/iOS)"
+    },
+    {
+      "company_name": "Sennco Solutions, Inc",
+      "formatted_relative_time": "30+ days ago",
+      "id": "52c5e8d9184d17a8",
+      "link": "/job/52c5e8d9184d17a8?locality=us",
+      "locality": "us",
+      "location": "Plainfield, IL 60544",
+      "pub_date_ts_milli": 1682485200000,
+      "title": "Junior Software Engineer"
+    },
+    {
+      "company_name": "Glassdoor",
+      "formatted_relative_time": "30+ days ago",
+      "id": "e95ab7c636535795",
+      "link": "/job/e95ab7c636535795?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60607",
+      "pub_date_ts_milli": 1682917200000,
+      "title": "Senior Android Engineer"
+    },
+    {
+      "company_name": "Grindr",
+      "formatted_relative_time": "30+ days ago",
+      "id": "87c0e15ad1a96679",
+      "link": "/job/87c0e15ad1a96679?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60625",
+      "pub_date_ts_milli": 1677736800000,
+      "title": "Android Engineer"
+    },
+    {
+      "company_name": "Chamberlain Group",
+      "formatted_relative_time": "30+ days ago",
+      "id": "4ac37cc4de499dda",
+      "link": "/job/4ac37cc4de499dda?locality=us",
+      "locality": "us",
+      "location": "Oak Brook, IL 60523",
+      "pub_date_ts_milli": 1676440800000,
+      "title": "Software Engineer 3, Front End (Hybrid)"
+    },
+    {
+      "company_name": "JPMorgan Chase Bank, N.A.",
+      "formatted_relative_time": "10 days ago",
+      "id": "74dcd684ca259d4b",
+      "link": "/job/74dcd684ca259d4b?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1684818000000,
+      "title": "Manager of Software Engineering"
+    },
+    {
+      "company_name": "embedUR systems",
+      "formatted_relative_time": "30+ days ago",
+      "id": "2b9c37f319983d74",
+      "link": "/job/2b9c37f319983d74?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1607580000000,
+      "title": "SOFTWARE ENGINEER"
+    }
+  ],
+  "indeed_final_url": "https://www.indeed.com/jobs?q=ios+engineer&l=chicago",
+  "next_page_id": 2,
+  "suggest_locality": null
+}

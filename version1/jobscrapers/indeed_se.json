@@ -1,0 +1,158 @@
+{
+  "count": 15,
+  "hits": [
+    {
+      "company_name": "ConData",
+      "formatted_relative_time": "11 days ago",
+      "id": "96bfa406e9ae2286",
+      "link": "/job/96bfa406e9ae2286?locality=us",
+      "locality": "us",
+      "location": "Oak Brook, IL 60523",
+      "pub_date_ts_milli": 1684731600000,
+      "title": "Operations Engineer"
+    },
+    {
+      "company_name": "Next Step Systems",
+      "formatted_relative_time": "Just posted",
+      "id": "78c27fe59b7174c0",
+      "link": "/job/78c27fe59b7174c0?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1685682000000,
+      "title": "Front-End Web Developer"
+    },
+    {
+      "company_name": "Discover Financial Services",
+      "formatted_relative_time": "24 days ago",
+      "id": "fa754fb8194f0ba1",
+      "link": "/job/fa754fb8194f0ba1?locality=us",
+      "locality": "us",
+      "location": "Riverwoods, IL 60015",
+      "pub_date_ts_milli": 1683608400000,
+      "title": "Manager Software Engineering"
+    },
+    {
+      "company_name": "Uline",
+      "formatted_relative_time": "30+ days ago",
+      "id": "8e158c847e80ca4f",
+      "link": "/job/8e158c847e80ca4f?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1675058400000,
+      "title": "Software Engineer (North of Chicago)"
+    },
+    {
+      "company_name": "Allstate",
+      "formatted_relative_time": "1 day ago",
+      "id": "eb04b39ff8055789",
+      "link": "/job/eb04b39ff8055789?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1685422800000,
+      "title": "Applied Behavioral Science Junior Machine Learning Engineer (Remote - Home Based Worker)"
+    },
+    {
+      "company_name": "WALGREENS",
+      "formatted_relative_time": "29 days ago",
+      "id": "6648e486d2b17151",
+      "link": "/job/6648e486d2b17151?locality=us",
+      "locality": "us",
+      "location": "Deerfield, IL 60015",
+      "pub_date_ts_milli": 1683003600000,
+      "title": "Software Engineer PHT"
+    },
+    {
+      "company_name": "Caterpillar",
+      "formatted_relative_time": "30+ days ago",
+      "id": "0d192952ac88a9f4",
+      "link": "/job/0d192952ac88a9f4?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60622",
+      "pub_date_ts_milli": 1673589600000,
+      "title": "2023 Software Engineering Recent Grad Positions \u2013 Cat Digital"
+    },
+    {
+      "company_name": "Allstate",
+      "formatted_relative_time": "22 days ago",
+      "id": "d97b899f53a62ba8",
+      "link": "/job/d97b899f53a62ba8?locality=us",
+      "locality": "us",
+      "location": "Northbrook, IL",
+      "pub_date_ts_milli": 1683694800000,
+      "title": "ENT-Software Engineer-Lead Cons (Northbrook, Illinois)"
+    },
+    {
+      "company_name": "Uline",
+      "formatted_relative_time": "30+ days ago",
+      "id": "85778204195da50f",
+      "link": "/job/85778204195da50f?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1675058400000,
+      "title": "Software Development Team Lead - .Net (North of Chicago)"
+    },
+    {
+      "company_name": "Michael Page",
+      "formatted_relative_time": "9 days ago",
+      "id": "c3b5e058fb828f82",
+      "link": "/job/c3b5e058fb828f82?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1684904400000,
+      "title": "Chicago - Technical Leader - .Net/JavaScript"
+    },
+    {
+      "company_name": "Strategic Employment",
+      "formatted_relative_time": "30+ days ago",
+      "id": "ad05ce6e89f1e6a6",
+      "link": "/job/ad05ce6e89f1e6a6?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60601",
+      "pub_date_ts_milli": 1661749200000,
+      "title": "Senior .NET Developer"
+    },
+    {
+      "company_name": "Allstate",
+      "formatted_relative_time": "30+ days ago",
+      "id": "9a7ab72c087ab9e3",
+      "link": "/job/9a7ab72c087ab9e3?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1681966800000,
+      "title": "Arity - Junior Dev Ops / Support"
+    },
+    {
+      "company_name": "Column Case Management",
+      "formatted_relative_time": "9 days ago",
+      "id": "dcf8a1b983bcdca2",
+      "link": "/job/dcf8a1b983bcdca2?locality=us",
+      "locality": "us",
+      "location": "Lombard, IL 60148",
+      "pub_date_ts_milli": 1684904400000,
+      "title": "Jr. Software Engineer"
+    },
+    {
+      "company_name": "Red Foundry",
+      "formatted_relative_time": "30+ days ago",
+      "id": "d8680ad4c3c9943b",
+      "link": "/job/d8680ad4c3c9943b?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1565845200000,
+      "title": "Software Engineer Apprentice"
+    },
+    {
+      "company_name": "Tempus",
+      "formatted_relative_time": "Just posted",
+      "id": "8818c1dc808d7534",
+      "link": "/job/8818c1dc808d7534?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1685682000000,
+      "title": "Security Software Engineer"
+    }
+  ],
+  "indeed_final_url": "https://www.indeed.com/jobs?q=software+engineer&l=chicago",
+  "next_page_id": 2,
+  "suggest_locality": null
+}

@@ -1,0 +1,158 @@
+{
+  "count": 15,
+  "hits": [
+    {
+      "company_name": "Capital One",
+      "formatted_relative_time": "4 days ago",
+      "id": "bced714515709975",
+      "link": "/job/bced714515709975?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60695",
+      "pub_date_ts_milli": 1684126800000,
+      "title": "Senior Software Engineer, Android"
+    },
+    {
+      "company_name": "Recruiting From Scratch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "8a8a44976983c922",
+      "link": "/job/8a8a44976983c922?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60601",
+      "pub_date_ts_milli": 1673935200000,
+      "title": "Android Engineer"
+    },
+    {
+      "company_name": "Fetch",
+      "formatted_relative_time": "30+ days ago",
+      "id": "c84231220a58043a",
+      "link": "/job/c84231220a58043a?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60654",
+      "pub_date_ts_milli": 1669960800000,
+      "title": "Android, Mobile Engineer, Apprenticeship"
+    },
+    {
+      "company_name": "Glassdoor",
+      "formatted_relative_time": "30+ days ago",
+      "id": "e95ab7c636535795",
+      "link": "/job/e95ab7c636535795?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60607",
+      "pub_date_ts_milli": 1682917200000,
+      "title": "Senior Android Engineer"
+    },
+    {
+      "company_name": "Grindr",
+      "formatted_relative_time": "30+ days ago",
+      "id": "87c0e15ad1a96679",
+      "link": "/job/87c0e15ad1a96679?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60625",
+      "pub_date_ts_milli": 1677736800000,
+      "title": "Android Engineer"
+    },
+    {
+      "company_name": "Hallsten Innovations",
+      "formatted_relative_time": "30+ days ago",
+      "id": "8db6c7132464a0b1",
+      "link": "/job/8db6c7132464a0b1?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1574748000000,
+      "title": "Software Engineer, Mobile Applications (Android/iOS)"
+    },
+    {
+      "company_name": "Whirlpool Corporation",
+      "formatted_relative_time": "1 day ago",
+      "id": "ff135437ff4384c2",
+      "link": "/job/ff135437ff4384c2?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1684126800000,
+      "title": "Android Software Engineer"
+    },
+    {
+      "company_name": "Photon",
+      "formatted_relative_time": "30+ days ago",
+      "id": "00e6d9276aed4e34",
+      "link": "/job/00e6d9276aed4e34?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60630",
+      "pub_date_ts_milli": 1679979600000,
+      "title": "Developer - Android"
+    },
+    {
+      "company_name": "Life Fitness Family of Brands",
+      "formatted_relative_time": "30+ days ago",
+      "id": "19441ed92d74a1a9",
+      "link": "/job/19441ed92d74a1a9?locality=us",
+      "locality": "us",
+      "location": "Franklin Park, IL",
+      "pub_date_ts_milli": 1676268000000,
+      "title": "Android Software Engineer"
+    },
+    {
+      "company_name": "ACG Tech Systems",
+      "formatted_relative_time": "30+ days ago",
+      "id": "f93c6b45201ef1fd",
+      "link": "/job/f93c6b45201ef1fd?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1625547600000,
+      "title": "Android developer"
+    },
+    {
+      "company_name": "U.S. Bank National Association",
+      "formatted_relative_time": "30+ days ago",
+      "id": "27d7533c0ee349f4",
+      "link": "/job/27d7533c0ee349f4?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60659",
+      "pub_date_ts_milli": 1675317600000,
+      "title": "Lead software engineer (iOS and Android)"
+    },
+    {
+      "company_name": "Iknal Semikan",
+      "formatted_relative_time": "14 days ago",
+      "id": "1cfbb52ef2892e2a",
+      "link": "/job/1cfbb52ef2892e2a?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL 60604",
+      "pub_date_ts_milli": 1684386000000,
+      "title": "Automotive Android Developer"
+    },
+    {
+      "company_name": "Costco Wholesale",
+      "formatted_relative_time": "30+ days ago",
+      "id": "b67a806db6137937",
+      "link": "/job/b67a806db6137937?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1679547600000,
+      "title": "Software Developer - Android Mobile App"
+    },
+    {
+      "company_name": "Verifone",
+      "formatted_relative_time": "30+ days ago",
+      "id": "af34ab1b29475dff",
+      "link": "/job/af34ab1b29475dff?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1678168800000,
+      "title": "Software Engineer"
+    },
+    {
+      "company_name": "Purple Drive Technologies",
+      "formatted_relative_time": "30+ days ago",
+      "id": "12ef7fc7bd549f0e",
+      "link": "/job/12ef7fc7bd549f0e?locality=us",
+      "locality": "us",
+      "location": "Chicago, IL",
+      "pub_date_ts_milli": 1681362000000,
+      "title": "Android Application Developer-Full Time"
+    }
+  ],
+  "indeed_final_url": "https://www.indeed.com/jobs?q=android+engineer&l=chicago",
+  "next_page_id": 2,
+  "suggest_locality": null
+}

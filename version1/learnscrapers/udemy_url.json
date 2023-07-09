@@ -1,0 +1,1199 @@
+{
+  "1": {
+    "course url": "https://www.udemy.com/course/complete-python-bootcamp/"
+  },
+  "2": {
+    "course url": "https://www.udemy.com/course/the-web-developer-bootcamp/"
+  },
+  "3": {
+    "course url": "https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+  },
+  "4": {
+    "course url": "https://www.udemy.com/course/the-complete-guide-to-angular-2/"
+  },
+  "5": {
+    "course url": "https://www.udemy.com/course/java-the-complete-java-developer-course/"
+  },
+  "6": {
+    "course url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+  },
+  "7": {
+    "course url": "https://www.udemy.com/course/machinelearning/"
+  },
+  "8": {
+    "course url": "https://www.udemy.com/course/the-complete-javascript-course/"
+  },
+  "9": {
+    "course url": "https://www.udemy.com/course/100-days-of-code/"
+  },
+  "10": {
+    "course url": "https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/"
+  },
+  "11": {
+    "course url": "https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/"
+  },
+  "12": {
+    "course url": "https://www.udemy.com/course/automate/"
+  },
+  "13": {
+    "course url": "https://www.udemy.com/course/unitycourse/"
+  },
+  "14": {
+    "course url": "https://www.udemy.com/course/python-the-complete-python-developer-course/"
+  },
+  "15": {
+    "course url": "https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/"
+  },
+  "16": {
+    "course url": "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
+  },
+  "17": {
+    "course url": "https://www.udemy.com/course/ios-13-app-development-bootcamp/"
+  },
+  "18": {
+    "course url": "https://www.udemy.com/course/react-redux/"
+  },
+  "19": {
+    "course url": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/"
+  },
+  "20": {
+    "course url": "https://www.udemy.com/course/the-complete-web-developer-course-2/"
+  },
+  "21": {
+    "course url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2/"
+  },
+  "22": {
+    "course url": "https://www.udemy.com/course/spring-hibernate-tutorial/"
+  },
+  "23": {
+    "course url": "https://www.udemy.com/course/unrealcourse/"
+  },
+  "24": {
+    "course url": "https://www.udemy.com/course/the-python-mega-course/"
+  },
+  "25": {
+    "course url": "https://www.udemy.com/course/csharp-tutorial-for-beginners/"
+  },
+  "26": {
+    "course url": "https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/"
+  },
+  "27": {
+    "course url": "https://www.udemy.com/course/docker-mastery/"
+  },
+  "28": {
+    "course url": "https://www.udemy.com/course/vuejs-2-the-complete-guide/"
+  },
+  "29": {
+    "course url": "https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/"
+  },
+  "30": {
+    "course url": "https://www.udemy.com/course/beginning-c-plus-plus-programming/"
+  },
+  "31": {
+    "course url": "https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/"
+  },
+  "32": {
+    "course url": "https://www.udemy.com/course/r-programming/"
+  },
+  "33": {
+    "course url": "https://www.udemy.com/course/understand-javascript/"
+  },
+  "34": {
+    "course url": "https://www.udemy.com/course/flutter-bootcamp-with-dart/"
+  },
+  "35": {
+    "course url": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/"
+  },
+  "36": {
+    "course url": "https://www.udemy.com/course/the-python-bible/"
+  },
+  "37": {
+    "course url": "https://www.udemy.com/course/complete-python-developer-zero-to-mastery/"
+  },
+  "38": {
+    "course url": "https://www.udemy.com/course/the-complete-react-native-and-redux-course/"
+  },
+  "39": {
+    "course url": "https://www.udemy.com/course/deeplearning/"
+  },
+  "40": {
+    "course url": "https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/"
+  },
+  "41": {
+    "course url": "https://www.udemy.com/course/sql-for-beginners-course/"
+  },
+  "42": {
+    "course url": "https://www.udemy.com/course/the-complete-oracle-sql-certification-course/"
+  },
+  "43": {
+    "course url": "https://www.udemy.com/course/advanced-css-and-sass/"
+  },
+  "44": {
+    "course url": "https://www.udemy.com/course/nodejs-the-complete-guide/"
+  },
+  "45": {
+    "course url": "https://www.udemy.com/course/understanding-typescript/"
+  },
+  "46": {
+    "course url": "https://www.udemy.com/course/unitycourse2/"
+  },
+  "47": {
+    "course url": "https://www.udemy.com/course/apache-kafka/"
+  },
+  "48": {
+    "course url": "https://www.udemy.com/course/statistics-for-data-science-and-business-analysis/"
+  },
+  "49": {
+    "course url": "https://www.udemy.com/course/html-and-css-for-beginners-crash-course-learn-fast-easy/"
+  },
+  "50": {
+    "course url": "https://www.udemy.com/course/datastructurescncpp/"
+  },
+  "51": {
+    "course url": "https://www.udemy.com/course/datascience/"
+  },
+  "52": {
+    "course url": "https://www.udemy.com/course/python-programming-projects/"
+  },
+  "53": {
+    "course url": "https://www.udemy.com/course/the-complete-aspnet-mvc-5-course/"
+  },
+  "54": {
+    "course url": "https://www.udemy.com/course/ios11-app-development-bootcamp/"
+  },
+  "55": {
+    "course url": "https://www.udemy.com/course/csharp-intermediate-classes-interfaces-and-oop/"
+  },
+  "56": {
+    "course url": "https://www.udemy.com/course/modern-javascript-from-the-beginning/"
+  },
+  "57": {
+    "course url": "https://www.udemy.com/course/go-the-complete-developers-guide/"
+  },
+  "58": {
+    "course url": "https://www.udemy.com/course/java-programming-tutorial-for-beginners/"
+  },
+  "59": {
+    "course url": "https://www.udemy.com/course/react-native-the-practical-guide/"
+  },
+  "60": {
+    "course url": "https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/"
+  },
+  "61": {
+    "course url": "https://www.udemy.com/course/complete-android-n-developer-course/"
+  },
+  "62": {
+    "course url": "https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/"
+  },
+  "63": {
+    "course url": "https://www.udemy.com/course/c-programming-for-beginners-/"
+  },
+  "64": {
+    "course url": "https://www.udemy.com/course/understand-nodejs/"
+  },
+  "65": {
+    "course url": "https://www.udemy.com/course/the-complete-guide-to-jira-with-real-world-examples/"
+  },
+  "66": {
+    "course url": "https://www.udemy.com/course/the-modern-python3-bootcamp/"
+  },
+  "67": {
+    "course url": "https://www.udemy.com/course/relational-database-design/"
+  },
+  "68": {
+    "course url": "https://www.udemy.com/course/rest-api-automation-testing-rest-assured/"
+  },
+  "69": {
+    "course url": "https://www.udemy.com/course/the-complete-angular-master-class/"
+  },
+  "70": {
+    "course url": "https://www.udemy.com/course/ci-cd-devops/"
+  },
+  "71": {
+    "course url": "https://www.udemy.com/course/git-complete/"
+  },
+  "72": {
+    "course url": "https://www.udemy.com/course/javascript-basics-for-beginners/"
+  },
+  "73": {
+    "course url": "https://www.udemy.com/course/python-coding/"
+  },
+  "74": {
+    "course url": "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/"
+  },
+  "75": {
+    "course url": "https://www.udemy.com/course/modern-html-css-from-the-beginning/"
+  },
+  "76": {
+    "course url": "https://www.udemy.com/course/complete-react-developer-zero-to-mastery/"
+  },
+  "77": {
+    "course url": "https://www.udemy.com/course/html-css-more/"
+  },
+  "78": {
+    "course url": "https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/"
+  },
+  "79": {
+    "course url": "https://www.udemy.com/course/python-for-absolute-beginners-u/"
+  },
+  "80": {
+    "course url": "https://www.udemy.com/course/python-complete/"
+  },
+  "81": {
+    "course url": "https://www.udemy.com/course/php-for-complete-beginners-includes-msql-object-oriented/"
+  },
+  "82": {
+    "course url": "https://www.udemy.com/course/angular-2-and-nodejs-the-practical-guide/"
+  },
+  "83": {
+    "course url": "https://www.udemy.com/course/complete-csharp-masterclass/"
+  },
+  "84": {
+    "course url": "https://www.udemy.com/course/react-2nd-edition/"
+  },
+  "85": {
+    "course url": "https://www.udemy.com/course/alteryx-bootcamp/"
+  },
+  "86": {
+    "course url": "https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/"
+  },
+  "87": {
+    "course url": "https://www.udemy.com/course/artificial-intelligence-az/"
+  },
+  "88": {
+    "course url": "https://www.udemy.com/course/certified-kubernetes-application-developer/"
+  },
+  "89": {
+    "course url": "https://www.udemy.com/course/master-practical-java-development/"
+  },
+  "90": {
+    "course url": "https://www.udemy.com/course/learn-angularjs/"
+  },
+  "91": {
+    "course url": "https://www.udemy.com/course/python-core-and-advanced/"
+  },
+  "92": {
+    "course url": "https://www.udemy.com/course/microsoft-sql-for-beginners/"
+  },
+  "93": {
+    "course url": "https://www.udemy.com/course/learn-how-to-code/"
+  },
+  "94": {
+    "course url": "https://www.udemy.com/course/java-in-depth-become-a-complete-java-engineer/"
+  },
+  "95": {
+    "course url": "https://www.udemy.com/course/spark-and-python-for-big-data-with-pyspark/"
+  },
+  "96": {
+    "course url": "https://www.udemy.com/course/become-a-wordpress-developer-php-javascript/"
+  },
+  "97": {
+    "course url": "https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/"
+  },
+  "98": {
+    "course url": "https://www.udemy.com/course/csharp-advanced/"
+  },
+  "99": {
+    "course url": "https://www.udemy.com/course/mongodb-the-complete-developers-guide/"
+  },
+  "100": {
+    "course url": "https://www.udemy.com/course/rest-api-flask-and-python/"
+  },
+  "101": {
+    "course url": "https://www.udemy.com/course/cpp-deep-dive/"
+  },
+  "102": {
+    "course url": "https://www.udemy.com/course/learning-python-for-data-analysis-and-visualization/"
+  },
+  "103": {
+    "course url": "https://www.udemy.com/course/the-complete-python-course/"
+  },
+  "104": {
+    "course url": "https://www.udemy.com/course/data-analysis-with-pandas/"
+  },
+  "105": {
+    "course url": "https://www.udemy.com/course/elasticsearch-complete-guide/"
+  },
+  "106": {
+    "course url": "https://www.udemy.com/course/spring-framework-5-beginner-to-guru/"
+  },
+  "107": {
+    "course url": "https://www.udemy.com/course/angular-crash-course/"
+  },
+  "108": {
+    "course url": "https://www.udemy.com/course/the-complete-android-oreo-developer-course/"
+  },
+  "109": {
+    "course url": "https://www.udemy.com/course/the-ultimate-guide-to-game-development-with-unity/"
+  },
+  "110": {
+    "course url": "https://www.udemy.com/course/testerbootcamp/"
+  },
+  "111": {
+    "course url": "https://www.udemy.com/course/python-for-finance-and-trading-algorithms/"
+  },
+  "112": {
+    "course url": "https://www.udemy.com/course/git-going-fast/"
+  },
+  "113": {
+    "course url": "https://www.udemy.com/course/learn-python-and-ethical-hacking-from-scratch/"
+  },
+  "114": {
+    "course url": "https://www.udemy.com/course/complete-guide-to-tensorflow-for-deep-learning-with-python/"
+  },
+  "115": {
+    "course url": "https://www.udemy.com/course/apache-spark-with-scala-hands-on-with-big-data/"
+  },
+  "116": {
+    "course url": "https://www.udemy.com/course/bootstrap-4-from-scratch-with-5-projects/"
+  },
+  "117": {
+    "course url": "https://www.udemy.com/course/selenium-training/"
+  },
+  "118": {
+    "course url": "https://www.udemy.com/course/ultimate-excel-programmer/"
+  },
+  "119": {
+    "course url": "https://www.udemy.com/course/introduction-to-jira/"
+  },
+  "120": {
+    "course url": "https://www.udemy.com/course/ionic-2-the-practical-guide-to-building-ios-android-apps/"
+  },
+  "121": {
+    "course url": "https://www.udemy.com/course/data-science-and-machine-learning-bootcamp-with-r/"
+  },
+  "122": {
+    "course url": "https://www.udemy.com/course/webservices-testing-with-soap-ui/"
+  },
+  "123": {
+    "course url": "https://www.udemy.com/course/mobile-automation-using-appiumselenium-3/"
+  },
+  "124": {
+    "course url": "https://www.udemy.com/course/javascript-for-beginners-introduction-learn-fast-easy/"
+  },
+  "125": {
+    "course url": "https://www.udemy.com/course/mern-stack-front-to-back/"
+  },
+  "126": {
+    "course url": "https://www.udemy.com/course/oracle-sql-12c-become-an-sql-developer-with-subtitle/"
+  },
+  "127": {
+    "course url": "https://www.udemy.com/course/learn-html5-programming-from-scratch/"
+  },
+  "128": {
+    "course url": "https://www.udemy.com/course/the-complete-wordpress-website-business-course/"
+  },
+  "129": {
+    "course url": "https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/"
+  },
+  "130": {
+    "course url": "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
+  },
+  "131": {
+    "course url": "https://www.udemy.com/course/learn-devops-ci-cd-with-jenkins-using-pipelines-and-docker/"
+  },
+  "132": {
+    "course url": "https://www.udemy.com/course/node-with-react-fullstack-web-development/"
+  },
+  "133": {
+    "course url": "https://www.udemy.com/course/learn-software-testing-in-practical-become-a-qa-expert/"
+  },
+  "134": {
+    "course url": "https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/"
+  },
+  "135": {
+    "course url": "https://www.udemy.com/course/java-programming-complete-beginner-to-advanced/"
+  },
+  "136": {
+    "course url": "https://www.udemy.com/course/taming-big-data-with-apache-spark-hands-on/"
+  },
+  "137": {
+    "course url": "https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/"
+  },
+  "138": {
+    "course url": "https://www.udemy.com/course/docker-kubernetes-the-practical-guide/"
+  },
+  "139": {
+    "course url": "https://www.udemy.com/course/devslopes-ios10/"
+  },
+  "140": {
+    "course url": "https://www.udemy.com/course/web-developer-course/"
+  },
+  "141": {
+    "course url": "https://www.udemy.com/course/bash-scripting/"
+  },
+  "142": {
+    "course url": "https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/"
+  },
+  "143": {
+    "course url": "https://www.udemy.com/course/front-end-web-development/"
+  },
+  "144": {
+    "course url": "https://www.udemy.com/course/jenkins-from-zero-to-hero/"
+  },
+  "145": {
+    "course url": "https://www.udemy.com/course/microservices-with-node-js-and-react/"
+  },
+  "146": {
+    "course url": "https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/"
+  },
+  "147": {
+    "course url": "https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/"
+  },
+  "148": {
+    "course url": "https://www.udemy.com/course/learn-jmeter-from-scratch-performance-load-testing-tool/"
+  },
+  "149": {
+    "course url": "https://www.udemy.com/course/javascript-es6-tutorial/"
+  },
+  "150": {
+    "course url": "https://www.udemy.com/course/modern-javascript/"
+  },
+  "151": {
+    "course url": "https://www.udemy.com/course/the-agile-samurai-bootcamp/"
+  },
+  "152": {
+    "course url": "https://www.udemy.com/course/git-and-github-bootcamp/"
+  },
+  "153": {
+    "course url": "https://www.udemy.com/course/aws-serverless-a-complete-introduction/"
+  },
+  "154": {
+    "course url": "https://www.udemy.com/course/machine-learning-for-data-science/"
+  },
+  "155": {
+    "course url": "https://www.udemy.com/course/nlp-natural-language-processing-with-python/"
+  },
+  "156": {
+    "course url": "https://www.udemy.com/course/spring-web-services-tutorial/"
+  },
+  "157": {
+    "course url": "https://www.udemy.com/course/entity-framework-tutorial/"
+  },
+  "158": {
+    "course url": "https://www.udemy.com/course/build-website-scratch/"
+  },
+  "159": {
+    "course url": "https://www.udemy.com/course/learn-selenium-automation-in-easy-python-language/"
+  },
+  "160": {
+    "course url": "https://www.udemy.com/course/php-with-laravel-for-beginners-become-a-master-in-laravel/"
+  },
+  "161": {
+    "course url": "https://www.udemy.com/course/advanced-javascript-concepts/"
+  },
+  "162": {
+    "course url": "https://www.udemy.com/course/postman-the-complete-guide/"
+  },
+  "163": {
+    "course url": "https://www.udemy.com/course/rock-the-jvm-scala-for-beginners/"
+  },
+  "164": {
+    "course url": "https://www.udemy.com/course/learn-python-programming-a-step-by-step-course-to-beginners/"
+  },
+  "165": {
+    "course url": "https://www.udemy.com/course/ultimate-web/"
+  },
+  "166": {
+    "course url": "https://www.udemy.com/course/devops-and-continuous-integration-with-jenkins-pipelines/"
+  },
+  "167": {
+    "course url": "https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/"
+  },
+  "168": {
+    "course url": "https://www.udemy.com/course/corejavamadeeasy/"
+  },
+  "169": {
+    "course url": "https://www.udemy.com/course/python-programming-beginners/"
+  },
+  "170": {
+    "course url": "https://www.udemy.com/course/nodejs-master-class/"
+  },
+  "171": {
+    "course url": "https://www.udemy.com/course/data-science-natural-language-processing-in-python/"
+  },
+  "172": {
+    "course url": "https://www.udemy.com/course/solid-design/"
+  },
+  "173": {
+    "course url": "https://www.udemy.com/course/unreale4/"
+  },
+  "174": {
+    "course url": "https://www.udemy.com/course/python-for-data-structures-algorithms-and-interviews/"
+  },
+  "175": {
+    "course url": "https://www.udemy.com/course/complete-ios-10-developer-course/"
+  },
+  "176": {
+    "course url": "https://www.udemy.com/course/aws-cloudformation-master-class/"
+  },
+  "177": {
+    "course url": "https://www.udemy.com/course/react-redux-tutorial/"
+  },
+  "178": {
+    "course url": "https://www.udemy.com/course/spring-boot-tutorial-for-beginners/"
+  },
+  "179": {
+    "course url": "https://www.udemy.com/course/javascript-beginners-complete-tutorial/"
+  },
+  "180": {
+    "course url": "https://www.udemy.com/course/jsp-tutorial/"
+  },
+  "181": {
+    "course url": "https://www.udemy.com/course/complete-uipath-rpa-developer-course/"
+  },
+  "182": {
+    "course url": "https://www.udemy.com/course/typescript-the-complete-developers-guide/"
+  },
+  "183": {
+    "course url": "https://www.udemy.com/course/master-android-7-nougat-java-app-development-step-by-step/"
+  },
+  "184": {
+    "course url": "https://www.udemy.com/course/pre-programming-everything-you-need-to-know-before-you-code/"
+  },
+  "185": {
+    "course url": "https://www.udemy.com/course/progressive-web-app-pwa-the-complete-guide/"
+  },
+  "186": {
+    "course url": "https://www.udemy.com/course/unityrpg/"
+  },
+  "187": {
+    "course url": "https://www.udemy.com/course/plsql-beginner-to-advanced-become-a-perfect-plsql-developer/"
+  },
+  "188": {
+    "course url": "https://www.udemy.com/course/data-statistics/"
+  },
+  "189": {
+    "course url": "https://www.udemy.com/course/video-course-c-from-beginner-to-expert/"
+  },
+  "190": {
+    "course url": "https://www.udemy.com/course/practice-java-by-building-projects/"
+  },
+  "191": {
+    "course url": "https://www.udemy.com/course/github-ultimate/"
+  },
+  "192": {
+    "course url": "https://www.udemy.com/course/python-for-machine-learning-data-science-masterclass/"
+  },
+  "193": {
+    "course url": "https://www.udemy.com/course/design-patterns-csharp-dotnet/"
+  },
+  "194": {
+    "course url": "https://www.udemy.com/course/xamarin-forms-course/"
+  },
+  "195": {
+    "course url": "https://www.udemy.com/course/microservices-software-architecture-patterns-and-techniques/"
+  },
+  "196": {
+    "course url": "https://www.udemy.com/course/selenium-for-beginners/"
+  },
+  "197": {
+    "course url": "https://www.udemy.com/course/selenium-webdriver-with-java-testng-and-log4j/"
+  },
+  "198": {
+    "course url": "https://www.udemy.com/course/modern-javascript-from-novice-to-ninja/"
+  },
+  "199": {
+    "course url": "https://www.udemy.com/course/blockchain-developer/"
+  },
+  "200": {
+    "course url": "https://www.udemy.com/course/graphql-with-react-course/"
+  },
+  "201": {
+    "course url": "https://www.udemy.com/course/ardit-sulce-python-for-beginners/"
+  },
+  "202": {
+    "course url": "https://www.udemy.com/course/artificial-intelligence-reinforcement-learning-in-python/"
+  },
+  "203": {
+    "course url": "https://www.udemy.com/course/cypress-tutorial/"
+  },
+  "204": {
+    "course url": "https://www.udemy.com/course/the-advanced-web-developer-bootcamp/"
+  },
+  "205": {
+    "course url": "https://www.udemy.com/course/learn-front-end-development/"
+  },
+  "206": {
+    "course url": "https://www.udemy.com/course/teach-your-kids-to-code/"
+  },
+  "207": {
+    "course url": "https://www.udemy.com/course/robot-framework-level-1/"
+  },
+  "208": {
+    "course url": "https://www.udemy.com/course/modern-react-front-to-back/"
+  },
+  "209": {
+    "course url": "https://www.udemy.com/course/postman-crash-course-for-beginners-learn-rest-api-testing/"
+  },
+  "210": {
+    "course url": "https://www.udemy.com/course/android-kotlin-developer/"
+  },
+  "211": {
+    "course url": "https://www.udemy.com/course/50-projects-50-days/"
+  },
+  "212": {
+    "course url": "https://www.udemy.com/course/data-science-deep-learning-in-python/"
+  },
+  "213": {
+    "course url": "https://www.udemy.com/course/hibernate-jpa-tutorial-for-beginners-in-100-steps/"
+  },
+  "214": {
+    "course url": "https://www.udemy.com/course/python-3-deep-dive-part-1/"
+  },
+  "215": {
+    "course url": "https://www.udemy.com/course/python-for-computer-vision-with-opencv-and-deep-learning/"
+  },
+  "216": {
+    "course url": "https://www.udemy.com/course/python-oops-beginners/"
+  },
+  "217": {
+    "course url": "https://www.udemy.com/course/web-development-masterclass-complete-certificate-course/"
+  },
+  "218": {
+    "course url": "https://www.udemy.com/course/unit-testing-csharp/"
+  },
+  "219": {
+    "course url": "https://www.udemy.com/course/nextjs-react-the-complete-guide/"
+  },
+  "220": {
+    "course url": "https://www.udemy.com/course/learn-java-se-8-and-prepare-for-the-java-associate-exam/"
+  },
+  "221": {
+    "course url": "https://www.udemy.com/course/learn-git-by-doing-a-step-by-step-guide-to-version-control/"
+  },
+  "222": {
+    "course url": "https://www.udemy.com/course/unreal-engine-5-the-complete-beginners-course/"
+  },
+  "223": {
+    "course url": "https://www.udemy.com/course/software-engineering-101/"
+  },
+  "224": {
+    "course url": "https://www.udemy.com/course/nestjs-zero-to-hero/"
+  },
+  "225": {
+    "course url": "https://www.udemy.com/course/python-for-beginners-learn-all-the-basics-of-python/"
+  },
+  "226": {
+    "course url": "https://www.udemy.com/course/introduction-to-microservices/"
+  },
+  "227": {
+    "course url": "https://www.udemy.com/course/r-analytics/"
+  },
+  "228": {
+    "course url": "https://www.udemy.com/course/bash-shell-scripting-crash-course-for-beginners/"
+  },
+  "229": {
+    "course url": "https://www.udemy.com/course/java-se-programming/"
+  },
+  "230": {
+    "course url": "https://www.udemy.com/course/complete-aspnet-core-21-course/"
+  },
+  "231": {
+    "course url": "https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/"
+  },
+  "232": {
+    "course url": "https://www.udemy.com/course/coding-for-beginners-you-can-learn-to-code/"
+  },
+  "233": {
+    "course url": "https://www.udemy.com/course/full-stack-application-development-with-spring-boot-and-angular/"
+  },
+  "234": {
+    "course url": "https://www.udemy.com/course/java-multithreading-concurrency-performance-optimization/"
+  },
+  "235": {
+    "course url": "https://www.udemy.com/course/deep-learning-tensorflow-2/"
+  },
+  "236": {
+    "course url": "https://www.udemy.com/course/shell-scripting-linux/"
+  },
+  "237": {
+    "course url": "https://www.udemy.com/course/advanced-node-for-developers/"
+  },
+  "238": {
+    "course url": "https://www.udemy.com/course/python-tutorials-for-by-navinreddy/"
+  },
+  "239": {
+    "course url": "https://www.udemy.com/course/python-network-programming-for-network-engineers-python-3/"
+  },
+  "240": {
+    "course url": "https://www.udemy.com/course/interactive-python-dashboards-with-plotly-and-dash/"
+  },
+  "241": {
+    "course url": "https://www.udemy.com/course/learn-object-oriented-php-by-building-a-complete-website/"
+  },
+  "242": {
+    "course url": "https://www.udemy.com/course/javascript-advanced/"
+  },
+  "243": {
+    "course url": "https://www.udemy.com/course/cucumber-tutorial/"
+  },
+  "244": {
+    "course url": "https://www.udemy.com/course/angular-full-app-with-angular-material-angularfire-ngrx/"
+  },
+  "245": {
+    "course url": "https://www.udemy.com/course/python-and-flask-bootcamp-create-websites-using-flask/"
+  },
+  "246": {
+    "course url": "https://www.udemy.com/course/html-css-javascript-certification-course-for-beginners/"
+  },
+  "247": {
+    "course url": "https://www.udemy.com/course/the-complete-developers-guide-to-mongodb/"
+  },
+  "248": {
+    "course url": "https://www.udemy.com/course/microservices-with-spring-cloud/"
+  },
+  "249": {
+    "course url": "https://www.udemy.com/course/introduction-to-data-structures/"
+  },
+  "250": {
+    "course url": "https://www.udemy.com/course/30-days-of-python/"
+  },
+  "251": {
+    "course url": "https://www.udemy.com/course/complete-python-programming-masterclass-beginner-to-advanced/"
+  },
+  "252": {
+    "course url": "https://www.udemy.com/course/modern-react-bootcamp/"
+  },
+  "253": {
+    "course url": "https://www.udemy.com/course/windows-powershell-training/"
+  },
+  "254": {
+    "course url": "https://www.udemy.com/course/the-complete-kotlin-developer-course/"
+  },
+  "255": {
+    "course url": "https://www.udemy.com/course/postman-api-testing-step-by-step-for-beginners/"
+  },
+  "256": {
+    "course url": "https://www.udemy.com/course/design-patterns-java/"
+  },
+  "257": {
+    "course url": "https://www.udemy.com/course/modern-java-learn-java-8-features-by-coding-it/"
+  },
+  "258": {
+    "course url": "https://www.udemy.com/course/dp900-azure/"
+  },
+  "259": {
+    "course url": "https://www.udemy.com/course/complete-web-development-course/"
+  },
+  "260": {
+    "course url": "https://www.udemy.com/course/full-stack-angular-spring-boot-tutorial/"
+  },
+  "261": {
+    "course url": "https://www.udemy.com/course/complete-elasticsearch-masterclass-with-kibana-and-logstash/"
+  },
+  "262": {
+    "course url": "https://www.udemy.com/course/natural-language-processing-with-deep-learning-in-python/"
+  },
+  "263": {
+    "course url": "https://www.udemy.com/course/the-complete-hands-on-course-to-master-apache-airflow/"
+  },
+  "264": {
+    "course url": "https://www.udemy.com/course/gcp-data-engineer-and-cloud-architect/"
+  },
+  "265": {
+    "course url": "https://www.udemy.com/course/unrealblueprint/"
+  },
+  "266": {
+    "course url": "https://www.udemy.com/course/git-a-web-developer-job-mastering-the-modern-workflow/"
+  },
+  "267": {
+    "course url": "https://www.udemy.com/course/go-programming-language/"
+  },
+  "268": {
+    "course url": "https://www.udemy.com/course/jquery-tutorial/"
+  },
+  "269": {
+    "course url": "https://www.udemy.com/course/oracle-database-12c-sql-certified-associate-1z0-071/"
+  },
+  "270": {
+    "course url": "https://www.udemy.com/course/foundation-level-training/"
+  },
+  "271": {
+    "course url": "https://www.udemy.com/course/python-masterclass-course/"
+  },
+  "272": {
+    "course url": "https://www.udemy.com/course/data-structures-and-algorithms-the-complete-guide/"
+  },
+  "273": {
+    "course url": "https://www.udemy.com/course/mysql-for-data-analysis/"
+  },
+  "274": {
+    "course url": "https://www.udemy.com/course/python-for-time-series-data-analysis/"
+  },
+  "275": {
+    "course url": "https://www.udemy.com/course/automate-tests-using-selenium-webdriver-with-java-cucumber/"
+  },
+  "276": {
+    "course url": "https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/"
+  },
+  "277": {
+    "course url": "https://www.udemy.com/course/complete-tensorflow-2-and-keras-deep-learning-bootcamp/"
+  },
+  "278": {
+    "course url": "https://www.udemy.com/course/informatica-tutorial-beginner-to-expert-level/"
+  },
+  "279": {
+    "course url": "https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/"
+  },
+  "280": {
+    "course url": "https://www.udemy.com/course/nuxtjs-vuejs-on-steroids/"
+  },
+  "281": {
+    "course url": "https://www.udemy.com/course/unrealengine-cpp/"
+  },
+  "282": {
+    "course url": "https://www.udemy.com/course/angular-4-front-to-back/"
+  },
+  "283": {
+    "course url": "https://www.udemy.com/course/thecompletewebdeveloper/"
+  },
+  "284": {
+    "course url": "https://www.udemy.com/course/learn-salesforce-apex-basic-to-advance/"
+  },
+  "285": {
+    "course url": "https://www.udemy.com/course/computer-vision-a-z/"
+  },
+  "286": {
+    "course url": "https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud/"
+  },
+  "287": {
+    "course url": "https://www.udemy.com/course/microsoft-sql-from-a-to-z/"
+  },
+  "288": {
+    "course url": "https://www.udemy.com/course/software-requirements-gathering/"
+  },
+  "289": {
+    "course url": "https://www.udemy.com/course/writing-clean-code/"
+  },
+  "290": {
+    "course url": "https://www.udemy.com/course/python-programming-beginner-to-advanced/"
+  },
+  "291": {
+    "course url": "https://www.udemy.com/course/django-python-advanced/"
+  },
+  "292": {
+    "course url": "https://www.udemy.com/course/blendercharacters/"
+  },
+  "293": {
+    "course url": "https://www.udemy.com/course/web-projects-with-vanilla-javascript/"
+  },
+  "294": {
+    "course url": "https://www.udemy.com/course/bootstrap-4-bootcamp/"
+  },
+  "295": {
+    "course url": "https://www.udemy.com/course/java-spring-framework-masterclass/"
+  },
+  "296": {
+    "course url": "https://www.udemy.com/course/javascript-bootcamp-2016/"
+  },
+  "297": {
+    "course url": "https://www.udemy.com/course/masteringssis2016/"
+  },
+  "298": {
+    "course url": "https://www.udemy.com/course/complete-java-for-test-automation/"
+  },
+  "299": {
+    "course url": "https://www.udemy.com/course/selenium-webdriver-with-python3/"
+  },
+  "300": {
+    "course url": "https://www.udemy.com/course/software-testing-masterclass-from-novice-to-expert/"
+  },
+  "301": {
+    "course url": "https://www.udemy.com/course/mern-ecommerce/"
+  },
+  "302": {
+    "course url": "https://www.udemy.com/course/java-for-absolute-beginners/"
+  },
+  "303": {
+    "course url": "https://www.udemy.com/course/kubernetes-microservices/"
+  },
+  "304": {
+    "course url": "https://www.udemy.com/course/working-with-jenkins/"
+  },
+  "305": {
+    "course url": "https://www.udemy.com/course/web-developer-bootcamp-flask-python/"
+  },
+  "306": {
+    "course url": "https://www.udemy.com/course/full-stack-java-developer-java/"
+  },
+  "307": {
+    "course url": "https://www.udemy.com/course/servicenow-201-development/"
+  },
+  "308": {
+    "course url": "https://www.udemy.com/course/bayesian-machine-learning-in-python-ab-testing/"
+  },
+  "309": {
+    "course url": "https://www.udemy.com/course/absolute-introduction-to-object-oriented-programming-in-java/"
+  },
+  "310": {
+    "course url": "https://www.udemy.com/course/python-programming-tutorial-a-z/"
+  },
+  "311": {
+    "course url": "https://www.udemy.com/course/ios9-swift/"
+  },
+  "312": {
+    "course url": "https://www.udemy.com/course/matlab-programming-fundamentals/"
+  },
+  "313": {
+    "course url": "https://www.udemy.com/course/android-oreo-kotlin-app-masterclass/"
+  },
+  "314": {
+    "course url": "https://www.udemy.com/course/salesforce-development/"
+  },
+  "315": {
+    "course url": "https://www.udemy.com/course/probability-and-statistics-for-business-and-data-science/"
+  },
+  "316": {
+    "course url": "https://www.udemy.com/course/javascript-the-basics-for-beginners/"
+  },
+  "317": {
+    "course url": "https://www.udemy.com/course/the-ultimate-beginners-guide-to-django-django-2-python-web-dev-website/"
+  },
+  "318": {
+    "course url": "https://www.udemy.com/course/selenium-webdriver-java-complete-step-by-step-course/"
+  },
+  "319": {
+    "course url": "https://www.udemy.com/course/complete-guide-to-building-an-app-with-net-core-and-react/"
+  },
+  "320": {
+    "course url": "https://www.udemy.com/course/machine-learning-course-with-python/"
+  },
+  "321": {
+    "course url": "https://www.udemy.com/course/how-to-become-an-outstanding-solution-architect/"
+  },
+  "322": {
+    "course url": "https://www.udemy.com/course/practical-data-structures-algorithms-in-java/"
+  },
+  "323": {
+    "course url": "https://www.udemy.com/course/selenium-webdriver-web-based-automation-testing/"
+  },
+  "324": {
+    "course url": "https://www.udemy.com/course/data-science-linear-regression-in-python/"
+  },
+  "325": {
+    "course url": "https://www.udemy.com/course/react-js-and-redux-mastering-web-apps/"
+  },
+  "326": {
+    "course url": "https://www.udemy.com/course/es6-bootcamp-next-generation-javascript/"
+  },
+  "327": {
+    "course url": "https://www.udemy.com/course/online-store-e-commerce-website-in-php-mysql-from-scratch/"
+  },
+  "328": {
+    "course url": "https://www.udemy.com/course/devslopes-unity3d/"
+  },
+  "329": {
+    "course url": "https://www.udemy.com/course/python-django-dev-to-deployment/"
+  },
+  "330": {
+    "course url": "https://www.udemy.com/course/learn-unit-testing-with-spring-boot/"
+  },
+  "331": {
+    "course url": "https://www.udemy.com/course/react-native-advanced/"
+  },
+  "332": {
+    "course url": "https://www.udemy.com/course/learn-python-3-from-beginner-to-advanced/"
+  },
+  "333": {
+    "course url": "https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/"
+  },
+  "334": {
+    "course url": "https://www.udemy.com/course/graphql-bootcamp/"
+  },
+  "335": {
+    "course url": "https://www.udemy.com/course/sql-and-postgresql/"
+  },
+  "336": {
+    "course url": "https://www.udemy.com/course/learn-to-code-with-ruby-lang/"
+  },
+  "337": {
+    "course url": "https://www.udemy.com/course/webpack-2-the-complete-developers-guide/"
+  },
+  "338": {
+    "course url": "https://www.udemy.com/course/spring-boot-intro/"
+  },
+  "339": {
+    "course url": "https://www.udemy.com/course/sql-advanced/"
+  },
+  "340": {
+    "course url": "https://www.udemy.com/course/uml-and-object-oriented-design-foundations/"
+  },
+  "341": {
+    "course url": "https://www.udemy.com/course/scala-and-spark-for-big-data-and-machine-learning/"
+  },
+  "342": {
+    "course url": "https://www.udemy.com/course/advanced-computer-vision/"
+  },
+  "343": {
+    "course url": "https://www.udemy.com/course/python-programming-for-real-life-networking-use/"
+  },
+  "344": {
+    "course url": "https://www.udemy.com/course/data_science_a_to_z/"
+  },
+  "345": {
+    "course url": "https://www.udemy.com/course/devops-training/"
+  },
+  "346": {
+    "course url": "https://www.udemy.com/course/mastering-object-oriented-design-in-java/"
+  },
+  "347": {
+    "course url": "https://www.udemy.com/course/protractor-tutorial/"
+  },
+  "348": {
+    "course url": "https://www.udemy.com/course/beg-modern-cpp/"
+  },
+  "349": {
+    "course url": "https://www.udemy.com/course/flutter-dart-the-complete-flutter-app-development-course/"
+  },
+  "350": {
+    "course url": "https://www.udemy.com/course/the-complete-php-full-stack-web-developer-bootcamp/"
+  },
+  "351": {
+    "course url": "https://www.udemy.com/course/patterns-cplusplus/"
+  },
+  "352": {
+    "course url": "https://www.udemy.com/course/deep-learning-advanced-nlp/"
+  },
+  "353": {
+    "course url": "https://www.udemy.com/course/sqldatabases/"
+  },
+  "354": {
+    "course url": "https://www.udemy.com/course/the-complete-python-postgresql-developer-course/"
+  },
+  "355": {
+    "course url": "https://www.udemy.com/course/deep-learning-convolutional-neural-networks-theano-tensorflow/"
+  },
+  "356": {
+    "course url": "https://www.udemy.com/course/django-python/"
+  },
+  "357": {
+    "course url": "https://www.udemy.com/course/statistics-using-excel/"
+  },
+  "358": {
+    "course url": "https://www.udemy.com/course/jenkins-continuous-integration-bootcamp/"
+  },
+  "359": {
+    "course url": "https://www.udemy.com/course/matlabsimulink-biblego-from-zero-to-hero/"
+  },
+  "360": {
+    "course url": "https://www.udemy.com/course/python-data-science-machine-learning-bootcamp/"
+  },
+  "361": {
+    "course url": "https://www.udemy.com/course/learn-python-by-building-a-blockchain-cryptocurrency/"
+  },
+  "362": {
+    "course url": "https://www.udemy.com/course/data-structures-and-algorithms-bootcamp-in-python/"
+  },
+  "363": {
+    "course url": "https://www.udemy.com/course/angular-essentials-angular-2-angular-4-with-typescript/"
+  },
+  "364": {
+    "course url": "https://www.udemy.com/course/get-started-with-html-css-the-frontend-developer-bootcamp/"
+  },
+  "365": {
+    "course url": "https://www.udemy.com/course/testing-angular-apps/"
+  },
+  "366": {
+    "course url": "https://www.udemy.com/course/c-programming-for-beginners-programming-in-c/"
+  },
+  "367": {
+    "course url": "https://www.udemy.com/course/microfrontend-course/"
+  },
+  "368": {
+    "course url": "https://www.udemy.com/course/sql-server-administration-part1/"
+  },
+  "369": {
+    "course url": "https://www.udemy.com/course/aspnet-core-angular/"
+  },
+  "370": {
+    "course url": "https://www.udemy.com/course/html-basic-to-advanced/"
+  },
+  "371": {
+    "course url": "https://www.udemy.com/course/dart-and-flutter-the-complete-developers-guide/"
+  },
+  "372": {
+    "course url": "https://www.udemy.com/course/essentials-in-javascript-es6/"
+  },
+  "373": {
+    "course url": "https://www.udemy.com/course/the-complete-python-programmer-bootcamp/"
+  },
+  "374": {
+    "course url": "https://www.udemy.com/course/oracle-java-associate-certification-exam-course-1z0-808/"
+  },
+  "375": {
+    "course url": "https://www.udemy.com/course/computer-science-101-master-the-theory-behind-programming/"
+  },
+  "376": {
+    "course url": "https://www.udemy.com/course/learn-to-code-with-python/"
+  },
+  "377": {
+    "course url": "https://www.udemy.com/course/deep-reinforcement-learning-in-python/"
+  },
+  "378": {
+    "course url": "https://www.udemy.com/course/masteringd3js/"
+  },
+  "379": {
+    "course url": "https://www.udemy.com/course/learn-javascript-full-stack-from-scratch/"
+  },
+  "380": {
+    "course url": "https://www.udemy.com/course/ngrx-course/"
+  },
+  "381": {
+    "course url": "https://www.udemy.com/course/database-engines-crash-course/"
+  },
+  "382": {
+    "course url": "https://www.udemy.com/course/cluster-analysis-unsupervised-machine-learning-python/"
+  },
+  "383": {
+    "course url": "https://www.udemy.com/course/learn-responsive-web-development-from-scratch/"
+  },
+  "384": {
+    "course url": "https://www.udemy.com/course/devslopes-ios11/"
+  },
+  "385": {
+    "course url": "https://www.udemy.com/course/html-javascript-bootstrap-certification-course/"
+  },
+  "386": {
+    "course url": "https://www.udemy.com/course/rxjs-course/"
+  },
+  "387": {
+    "course url": "https://www.udemy.com/course/clean-code/"
+  },
+  "388": {
+    "course url": "https://www.udemy.com/course/object-oriented-php-mvc/"
+  },
+  "389": {
+    "course url": "https://www.udemy.com/course/chatbot/"
+  },
+  "390": {
+    "course url": "https://www.udemy.com/course/vim-commands-cheat-sheet/"
+  },
+  "391": {
+    "course url": "https://www.udemy.com/course/aws-lambda-serverless-architecture/"
+  },
+  "392": {
+    "course url": "https://www.udemy.com/course/spring-boot-microservices-with-spring-cloud-beginner-to-guru/"
+  },
+  "393": {
+    "course url": "https://www.udemy.com/course/javaspring/"
+  },
+  "394": {
+    "course url": "https://www.udemy.com/course/nodejs-api-masterclass/"
+  },
+  "395": {
+    "course url": "https://www.udemy.com/course/apache-spark-programming-in-python-for-beginners/"
+  },
+  "396": {
+    "course url": "https://www.udemy.com/course/100-days-of-code-web-development-bootcamp/"
+  },
+  "397": {
+    "course url": "https://www.udemy.com/course/pythontutorial/"
+  },
+  "398": {
+    "course url": "https://www.udemy.com/course/kafka-connect/"
+  },
+  "399": {
+    "course url": "https://www.udemy.com/course/java-android-complete-guide/"
+  }
+}

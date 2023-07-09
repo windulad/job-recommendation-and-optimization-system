@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <ul class="home_topnav">
+        <li><a href={{url_for('homepage')}}>Home</a></li>
+        <li><a href={{url_for('learnpage')}}>Learn</a></li>
+        <li><a href={{url_for('profile')}}>Profile</a></li>
+        <li><a href={{url_for('settings')}}>Settings</a></li>
+        <li style="float: right;"><a href={{url_for('logout')}}>Log out</a></li>
+    </ul>
+</div>
+
+<div class="main">
+    <div class="main_box">
+        {% for data in learn_1 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_2 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_3 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_4 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_5 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_6 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_7 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_8 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_9 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_10 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_11 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_12 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_13 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_14 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_15 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_16 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_17 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_18 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_19 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_20 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_21 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_22 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_23 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_24 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_25 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_26 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_27 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_28 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_29 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_30 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_31 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_32 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_33 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_34 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_35 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_36 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_37 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_38 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_39 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_40 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_41 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_42 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_43 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_44 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_45 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_46 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_47 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_48 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_49 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+        {% for data in learn_50 %}
+        <ul class="job_list">
+            <li>{{ data[2] }}</li><br>      <!--skill-->
+            <li class="job_title">{{ data[4] }}</li><br>    <!--tutor-->
+            <li>Enroll via {{ data[1] }} <a href="{{ data[5] }}" target="_blank">Click here!</a></li><br> <!--url-->
+        </ul>
+        {% endfor %}
+
+
+
+
+        </table>
+    </div>
+</div>
+<!--
+<div class="sidebar">
+    <h1 class="sidebar_title">Job Description</h1>
+    <div class="sidebar_box">
+        {% for position in user_positions %}
+        <li class="position">{{ position }}</li><br>
+        {% endfor %}
+    </div>
+</div>
+-->
+{% endblock %}
