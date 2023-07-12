@@ -15,10 +15,13 @@ function Index(){
     }
 
     return(
-        <div class="topnav">
+        <div>
+            <div class="topnav">
             <a onClick={handleclick1}>Sign Up</a>
             <a onClick={handleclick2}>Login</a>
         </div>
+        </div>
+        
     )
 }
 

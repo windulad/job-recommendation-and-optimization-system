@@ -20,14 +20,13 @@ function Home(){
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await Axios.post(SERVER_URL+'/homepage', pass_data, { withCredentials: true });
+                const response = await Axios.post(SERVER_URL+'/learnpage', pass_data, { withCredentials: true });
                 // GET data from server
-                const job_data = response.data;
-                //const job_data = JSON.stringify(response.data);
-                console.log(job_data);
-                const job_data_sliced = job_data.slice(1);
+                const learn_data = response.data;
+                //console.log(learn_data);
+                const learn_data_sliced = learn_data.slice(1);
 
-                setResponseData(job_data_sliced);
+                setResponseData(learn_data_sliced);
 
                 //const position_id = responseData.0.
                 
@@ -74,7 +73,7 @@ function Home(){
         <div>
             <div>
                 <ul class="home_topnav">
-                    <li><a onClick={handleclick1}>Home</a></li>
+                <li><a onClick={handleclick1}>Home</a></li>
                     <li><a onClick={handleclick2}>Learn</a></li>
                     <li><a onClick={handleclick3}>Profile</a></li>
                     <li style={{float:"right"}}><a onClick={handleclick5}>Log out</a></li>
@@ -85,13 +84,9 @@ function Home(){
                     {responseData.map((element) => {
                         return(
                             <ul class="job_list">
-                                <li>{element.position}</li><br />
-                                <li class="job_title">{element.title}</li><br />
-                                <li>{element.company}</li><br />
-                                <li>{element.location}</li><br />
-                                <li>{element.summary}</li><br />
+                                <li>{element.skill}</li><br />
+                                <li class="job_title">{element.tutor}</li><br />
                                 <li>Apply via {element.platform} <a href={element.url} target="_blank">Click here!</a></li><br />
-                                <li>{element.post_date}</li><br />
                             </ul>
                         );
                     })};
