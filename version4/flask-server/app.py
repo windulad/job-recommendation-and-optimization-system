@@ -31,6 +31,14 @@ def createacc():
     # Get the data from user
     email = json_data['email']
     password = json_data['password']
+    fname = json_data['fname']
+    lname = json_data['lname']
+    phone = json_data['phone']
+    address = json_data['address']
+    postalcode = json_data['postalcode']
+    country = json_data['country']
+
+    # print(email,password,fname,lname,phone,address,postalcode,country)
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
@@ -48,7 +56,7 @@ def createacc():
     
     else:
         # If not present in db, Insert the data into the table
-        cursor.execute("INSERT INTO users (email, password) VALUES (?, ?)",(email, password))
+        cursor.execute("INSERT INTO users (email,password,fname,lname,phone,address,postalcode,country) VALUES (?,?,?,?,?,?,?,?)",(email, password,fname,lname,phone,address,postalcode,country))
         connection.commit()
     
         # Get user id
@@ -202,6 +210,35 @@ def enter_manual():
     
     # Get the data from user
     user_id = json_data['session_value']
+
+    # Connect to 'user_data.db' database
+    connection = sqlite3.connect(DATABASE)
+    cursor = connection.cursor()
+
+    # Retrieve data
+    query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
+    cursor.execute(query)
+    data = cursor.fetchone()
+
+    fname = data[4]
+    lname = data[5]
+    email = data[1]
+    phone = data[6]
+    address = data[7]
+    country = data[8]
+    postalcode = data[9]
+
+
+
+
+
+
+
+
+
+
+
+
 
     # modify keys
     modified_data = {}
