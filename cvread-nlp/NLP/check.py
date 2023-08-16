@@ -7,7 +7,7 @@ import sys
 import fitz
 
 nlp=spacy.load('model/output/model-best')
-fname='test/test1.pdf'
+fname='test/test.pdf'
 doc=fitz.open(fname)
 text=" "
 for page in doc:

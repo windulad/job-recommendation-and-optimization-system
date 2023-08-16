@@ -216,10 +216,11 @@ def enter_manual():
     cursor = connection.cursor()
 
     # Retrieve data
-    query = "SELECT * FROM positions WHERE userid='"+user_id+"'"
+    query = "SELECT * FROM users WHERE userid='"+user_id+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 
+    # Personal data
     fname = data[4]
     lname = data[5]
     email = data[1]
@@ -227,6 +228,107 @@ def enter_manual():
     address = data[7]
     country = data[8]
     postalcode = data[9]
+
+    # Educational data (Max 3)
+    qualify_1 = data[10]
+    qualify_1_syear = data[11]
+    qualify_1_eyear = data[12]
+    qualify_1_notes = data[13]
+
+    qualify_2 = data[14]
+    qualify_2_syear = data[15]
+    qualify_2_eyear = data[16]
+    qualify_2_notes = data[17]
+
+    qualify_3 = data[18]
+    qualify_3_syear = data[19]
+    qualify_3_eyear = data[20]
+    qualify_3_notes = data[21]
+
+    # Project data (Max 3)
+    project_1_title = data[22]
+    project_1_desc = data[23]
+
+    project_2_title = data[24]
+    project_2_desc = data[25]
+
+    project_3_title = data[26]
+    project_3_desc = data[27]
+
+    # Past experience (Max 3)
+    job_1 = data[28]
+    job_1_syear = data[29]
+    job_1_eyear = data[30]
+    job_1_notes = data[31]
+
+    job_2 = data[32]
+    job_2_syear = data[33]
+    job_2_eyear = data[34]
+    job_2_notes = data[35]
+
+    job_3 = data[36]
+    job_3_syear = data[37]
+    job_3_eyear = data[38]
+    job_3_notes = data[39]
+
+    # Retrieve data
+    query = "SELECT * FROM miss WHERE userid='"+user_id+"'"
+    cursor.execute(query)
+    data2 = cursor.fetchone()
+
+    # Technologies 
+    skill1 = data2[1]
+    skill2 = data2[2]
+    skill3 = data2[3]
+    skill4 = data2[4]
+    skill5 = data2[5]
+    skill6 = data2[6]
+    skill7 = data2[7]
+    skill8 = data2[8]
+    skill9 = data2[9]
+    skill10 = data2[10]
+    skill11 = data2[11]
+    skill12 = data2[12]
+    skill13 = data2[13]
+    skill14 = data2[14]
+    skill15 = data2[15]
+    skill16 = data2[16]
+    skill17 = data2[17]
+    skill18 = data2[18]
+    skill19 = data2[19]
+    skill20 = data2[20]
+    skill21 = data2[21]
+    skill22 = data2[22]
+    skill23 = data2[23]
+    skill24 = data2[24]
+    skill25 = data2[25]
+    skill26 = data2[26]
+    skill27 = data2[27]
+    skill28 = data2[28]
+    skill29 = data2[29]
+    skill30 = data2[30]
+    skill31 = data2[31]
+    skill32 = data2[32]
+    skill33 = data2[33]
+    skill34 = data2[34]
+    skill35 = data2[35]
+    skill36 = data2[36]
+    skill37 = data2[37]
+    skill38 = data2[38]
+    skill39 = data2[39]
+    skill40 = data2[40]
+    skill41 = data2[41]
+    skill42 = data2[42]
+    skill43 = data2[43]
+    skill44 = data2[44]
+    skill45 = data2[45]
+    skill46 = data2[46]
+    skill47 = data2[47]
+    skill48 = data2[48]
+    skill49 = data2[49]
+    skill50 = data2[50]
+
+
 
 
 
