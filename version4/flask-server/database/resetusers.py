@@ -3,7 +3,9 @@ import sqlite3
 connection = sqlite3.connect("user_data.db")
 cursor = connection.cursor()
 
-command1 = """DROP TABLE IF EXISTS users"""
+command1 = """DROP TABLE IF EXISTS users_biodata"""
+
+command12 = """DROP TABLE IF EXISTS users_cvdata"""
 
 command2 = """DROP TABLE IF EXISTS miss"""
 
@@ -11,7 +13,7 @@ command3 = """DROP TABLE IF EXISTS positions"""
 
 command4 = """DROP TABLE IF EXISTS skills"""
 
-command5 = """CREATE TABLE IF NOT EXISTS users(
+command5 = """CREATE TABLE IF NOT EXISTS users_biodata(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 email TEXT UNIQUE, 
                 password TEXT, 
@@ -21,7 +23,11 @@ command5 = """CREATE TABLE IF NOT EXISTS users(
                 phone TEXT,
                 address TEXT,
                 country TEXT,
-                postalcode TEXT,
+                postalcode TEXT
+            )"""
+
+command6 = """CREATE TABLE IF NOT EXISTS users_cvdata(
+                userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 qualify_1 TEXT,
                 qualify_1_syear INTEGER,
                 qualify_1_eyear INTEGER,
@@ -51,10 +57,10 @@ command5 = """CREATE TABLE IF NOT EXISTS users(
                 job_3 TEXT,
                 job_3_syear INTEGER,
                 job_3_eyear INTEGER,
-                job_3_notes TEXT,
+                job_3_notes TEXT
             )"""
 
-command6 = """CREATE TABLE IF NOT EXISTS miss(
+command7 = """CREATE TABLE IF NOT EXISTS miss(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 missskillcount INTEGER,
                 miss_1 TEXT,
@@ -111,7 +117,7 @@ command6 = """CREATE TABLE IF NOT EXISTS miss(
             )"""
 
 
-command7 = """CREATE TABLE IF NOT EXISTS positions(
+command8 = """CREATE TABLE IF NOT EXISTS positions(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 positioncount INTEGER,
                 position_1 TEXT,
@@ -123,7 +129,7 @@ command7 = """CREATE TABLE IF NOT EXISTS positions(
             )"""
 
 
-command8 = """CREATE TABLE IF NOT EXISTS skills(
+command9 = """CREATE TABLE IF NOT EXISTS skills(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 skillcount INTEGER,
                 skill_1 TEXT,
@@ -182,6 +188,7 @@ command8 = """CREATE TABLE IF NOT EXISTS skills(
 
 
 cursor.execute(command1)
+cursor.execute(command12)
 cursor.execute(command2)
 cursor.execute(command3)
 cursor.execute(command4)
@@ -189,5 +196,6 @@ cursor.execute(command5)
 cursor.execute(command6)
 cursor.execute(command7)
 cursor.execute(command8)
+cursor.execute(command9)
 
 connection.commit()

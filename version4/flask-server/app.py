@@ -45,7 +45,7 @@ def createacc():
     cursor = connection.cursor()
 
     # Compare with stored data
-    query = "SELECT email FROM users WHERE email='"+email+"'"
+    query = "SELECT email FROM users_biodata WHERE email='"+email+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 
@@ -56,11 +56,11 @@ def createacc():
     
     else:
         # If not present in db, Insert the data into the table
-        cursor.execute("INSERT INTO users (email,password,fname,lname,phone,address,postalcode,country) VALUES (?,?,?,?,?,?,?,?)",(email, password,fname,lname,phone,address,postalcode,country))
+        cursor.execute("INSERT INTO users_biodata (email,password,fname,lname,phone,address,country,postalcode) VALUES (?,?,?,?,?,?,?,?)",(email, password,fname,lname,phone,address,postalcode,country))
         connection.commit()
     
         # Get user id
-        query = "SELECT userid FROM users WHERE email='"+email+"' and password= '"+password+"'"
+        query = "SELECT userid FROM users_biodata WHERE email='"+email+"' and password= '"+password+"'"
         cursor.execute(query)
         data = cursor.fetchone()
 
@@ -88,7 +88,7 @@ def login():
     cursor = connection.cursor()
 
     # Compare with stored data
-    query = "SELECT userid FROM users WHERE email='"+email+"' and password= '"+password+"'"
+    query = "SELECT userid FROM users_biodata WHERE email='"+email+"' and password= '"+password+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 

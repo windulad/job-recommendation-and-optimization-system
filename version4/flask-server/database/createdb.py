@@ -3,7 +3,7 @@ import sqlite3
 connection = sqlite3.connect("user_data.db")
 cursor = connection.cursor()
 
-command1 = """CREATE TABLE IF NOT EXISTS users(
+command1 = """CREATE TABLE IF NOT EXISTS users_biodata(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 email TEXT UNIQUE, 
                 password TEXT, 
@@ -13,7 +13,12 @@ command1 = """CREATE TABLE IF NOT EXISTS users(
                 phone TEXT,
                 address TEXT,
                 country TEXT,
-                postalcode TEXT,
+                postalcode TEXT
+            )"""
+
+
+command2 = """CREATE TABLE IF NOT EXISTS users_cvdata(
+                userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 qualify_1 TEXT,
                 qualify_1_syear INTEGER,
                 qualify_1_eyear INTEGER,
@@ -46,7 +51,7 @@ command1 = """CREATE TABLE IF NOT EXISTS users(
                 job_3_notes TEXT
             )"""
 
-command2 = """CREATE TABLE IF NOT EXISTS skills(
+command3 = """CREATE TABLE IF NOT EXISTS skills(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 skillcount INTEGER,
                 skill_1 TEXT,
@@ -102,7 +107,7 @@ command2 = """CREATE TABLE IF NOT EXISTS skills(
                 foreign key (userid) REFERENCES users(userid)
             )"""
 
-command3 = """CREATE TABLE IF NOT EXISTS positions(
+command4 = """CREATE TABLE IF NOT EXISTS positions(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 positioncount INTEGER,
                 position_1 TEXT,
@@ -113,7 +118,7 @@ command3 = """CREATE TABLE IF NOT EXISTS positions(
                 foreign key (userid) REFERENCES users(userid)
             )"""
 
-command4 = """CREATE TABLE IF NOT EXISTS miss(
+command5 = """CREATE TABLE IF NOT EXISTS miss(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 missskillcount INTEGER,
                 miss_1 TEXT,
@@ -169,7 +174,7 @@ command4 = """CREATE TABLE IF NOT EXISTS miss(
                 foreign key (userid) REFERENCES users(userid)
             )"""
 
-command5 = """CREATE TABLE IF NOT EXISTS jobs(
+command6 = """CREATE TABLE IF NOT EXISTS jobs(
                 positionid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 platform TEXT,
                 position TEXT,
@@ -182,7 +187,7 @@ command5 = """CREATE TABLE IF NOT EXISTS jobs(
                 salary TEXT
             )"""
 
-command6 = """CREATE TABLE IF NOT EXISTS learn(
+command7 = """CREATE TABLE IF NOT EXISTS learn(
                 courseid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 platform TEXT,
                 skill TEXT,
@@ -198,5 +203,6 @@ cursor.execute(command3)
 cursor.execute(command4)
 cursor.execute(command5)
 cursor.execute(command6)
+cursor.execute(command7)
 
 connection.commit()
