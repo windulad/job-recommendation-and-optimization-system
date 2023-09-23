@@ -56,7 +56,7 @@ def createacc():
     
     else:
         # If not present in db, Insert the data into the table
-        cursor.execute("INSERT INTO users_biodata (email,password,fname,lname,phone,address,country,postalcode) VALUES (?,?,?,?,?,?,?,?)",(email, password,fname,lname,phone,address,postalcode,country))
+        cursor.execute("INSERT INTO users_biodata (email,password,fname,lname,phone,address,country,postalcode) VALUES (?,?,?,?,?,?,?,?)",(email, password,fname,lname,phone,address,country,postalcode))
         connection.commit()
     
         # Get user id
@@ -182,11 +182,11 @@ def enter_cv():
         cursor.execute("INSERT INTO skills (userid,skillcount) VALUES (?,?)",(user_id,size_user_skills))
         cursor.execute("UPDATE skills SET skill_1=?,skill_2=?,skill_3=?,skill_4=?,skill_5=?,skill_6=?,skill_7=?,skill_8=?,skill_9=?,skill_10=?,skill_11=?,skill_12=?,skill_13=?,skill_14=?,skill_15=?,skill_16=?,skill_17=?,skill_18=?,skill_19=?,skill_20=?,skill_21=?,skill_22=?,skill_23=?,skill_24=?,skill_25=?,skill_26=?,skill_27=?,skill_28=?,skill_29=?,skill_30=?,skill_31=?,skill_32=?,skill_33=?,skill_34=?,skill_35=?,skill_36=?,skill_37=?,skill_38=?,skill_39=?,skill_40=?,skill_41=?,skill_42=?,skill_43=?,skill_44=?,skill_45=?,skill_46=?,skill_47=?,skill_48=?,skill_49=?,skill_50=? WHERE userid=?",(skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50,user_id))
 
-        # Insert the data into the table skills
+        # Insert the data into the table positions
         cursor.execute("INSERT INTO positions (userid,positioncount) VALUES (?,?)",(user_id,size_user_positions))
         cursor.execute("UPDATE positions SET position_1=?,position_2=?,position_3=?,position_4=?,position_5=? WHERE userid=?",(position_1,position_2,position_3,position_4,position_5,user_id))
 
-        # Insert the data into the table skills
+        # Insert the data into the table miss
         cursor.execute("INSERT INTO miss (userid,missskillcount) VALUES (?,?)",(user_id,size_user_miss_skills))
         cursor.execute("UPDATE miss SET miss_1=?,miss_2=?,miss_3=?,miss_4=?,miss_5=?,miss_6=?,miss_7=?,miss_8=?,miss_9=?,miss_10=?,miss_11=?,miss_12=?,miss_13=?,miss_14=?,miss_15=?,miss_16=?,miss_17=?,miss_18=?,miss_19=?,miss_20=?,miss_21=?,miss_22=?,miss_23=?,miss_24=?,miss_25=?,miss_26=?,miss_27=?,miss_28=?,miss_29=?,miss_30=?,miss_31=?,miss_32=?,miss_33=?,miss_34=?,miss_35=?,miss_36=?,miss_37=?,miss_38=?,miss_39=?,miss_40=?,miss_41=?,miss_42=?,miss_43=?,miss_44=?,miss_45=?,miss_46=?,miss_47=?,miss_48=?,miss_49=?,miss_50=? WHERE userid=?",(miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50,user_id))
         
@@ -201,22 +201,22 @@ def enter_cv():
             'session_value': user_id
         }
 
-# Enter Manual --------------------------------
-@app.route('/enter_manual', methods=['POST','GET'])
+# Enter Manual GET --------------------------------
+@app.route('/enter_manual/get', methods=['POST','GET'])
 @cross_origin(supports_credentials=True)
-def enter_manual():
+def enter_manual_get():
     # Get the data from user
     json_data = request.get_json('data')
     
     # Get the data from user
-    user_id = json_data['session_value']
+    user_id = json_data['value']
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
 
     # Retrieve data
-    query = "SELECT * FROM users WHERE userid='"+user_id+"'"
+    query = "SELECT * FROM users_biodata WHERE userid='"+user_id+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 
@@ -229,187 +229,226 @@ def enter_manual():
     country = data[8]
     postalcode = data[9]
 
+    # Return a response to the client
+    data = []
+
+    data.append({
+        'message':'success-5',
+        'session_value': user_id,
+        'fname': fname,
+        'lname': lname,
+        'email': email,
+        'phone': phone,
+        'address': address,
+        'country': country,
+        'postalcode': postalcode
+    })
+
+    json_data = json.dumps(data, indent=4)
+
+    # return render_template
+    return json_data
+
+# Enter Manual POST --------------------------------
+@app.route('/enter_manual/post', methods=['POST','GET'])
+@cross_origin(supports_credentials=True)
+def enter_manual_post():
+    # Get the data from user
+    json_data = request.get_json('data')
+    
+    # Get the data from user
+    user_id = json_data['value']
+
+    print(json_data)
+
+    # Initialize values
+    qualify_1=qualify_1_syear=qualify_1_eyear=qualify_1_notes=qualify_2=qualify_2_syear=qualify_2_eyear=qualify_2_notes=qualify_3=qualify_3_syear=qualify_3_eyear=qualify_3_notes=""
+    project_1_title=project_1_desc=project_2_title=project_2_desc=project_3_title=project_3_desc=""
+    job_1=job_1_syear=job_1_eyear=job_1_notes=job_2=job_2_syear=job_2_eyear=job_2_notes=job_3=job_3_syear=job_3_eyear=job_3_notes=""
+
     # Educational data (Max 3)
-    qualify_1 = data[10]
-    qualify_1_syear = data[11]
-    qualify_1_eyear = data[12]
-    qualify_1_notes = data[13]
+    qualify_1 = json_data['qualify_1']
+    qualify_1_syear = json_data['qualify_1_syear']
+    qualify_1_eyear = json_data['qualify_1_eyear']
+    qualify_1_notes = json_data['qualify_1_notes']
 
-    qualify_2 = data[14]
-    qualify_2_syear = data[15]
-    qualify_2_eyear = data[16]
-    qualify_2_notes = data[17]
+    qualify_2 = json_data['qualify_2']
+    qualify_2_syear = json_data['qualify_2_syear']
+    qualify_2_eyear = json_data['qualify_2_eyear']
+    qualify_2_notes = json_data['qualify_2_notes']
 
-    qualify_3 = data[18]
-    qualify_3_syear = data[19]
-    qualify_3_eyear = data[20]
-    qualify_3_notes = data[21]
+    qualify_3 = json_data['qualify_3']
+    qualify_3_syear = json_data['qualify_3_syear']
+    qualify_3_eyear = json_data['qualify_3_eyear']
+    qualify_3_notes = json_data['qualify_3_notes']
 
     # Project data (Max 3)
-    project_1_title = data[22]
-    project_1_desc = data[23]
+    project_1_title = json_data['project_1_title']
+    project_1_desc = json_data['project_1_desc']
 
-    project_2_title = data[24]
-    project_2_desc = data[25]
+    project_2_title = json_data['project_2_title']
+    project_2_desc = json_data['project_2_desc']
 
-    project_3_title = data[26]
-    project_3_desc = data[27]
+    project_3_title = json_data['project_3_title']
+    project_3_desc = json_data['project_3_desc']
 
     # Past experience (Max 3)
-    job_1 = data[28]
-    job_1_syear = data[29]
-    job_1_eyear = data[30]
-    job_1_notes = data[31]
+    job_1 = json_data['job_1']
+    job_1_syear = json_data['job_1_syear']
+    job_1_eyear = json_data['job_1_eyear']
+    job_1_notes = json_data['job_1_notes']
 
-    job_2 = data[32]
-    job_2_syear = data[33]
-    job_2_eyear = data[34]
-    job_2_notes = data[35]
+    job_2 = json_data['job_2']
+    job_2_syear = json_data['job_2_syear']
+    job_2_eyear = json_data['job_2_eyear']
+    job_2_notes = json_data['job_2_notes']
 
-    job_3 = data[36]
-    job_3_syear = data[37]
-    job_3_eyear = data[38]
-    job_3_notes = data[39]
-
-    # Retrieve data
-    query = "SELECT * FROM miss WHERE userid='"+user_id+"'"
-    cursor.execute(query)
-    data2 = cursor.fetchone()
+    job_3 = json_data['job_3']
+    job_3_syear = json_data['job_3_syear']
+    job_3_eyear = json_data['job_3_eyear']
+    job_3_notes = json_data['job_3_notes']
 
     # Technologies 
-    skill1 = data2[1]
-    skill2 = data2[2]
-    skill3 = data2[3]
-    skill4 = data2[4]
-    skill5 = data2[5]
-    skill6 = data2[6]
-    skill7 = data2[7]
-    skill8 = data2[8]
-    skill9 = data2[9]
-    skill10 = data2[10]
-    skill11 = data2[11]
-    skill12 = data2[12]
-    skill13 = data2[13]
-    skill14 = data2[14]
-    skill15 = data2[15]
-    skill16 = data2[16]
-    skill17 = data2[17]
-    skill18 = data2[18]
-    skill19 = data2[19]
-    skill20 = data2[20]
-    skill21 = data2[21]
-    skill22 = data2[22]
-    skill23 = data2[23]
-    skill24 = data2[24]
-    skill25 = data2[25]
-    skill26 = data2[26]
-    skill27 = data2[27]
-    skill28 = data2[28]
-    skill29 = data2[29]
-    skill30 = data2[30]
-    skill31 = data2[31]
-    skill32 = data2[32]
-    skill33 = data2[33]
-    skill34 = data2[34]
-    skill35 = data2[35]
-    skill36 = data2[36]
-    skill37 = data2[37]
-    skill38 = data2[38]
-    skill39 = data2[39]
-    skill40 = data2[40]
-    skill41 = data2[41]
-    skill42 = data2[42]
-    skill43 = data2[43]
-    skill44 = data2[44]
-    skill45 = data2[45]
-    skill46 = data2[46]
-    skill47 = data2[47]
-    skill48 = data2[48]
-    skill49 = data2[49]
-    skill50 = data2[50]
+    skill1 = json_data['boxContent'][0]['id']
+    # skill2 = data2[2]
+
+    print(skill1)
+    # skill3 = data2[3]
+    # skill4 = data2[4]
+    # skill5 = data2[5]
+    # skill6 = data2[6]
+    # skill7 = data2[7]
+    # skill8 = data2[8]
+    # skill9 = data2[9]
+    # skill10 = data2[10]
+    # skill11 = data2[11]
+    # skill12 = data2[12]
+    # skill13 = data2[13]
+    # skill14 = data2[14]
+    # skill15 = data2[15]
+    # skill16 = data2[16]
+    # skill17 = data2[17]
+    # skill18 = data2[18]
+    # skill19 = data2[19]
+    # skill20 = data2[20]
+    # skill21 = data2[21]
+    # skill22 = data2[22]
+    # skill23 = data2[23]
+    # skill24 = data2[24]
+    # skill25 = data2[25]
+    # skill26 = data2[26]
+    # skill27 = data2[27]
+    # skill28 = data2[28]
+    # skill29 = data2[29]
+    # skill30 = data2[30]
+    # skill31 = data2[31]
+    # skill32 = data2[32]
+    # skill33 = data2[33]
+    # skill34 = data2[34]
+    # skill35 = data2[35]
+    # skill36 = data2[36]
+    # skill37 = data2[37]
+    # skill38 = data2[38]
+    # skill39 = data2[39]
+    # skill40 = data2[40]
+    # skill41 = data2[41]
+    # skill42 = data2[42]
+    # skill43 = data2[43]
+    # skill44 = data2[44]
+    # skill45 = data2[45]
+    # skill46 = data2[46]
+    # skill47 = data2[47]
+    # skill48 = data2[48]
+    # skill49 = data2[49]
+    # skill50 = data2[50]
 
 
+    # # Connect to 'user_data.db' database
+    # connection = sqlite3.connect(DATABASE)
+    # cursor = connection.cursor()
 
+    # # Insert the data into the table skills
+    # cursor.execute("INSERT INTO users_cvdata (userid, qualify_1, qualify_1_syear, qualify_1_eyear, qualify_1_notes, qualify_2, qualify_2_syear, qualify_2_eyear, qualify_2_notes, qualify_3, qualify_3_syear, qualify_3_eyear, qualify_3_notes, project_1_title, project_1_desc, project_2_title, project_2_desc, project_3_title, project_3_desc, job_1, job_1_syear, job_1_eyear, job_1_notes, job_2, job_2_syear, job_2_eyear, job_2_notes, job_3, job_3_syear, job_3_eyear, job_3_notes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(user_id, qualify_1, qualify_1_syear, qualify_1_eyear, qualify_1_notes, qualify_2, qualify_2_syear, qualify_2_eyear, qualify_2_notes, qualify_3, qualify_3_syear, qualify_3_eyear, qualify_3_notes, project_1_title, project_1_desc, project_2_title, project_2_desc, project_3_title, project_3_desc, job_1, job_1_syear, job_1_eyear, job_1_notes, job_2, job_2_syear, job_2_eyear, job_2_notes, job_3, job_3_syear, job_3_eyear, job_3_notes))
 
+    # # Retrieve data
+    # query = "SELECT * FROM users_cvdata WHERE userid='"+user_id+"'"
+    # cursor.execute(query)
+    # data = cursor.fetchone()
 
+    # # Retrieve data
+    # query = "SELECT * FROM miss WHERE userid='"+user_id+"'"
+    # cursor.execute(query)
+    # data2 = cursor.fetchone()
 
+    
+    # # modify keys
+    # modified_data = {}
 
+    # key_replacements = {
+    #     "Cpp": "C++",
+    #     "Csharp": "C#"
+    # }
 
-
-
-
-
-
-
-
-    # modify keys
-    modified_data = {}
-
-    key_replacements = {
-        "Cpp": "C++",
-        "Csharp": "C#"
-    }
-
-    for key, value in json_data.items():
-        if key in key_replacements:
-            modified_data[key_replacements[key]] = value
-        else:
-            modified_data[key] = value
+    # for key, value in json_data.items():
+    #     if key in key_replacements:
+    #         modified_data[key_replacements[key]] = value
+    #     else:
+    #         modified_data[key] = value
         
-    # Get user_skills
-    user_skills = [key for key, value in modified_data.items() if value is True]
+    # # Get user_skills
+    # user_skills = [key for key, value in modified_data.items() if value is True]
     
-    #Get element count
-    size_user_skills = len(user_skills)
+    # #Get element count
+    # size_user_skills = len(user_skills)
     
-    # Return other data
-    user_positions,user_miss_skills = ManualRead(user_skills)
+    # # Return other data
+    # user_positions,user_miss_skills = ManualRead(user_skills)
 
-    size_user_positions = len(user_positions)
-    size_user_miss_skills = len(user_miss_skills)
+    # size_user_positions = len(user_positions)
+    # size_user_miss_skills = len(user_miss_skills)
 
-    print('userid:',user_id)
-    print('skills count:',size_user_skills,'skills:',user_skills)
-    print('position count:',size_user_positions,'positions:',user_positions)
-    print('miss skill count:',size_user_miss_skills,'miss skills:',user_miss_skills)
+    # print('userid:',user_id)
+    # print('skills count:',size_user_skills,'skills:',user_skills)
+    # print('position count:',size_user_positions,'positions:',user_positions)
+    # print('miss skill count:',size_user_miss_skills,'miss skills:',user_miss_skills)
 
-    #Prepare for database input
-    for skill in range(size_user_skills,50):
-        user_skills.append('')
+    # #Prepare for database input
+    # for skill in range(size_user_skills,50):
+    #     user_skills.append('')
 
-    for position in range(size_user_positions,5):
-        user_positions.append('')
+    # for position in range(size_user_positions,5):
+    #     user_positions.append('')
 
-    for position in range(size_user_miss_skills,50):
-        user_miss_skills.append('')
+    # for position in range(size_user_miss_skills,50):
+    #     user_miss_skills.append('')
 
-    # Unpack skills from user_skills list
-    skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50 = user_skills
+    # # Unpack skills from user_skills list
+    # skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50 = user_skills
 
-    #Unpack positions from user_positions list
-    position_1,position_2,position_3,position_4,position_5 = user_positions
+    # #Unpack positions from user_positions list
+    # position_1,position_2,position_3,position_4,position_5 = user_positions
 
-    #Unpack missing skills from user_miss_skills list
-    miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
+    # #Unpack missing skills from user_miss_skills list
+    # miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss_skills
 
-    # Connect to 'user_data.db' database
-    connection = sqlite3.connect(DATABASE)
-    cursor = connection.cursor()
+    # # Connect to 'user_data.db' database
+    # connection = sqlite3.connect(DATABASE)
+    # cursor = connection.cursor()
 
-    # Insert the data into the table skills
-    cursor.execute("INSERT INTO skills (userid,skillcount) VALUES (?,?)",(user_id,size_user_skills))
-    cursor.execute("UPDATE skills SET skill_1=?,skill_2=?,skill_3=?,skill_4=?,skill_5=?,skill_6=?,skill_7=?,skill_8=?,skill_9=?,skill_10=?,skill_11=?,skill_12=?,skill_13=?,skill_14=?,skill_15=?,skill_16=?,skill_17=?,skill_18=?,skill_19=?,skill_20=?,skill_21=?,skill_22=?,skill_23=?,skill_24=?,skill_25=?,skill_26=?,skill_27=?,skill_28=?,skill_29=?,skill_30=?,skill_31=?,skill_32=?,skill_33=?,skill_34=?,skill_35=?,skill_36=?,skill_37=?,skill_38=?,skill_39=?,skill_40=?,skill_41=?,skill_42=?,skill_43=?,skill_44=?,skill_45=?,skill_46=?,skill_47=?,skill_48=?,skill_49=?,skill_50=? WHERE userid=?",(skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50,user_id))
+    # # Insert the data into the table skills
+    # cursor.execute("INSERT INTO skills (userid,skillcount) VALUES (?,?)",(user_id,size_user_skills))
+    # cursor.execute("UPDATE skills SET skill_1=?,skill_2=?,skill_3=?,skill_4=?,skill_5=?,skill_6=?,skill_7=?,skill_8=?,skill_9=?,skill_10=?,skill_11=?,skill_12=?,skill_13=?,skill_14=?,skill_15=?,skill_16=?,skill_17=?,skill_18=?,skill_19=?,skill_20=?,skill_21=?,skill_22=?,skill_23=?,skill_24=?,skill_25=?,skill_26=?,skill_27=?,skill_28=?,skill_29=?,skill_30=?,skill_31=?,skill_32=?,skill_33=?,skill_34=?,skill_35=?,skill_36=?,skill_37=?,skill_38=?,skill_39=?,skill_40=?,skill_41=?,skill_42=?,skill_43=?,skill_44=?,skill_45=?,skill_46=?,skill_47=?,skill_48=?,skill_49=?,skill_50=? WHERE userid=?",(skill_1,skill_2,skill_3,skill_4,skill_5,skill_6,skill_7,skill_8,skill_9,skill_10,skill_11,skill_12,skill_13,skill_14,skill_15,skill_16,skill_17,skill_18,skill_19,skill_20,skill_21,skill_22,skill_23,skill_24,skill_25,skill_26,skill_27,skill_28,skill_29,skill_30,skill_31,skill_32,skill_33,skill_34,skill_35,skill_36,skill_37,skill_38,skill_39,skill_40,skill_41,skill_42,skill_43,skill_44,skill_45,skill_46,skill_47,skill_48,skill_49,skill_50,user_id))
 
-    # Insert the data into the table skills
-    cursor.execute("INSERT INTO positions (userid,positioncount) VALUES (?,?)",(user_id,size_user_positions))
-    cursor.execute("UPDATE positions SET position_1=?,position_2=?,position_3=?,position_4=?,position_5=? WHERE userid=?",(position_1,position_2,position_3,position_4,position_5,user_id))
+    # # Insert the data into the table skills
+    # cursor.execute("INSERT INTO positions (userid,positioncount) VALUES (?,?)",(user_id,size_user_positions))
+    # cursor.execute("UPDATE positions SET position_1=?,position_2=?,position_3=?,position_4=?,position_5=? WHERE userid=?",(position_1,position_2,position_3,position_4,position_5,user_id))
 
-    # Insert the data into the table skills
-    cursor.execute("INSERT INTO miss (userid,missskillcount) VALUES (?,?)",(user_id,size_user_miss_skills))
-    cursor.execute("UPDATE miss SET miss_1=?,miss_2=?,miss_3=?,miss_4=?,miss_5=?,miss_6=?,miss_7=?,miss_8=?,miss_9=?,miss_10=?,miss_11=?,miss_12=?,miss_13=?,miss_14=?,miss_15=?,miss_16=?,miss_17=?,miss_18=?,miss_19=?,miss_20=?,miss_21=?,miss_22=?,miss_23=?,miss_24=?,miss_25=?,miss_26=?,miss_27=?,miss_28=?,miss_29=?,miss_30=?,miss_31=?,miss_32=?,miss_33=?,miss_34=?,miss_35=?,miss_36=?,miss_37=?,miss_38=?,miss_39=?,miss_40=?,miss_41=?,miss_42=?,miss_43=?,miss_44=?,miss_45=?,miss_46=?,miss_47=?,miss_48=?,miss_49=?,miss_50=? WHERE userid=?",(miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50,user_id))
+    # # Insert the data into the table skills
+    # cursor.execute("INSERT INTO miss (userid,missskillcount) VALUES (?,?)",(user_id,size_user_miss_skills))
+    # cursor.execute("UPDATE miss SET miss_1=?,miss_2=?,miss_3=?,miss_4=?,miss_5=?,miss_6=?,miss_7=?,miss_8=?,miss_9=?,miss_10=?,miss_11=?,miss_12=?,miss_13=?,miss_14=?,miss_15=?,miss_16=?,miss_17=?,miss_18=?,miss_19=?,miss_20=?,miss_21=?,miss_22=?,miss_23=?,miss_24=?,miss_25=?,miss_26=?,miss_27=?,miss_28=?,miss_29=?,miss_30=?,miss_31=?,miss_32=?,miss_33=?,miss_34=?,miss_35=?,miss_36=?,miss_37=?,miss_38=?,miss_39=?,miss_40=?,miss_41=?,miss_42=?,miss_43=?,miss_44=?,miss_45=?,miss_46=?,miss_47=?,miss_48=?,miss_49=?,miss_50=? WHERE userid=?",(miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50,user_id))
     
-    # Disconnect from 'user_data.db' database
-    connection.commit()
+    # # Disconnect from 'user_data.db' database
+    # connection.commit()
 
     # Return a response to the client
     return {
@@ -425,23 +464,6 @@ def homepage():
 
     # Get the data from user
     user_id = json_data['value']
-
-    # if request.method == 'POST':
-    #     # Connect to 'user_data.db' database
-    #     connection = sqlite3.connect(DATABASE)
-    #     cursor = connection.cursor()
-
-    #     # Get the data from user
-    #     if(request.form['position']!=""):
-    #         position = request.form['position']
-    #         location = request.form['location']
-
-    #         record = Jobs(position, location)
-    #         data_0 = record.jobs_jora() + record.jobs_simplyhired() + record.jobs_flexjobs()
-    #         return render_template("homepage.html",data_0=data_0)
-
-    # else: 
-        # request.method=='GET'
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)

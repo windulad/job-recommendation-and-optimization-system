@@ -283,6 +283,8 @@ input[type=submit] {
   box-sizing: border-box;
 }
 
+
+
 /* Enter manual */
 .enter_manual{
   width: 75%; 
@@ -299,7 +301,7 @@ input[type=submit] {
 }
 
 .enter_manual_subtitle{
-  text-align: center;
+  text-align: left;
   font-family: sans-serif;
   margin: 3%;
 }
@@ -332,6 +334,14 @@ input[type=checkbox]{
   margin: 25px 5px;
 }
 
+input[type=text] {
+  float: right;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .enter_manual_submit{
   width: 100%;
   margin: 2% auto;
@@ -339,6 +349,86 @@ input[type=checkbox]{
   display: flex;
   justify-content: center;
 }
+
+
+
+/*Card - inside the container*/
+.card {
+  width: 100px;
+  height: 50px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  float: left;
+}
+
+/*Card - inside the box*/
+.box-card {
+  width: 150px;
+  height: 50px;
+  color: #ffffff;
+  background-color: #a1a1a1;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  float: left;
+}
+
+/*Card container*/
+.card-container{
+  width: 100%;
+  height: 50%;
+  background-color: #b6b6b6;
+  border-radius: 5px;
+  padding: 1px;
+  margin: 10px auto;
+  border-radius: 5px;
+  display: flexbox;
+}
+
+/*Drop box*/
+.box {
+  width: 100%;
+  height: 350px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 1px;
+  margin: 10px auto;
+  display: flexbox;
+}
+
+.clear{
+  clear: both;
+}
+
+
+
+input[type=submit] {
+  color:rgb(255, 255, 255);
+  background-color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 55px;
+  width: 100px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.signup_login{
+  width: 100%;
+  margin: 5px auto;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: center;
+}
+
 
 /* Homepage */
 .home_topnav{
