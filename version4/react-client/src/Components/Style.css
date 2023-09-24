@@ -406,8 +406,6 @@ input[type=text] {
   clear: both;
 }
 
-
-
 input[type=submit] {
   color:rgb(255, 255, 255);
   background-color: black;
@@ -426,8 +424,78 @@ input[type=submit] {
   margin: 5px auto;
   padding: 5px 5px;
   display: flex;
+}
+
+/* CrossCheck */
+.container {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.form-label{
+  margin: 10px;
+}
+
+.input_data{
+  margin: 5px;
+}
+
+
+.crosscheckl_title{
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 180%;
+  margin: 3%;
+  margin-left: 10px;
+}
+/*
+.enter_manual_subtitle{
+  text-align: left;
+  font-family: sans-serif;
+  margin: 3%;
+}*/
+
+#crossCheckForm input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.crossCheckSubmit{
+  width: 100%;
+  margin: 5% auto;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: left;
+}
+
+#crossCheckSubmit input[type=submit]{
+  color:rgb(255, 255, 255);
+  background-color: rgb(71, 71, 71);
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 55px;
+  width: 100%;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.form-control{
+  height: 50%;
+}
+
+/*
+.enter_manual_submit{
+  width: 100%;
+  margin: 2% auto;
+  padding: 5px 5px;
+  display: flex;
   justify-content: center;
 }
+*/
 
 
 /* Homepage */

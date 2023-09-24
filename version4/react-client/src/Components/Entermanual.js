@@ -75,19 +75,19 @@ function EnterManual(){
 
     
     // handle data
-    const [selectedQualify1, setSelectedQualify1] = useState('option0');
-    const [selectedQualify1Syear, setSelectedQualify1Syear] = useState('option0');
-    const [selectedQualify1Eyear, setSelectedQualify1Eyear] = useState('option0');
+    const [selectedQualify1, setSelectedQualify1] = useState('');
+    const [selectedQualify1Syear, setSelectedQualify1Syear] = useState('');
+    const [selectedQualify1Eyear, setSelectedQualify1Eyear] = useState('');
     const [selectedQualify1Notes, setSelectedQualify1Notes] = useState('');
 
-    const [selectedQualify2, setSelectedQualify2] = useState('option0');
-    const [selectedQualify2Syear, setSelectedQualify2Syear] = useState('option0');
-    const [selectedQualify2Eyear, setSelectedQualify2Eyear] = useState('option0');
+    const [selectedQualify2, setSelectedQualify2] = useState('');
+    const [selectedQualify2Syear, setSelectedQualify2Syear] = useState('');
+    const [selectedQualify2Eyear, setSelectedQualify2Eyear] = useState('');
     const [selectedQualify2Notes, setSelectedQualify2Notes] = useState('');
 
-    const [selectedQualify3, setSelectedQualify3] = useState('option0');
-    const [selectedQualify3Syear, setSelectedQualify3Syear] = useState('option0');
-    const [selectedQualify3Eyear, setSelectedQualify3Eyear] = useState('option0');
+    const [selectedQualify3, setSelectedQualify3] = useState('');
+    const [selectedQualify3Syear, setSelectedQualify3Syear] = useState('');
+    const [selectedQualify3Eyear, setSelectedQualify3Eyear] = useState('');
     const [selectedQualify3Notes, setSelectedQualify3Notes] = useState('');
 
     const currentYear = new Date().getFullYear();
@@ -103,18 +103,18 @@ function EnterManual(){
     const [project3Desc, setProject3Desc] = useState('');
 
     const [job1, setJob1] = useState('');
-    const [job1Syear, setJob1Syear] = useState('option0');
-    const [job1Eyear, setJob1Eyear] = useState('option0');
+    const [job1Syear, setJob1Syear] = useState('');
+    const [job1Eyear, setJob1Eyear] = useState('');
     const [job1Notes, setJob1Notes] = useState('');
 
     const [job2, setJob2] = useState('');
-    const [job2Syear, setJob2Syear] = useState('option0');
-    const [job2Eyear, setJob2Eyear] = useState('option0');
+    const [job2Syear, setJob2Syear] = useState('');
+    const [job2Eyear, setJob2Eyear] = useState('');
     const [job2Notes, setJob2Notes] = useState('');
 
     const [job3, setJob3] = useState('');
-    const [job3Syear, setJob3Syear] = useState('option0');
-    const [job3Eyear, setJob3Eyear] = useState('option0');
+    const [job3Syear, setJob3Syear] = useState('');
+    const [job3Eyear, setJob3Eyear] = useState('');
     const [job3Notes, setJob3Notes] = useState('');
 
     // form input handlers
@@ -213,8 +213,8 @@ function EnterManual(){
     // Drag N Drop]
     const [cards, setCards] = useState([
         { id: 'C', content: 'C' },
-        { id: 'cpp', content: 'C++' },
-        { id: 'csharp', content: 'C#' },
+        { id: 'Cpp', content: 'C++' },
+        { id: 'Csharp', content: 'C#' },
         { id: 'Java', content: 'Java' },
         { id: 'Python', content: 'Python' },
         { id: 'PHP', content: 'PHP' },
@@ -269,12 +269,15 @@ function EnterManual(){
     
     const [history, setHistory] = useState([]);
 
+    const [count, setCount] = useState(0);
+
     const [postdata, setPostData] = useState(null);
 
     //console.log(boxContent);
 
     const handleCardDropped = (cardId) => {
         const card = cards.find((c) => c.id === cardId);
+
         if (card) {
             setBoxContent([...boxContent, card]);
             setCards(cards.filter((c) => c.id !== cardId));
@@ -286,6 +289,8 @@ function EnterManual(){
                 content: cards.content,
             }
             setPostData(cardSubmitData);
+
+            setCount(count + 1);
         }
     };
 
@@ -297,6 +302,8 @@ function EnterManual(){
         
             // Remove the last state from history
             setHistory(history.slice(0, -1));
+
+            setCount(count - 1);
         }
     };
 
@@ -332,6 +339,7 @@ function EnterManual(){
         job_3_syear: job3Syear,
         job_3_eyear: job3Eyear,
         job_3_notes: job3Notes,
+        count: count,
         boxContent: boxContent,
     };
 
@@ -358,7 +366,7 @@ function EnterManual(){
             if (message === 'error-5'){
                 navigate('/entermanual',  {state: data});
             }else if(message === 'success-5'){
-                navigate('/crosscheck',  {state: data});
+                navigate('/crosscheck/get',  {state: data});
             }
         } catch (error) {
             console.error(error);
@@ -424,23 +432,23 @@ function EnterManual(){
                         <tr>
                             <td>
                                 <select value={selectedQualify1} onChange={handleChange1}>
-                                    <option value="option0">Select a Qualification</option>
-                                    <option value="option1">High school</option>
-                                    <option value="option2">Vocational qualification</option>
-                                    <option value="option3">Bachelor's degree</option>
-                                    <option value="option4">Master's degree</option>
-                                    <option value="option5">Doctorate or higher</option>
+                                    <option value="">Select a Qualification</option>
+                                    <option value="High school">High school</option>
+                                    <option value="Vocational qualification">Vocational qualification</option>
+                                    <option value="Bachelor's degree">Bachelor's degree</option>
+                                    <option value="Master's degree">Master's degree</option>
+                                    <option value="Doctorate or higher">Doctorate or higher</option>
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify1Syear} onChange={handleChange2}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify1Eyear} onChange={handleChange3}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
@@ -451,23 +459,23 @@ function EnterManual(){
                         <tr>
                             <td>
                                 <select value={selectedQualify2} onChange={handleChange5}>
-                                    <option value="option0">Select a Qualification</option>
-                                    <option value="option1">High school</option>
-                                    <option value="option2">Vocational qualification</option>
-                                    <option value="option3">Bachelor's degree</option>
-                                    <option value="option4">Master's degree</option>
-                                    <option value="option5">Doctorate or higher</option>
+                                    <option value="">Select a Qualification</option>
+                                    <option value="High school">High school</option>
+                                    <option value="Vocational qualification">Vocational qualification</option>
+                                    <option value="Bachelor's degree">Bachelor's degree</option>
+                                    <option value="Master's degree">Master's degree</option>
+                                    <option value="Doctorate or higher">Doctorate or higher</option>
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify2Syear} onChange={handleChange6}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify2Eyear} onChange={handleChange7}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
@@ -478,23 +486,23 @@ function EnterManual(){
                         <tr>
                             <td>
                                 <select value={selectedQualify3} onChange={handleChange9}>
-                                    <option value="option0">Select a Qualification</option>
-                                    <option value="option1">High school</option>
-                                    <option value="option2">Vocational qualification</option>
-                                    <option value="option3">Bachelor's degree</option>
-                                    <option value="option4">Master's degree</option>
-                                    <option value="option5">Doctorate or higher</option>
+                                    <option value="">Select a Qualification</option>
+                                    <option value="High school">High school</option>
+                                    <option value="Vocational qualification">Vocational qualification</option>
+                                    <option value="Bachelor's degree">Bachelor's degree</option>
+                                    <option value="Master's degree">Master's degree</option>
+                                    <option value="Doctorate or higher">Doctorate or higher</option>
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify3Syear} onChange={handleChange10}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={selectedQualify3Eyear} onChange={handleChange11}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
@@ -548,13 +556,13 @@ function EnterManual(){
                             </td>
                             <td>
                                 <select value={job1Syear} onChange={handleChange20}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={job1Eyear} onChange={handleChange21}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
@@ -568,13 +576,13 @@ function EnterManual(){
                             </td>
                             <td>
                                 <select value={job2Syear} onChange={handleChange24}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={job2Eyear} onChange={handleChange25}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
@@ -588,13 +596,13 @@ function EnterManual(){
                             </td>
                             <td>
                                 <select value={job3Syear} onChange={handleChange28}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>
                             <td>
                                 <select value={job3Eyear} onChange={handleChange29}>
-                                    <option value="option0">Select a year</option>
+                                    <option value="">Select a year</option>
                                     {years.map((year) => (<option key={year} value={year}>{year}</option>))}
                                 </select>
                             </td>

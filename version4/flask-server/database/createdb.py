@@ -51,9 +51,9 @@ command2 = """CREATE TABLE IF NOT EXISTS users_cvdata(
                 job_3_notes TEXT
             )"""
 
-command3 = """CREATE TABLE IF NOT EXISTS skills(
+command3 = """CREATE TABLE IF NOT EXISTS users_skilldata(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
-                skillcount INTEGER,
+                skillCount INTEGER,
                 skill_1 TEXT,
                 skill_2 TEXT,
                 skill_3 TEXT,

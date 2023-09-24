@@ -21,7 +21,7 @@ function App(){
             <Route path="/enterskills" element={<EnterSkills/>}/>
             <Route path="/entercv" element={<EnterCV/>}/>
             <Route path="/entermanual/get" element={<EnterManual/>}/>
-            <Route path="/crosscheck" element={<CrossCheck/>}/>
+            <Route path="/crosscheck/get" element={<CrossCheck/>}/>
             <Route path="/home" element={<Home/>}/>
             <Route path="/learn" element={<Learn/>}/>
             <Route path="/profile" element={<Profile/>}/>
