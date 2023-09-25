@@ -499,133 +499,54 @@ input[type=submit] {
 
 
 /* Homepage */
-.home_topnav{
-  background-color: rgb(255, 255, 255);
-  display: block;
-  height: 65px;
-  width: 99%;
-  list-style-type: none;
-  overflow: x hidden;
-  position: fixed;
-  margin: 0 auto;
-  padding: 0%;
-  padding-right: 0px;
+.nav-item{
+  margin: 10px 10%;
 }
 
-.home_topnav a{
-  color: #ffffff;
-  background-color: rgb(255, 255, 255);
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 17px;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-li{
-  display: inline-block;
-}
-
-.main {
-  margin-top: 70px;
-  width: 100%; 
-  display: inline-block;
-}
-
-.main_title{
-  text-align: center;
-  height: 40%;
-  margin: 0px;
-  padding: 30px;
-  width: 100%;
+.main{
+  margin-top: 6%;
 }
 
 .main_box{
   width: 100%; 
-  margin: 10px 0;
-  margin-top: 10px;
-  padding: 2px;
+  margin-top: 2%;
   display: inline-block;
 }
 
-.job_list{
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px auto;
-  padding: 20px;
+.sidebar-left {
+  background-color: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 88vh;
 }
 
-.job_title{
-  font-size: 25px;
+.sidebar-right {
+  background-color: #ffffff;
+  padding: 10px;
+  height: 100vh;
 }
 
-ul li{
-  padding: 2px;
+.sidebar-title{
+  margin-top: 20px;
 }
 
-.search{
-  background-color: aquamarine;
-  padding-bottom: 20px;
+.card{
+  width: 100%;
+  text-align: left;
+  height: 100%;
 }
-
-.search_field input[type=text] {
-  width: 40%;
-  padding: 12px 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
+.card-body{
+  margin-bottom: -25px;
 }
-
-.search_field{
-  margin: 10px;
-  margin-left: 30px;
-}
-
-input[type=submit] {
-  color:rgb(255, 255, 255);
-  background-color: black;
-  font-size: 16px;
-  text-align: center;
-  padding-top: 10px 20px;
-  box-sizing: border-box;
+.card-text{
+  font-size: 14px;
 }
 
 
-/*
-.sidebar {
-  height: 100vh; 
-  width: 30%; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0; 
-  right: 0;
-  background-color: #ebebeb; 
-  overflow-x: hidden; 
-  margin-top: 70px;
-  margin-right: 7px;
-  padding-top: 20px;
-}
 
-.sidebar_title{
-  text-align: center;
-  margin-top: 0px;
-}
 
-.sidebar_box{
-  width: 85%; 
-  height: 72vh;
-  margin-top: 20px; 
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
 
-.position{
-  font-size: 20px;
-}
-*/
+
 /* Learnpage */
 
 .learn {

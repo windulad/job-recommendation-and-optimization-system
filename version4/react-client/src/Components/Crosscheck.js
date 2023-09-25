@@ -406,7 +406,7 @@ function CrossCheck(){
             if (message === 'error-9'){
                 navigate('/crosscheck/get',  {state: data});
             }else if(message === 'success-9'){
-                navigate('/homepage',  {state: data});
+                navigate('/home',  {state: data});
             }
         } catch (error) {
             console.error(error);
