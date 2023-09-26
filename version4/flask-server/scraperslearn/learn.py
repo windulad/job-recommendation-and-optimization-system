@@ -9,7 +9,7 @@ class Learn:
         base_url = "http://api.scraperapi.com"
 
         payload = {
-            'api_key': '07e923bd835f70e73964ac82785227dc', 
+            'api_key': 'ce4f98dc5b76bc5a635534c73ef21745', 
             'url': 'https://www.futurelearn.com/search?q={}'.format(self.skill)
         }
         headers = {}
@@ -59,7 +59,7 @@ class Learn:
         base_url = "http://api.scraperapi.com"
 
         payload = {
-            'api_key': '07e923bd835f70e73964ac82785227dc', 
+            'api_key': 'ce4f98dc5b76bc5a635534c73ef21745', 
             'url': 'https://www.classcentral.com/search?q={}'.format(self.skill)
         }
         headers = {}

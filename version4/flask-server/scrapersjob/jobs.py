@@ -10,7 +10,7 @@ class Jobs:
         base_url = "http://api.scraperapi.com"
 
         payload = {
-            'api_key': '07e923bd835f70e73964ac82785227dc', 
+            'api_key': 'ce4f98dc5b76bc5a635534c73ef21745', 
             'url': 'https://us.jora.com/j?q={}&l={}'.format(self.position, self.location)
         }
         headers = {}
@@ -84,7 +84,7 @@ class Jobs:
         base_url = "http://api.scraperapi.com"
 
         payload = {
-            'api_key': '07e923bd835f70e73964ac82785227dc',
+            'api_key': 'ce4f98dc5b76bc5a635534c73ef21745',
             'url': 'https://www.simplyhired.com/search?q={}&l={}'.format(self.position, self.location)
         }
         headers = {}
@@ -157,7 +157,7 @@ class Jobs:
         base_url = "http://api.scraperapi.com"
 
         payload = {
-            'api_key': '07e923bd835f70e73964ac82785227dc',
+            'api_key': 'ce4f98dc5b76bc5a635534c73ef21745',
             'url': 'https://www.flexjobs.com/search?search={}&location={}'.format(self.position, self.location)        
         }
         headers = {}
