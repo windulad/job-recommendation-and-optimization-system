@@ -54,56 +54,209 @@ function CrossCheck(){
     const [job3Syear, setJob3Syear] = useState('');
     const [job3Eyear, setJob3Eyear] = useState('');
 
-    const [skill1, setSkill1] = useState('');
-    const [skill2, setSkill2] = useState('');
-    const [skill3, setSkill3] = useState('');
-    const [skill4, setSkill4] = useState('');
-    const [skill5, setSkill5] = useState('');
-    const [skill6, setSkill6] = useState('');
-    const [skill7, setSkill7] = useState('');
-    const [skill8, setSkill8] = useState('');
-    const [skill9, setSkill9] = useState('');
-    const [skill10, setSkill10] = useState('');
-    const [skill11, setSkill11] = useState('');
-    const [skill12, setSkill12] = useState('');
-    const [skill13, setSkill13] = useState('');
-    const [skill14, setSkill14] = useState('');
-    const [skill15, setSkill15] = useState('');
-    const [skill16, setSkill16] = useState('');
-    const [skill17, setSkill17] = useState('');
-    const [skill18, setSkill18] = useState('');
-    const [skill19, setSkill19] = useState('');
-    const [skill20, setSkill20] = useState('');
-    const [skill21, setSkill21] = useState('');
-    const [skill22, setSkill22] = useState('');
-    const [skill23, setSkill23] = useState('');
-    const [skill24, setSkill24] = useState('');
-    const [skill25, setSkill25] = useState('');
-    const [skill26, setSkill26] = useState('');
-    const [skill27, setSkill27] = useState('');
-    const [skill28, setSkill28] = useState('');
-    const [skill29, setSkill29] = useState('');
-    const [skill30, setSkill30] = useState('');
-    const [skill31, setSkill31] = useState('');
-    const [skill32, setSkill32] = useState('');
-    const [skill33, setSkill33] = useState('');
-    const [skill34, setSkill34] = useState('');
-    const [skill35, setSkill35] = useState('');
-    const [skill36, setSkill36] = useState('');
-    const [skill37, setSkill37] = useState('');
-    const [skill38, setSkill38] = useState('');
-    const [skill39, setSkill39] = useState('');
-    const [skill40, setSkill40] = useState('');
-    const [skill41, setSkill41] = useState('');
-    const [skill42, setSkill42] = useState('');
-    const [skill43, setSkill43] = useState('');
-    const [skill44, setSkill44] = useState('');
-    const [skill45, setSkill45] = useState('');
-    const [skill46, setSkill46] = useState('');
-    const [skill47, setSkill47] = useState('');
-    const [skill48, setSkill48] = useState('');
-    const [skill49, setSkill49] = useState('');
-    const [skill50, setSkill50] = useState('');
+    // Define a state variable to track whether the item is in the box.
+    const [item1InBox, setItem1InBox] = useState(false);
+    const [item2InBox, setItem2InBox] = useState(false);
+    const [item3InBox, setItem3InBox] = useState(false);
+    const [item4InBox, setItem4InBox] = useState(false);
+    const [item5InBox, setItem5InBox] = useState(false);
+    const [item6InBox, setItem6InBox] = useState(false);
+    const [item7InBox, setItem7InBox] = useState(false);
+    const [item8InBox, setItem8InBox] = useState(false);
+    const [item9InBox, setItem9InBox] = useState(false);
+    const [item10InBox, setItem10InBox] = useState(false);
+    const [item11InBox, setItem11InBox] = useState(false);
+    const [item12InBox, setItem12InBox] = useState(false);
+    const [item13InBox, setItem13InBox] = useState(false);
+    const [item14InBox, setItem14InBox] = useState(false);
+    const [item15InBox, setItem15InBox] = useState(false);
+    const [item16InBox, setItem16InBox] = useState(false);
+    const [item17InBox, setItem17InBox] = useState(false);
+    const [item18InBox, setItem18InBox] = useState(false);
+    const [item19InBox, setItem19InBox] = useState(false);
+    const [item20InBox, setItem20InBox] = useState(false);
+    const [item21InBox, setItem21InBox] = useState(false);
+    const [item22InBox, setItem22InBox] = useState(false);
+    const [item23InBox, setItem23InBox] = useState(false);
+    const [item24InBox, setItem24InBox] = useState(false);
+    const [item25InBox, setItem25InBox] = useState(false);
+    const [item26InBox, setItem26InBox] = useState(false);
+    const [item27InBox, setItem27InBox] = useState(false);
+    const [item28InBox, setItem28InBox] = useState(false);
+    const [item29InBox, setItem29InBox] = useState(false);
+    const [item30InBox, setItem30InBox] = useState(false);
+    const [item31InBox, setItem31InBox] = useState(false);
+    const [item32InBox, setItem32InBox] = useState(false);
+    const [item33InBox, setItem33InBox] = useState(false);
+    const [item34InBox, setItem34InBox] = useState(false);
+    const [item35InBox, setItem35InBox] = useState(false);
+    const [item36InBox, setItem36InBox] = useState(false);
+    const [item37InBox, setItem37InBox] = useState(false);
+    const [item38InBox, setItem38InBox] = useState(false);
+    const [item39InBox, setItem39InBox] = useState(false);
+    const [item40InBox, setItem40InBox] = useState(false);
+    const [item41InBox, setItem41InBox] = useState(false);
+    const [item42InBox, setItem42InBox] = useState(false);
+    const [item43InBox, setItem43InBox] = useState(false);
+    const [item44InBox, setItem44InBox] = useState(false);
+    const [item45InBox, setItem45InBox] = useState(false);
+    const [item46InBox, setItem46InBox] = useState(false);
+    const [item47InBox, setItem47InBox] = useState(false);
+    const [item48InBox, setItem48InBox] = useState(false);
+    const [item49InBox, setItem49InBox] = useState(false);
+    const [item50InBox, setItem50InBox] = useState(false);
+
+    // Create a function to toggle the state variable when the button is clicked.
+    const toggleItem1InBox = () => {
+        setItem1InBox(!item1InBox);
+    };
+    const toggleItem2InBox = () => {
+        setItem2InBox(!item2InBox);
+    };
+    const toggleItem3InBox = () => {
+        setItem3InBox(!item3InBox);
+    };
+    const toggleItem4InBox = () => {
+        setItem4InBox(!item4InBox);
+    };
+    const toggleItem5InBox = () => {
+        setItem5InBox(!item5InBox);
+    };
+    const toggleItem6InBox = () => {
+        setItem6InBox(!item6InBox);
+    };
+    const toggleItem7InBox = () => {
+        setItem7InBox(!item7InBox);
+    };
+    const toggleItem8InBox = () => {
+        setItem8InBox(!item8InBox);
+    };
+    const toggleItem9InBox = () => {
+        setItem9InBox(!item9InBox);
+    };
+    const toggleItem10InBox = () => {
+        setItem10InBox(!item10InBox);
+    };
+    const toggleItem11InBox = () => {
+        setItem11InBox(!item11InBox);
+    };
+    const toggleItem12InBox = () => {
+        setItem12InBox(!item12InBox);
+    };
+    const toggleItem13InBox = () => {
+        setItem13InBox(!item13InBox);
+    };
+    const toggleItem14InBox = () => {
+        setItem14InBox(!item14InBox);
+    };
+    const toggleItem15InBox = () => {
+        setItem15InBox(!item15InBox);
+    };
+    const toggleItem16InBox = () => {
+        setItem16InBox(!item16InBox);
+    };
+    const toggleItem17InBox = () => {
+        setItem17InBox(!item17InBox);
+    };
+    const toggleItem18InBox = () => {
+        setItem18InBox(!item18InBox);
+    };
+    const toggleItem19InBox = () => {
+        setItem19InBox(!item19InBox);
+    };
+    const toggleItem20InBox = () => {
+        setItem20InBox(!item20InBox);
+    };
+    const toggleItem21InBox = () => {
+        setItem21InBox(!item21InBox);
+    };
+    const toggleItem22InBox = () => {
+        setItem22InBox(!item22InBox);
+    };
+    const toggleItem23InBox = () => {
+        setItem23InBox(!item23InBox);
+    };
+    const toggleItem24InBox = () => {
+        setItem24InBox(!item24InBox);
+    };
+    const toggleItem25InBox = () => {
+        setItem25InBox(!item25InBox);
+    };
+    const toggleItem26InBox = () => {
+        setItem26InBox(!item26InBox);
+    };
+    const toggleItem27InBox = () => {
+        setItem27InBox(!item27InBox);
+    };
+    const toggleItem28InBox = () => {
+        setItem28InBox(!item28InBox);
+    };
+    const toggleItem29InBox = () => {
+        setItem29InBox(!item29InBox);
+    };
+    const toggleItem30InBox = () => {
+        setItem30InBox(!item30InBox);
+    };
+    const toggleItem31InBox = () => {
+        setItem31InBox(!item31InBox);
+    };
+    const toggleItem32InBox = () => {
+        setItem32InBox(!item32InBox);
+    };
+    const toggleItem33InBox = () => {
+        setItem33InBox(!item33InBox);
+    };
+    const toggleItem34InBox = () => {
+        setItem34InBox(!item34InBox);
+    };
+    const toggleItem35InBox = () => {
+        setItem35InBox(!item35InBox);
+    };
+    const toggleItem36InBox = () => {
+        setItem36InBox(!item36InBox);
+    };
+    const toggleItem37InBox = () => {
+        setItem37InBox(!item37InBox);
+    };
+    const toggleItem38InBox = () => {
+        setItem38InBox(!item38InBox);
+    };
+    const toggleItem39InBox = () => {
+        setItem39InBox(!item39InBox);
+    };
+    const toggleItem40InBox = () => {
+        setItem40InBox(!item40InBox);
+    };
+    const toggleItem41InBox = () => {
+        setItem41InBox(!item41InBox);
+    };
+    const toggleItem42InBox = () => {
+        setItem42InBox(!item42InBox);
+    };
+    const toggleItem43InBox = () => {
+        setItem43InBox(!item43InBox);
+    };
+    const toggleItem44InBox = () => {
+        setItem44InBox(!item44InBox);
+    };
+    const toggleItem45InBox = () => {
+        setItem45InBox(!item45InBox);
+    };
+    const toggleItem46InBox = () => {
+        setItem46InBox(!item46InBox);
+    };
+    const toggleItem47InBox = () => {
+        setItem47InBox(!item47InBox);
+    };
+    const toggleItem48InBox = () => {
+        setItem48InBox(!item48InBox);
+    };
+    const toggleItem49InBox = () => {
+        setItem49InBox(!item49InBox);
+    };
+    const toggleItem50InBox = () => {
+        setItem50InBox(!item50InBox);
+    };
 
     const pass_data = { 
         value: session_value,
@@ -233,56 +386,57 @@ function CrossCheck(){
                 setJob3(job3);
                 setJob3Syear(job3Syear);
                 setJob3Eyear(job3Eyear);
-                setSkill1(skill1);
-                setSkill2(skill2);
-                setSkill3(skill3);
-                setSkill4(skill4);
-                setSkill5(skill5);
-                setSkill6(skill6);
-                setSkill7(skill7);
-                setSkill8(skill8);
-                setSkill9(skill9);
-                setSkill10(skill10);
-                setSkill11(skill11);
-                setSkill12(skill12);
-                setSkill13(skill13);
-                setSkill14(skill14);
-                setSkill15(skill15);
-                setSkill16(skill16);
-                setSkill17(skill17);
-                setSkill18(skill18);
-                setSkill19(skill19);
-                setSkill20(skill20);
-                setSkill21(skill21);
-                setSkill22(skill22);
-                setSkill23(skill23);
-                setSkill24(skill24);
-                setSkill25(skill25);
-                setSkill26(skill26);
-                setSkill27(skill27);
-                setSkill28(skill28);
-                setSkill29(skill29);
-                setSkill30(skill30);
-                setSkill31(skill31);
-                setSkill32(skill32);
-                setSkill33(skill33);
-                setSkill34(skill34);
-                setSkill35(skill35);
-                setSkill36(skill36);
-                setSkill37(skill37);
-                setSkill38(skill38);
-                setSkill39(skill39);
-                setSkill40(skill40);
-                setSkill41(skill41);
-                setSkill42(skill42);
-                setSkill43(skill43);
-                setSkill44(skill44);
-                setSkill45(skill45);
-                setSkill46(skill46);
-                setSkill47(skill47);
-                setSkill48(skill48);
-                setSkill49(skill49);
-                setSkill50(skill50);
+
+                setItem1InBox(skill1);
+                setItem2InBox(skill2);
+                setItem3InBox(skill3);
+                setItem4InBox(skill4);
+                setItem5InBox(skill5);
+                setItem6InBox(skill6);
+                setItem7InBox(skill7);
+                setItem8InBox(skill8);
+                setItem9InBox(skill9);
+                setItem10InBox(skill10);
+                setItem11InBox(skill11);
+                setItem12InBox(skill12);
+                setItem13InBox(skill13);
+                setItem14InBox(skill14);
+                setItem15InBox(skill15);
+                setItem16InBox(skill16);
+                setItem17InBox(skill17);
+                setItem18InBox(skill18);
+                setItem19InBox(skill19);
+                setItem20InBox(skill20);
+                setItem21InBox(skill21);
+                setItem22InBox(skill22);
+                setItem23InBox(skill23);
+                setItem24InBox(skill24);
+                setItem25InBox(skill25);
+                setItem26InBox(skill26);
+                setItem27InBox(skill27);
+                setItem28InBox(skill28);
+                setItem29InBox(skill29);
+                setItem30InBox(skill30);
+                setItem31InBox(skill31);
+                setItem32InBox(skill32);
+                setItem33InBox(skill33);
+                setItem34InBox(skill34);
+                setItem35InBox(skill35);
+                setItem36InBox(skill36);
+                setItem37InBox(skill37);
+                setItem38InBox(skill38);
+                setItem39InBox(skill39);
+                setItem40InBox(skill40);
+                setItem41InBox(skill41);
+                setItem42InBox(skill42);
+                setItem43InBox(skill43);
+                setItem44InBox(skill44);
+                setItem45InBox(skill45);
+                setItem46InBox(skill46);
+                setItem47InBox(skill47);
+                setItem48InBox(skill48);
+                setItem49InBox(skill49);
+                setItem50InBox(skill50);
 
             } catch (error) {
                 console.error(error);
@@ -383,6 +537,56 @@ function CrossCheck(){
         job_3: job3,
         job_3_syear: job3Syear,
         job_3_eyear: job3Eyear,
+        skill1: item1InBox,
+        skill2: item2InBox,
+        skill3: item3InBox,
+        skill4: item4InBox,
+        skill5: item5InBox,
+        skill6: item6InBox,
+        skill7: item7InBox,
+        skill8: item8InBox,
+        skill9: item9InBox,
+        skill10: item10InBox,
+        skill11: item11InBox,
+        skill12: item12InBox,
+        skill13: item13InBox,
+        skill14: item14InBox,
+        skill15: item15InBox,
+        skill16: item16InBox,
+        skill17: item17InBox,
+        skill18: item18InBox,
+        skill19: item19InBox,
+        skill20: item20InBox,
+        skill21: item21InBox,
+        skill22: item22InBox,
+        skill23: item23InBox,
+        skill24: item24InBox,
+        skill25: item25InBox,
+        skill26: item26InBox,
+        skill27: item27InBox,
+        skill28: item28InBox,
+        skill29: item29InBox,
+        skill30: item30InBox,
+        skill31: item31InBox,
+        skill32: item32InBox,
+        skill33: item33InBox,
+        skill34: item34InBox,
+        skill35: item35InBox,
+        skill36: item36InBox,
+        skill37: item37InBox,
+        skill38: item38InBox,
+        skill39: item39InBox,
+        skill40: item40InBox,
+        skill41: item41InBox,
+        skill42: item42InBox,
+        skill43: item43InBox,
+        skill44: item44InBox,
+        skill45: item45InBox,
+        skill46: item46InBox,
+        skill47: item47InBox,
+        skill48: item48InBox,
+        skill49: item49InBox,
+        skill50: item50InBox,
     };
 
     // Triggered on form submit
@@ -416,7 +620,7 @@ function CrossCheck(){
  
 
     return(
-        <div className="container">
+        <div className="enter_manual">
             <form id="crossCheckForm" onSubmit={handleSubmit}>
                 
                 <h2 className="crosscheckl_title">Personal Bio Data</h2>
@@ -621,175 +825,336 @@ function CrossCheck(){
                 </div>
 
                 <h2 className="crosscheckl_title">Technologies (Skills)</h2>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill1}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill2}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill3}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill4}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill5}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill6}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill7}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill8}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill9}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill10}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill11}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill12}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill13}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill14}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill15}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill16}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill17}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill18}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill19}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill20}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill21}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill22}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill23}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill24}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill25}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill26}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill27}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill28}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill29}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill30}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill31}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill32}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill33}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill34}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill35}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill36}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill37}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill38}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill39}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill40}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill41}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill42}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill43}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill44}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill45}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill46}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill47}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill48}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill49}/>
-                    </div>
-                    <div className="col input_data">
-                        <input type="text" class="form-control-plaintext" value={skill50}/>
-                    </div>
-                </div>
+                <div class="row">
+                    <h2 className="enter_manual_title">Technologies</h2>
 
+                    <div className="box col-md-6">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <div className="item-skill">
+                                    {item1InBox ? (<p className="p-card">C</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item2InBox ? (<p>C++</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item3InBox ? (<p>C#</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item4InBox ? (<p>Java</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item5InBox ? (<p>Python</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item6InBox ? (<p>PHP</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item7InBox ? (<p>Go</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item8InBox ? (<p>SQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item9InBox ? (<p>MySQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item10InBox ? (<p>PostgreSQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item11InBox ? (<p>MongoDB</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item12InBox ? (<p>SQL Server</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item13InBox ? (<p>Oracle SQL</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item14InBox ? (<p>Git</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item15InBox ? (<p>GitHub</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item16InBox ? (<p>GitLab</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item17InBox ? (<p>AWS</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item18InBox ? (<p>Azure</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item19InBox ? (<p>GCP</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item20InBox ? (<p>Postman</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item21InBox ? (<p>Twilio</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item22InBox ? (<p>Docker</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item23InBox ? (<p>Kubernetes</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item24InBox ? (<p>HTML</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item25InBox ? (<p>CSS</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item26InBox ? (<p>Bootstrap</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item27InBox ? (<p>Tailwind</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item28InBox ? (<p>JavaScript</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item29InBox ? (<p>TypeScript</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item30InBox ? (<p>React</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item31InBox ? (<p>Angular</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item32InBox ? (<p>Vue</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item33InBox ? (<p>Node</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item34InBox ? (<p>Django</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item35InBox ? (<p>Flask</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item36InBox ? (<p>Spring Boot</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item37InBox ? (<p>Laravel</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item38InBox ? (<p>Ruby on Rails</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item39InBox ? (<p>.NET Core</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item40InBox ? (<p>Dart</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item41InBox ? (<p>Flutter</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item42InBox ? (<p>React Native</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item43InBox ? (<p>Kotlin</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item44InBox ? (<p>Android Jetpack</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item45InBox ? (<p>Android Studio</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item46InBox ? (<p>Swift</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item47InBox ? (<p>SwiftUI</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item48InBox ? (<p>Ionic</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item49InBox ? (<p>Xcode</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item50InBox ? (<p>Xamarin</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6">
+                        <div className="row">
+                            <div className="col-md-3">
+                                {/* Button to toggle the item in and out of the box */}
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem1InBox}>
+                                    {item1InBox ? 'Remove C' : 'C'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem2InBox}>
+                                    {item2InBox ? 'Remove C++' : 'C++'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem3InBox}>
+                                    {item3InBox ? 'Remove C#' : 'C#'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem4InBox}>
+                                    {item4InBox ? 'Remove Java' : 'Java'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem5InBox}>
+                                    {item5InBox ? 'Remove Python' : 'Python'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem6InBox}>
+                                    {item6InBox ? 'Remove PHP' : 'PHP'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem7InBox}>
+                                    {item7InBox ? 'Remove Go' : 'Go'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem8InBox}>
+                                    {item8InBox ? 'Remove SQL' : 'SQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem9InBox}>
+                                    {item9InBox ? 'Remove MySQL' : 'MySQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem10InBox}>
+                                    {item10InBox ? 'Remove PostgreSQL' : 'PostgreSQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem11InBox}>
+                                    {item11InBox ? 'Remove MongoDB' : 'MongoDB'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem12InBox}>
+                                    {item12InBox ? 'Remove SQL Server' : 'SQL Server'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem13InBox}>
+                                    {item13InBox ? 'Remove Oracle SQL' : 'Oracle SQL'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem14InBox}>
+                                    {item14InBox ? 'Remove Git' : 'Git'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem15InBox}>
+                                    {item15InBox ? 'Remove GitHub' : 'GitHub'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem16InBox}>
+                                    {item16InBox ? 'Remove GitLab' : 'GitLab'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem17InBox}>
+                                    {item17InBox ? 'Remove AWS' : 'AWS'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem18InBox}>
+                                    {item18InBox ? 'Remove Azure' : 'Azure'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem19InBox}>
+                                    {item19InBox ? 'Remove GCP' : 'GCP'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem20InBox}>
+                                    {item20InBox ? 'Remove Postman' : 'Postman'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem21InBox}>
+                                    {item21InBox ? 'Remove Twilio' : 'Twilio'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem22InBox}>
+                                    {item22InBox ? 'Remove Docker' : 'Docker'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem23InBox}>
+                                    {item23InBox ? 'Remove Kubernetes' : 'Kubernetes'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem24InBox}>
+                                    {item24InBox ? 'Remove HTML' : 'HTML'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem25InBox}>
+                                    {item25InBox ? 'Remove CSS' : 'CSS'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem26InBox}>
+                                    {item26InBox ? 'Remove Bootstrap' : 'Bootstrap'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem27InBox}>
+                                    {item27InBox ? 'Remove Tailwind' : 'Tailwind'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem28InBox}>
+                                    {item28InBox ? 'Remove JavaScript' : 'JavaScript'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem29InBox}>
+                                    {item29InBox ? 'Remove TypeScript' : 'TypeScript'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem30InBox}>
+                                    {item30InBox ? 'Remove React' : 'React'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem31InBox}>
+                                    {item31InBox ? 'Remove Angular' : 'Angular'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem32InBox}>
+                                    {item32InBox ? 'Remove Vue' : 'Vue'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem33InBox}>
+                                    {item33InBox ? 'Remove Node' : 'Node'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem34InBox}>
+                                    {item34InBox ? 'Remove Django' : 'Django'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem35InBox}>
+                                    {item35InBox ? 'Remove Flask' : 'Flask'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem36InBox}>
+                                    {item36InBox ? 'Remove Spring Boot' : 'Spring Boot'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem37InBox}>
+                                    {item37InBox ? 'Remove Laravel' : 'Laravel'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem38InBox}>
+                                    {item38InBox ? 'Remove Ruby on Rails' : 'Ruby on Rails'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem39InBox}>
+                                    {item39InBox ? 'Remove .NET Core' : '.NET Core'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem40InBox}>
+                                    {item40InBox ? 'Remove Dart' : 'Dart'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem41InBox}>
+                                    {item41InBox ? 'Remove Flutter' : 'Flutter'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem42InBox}>
+                                    {item42InBox ? 'Remove React Native' : 'React Native'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem43InBox}>
+                                    {item43InBox ? 'Remove Kotlin' : 'Kotlin'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem44InBox}>
+                                    {item44InBox ? 'Remove Android Jetpack' : 'Android Jetpack'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem45InBox}>
+                                    {item45InBox ? 'Remove Android Studio' : 'Android Studio'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem46InBox}>
+                                    {item46InBox ? 'Remove Swift' : 'Swift'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem47InBox}>
+                                    {item47InBox ? 'Remove SwiftUI' : 'SwiftUI'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem48InBox}>
+                                    {item48InBox ? 'Remove Ionic' : 'Ionic'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem49InBox}>
+                                    {item49InBox ? 'Remove Xcode' : 'Xcode'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem50InBox}>
+                                    {item50InBox ? 'Remove Xamarin' : 'Xamarin'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div className="row">
                     <div className="col input_data">

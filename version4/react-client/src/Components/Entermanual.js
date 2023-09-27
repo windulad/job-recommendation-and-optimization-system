@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Card from '../items/Card';
-import Box from '../items/Box';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 Axios.defaults.withCredentials = true;
@@ -172,7 +170,6 @@ function EnterManual(){
     const handleChange18 = (event) => {
         setProject3Desc(event.target.value);
     };
-
     const handleChange19 = (event) => {
         setJob1(event.target.value);
     };
@@ -210,101 +207,305 @@ function EnterManual(){
         setJob3Notes(event.target.value);
     };
 
-    // Drag N Drop]
-    const [cards, setCards] = useState([
-        { id: 'C', content: 'C' },
-        { id: 'Cpp', content: 'C++' },
-        { id: 'Csharp', content: 'C#' },
-        { id: 'Java', content: 'Java' },
-        { id: 'Python', content: 'Python' },
-        { id: 'PHP', content: 'PHP' },
-        { id: 'Go', content: 'Go' },
-        { id: 'SQL', content: 'SQL' },
-        { id: 'MySQL', content: 'MySQL' },
-        { id: 'PostgreSQL', content: 'PostgreSQL' },
-        { id: 'MongoDB', content: 'MongoDB' },
-        { id: 'SQL Server', content: 'SQL Server' },
-        { id: 'Oracle SQL', content: 'Oracle SQL' },
-        { id: 'Git', content: 'Git' },
-        { id: 'GitHub', content: 'GitHub' },
-        { id: 'GitLab', content: 'GitLab' },
-        { id: 'AWS', content: 'AWS' },
-        { id: 'Azure', content: 'Azure' },
-        { id: 'GCP', content: 'GCP' },
-        { id: 'Postman', content: 'Postman' },
-        { id: 'Twilio', content: 'Twilio' },
-        { id: 'Docker', content: 'Docker' },
-        { id: 'Kubernetes', content: 'Kubernetes' },
-        { id: 'HTML', content: 'HTML' },
-        { id: 'CSS', content: 'CSS' },
-        { id: 'Bootstrap', content: 'Bootstrap' },
-        { id: 'Tailwind', content: 'Tailwind' },
-        { id: 'JavaScript', content: 'JavaScript' },
-        { id: 'TypeScript', content: 'TypeScript' },
-        { id: 'React', content: 'React' },
-        { id: 'Angular', content: 'Angular' },
-        { id: 'Vue', content: 'Vue' },
-        { id: 'Node', content: 'Node' },
-        { id: 'Django', content: 'Django' },
-        { id: 'Flask', content: 'Flask' },
-        { id: 'Spring Boot', content: 'Spring Boot' },
-        { id: 'Laravel', content: 'Laravel' },
-        { id: 'Ruby on Rails', content: 'Ruby on Rails' },
-        { id: '.NET Core', content: '.NET Core' },
-        { id: 'Dart', content: 'Dart' },
-        { id: 'Flutter', content: 'Flutter' },
-        { id: 'React Native', content: 'React Native' },
-        { id: 'Kotlin', content: 'Kotlin' },
-        { id: 'Android Jetpack', content: 'Android Jetpack' },
-        { id: 'Android Studio', content: 'Android Studio' },
-        { id: 'Swift', content: 'Swift' },
-        { id: 'SwiftUI', content: 'SwiftUI' },
-        { id: 'Ionic', content: 'Ionic' },
-        { id: 'Xcode', content: 'Xcode' },
-        { id: 'Xamarin', content: 'Xamarin' },
-    ]);
+    // // Drag N Drop]
+    // const [cards, setCards] = useState([
+    //     { id: 'C', content: 'C' },
+    //     { id: 'Cpp', content: 'C++' },
+    //     { id: 'Csharp', content: 'C#' },
+    //     { id: 'Java', content: 'Java' },
+    //     { id: 'Python', content: 'Python' },
+    //     { id: 'PHP', content: 'PHP' },
+    //     { id: 'Go', content: 'Go' },
+    //     { id: 'SQL', content: 'SQL' },
+    //     { id: 'MySQL', content: 'MySQL' },
+    //     { id: 'PostgreSQL', content: 'PostgreSQL' },
+    //     { id: 'MongoDB', content: 'MongoDB' },
+    //     { id: 'SQL Server', content: 'SQL Server' },
+    //     { id: 'Oracle SQL', content: 'Oracle SQL' },
+    //     { id: 'Git', content: 'Git' },
+    //     { id: 'GitHub', content: 'GitHub' },
+    //     { id: 'GitLab', content: 'GitLab' },
+    //     { id: 'AWS', content: 'AWS' },
+    //     { id: 'Azure', content: 'Azure' },
+    //     { id: 'GCP', content: 'GCP' },
+    //     { id: 'Postman', content: 'Postman' },
+    //     { id: 'Twilio', content: 'Twilio' },
+    //     { id: 'Docker', content: 'Docker' },
+    //     { id: 'Kubernetes', content: 'Kubernetes' },
+    //     { id: 'HTML', content: 'HTML' },
+    //     { id: 'CSS', content: 'CSS' },
+    //     { id: 'Bootstrap', content: 'Bootstrap' },
+    //     { id: 'Tailwind', content: 'Tailwind' },
+    //     { id: 'JavaScript', content: 'JavaScript' },
+    //     { id: 'TypeScript', content: 'TypeScript' },
+    //     { id: 'React', content: 'React' },
+    //     { id: 'Angular', content: 'Angular' },
+    //     { id: 'Vue', content: 'Vue' },
+    //     { id: 'Node', content: 'Node' },
+    //     { id: 'Django', content: 'Django' },
+    //     { id: 'Flask', content: 'Flask' },
+    //     { id: 'Spring Boot', content: 'Spring Boot' },
+    //     { id: 'Laravel', content: 'Laravel' },
+    //     { id: 'Ruby on Rails', content: 'Ruby on Rails' },
+    //     { id: '.NET Core', content: '.NET Core' },
+    //     { id: 'Dart', content: 'Dart' },
+    //     { id: 'Flutter', content: 'Flutter' },
+    //     { id: 'React Native', content: 'React Native' },
+    //     { id: 'Kotlin', content: 'Kotlin' },
+    //     { id: 'Android Jetpack', content: 'Android Jetpack' },
+    //     { id: 'Android Studio', content: 'Android Studio' },
+    //     { id: 'Swift', content: 'Swift' },
+    //     { id: 'SwiftUI', content: 'SwiftUI' },
+    //     { id: 'Ionic', content: 'Ionic' },
+    //     { id: 'Xcode', content: 'Xcode' },
+    //     { id: 'Xamarin', content: 'Xamarin' },
+    // ]);
 
-    // Output box content in every dnd
-    const [boxContent, setBoxContent] = useState([]);
+    // //Output box content in every dnd
+    // const [boxContent, setBoxContent] = useState([]);
     
-    const [history, setHistory] = useState([]);
+    // const [history, setHistory] = useState([]);
 
-    const [count, setCount] = useState(0);
+    // const [count, setCount] = useState(0);
 
-    const [postdata, setPostData] = useState(null);
+    // const [postdata, setPostData] = useState(null);
 
     //console.log(boxContent);
 
-    const handleCardDropped = (cardId) => {
-        const card = cards.find((c) => c.id === cardId);
+    // const handleCardDropped = (cardId) => {
+    //     const card = cards.find((c) => c.id === cardId);
 
-        if (card) {
-            setBoxContent([...boxContent, card]);
-            setCards(cards.filter((c) => c.id !== cardId));
+    //     if (card) {
+    //         setBoxContent([...boxContent, card]);
+    //         setCards(cards.filter((c) => c.id !== cardId));
 
-            setHistory([...history, { cards, boxContent }]);
+    //         setHistory([...history, { cards, boxContent }]);
 
-            const cardSubmitData = {
-                id: cards.id,
-                content: cards.content,
-            }
-            setPostData(cardSubmitData);
+    //         const cardSubmitData = {
+    //             id: cards.id,
+    //             content: cards.content,
+    //         }
+    //         setPostData(cardSubmitData);
 
-            setCount(count + 1);
-        }
-    };
+    //         setCount(count + 1);
+    //     }
+    // };
 
-    const handleUndo = () => {
-        if (history.length > 0) {
-            const previousState = history[history.length - 1];
-            setCards(previousState.cards);
-            setBoxContent(previousState.boxContent);
+    // const handleUndo = () => {
+    //     if (history.length > 0) {
+    //         const previousState = history[history.length - 1];
+    //         setCards(previousState.cards);
+    //         setBoxContent(previousState.boxContent);
         
-            // Remove the last state from history
-            setHistory(history.slice(0, -1));
+    //         // Remove the last state from history
+    //         setHistory(history.slice(0, -1));
 
-            setCount(count - 1);
-        }
+    //         setCount(count - 1);
+    //     }
+    // };
+
+    // Define a state variable to track whether the item is in the box.
+    const [item1InBox, setItem1InBox] = useState(false);
+    const [item2InBox, setItem2InBox] = useState(false);
+    const [item3InBox, setItem3InBox] = useState(false);
+    const [item4InBox, setItem4InBox] = useState(false);
+    const [item5InBox, setItem5InBox] = useState(false);
+    const [item6InBox, setItem6InBox] = useState(false);
+    const [item7InBox, setItem7InBox] = useState(false);
+    const [item8InBox, setItem8InBox] = useState(false);
+    const [item9InBox, setItem9InBox] = useState(false);
+    const [item10InBox, setItem10InBox] = useState(false);
+    const [item11InBox, setItem11InBox] = useState(false);
+    const [item12InBox, setItem12InBox] = useState(false);
+    const [item13InBox, setItem13InBox] = useState(false);
+    const [item14InBox, setItem14InBox] = useState(false);
+    const [item15InBox, setItem15InBox] = useState(false);
+    const [item16InBox, setItem16InBox] = useState(false);
+    const [item17InBox, setItem17InBox] = useState(false);
+    const [item18InBox, setItem18InBox] = useState(false);
+    const [item19InBox, setItem19InBox] = useState(false);
+    const [item20InBox, setItem20InBox] = useState(false);
+    const [item21InBox, setItem21InBox] = useState(false);
+    const [item22InBox, setItem22InBox] = useState(false);
+    const [item23InBox, setItem23InBox] = useState(false);
+    const [item24InBox, setItem24InBox] = useState(false);
+    const [item25InBox, setItem25InBox] = useState(false);
+    const [item26InBox, setItem26InBox] = useState(false);
+    const [item27InBox, setItem27InBox] = useState(false);
+    const [item28InBox, setItem28InBox] = useState(false);
+    const [item29InBox, setItem29InBox] = useState(false);
+    const [item30InBox, setItem30InBox] = useState(false);
+    const [item31InBox, setItem31InBox] = useState(false);
+    const [item32InBox, setItem32InBox] = useState(false);
+    const [item33InBox, setItem33InBox] = useState(false);
+    const [item34InBox, setItem34InBox] = useState(false);
+    const [item35InBox, setItem35InBox] = useState(false);
+    const [item36InBox, setItem36InBox] = useState(false);
+    const [item37InBox, setItem37InBox] = useState(false);
+    const [item38InBox, setItem38InBox] = useState(false);
+    const [item39InBox, setItem39InBox] = useState(false);
+    const [item40InBox, setItem40InBox] = useState(false);
+    const [item41InBox, setItem41InBox] = useState(false);
+    const [item42InBox, setItem42InBox] = useState(false);
+    const [item43InBox, setItem43InBox] = useState(false);
+    const [item44InBox, setItem44InBox] = useState(false);
+    const [item45InBox, setItem45InBox] = useState(false);
+    const [item46InBox, setItem46InBox] = useState(false);
+    const [item47InBox, setItem47InBox] = useState(false);
+    const [item48InBox, setItem48InBox] = useState(false);
+    const [item49InBox, setItem49InBox] = useState(false);
+    const [item50InBox, setItem50InBox] = useState(false);
+
+    // Create a function to toggle the state variable when the button is clicked.
+    const toggleItem1InBox = () => {
+        setItem1InBox(!item1InBox);
+    };
+    const toggleItem2InBox = () => {
+        setItem2InBox(!item2InBox);
+    };
+    const toggleItem3InBox = () => {
+        setItem3InBox(!item3InBox);
+    };
+    const toggleItem4InBox = () => {
+        setItem4InBox(!item4InBox);
+    };
+    const toggleItem5InBox = () => {
+        setItem5InBox(!item5InBox);
+    };
+    const toggleItem6InBox = () => {
+        setItem6InBox(!item6InBox);
+    };
+    const toggleItem7InBox = () => {
+        setItem7InBox(!item7InBox);
+    };
+    const toggleItem8InBox = () => {
+        setItem8InBox(!item8InBox);
+    };
+    const toggleItem9InBox = () => {
+        setItem9InBox(!item9InBox);
+    };
+    const toggleItem10InBox = () => {
+        setItem10InBox(!item10InBox);
+    };
+    const toggleItem11InBox = () => {
+        setItem11InBox(!item11InBox);
+    };
+    const toggleItem12InBox = () => {
+        setItem12InBox(!item12InBox);
+    };
+    const toggleItem13InBox = () => {
+        setItem13InBox(!item13InBox);
+    };
+    const toggleItem14InBox = () => {
+        setItem14InBox(!item14InBox);
+    };
+    const toggleItem15InBox = () => {
+        setItem15InBox(!item15InBox);
+    };
+    const toggleItem16InBox = () => {
+        setItem16InBox(!item16InBox);
+    };
+    const toggleItem17InBox = () => {
+        setItem17InBox(!item17InBox);
+    };
+    const toggleItem18InBox = () => {
+        setItem18InBox(!item18InBox);
+    };
+    const toggleItem19InBox = () => {
+        setItem19InBox(!item19InBox);
+    };
+    const toggleItem20InBox = () => {
+        setItem20InBox(!item20InBox);
+    };
+    const toggleItem21InBox = () => {
+        setItem21InBox(!item21InBox);
+    };
+    const toggleItem22InBox = () => {
+        setItem22InBox(!item22InBox);
+    };
+    const toggleItem23InBox = () => {
+        setItem23InBox(!item23InBox);
+    };
+    const toggleItem24InBox = () => {
+        setItem24InBox(!item24InBox);
+    };
+    const toggleItem25InBox = () => {
+        setItem25InBox(!item25InBox);
+    };
+    const toggleItem26InBox = () => {
+        setItem26InBox(!item26InBox);
+    };
+    const toggleItem27InBox = () => {
+        setItem27InBox(!item27InBox);
+    };
+    const toggleItem28InBox = () => {
+        setItem28InBox(!item28InBox);
+    };
+    const toggleItem29InBox = () => {
+        setItem29InBox(!item29InBox);
+    };
+    const toggleItem30InBox = () => {
+        setItem30InBox(!item30InBox);
+    };
+    const toggleItem31InBox = () => {
+        setItem31InBox(!item31InBox);
+    };
+    const toggleItem32InBox = () => {
+        setItem32InBox(!item32InBox);
+    };
+    const toggleItem33InBox = () => {
+        setItem33InBox(!item33InBox);
+    };
+    const toggleItem34InBox = () => {
+        setItem34InBox(!item34InBox);
+    };
+    const toggleItem35InBox = () => {
+        setItem35InBox(!item35InBox);
+    };
+    const toggleItem36InBox = () => {
+        setItem36InBox(!item36InBox);
+    };
+    const toggleItem37InBox = () => {
+        setItem37InBox(!item37InBox);
+    };
+    const toggleItem38InBox = () => {
+        setItem38InBox(!item38InBox);
+    };
+    const toggleItem39InBox = () => {
+        setItem39InBox(!item39InBox);
+    };
+    const toggleItem40InBox = () => {
+        setItem40InBox(!item40InBox);
+    };
+    const toggleItem41InBox = () => {
+        setItem41InBox(!item41InBox);
+    };
+    const toggleItem42InBox = () => {
+        setItem42InBox(!item42InBox);
+    };
+    const toggleItem43InBox = () => {
+        setItem43InBox(!item43InBox);
+    };
+    const toggleItem44InBox = () => {
+        setItem44InBox(!item44InBox);
+    };
+    const toggleItem45InBox = () => {
+        setItem45InBox(!item45InBox);
+    };
+    const toggleItem46InBox = () => {
+        setItem46InBox(!item46InBox);
+    };
+    const toggleItem47InBox = () => {
+        setItem47InBox(!item47InBox);
+    };
+    const toggleItem48InBox = () => {
+        setItem48InBox(!item48InBox);
+    };
+    const toggleItem49InBox = () => {
+        setItem49InBox(!item49InBox);
+    };
+    const toggleItem50InBox = () => {
+        setItem50InBox(!item50InBox);
     };
 
     const postData = { 
@@ -339,11 +540,59 @@ function EnterManual(){
         job_3_syear: job3Syear,
         job_3_eyear: job3Eyear,
         job_3_notes: job3Notes,
-        count: count,
-        boxContent: boxContent,
+        // count: count,
+        // boxContent: boxContent,
+        skill1: item1InBox,
+        skill2: item2InBox,
+        skill3: item3InBox,
+        skill4: item4InBox,
+        skill5: item5InBox,
+        skill6: item6InBox,
+        skill7: item7InBox,
+        skill8: item8InBox,
+        skill9: item9InBox,
+        skill10: item10InBox,
+        skill11: item11InBox,
+        skill12: item12InBox,
+        skill13: item13InBox,
+        skill14: item14InBox,
+        skill15: item15InBox,
+        skill16: item16InBox,
+        skill17: item17InBox,
+        skill18: item18InBox,
+        skill19: item19InBox,
+        skill20: item20InBox,
+        skill21: item21InBox,
+        skill22: item22InBox,
+        skill23: item23InBox,
+        skill24: item24InBox,
+        skill25: item25InBox,
+        skill26: item26InBox,
+        skill27: item27InBox,
+        skill28: item28InBox,
+        skill29: item29InBox,
+        skill30: item30InBox,
+        skill31: item31InBox,
+        skill32: item32InBox,
+        skill33: item33InBox,
+        skill34: item34InBox,
+        skill35: item35InBox,
+        skill36: item36InBox,
+        skill37: item37InBox,
+        skill38: item38InBox,
+        skill39: item39InBox,
+        skill40: item40InBox,
+        skill41: item41InBox,
+        skill42: item42InBox,
+        skill43: item43InBox,
+        skill44: item44InBox,
+        skill45: item45InBox,
+        skill46: item46InBox,
+        skill47: item47InBox,
+        skill48: item48InBox,
+        skill49: item49InBox,
+        skill50: item50InBox,
     };
-
-    //const post_data = {...cv_submit_data, ...postdata};
 
     // Triggered on form submit
     const handleSubmit = async (event) => {
@@ -613,12 +862,14 @@ function EnterManual(){
                     </tbody>
                 </table>
 
-                <div>
+                {/* <div>
                     <h2 className="enter_manual_title">Technologies</h2>
                     <p>*Drag and drop the skills you are profficient with</p>
+
                     <button onClick={handleUndo} className="undo-button">
                         Undo
                     </button>
+
                     <div className="card-container">
                         {cards.map((card) => (
                         <Card key={card.id} cardId={card.id}>
@@ -627,22 +878,357 @@ function EnterManual(){
                         ))}
                         <div class="clear"></div>
                     </div>
+
                     <Box onCardDropped={handleCardDropped}>
                         {boxContent.map((card) => (
                         <div key={card.id} className="box-card">
                             {card.content}
                         </div>
                         ))}
-                        <p style={{ 
-                            textAlign:'center',
-                            padding:'160px 0'
-                            }}
-                        >
-                        Drop Here</p>
+                        <p style={{ textAlign:'center', padding:'160px 0' }}>
+                            Drop Here
+                        </p>
                     </Box>   
                 </div>
-                
-                <div class="signup_login">
+                */}
+
+                <div class="row">
+                    <h2 className="enter_manual_title">Technologies</h2>
+
+                    <div className="box col-md-6">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <div className="item-skill">
+                                    {item1InBox ? (<p className="p-card">C</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item2InBox ? (<p>C++</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item3InBox ? (<p>C#</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item4InBox ? (<p>Java</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item5InBox ? (<p>Python</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item6InBox ? (<p>PHP</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item7InBox ? (<p>Go</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item8InBox ? (<p>SQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item9InBox ? (<p>MySQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item10InBox ? (<p>PostgreSQL</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item11InBox ? (<p>MongoDB</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item12InBox ? (<p>SQL Server</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item13InBox ? (<p>Oracle SQL</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item14InBox ? (<p>Git</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item15InBox ? (<p>GitHub</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item16InBox ? (<p>GitLab</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item17InBox ? (<p>AWS</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item18InBox ? (<p>Azure</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item19InBox ? (<p>GCP</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item20InBox ? (<p>Postman</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item21InBox ? (<p>Twilio</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item22InBox ? (<p>Docker</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item23InBox ? (<p>Kubernetes</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item24InBox ? (<p>HTML</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item25InBox ? (<p>CSS</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item26InBox ? (<p>Bootstrap</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item27InBox ? (<p>Tailwind</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item28InBox ? (<p>JavaScript</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item29InBox ? (<p>TypeScript</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item30InBox ? (<p>React</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item31InBox ? (<p>Angular</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item32InBox ? (<p>Vue</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item33InBox ? (<p>Node</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item34InBox ? (<p>Django</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item35InBox ? (<p>Flask</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item36InBox ? (<p>Spring Boot</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item37InBox ? (<p>Laravel</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item38InBox ? (<p>Ruby on Rails</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item39InBox ? (<p>.NET Core</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                            <div className="col-md-3">
+                            <div className="item-skill">
+                                    {item40InBox ? (<p>Dart</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item41InBox ? (<p>Flutter</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item42InBox ? (<p>React Native</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item43InBox ? (<p>Kotlin</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item44InBox ? (<p>Android Jetpack</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item45InBox ? (<p>Android Studio</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item46InBox ? (<p>Swift</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item47InBox ? (<p>SwiftUI</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item48InBox ? (<p>Ionic</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item49InBox ? (<p>Xcode</p>) : (<p>_</p>)}
+                                </div>
+                                <div className="item-skill">
+                                    {item50InBox ? (<p>Xamarin</p>) : (<p>_</p>)}
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6">
+                        <div className="row">
+                            <div className="col-md-3">
+                                {/* Button to toggle the item in and out of the box */}
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem1InBox}>
+                                    {item1InBox ? 'Remove C' : 'C'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem2InBox}>
+                                    {item2InBox ? 'Remove C++' : 'C++'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem3InBox}>
+                                    {item3InBox ? 'Remove C#' : 'C#'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem4InBox}>
+                                    {item4InBox ? 'Remove Java' : 'Java'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem5InBox}>
+                                    {item5InBox ? 'Remove Python' : 'Python'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem6InBox}>
+                                    {item6InBox ? 'Remove PHP' : 'PHP'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem7InBox}>
+                                    {item7InBox ? 'Remove Go' : 'Go'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem8InBox}>
+                                    {item8InBox ? 'Remove SQL' : 'SQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem9InBox}>
+                                    {item9InBox ? 'Remove MySQL' : 'MySQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem10InBox}>
+                                    {item10InBox ? 'Remove PostgreSQL' : 'PostgreSQL'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem11InBox}>
+                                    {item11InBox ? 'Remove MongoDB' : 'MongoDB'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem12InBox}>
+                                    {item12InBox ? 'Remove SQL Server' : 'SQL Server'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem13InBox}>
+                                    {item13InBox ? 'Remove Oracle SQL' : 'Oracle SQL'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem14InBox}>
+                                    {item14InBox ? 'Remove Git' : 'Git'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem15InBox}>
+                                    {item15InBox ? 'Remove GitHub' : 'GitHub'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem16InBox}>
+                                    {item16InBox ? 'Remove GitLab' : 'GitLab'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem17InBox}>
+                                    {item17InBox ? 'Remove AWS' : 'AWS'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem18InBox}>
+                                    {item18InBox ? 'Remove Azure' : 'Azure'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem19InBox}>
+                                    {item19InBox ? 'Remove GCP' : 'GCP'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem20InBox}>
+                                    {item20InBox ? 'Remove Postman' : 'Postman'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem21InBox}>
+                                    {item21InBox ? 'Remove Twilio' : 'Twilio'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem22InBox}>
+                                    {item22InBox ? 'Remove Docker' : 'Docker'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem23InBox}>
+                                    {item23InBox ? 'Remove Kubernetes' : 'Kubernetes'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem24InBox}>
+                                    {item24InBox ? 'Remove HTML' : 'HTML'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem25InBox}>
+                                    {item25InBox ? 'Remove CSS' : 'CSS'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem26InBox}>
+                                    {item26InBox ? 'Remove Bootstrap' : 'Bootstrap'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem27InBox}>
+                                    {item27InBox ? 'Remove Tailwind' : 'Tailwind'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem28InBox}>
+                                    {item28InBox ? 'Remove JavaScript' : 'JavaScript'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem29InBox}>
+                                    {item29InBox ? 'Remove TypeScript' : 'TypeScript'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem30InBox}>
+                                    {item30InBox ? 'Remove React' : 'React'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem31InBox}>
+                                    {item31InBox ? 'Remove Angular' : 'Angular'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem32InBox}>
+                                    {item32InBox ? 'Remove Vue' : 'Vue'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem33InBox}>
+                                    {item33InBox ? 'Remove Node' : 'Node'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem34InBox}>
+                                    {item34InBox ? 'Remove Django' : 'Django'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem35InBox}>
+                                    {item35InBox ? 'Remove Flask' : 'Flask'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem36InBox}>
+                                    {item36InBox ? 'Remove Spring Boot' : 'Spring Boot'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem37InBox}>
+                                    {item37InBox ? 'Remove Laravel' : 'Laravel'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem38InBox}>
+                                    {item38InBox ? 'Remove Ruby on Rails' : 'Ruby on Rails'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem39InBox}>
+                                    {item39InBox ? 'Remove .NET Core' : '.NET Core'}
+                                </button>
+                            </div>
+                            <div className="col-md-3">
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem40InBox}>
+                                    {item40InBox ? 'Remove Dart' : 'Dart'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem41InBox}>
+                                    {item41InBox ? 'Remove Flutter' : 'Flutter'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem42InBox}>
+                                    {item42InBox ? 'Remove React Native' : 'React Native'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem43InBox}>
+                                    {item43InBox ? 'Remove Kotlin' : 'Kotlin'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem44InBox}>
+                                    {item44InBox ? 'Remove Android Jetpack' : 'Android Jetpack'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem45InBox}>
+                                    {item45InBox ? 'Remove Android Studio' : 'Android Studio'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem46InBox}>
+                                    {item46InBox ? 'Remove Swift' : 'Swift'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem47InBox}>
+                                    {item47InBox ? 'Remove SwiftUI' : 'SwiftUI'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem48InBox}>
+                                    {item48InBox ? 'Remove Ionic' : 'Ionic'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem49InBox}>
+                                    {item49InBox ? 'Remove Xcode' : 'Xcode'}
+                                </button>
+                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem50InBox}>
+                                    {item50InBox ? 'Remove Xamarin' : 'Xamarin'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+
+
+
+                <div class="enter_manual_submit">
                     <input type="submit" value="Next"/>
                 </div>
             </form>

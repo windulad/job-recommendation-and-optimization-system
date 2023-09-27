@@ -287,11 +287,9 @@ input[type=submit] {
 
 /* Enter manual */
 .enter_manual{
-  width: 75%; 
+  width: 90%; 
   margin: 50px auto; 
   padding: 15px;
-  border: 1px solid black;
-  border-radius: 5px;
 }
 
 .enter_manual_title{
@@ -344,7 +342,7 @@ input[type=text] {
 
 .enter_manual_submit{
   width: 100%;
-  margin: 2% auto;
+  margin: 30px auto;
   padding: 5px 5px;
   display: flex;
   justify-content: center;
@@ -352,20 +350,8 @@ input[type=text] {
 
 
 
-/*Card - inside the container*/
-.card {
-  width: 100px;
-  height: 50px;
-  background-color: #ffffff;
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 5px;
-  float: left;
-}
 
-/*Card - inside the box*/
+/*Card - inside the box
 .box-card {
   width: 150px;
   height: 50px;
@@ -378,10 +364,10 @@ input[type=text] {
   float: left;
 }
 
-/*Card container*/
+
 .card-container{
   width: 100%;
-  height: 50%;
+  height: 350px;
   background-color: #b6b6b6;
   border-radius: 5px;
   padding: 1px;
@@ -389,17 +375,34 @@ input[type=text] {
   border-radius: 5px;
   display: flexbox;
 }
+*/
+
+
+/*Card - inside the container*/
+.item-skill {
+  padding: 1px;
+  margin: 1px;
+  cursor: pointer;
+  text-align: center;
+  float: center;
+}
 
 /*Drop box*/
 .box {
   width: 100%;
-  height: 350px;
-  background-color: #ffffff;
-  border: 1px solid #000000;
+  height: 600px;
+  background-color: #e9e9e9;
+  border: 1px solid #c0c0c0;
   border-radius: 5px;
-  padding: 1px;
+  padding: 10px;
+  padding-top: 15px;
   margin: 10px auto;
   display: flexbox;
+}
+
+.card_button{
+  width: 150px;
+  margin: 1px;
 }
 
 .clear{
@@ -533,10 +536,12 @@ input[type=submit] {
 .card{
   width: 100%;
   text-align: left;
-  height: 100%;
+  margin: 5px auto;
 }
 .card-body{
-  margin-bottom: -25px;
+  height: 100%;
+  margin: 10px auto;
+  margin-bottom: -10px;
 }
 .card-text{
   font-size: 14px;

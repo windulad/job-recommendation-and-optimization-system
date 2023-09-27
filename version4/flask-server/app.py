@@ -265,7 +265,7 @@ def enter_manual_post():
     qualify_1=qualify_1_syear=qualify_1_eyear=qualify_1_notes=qualify_2=qualify_2_syear=qualify_2_eyear=qualify_2_notes=qualify_3=qualify_3_syear=qualify_3_eyear=qualify_3_notes=""
     project_1_title=project_1_desc=project_2_title=project_2_desc=project_3_title=project_3_desc=""
     job_1=job_1_syear=job_1_eyear=job_1_notes=job_2=job_2_syear=job_2_eyear=job_2_notes=job_3=job_3_syear=job_3_eyear=job_3_notes=""
-    skill1=skill2=skill3=skill4=skill5=skill6=skill7=skill8=skill9=skill10=skill11=skill12=skill13=skill14=skill15=skill16=skill17=skill18=skill19=skill20=skill21=skill22=skill23=skill24=skill25=skill26=skill27=skill28=skill29=skill30=skill31=skill32=skill33=skill34=skill35=skill36=skill37=skill38=skill39=skill40=skill41=skill42=skill43=skill44=skill45=skill46=skill47=skill48=skill49=skill50=""
+    skill1=skill2=skill3=skill4=skill5=skill6=skill7=skill8=skill9=skill10=skill11=skill12=skill13=skill14=skill15=skill16=skill17=skill18=skill19=skill20=skill21=skill22=skill23=skill24=skill25=skill26=skill27=skill28=skill29=skill30=skill31=skill32=skill33=skill34=skill35=skill36=skill37=skill38=skill39=skill40=skill41=skill42=skill43=skill44=skill45=skill46=skill47=skill48=skill49=skill50=False
     
     # Educational data (Max 3)
     qualify_1 = json_data['qualify_1']
@@ -310,70 +310,72 @@ def enter_manual_post():
     job_3_notes = json_data['job_3_notes']
 
     # Technologies 
-    skillCount = int(json_data['count'])
-    remainCount = 50 - skillCount
+    # skillCount = int(json_data['count'])
+    # remainCount = 50 - skillCount
 
-    jsonSkillData = []
+    # jsonSkillData = []
 
-    for i in range (skillCount):
-        skill = json_data['boxContent'][i]['id']
-        jsonSkillData.append(skill)
+    # for i in range (skillCount):
+    #     skill = json_data['boxContent'][i]['id']
+    #     jsonSkillData.append(skill)
 
-    for i in range (remainCount):
-        jsonSkillData.append("")
+    # for i in range (remainCount):
+    #     jsonSkillData.append("")
 
-    print(jsonSkillData)
+    # print(jsonSkillData)
 
-    skill1 = jsonSkillData[0]
-    skill2 = jsonSkillData[1]
-    skill3 = jsonSkillData[2]
-    skill4 = jsonSkillData[3]
-    skill5 = jsonSkillData[4]
-    skill6 = jsonSkillData[5]
-    skill7 = jsonSkillData[6]
-    skill8 = jsonSkillData[7]
-    skill9 = jsonSkillData[8]
-    skill10 = jsonSkillData[9]
-    skill11 = jsonSkillData[10]
-    skill12 = jsonSkillData[11]
-    skill13 = jsonSkillData[12]
-    skill14 = jsonSkillData[13]
-    skill15 = jsonSkillData[14]
-    skill16 = jsonSkillData[15]
-    skill17 = jsonSkillData[16]
-    skill18 = jsonSkillData[17]
-    skill19 = jsonSkillData[18]
-    skill20 = jsonSkillData[19]
-    skill21 = jsonSkillData[20]
-    skill22 = jsonSkillData[21]
-    skill23 = jsonSkillData[22]
-    skill24 = jsonSkillData[23]
-    skill25 = jsonSkillData[24]
-    skill26 = jsonSkillData[25]
-    skill27 = jsonSkillData[26]
-    skill28 = jsonSkillData[27]
-    skill29 = jsonSkillData[28]
-    skill30 = jsonSkillData[29]
-    skill31 = jsonSkillData[30]
-    skill32 = jsonSkillData[31]
-    skill33 = jsonSkillData[32]
-    skill34 = jsonSkillData[33]
-    skill35 = jsonSkillData[34]
-    skill36 = jsonSkillData[35]
-    skill37 = jsonSkillData[36]
-    skill38 = jsonSkillData[37]
-    skill39 = jsonSkillData[38]
-    skill40 = jsonSkillData[39]
-    skill41 = jsonSkillData[40]
-    skill42 = jsonSkillData[41]
-    skill43 = jsonSkillData[42]
-    skill44 = jsonSkillData[43]
-    skill45 = jsonSkillData[44]
-    skill46 = jsonSkillData[45]
-    skill47 = jsonSkillData[46]
-    skill48 = jsonSkillData[47]
-    skill49 = jsonSkillData[48]
-    skill50 = jsonSkillData[49]
+    skill1 = str(json_data['skill1'])
+    skill2 = str(json_data['skill2'])    
+    skill3 = str(json_data['skill3'])    
+    skill4 = str(json_data['skill4'])    
+    skill5 = str(json_data['skill5'])    
+    skill6 = str(json_data['skill6'])    
+    skill7 = str(json_data['skill7'])    
+    skill8 = str(json_data['skill8'])    
+    skill9 = str(json_data['skill9'])    
+    skill10 = str(json_data['skill10'])
+    skill11 = str(json_data['skill11'])
+    skill12 = str(json_data['skill12'])
+    skill13 = str(json_data['skill13'])
+    skill14 = str(json_data['skill14'])
+    skill15 = str(json_data['skill15'])
+    skill16 = str(json_data['skill16'])
+    skill17 = str(json_data['skill17'])
+    skill18 = str(json_data['skill18'])
+    skill19 = str(json_data['skill19'])
+    skill20 = str(json_data['skill20'])
+    skill21 = str(json_data['skill21'])
+    skill22 = str(json_data['skill22'])
+    skill23 = str(json_data['skill23'])
+    skill24 = str(json_data['skill24'])
+    skill25 = str(json_data['skill25'])
+    skill26 = str(json_data['skill26'])
+    skill27 = str(json_data['skill27'])
+    skill28 = str(json_data['skill28'])
+    skill29 = str(json_data['skill29'])
+    skill30 = str(json_data['skill30'])
+    skill31 = str(json_data['skill31'])
+    skill32 = str(json_data['skill32'])
+    skill33 = str(json_data['skill33'])
+    skill34 = str(json_data['skill34'])
+    skill35 = str(json_data['skill35'])
+    skill36 = str(json_data['skill36'])
+    skill37 = str(json_data['skill37'])
+    skill38 = str(json_data['skill38'])
+    skill39 = str(json_data['skill39'])
+    skill40 = str(json_data['skill40'])
+    skill41 = str(json_data['skill41'])
+    skill42 = str(json_data['skill42'])
+    skill43 = str(json_data['skill43'])
+    skill44 = str(json_data['skill44'])
+    skill45 = str(json_data['skill45'])
+    skill46 = str(json_data['skill46'])
+    skill47 = str(json_data['skill47'])
+    skill48 = str(json_data['skill48'])
+    skill49 = str(json_data['skill49'])
+    skill50 = str(json_data['skill50'])
+
+    print(skill50)
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
@@ -382,7 +384,7 @@ def enter_manual_post():
     # Insert the data into the table 'users_cvdata'
     cursor.execute("INSERT INTO users_cvdata (userid, qualify_1, qualify_1_syear, qualify_1_eyear, qualify_1_notes, qualify_2, qualify_2_syear, qualify_2_eyear, qualify_2_notes, qualify_3, qualify_3_syear, qualify_3_eyear, qualify_3_notes, project_1_title, project_1_desc, project_2_title, project_2_desc, project_3_title, project_3_desc, job_1, job_1_syear, job_1_eyear, job_1_notes, job_2, job_2_syear, job_2_eyear, job_2_notes, job_3, job_3_syear, job_3_eyear, job_3_notes) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(user_id, qualify_1, qualify_1_syear, qualify_1_eyear, qualify_1_notes, qualify_2, qualify_2_syear, qualify_2_eyear, qualify_2_notes, qualify_3, qualify_3_syear, qualify_3_eyear, qualify_3_notes, project_1_title, project_1_desc, project_2_title, project_2_desc, project_3_title, project_3_desc, job_1, job_1_syear, job_1_eyear, job_1_notes, job_2, job_2_syear, job_2_eyear, job_2_notes, job_3, job_3_syear, job_3_eyear, job_3_notes))
     # Insert the data into the table 'users_skilldata'
-    cursor.execute("INSERT INTO users_skilldata (userid, skillCount, skill_1, skill_2, skill_3, skill_4, skill_5, skill_6, skill_7, skill_8, skill_9, skill_10, skill_11, skill_12, skill_13, skill_14, skill_15, skill_16, skill_17, skill_18, skill_19, skill_20, skill_21, skill_22, skill_23, skill_24, skill_25, skill_26, skill_27, skill_28, skill_29, skill_30, skill_31, skill_32, skill_33, skill_34, skill_35, skill_36, skill_37, skill_38, skill_39, skill_40, skill_41, skill_42, skill_43, skill_44, skill_45, skill_46, skill_47, skill_48, skill_49, skill_50) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(user_id, skillCount, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11, skill12, skill13, skill14, skill15, skill16, skill17, skill18, skill19, skill20, skill21, skill22, skill23, skill24, skill25, skill26, skill27, skill28, skill29, skill30, skill31, skill32, skill33, skill34, skill35, skill36, skill37, skill38, skill39, skill40, skill41, skill42, skill43, skill44, skill45, skill46, skill47, skill48, skill49, skill50))
+    cursor.execute("INSERT INTO users_skilldata (userid, skill_1, skill_2, skill_3, skill_4, skill_5, skill_6, skill_7, skill_8, skill_9, skill_10, skill_11, skill_12, skill_13, skill_14, skill_15, skill_16, skill_17, skill_18, skill_19, skill_20, skill_21, skill_22, skill_23, skill_24, skill_25, skill_26, skill_27, skill_28, skill_29, skill_30, skill_31, skill_32, skill_33, skill_34, skill_35, skill_36, skill_37, skill_38, skill_39, skill_40, skill_41, skill_42, skill_43, skill_44, skill_45, skill_46, skill_47, skill_48, skill_49, skill_50) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(user_id, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11, skill12, skill13, skill14, skill15, skill16, skill17, skill18, skill19, skill20, skill21, skill22, skill23, skill24, skill25, skill26, skill27, skill28, skill29, skill30, skill31, skill32, skill33, skill34, skill35, skill36, skill37, skill38, skill39, skill40, skill41, skill42, skill43, skill44, skill45, skill46, skill47, skill48, skill49, skill50))
     
     # Disconnect from 'user_data.db' database
     connection.commit()
@@ -404,6 +406,12 @@ def crosscheck_get():
     user_id = json_data['value']
 
     print(json_data)
+
+    # Initialize values
+    qualify_1=qualify_1_syear=qualify_1_eyear=qualify_1_notes=qualify_2=qualify_2_syear=qualify_2_eyear=qualify_2_notes=qualify_3=qualify_3_syear=qualify_3_eyear=qualify_3_notes=""
+    project_1_title=project_1_desc=project_2_title=project_2_desc=project_3_title=project_3_desc=""
+    job_1=job_1_syear=job_1_eyear=job_1_notes=job_2=job_2_syear=job_2_eyear=job_2_notes=job_3=job_3_syear=job_3_eyear=job_3_notes=""
+    skill1=skill2=skill3=skill4=skill5=skill6=skill7=skill8=skill9=skill10=skill11=skill12=skill13=skill14=skill15=skill16=skill17=skill18=skill19=skill20=skill21=skill22=skill23=skill24=skill25=skill26=skill27=skill28=skill29=skill30=skill31=skill32=skill33=skill34=skill35=skill36=skill37=skill38=skill39=skill40=skill41=skill42=skill43=skill44=skill45=skill46=skill47=skill48=skill49=skill50=False
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
@@ -473,58 +481,56 @@ def crosscheck_get():
     job_3_eyear = users_cvdata[29]
 
     # Skill data
-    skillCount = users_skilldata[1]
-
-    skill1 = users_skilldata[2]
-    skill2 = users_skilldata[3]
-    skill3 = users_skilldata[4]
-    skill4 = users_skilldata[5]
-    skill5 = users_skilldata[6]
-    skill6 = users_skilldata[7]
-    skill7 = users_skilldata[8]
-    skill8 = users_skilldata[9]
-    skill9 = users_skilldata[10]
-    skill10 = users_skilldata[11]
-    skill11 = users_skilldata[12]
-    skill12 = users_skilldata[13]
-    skill13 = users_skilldata[14]
-    skill14 = users_skilldata[15]
-    skill15 = users_skilldata[16]
-    skill16 = users_skilldata[17]
-    skill17 = users_skilldata[18]
-    skill18 = users_skilldata[19]
-    skill19 = users_skilldata[20]
-    skill20 = users_skilldata[21]
-    skill21 = users_skilldata[22]
-    skill22 = users_skilldata[23]
-    skill23 = users_skilldata[24]
-    skill24 = users_skilldata[25]
-    skill25 = users_skilldata[26]
-    skill26 = users_skilldata[27]
-    skill27 = users_skilldata[28]
-    skill28 = users_skilldata[29]
-    skill29 = users_skilldata[30]
-    skill30 = users_skilldata[31]
-    skill31 = users_skilldata[32]
-    skill32 = users_skilldata[33]
-    skill33 = users_skilldata[34]
-    skill34 = users_skilldata[35]
-    skill35 = users_skilldata[36]
-    skill36 = users_skilldata[37]
-    skill37 = users_skilldata[38]
-    skill38 = users_skilldata[39]
-    skill39 = users_skilldata[40]
-    skill40 = users_skilldata[41]
-    skill41 = users_skilldata[42]
-    skill42 = users_skilldata[43]
-    skill43 = users_skilldata[44]
-    skill44 = users_skilldata[45]
-    skill45 = users_skilldata[46]
-    skill46 = users_skilldata[47]
-    skill47 = users_skilldata[48]
-    skill48 = users_skilldata[49]
-    skill49 = users_skilldata[50]
-    skill50 = users_skilldata[51]
+    skill1 = eval(users_skilldata[1])
+    skill2 = eval(users_skilldata[2])    
+    skill3 = eval(users_skilldata[3])    
+    skill4 = eval(users_skilldata[4])    
+    skill5 = eval(users_skilldata[5])    
+    skill6 = eval(users_skilldata[6])    
+    skill7 = eval(users_skilldata[7])    
+    skill8 = eval(users_skilldata[8])    
+    skill9 = eval(users_skilldata[9])    
+    skill10 = eval(users_skilldata[10])
+    skill11 = eval(users_skilldata[11])
+    skill12 = eval(users_skilldata[12])
+    skill13 = eval(users_skilldata[13])
+    skill14 = eval(users_skilldata[14])
+    skill15 = eval(users_skilldata[15])
+    skill16 = eval(users_skilldata[16])
+    skill17 = eval(users_skilldata[17])
+    skill18 = eval(users_skilldata[18])
+    skill19 = eval(users_skilldata[19])
+    skill20 = eval(users_skilldata[20])
+    skill21 = eval(users_skilldata[21])
+    skill22 = eval(users_skilldata[22])
+    skill23 = eval(users_skilldata[23])
+    skill24 = eval(users_skilldata[24])
+    skill25 = eval(users_skilldata[25])
+    skill26 = eval(users_skilldata[26])
+    skill27 = eval(users_skilldata[27])
+    skill28 = eval(users_skilldata[28])
+    skill29 = eval(users_skilldata[29])
+    skill30 = eval(users_skilldata[30])
+    skill31 = eval(users_skilldata[31])
+    skill32 = eval(users_skilldata[32])
+    skill33 = eval(users_skilldata[33])
+    skill34 = eval(users_skilldata[34])
+    skill35 = eval(users_skilldata[35])
+    skill36 = eval(users_skilldata[36])
+    skill37 = eval(users_skilldata[37])
+    skill38 = eval(users_skilldata[38])
+    skill39 = eval(users_skilldata[39])
+    skill40 = eval(users_skilldata[40])
+    skill41 = eval(users_skilldata[41])
+    skill42 = eval(users_skilldata[42])
+    skill43 = eval(users_skilldata[43])
+    skill44 = eval(users_skilldata[44])
+    skill45 = eval(users_skilldata[45])
+    skill46 = eval(users_skilldata[46])
+    skill47 = eval(users_skilldata[47])
+    skill48 = eval(users_skilldata[48])
+    skill49 = eval(users_skilldata[49])
+    skill50 = eval(users_skilldata[50])
 
     # Return a response to the client
     data = []
@@ -634,8 +640,8 @@ def crosscheck_post():
     qualify_1=qualify_1_syear=qualify_1_eyear=qualify_2=qualify_2_syear=qualify_2_eyear=qualify_3=qualify_3_syear=qualify_3_eyear=""
     project_1_title=project_2_title=project_3_title=""
     job_1=job_1_syear=job_1_eyear=job_2=job_2_syear=job_2_eyear=job_3=job_3_syear=job_3_eyear=""
-    #skill1=skill2=skill3=skill4=skill5=skill6=skill7=skill8=skill9=skill10=skill11=skill12=skill13=skill14=skill15=skill16=skill17=skill18=skill19=skill20=skill21=skill22=skill23=skill24=skill25=skill26=skill27=skill28=skill29=skill30=skill31=skill32=skill33=skill34=skill35=skill36=skill37=skill38=skill39=skill40=skill41=skill42=skill43=skill44=skill45=skill46=skill47=skill48=skill49=skill50=""
-    
+    skill1=skill2=skill3=skill4=skill5=skill6=skill7=skill8=skill9=skill10=skill11=skill12=skill13=skill14=skill15=skill16=skill17=skill18=skill19=skill20=skill21=skill22=skill23=skill24=skill25=skill26=skill27=skill28=skill29=skill30=skill31=skill32=skill33=skill34=skill35=skill36=skill37=skill38=skill39=skill40=skill41=skill42=skill43=skill44=skill45=skill46=skill47=skill48=skill49=skill50=False
+
     # Educational data (Max 3)
     qualify_1 = json_data['qualify_1']
     qualify_1_syear = json_data['qualify_1_syear']
@@ -667,71 +673,56 @@ def crosscheck_post():
     job_3_syear = json_data['job_3_syear']
     job_3_eyear = json_data['job_3_eyear']
 
-    # # Technologies 
-    # skillCount = int(json_data['count'])
-    # remainCount = 50 - skillCount
-
-    # jsonSkillData = []
-
-    # for i in range (skillCount):
-    #     skill = json_data['boxContent'][i]['id']
-    #     jsonSkillData.append(skill)
-
-    # for i in range (remainCount):
-    #     jsonSkillData.append("")
-
-    # print(jsonSkillData)
-
-    # skill1 = jsonSkillData[0]
-    # skill2 = jsonSkillData[1]
-    # skill3 = jsonSkillData[2]
-    # skill4 = jsonSkillData[3]
-    # skill5 = jsonSkillData[4]
-    # skill6 = jsonSkillData[5]
-    # skill7 = jsonSkillData[6]
-    # skill8 = jsonSkillData[7]
-    # skill9 = jsonSkillData[8]
-    # skill10 = jsonSkillData[9]
-    # skill11 = jsonSkillData[10]
-    # skill12 = jsonSkillData[11]
-    # skill13 = jsonSkillData[12]
-    # skill14 = jsonSkillData[13]
-    # skill15 = jsonSkillData[14]
-    # skill16 = jsonSkillData[15]
-    # skill17 = jsonSkillData[16]
-    # skill18 = jsonSkillData[17]
-    # skill19 = jsonSkillData[18]
-    # skill20 = jsonSkillData[19]
-    # skill21 = jsonSkillData[20]
-    # skill22 = jsonSkillData[21]
-    # skill23 = jsonSkillData[22]
-    # skill24 = jsonSkillData[23]
-    # skill25 = jsonSkillData[24]
-    # skill26 = jsonSkillData[25]
-    # skill27 = jsonSkillData[26]
-    # skill28 = jsonSkillData[27]
-    # skill29 = jsonSkillData[28]
-    # skill30 = jsonSkillData[29]
-    # skill31 = jsonSkillData[30]
-    # skill32 = jsonSkillData[31]
-    # skill33 = jsonSkillData[32]
-    # skill34 = jsonSkillData[33]
-    # skill35 = jsonSkillData[34]
-    # skill36 = jsonSkillData[35]
-    # skill37 = jsonSkillData[36]
-    # skill38 = jsonSkillData[37]
-    # skill39 = jsonSkillData[38]
-    # skill40 = jsonSkillData[39]
-    # skill41 = jsonSkillData[40]
-    # skill42 = jsonSkillData[41]
-    # skill43 = jsonSkillData[42]
-    # skill44 = jsonSkillData[43]
-    # skill45 = jsonSkillData[44]
-    # skill46 = jsonSkillData[45]
-    # skill47 = jsonSkillData[46]
-    # skill48 = jsonSkillData[47]
-    # skill49 = jsonSkillData[48]
-    # skill50 = jsonSkillData[49]
+    skill1 = str(json_data['skill1'])
+    skill2 = str(json_data['skill2'])    
+    skill3 = str(json_data['skill3'])    
+    skill4 = str(json_data['skill4'])    
+    skill5 = str(json_data['skill5'])    
+    skill6 = str(json_data['skill6'])    
+    skill7 = str(json_data['skill7'])    
+    skill8 = str(json_data['skill8'])    
+    skill9 = str(json_data['skill9'])    
+    skill10 = str(json_data['skill10'])
+    skill11 = str(json_data['skill11'])
+    skill12 = str(json_data['skill12'])
+    skill13 = str(json_data['skill13'])
+    skill14 = str(json_data['skill14'])
+    skill15 = str(json_data['skill15'])
+    skill16 = str(json_data['skill16'])
+    skill17 = str(json_data['skill17'])
+    skill18 = str(json_data['skill18'])
+    skill19 = str(json_data['skill19'])
+    skill20 = str(json_data['skill20'])
+    skill21 = str(json_data['skill21'])
+    skill22 = str(json_data['skill22'])
+    skill23 = str(json_data['skill23'])
+    skill24 = str(json_data['skill24'])
+    skill25 = str(json_data['skill25'])
+    skill26 = str(json_data['skill26'])
+    skill27 = str(json_data['skill27'])
+    skill28 = str(json_data['skill28'])
+    skill29 = str(json_data['skill29'])
+    skill30 = str(json_data['skill30'])
+    skill31 = str(json_data['skill31'])
+    skill32 = str(json_data['skill32'])
+    skill33 = str(json_data['skill33'])
+    skill34 = str(json_data['skill34'])
+    skill35 = str(json_data['skill35'])
+    skill36 = str(json_data['skill36'])
+    skill37 = str(json_data['skill37'])
+    skill38 = str(json_data['skill38'])
+    skill39 = str(json_data['skill39'])
+    skill40 = str(json_data['skill40'])
+    skill41 = str(json_data['skill41'])
+    skill42 = str(json_data['skill42'])
+    skill43 = str(json_data['skill43'])
+    skill44 = str(json_data['skill44'])
+    skill45 = str(json_data['skill45'])
+    skill46 = str(json_data['skill46'])
+    skill47 = str(json_data['skill47'])
+    skill48 = str(json_data['skill48'])
+    skill49 = str(json_data['skill49'])
+    skill50 = str(json_data['skill50'])
 
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
@@ -741,31 +732,14 @@ def crosscheck_post():
     cursor.execute("UPDATE users_cvdata SET qualify_1=?, qualify_1_syear=?, qualify_1_eyear=?, qualify_2=?, qualify_2_syear=?, qualify_2_eyear=?, qualify_3=?, qualify_3_syear=?, qualify_3_eyear=?, project_1_title=?, project_2_title=?, project_3_title=?, job_1=?, job_1_syear=?, job_1_eyear=?, job_2=?, job_2_syear=?, job_2_eyear=?, job_3=?, job_3_syear=?, job_3_eyear=? WHERE userid=?",(qualify_1, qualify_1_syear, qualify_1_eyear, qualify_2, qualify_2_syear, qualify_2_eyear, qualify_3, qualify_3_syear, qualify_3_eyear, project_1_title, project_2_title, project_3_title, job_1, job_1_syear, job_1_eyear, job_2, job_2_syear, job_2_eyear, job_3, job_3_syear, job_3_eyear, user_id))
     
     # Update the data into the table 'users_skilldata'
-    # cursor.execute("INSERT INTO users_skilldata (userid, skillCount, skill_1, skill_2, skill_3, skill_4, skill_5, skill_6, skill_7, skill_8, skill_9, skill_10, skill_11, skill_12, skill_13, skill_14, skill_15, skill_16, skill_17, skill_18, skill_19, skill_20, skill_21, skill_22, skill_23, skill_24, skill_25, skill_26, skill_27, skill_28, skill_29, skill_30, skill_31, skill_32, skill_33, skill_34, skill_35, skill_36, skill_37, skill_38, skill_39, skill_40, skill_41, skill_42, skill_43, skill_44, skill_45, skill_46, skill_47, skill_48, skill_49, skill_50) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",(user_id, skillCount, skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11, skill12, skill13, skill14, skill15, skill16, skill17, skill18, skill19, skill20, skill21, skill22, skill23, skill24, skill25, skill26, skill27, skill28, skill29, skill30, skill31, skill32, skill33, skill34, skill35, skill36, skill37, skill38, skill39, skill40, skill41, skill42, skill43, skill44, skill45, skill46, skill47, skill48, skill49, skill50))
+    cursor.execute("UPDATE users_skilldata SET skill_1=?, skill_2=?, skill_3=?, skill_4=?, skill_5=?, skill_6=?, skill_7=?, skill_8=?, skill_9=?, skill_10=?, skill_11=?, skill_12=?, skill_13=?, skill_14=?, skill_15=?, skill_16=?, skill_17=?, skill_18=?, skill_19=?, skill_20=?, skill_21=?, skill_22=?, skill_23=?, skill_24=?, skill_25=?, skill_26=?, skill_27=?, skill_28=?, skill_29=?, skill_30=?, skill_31=?, skill_32=?, skill_33=?, skill_34=?, skill_35=?, skill_36=?, skill_37=?, skill_38=?, skill_39=?, skill_40=?, skill_41=?, skill_42=?, skill_43=?, skill_44=?, skill_45=?, skill_46=?, skill_47=?, skill_48=?, skill_49=?, skill_50=? WHERE userid=?",(skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8, skill9, skill10, skill11, skill12, skill13, skill14, skill15, skill16, skill17, skill18, skill19, skill20, skill21, skill22, skill23, skill24, skill25, skill26, skill27, skill28, skill29, skill30, skill31, skill32, skill33, skill34, skill35, skill36, skill37, skill38, skill39, skill40, skill41, skill42, skill43, skill44, skill45, skill46, skill47, skill48, skill49, skill50, user_id))
     
     # Disconnect from 'user_data.db' database
     connection.commit()
 
     # # # POSITION ELIGIBILITY CALCULATION -------------------------
-    # Retrieve users_cvdata
-    query = "SELECT * FROM users_cvdata WHERE userid='"+user_id+"'"
-    cursor.execute(query)
-    usersCvData = cursor.fetchone()
-
-    # Educational data (Max 3)
-    qualify_1 = usersCvData[1]
-    qualify_2 = usersCvData[5]
-    qualify_3 = usersCvData[9]
-
-    # Project data (Max 3)
-    project_1_title = usersCvData[13]
-    project_2_title = usersCvData[15]
-    project_3_title = usersCvData[17]
-
-    # Past experience (Max 3)
-    job_1 = usersCvData[19]
-    job_2 = usersCvData[23]
-    job_3 = usersCvData[27]
+    # # Retrieve users_cvdata
+    # query = "SELECT * FROM users_cvdata WHERE userid='"+user_id+"'"
 
     # calculate score_qualify_1
     if (qualify_1 == 'High school'):
@@ -844,17 +818,118 @@ def crosscheck_post():
     # Retrieve users_skilldata
     query = "SELECT * FROM users_skilldata WHERE userid='"+user_id+"'"
     cursor.execute(query)
-    usersSkillData = cursor.fetchone()
+    users_skilldata = cursor.fetchone()
+
+    # print(users_skilldata)
 
     # Get element count
-    count_user_skills = usersSkillData[1]
+    # count_user_skills = usersSkillData[1]
 
     # Get user_skills
     user_skills = []
 
-    for i in range (2, count_user_skills + 2):
-        skill = usersSkillData[i]
-        user_skills.append(skill)
+    if (skill1 == 'True'):
+        user_skills.append('C')
+    if (skill2 == 'True'):
+        user_skills.append('Cpp')
+    if (skill3 == 'True'):
+        user_skills.append('Csharp')
+    if (skill4 == 'True'):
+        user_skills.append('Java')
+    if (skill5 == 'True'):
+        user_skills.append('Python')
+    if (skill6 == 'True'):
+        user_skills.append('PHP')
+    if (skill7 == 'True'):
+        user_skills.append('Go')
+    if (skill8 == 'True'):
+        user_skills.append('SQL')
+    if (skill9 == 'True'):
+        user_skills.append('MySQL')
+    if (skill10 == 'True'):
+        user_skills.append('PostgreSQL')
+    if (skill11 == 'True'):
+        user_skills.append('MongoDB')
+    if (skill12 == 'True'):
+        user_skills.append('SQL Server')
+    if (skill13 == 'True'):
+        user_skills.append('Oracle SQL')
+    if (skill14 == 'True'):
+        user_skills.append('Git')
+    if (skill15 == 'True'):
+        user_skills.append('GitHub')
+    if (skill16 == 'True'):
+        user_skills.append('GitLab')
+    if (skill17 == 'True'):
+        user_skills.append('AWS')
+    if (skill18 == 'True'):
+        user_skills.append('Azure')
+    if (skill19 == 'True'):
+        user_skills.append('GCP')
+    if (skill20 == 'True'):
+        user_skills.append('Postman')
+    if (skill21 == 'True'):
+        user_skills.append('Twilio')
+    if (skill22 == 'True'):
+        user_skills.append('Docker')
+    if (skill23 == 'True'):
+        user_skills.append('Kubernetes')
+    if (skill24 == 'True'):
+        user_skills.append('HTML')
+    if (skill25 == 'True'):
+        user_skills.append('CSS')
+    if (skill26 == 'True'):
+        user_skills.append('Bootstrap')
+    if (skill27 == 'True'):
+        user_skills.append('Tailwind')
+    if (skill28 == 'True'):
+        user_skills.append('JavaScript')
+    if (skill29 == 'True'):
+        user_skills.append('TypeScript')
+    if (skill30 == 'True'):
+        user_skills.append('React')
+    if (skill31 == 'True'):
+        user_skills.append('Angular')
+    if (skill32 == 'True'):
+        user_skills.append('Vue')
+    if (skill33 == 'True'):
+        user_skills.append('Node')
+    if (skill34 == 'True'):
+        user_skills.append('Django')
+    if (skill35 == 'True'):
+        user_skills.append('Flask')
+    if (skill36 == 'True'):
+        user_skills.append('Spring Boot')
+    if (skill37 == 'True'):
+        user_skills.append('Laravel')
+    if (skill38 == 'True'):
+        user_skills.append('Ruby on Rails')
+    if (skill39 == 'True'):
+        user_skills.append('.NET Core')
+    if (skill40 == 'True'):
+        user_skills.append('Dart')
+    if (skill41 == 'True'):
+        user_skills.append('Flutter')
+    if (skill42 == 'True'):
+        user_skills.append('React Native')
+    if (skill43 == 'True'):
+        user_skills.append('Kotlin')
+    if (skill44 == 'True'):
+        user_skills.append('Android Jetpack')
+    if (skill45 == 'True'):
+        user_skills.append('Android Studio')
+    if (skill46 == 'True'):
+        user_skills.append('Swift')
+    if (skill47 == 'True'):
+        user_skills.append('SwiftUI')
+    if (skill48 == 'True'):
+        user_skills.append('Ionic')
+    if (skill49 == 'True'):
+        user_skills.append('Xcode')
+    if (skill50 == 'True'):
+        user_skills.append('Xamarin')
+
+    count_user_skills = len(user_skills)
 
     # Calculate score_usersSkillData
     score_usersSkillData_final = float((count_user_skills / 50) * 35)
@@ -966,6 +1041,14 @@ def homepage():
     # Get the data from user
     user_id = json_data['value']
 
+    # Unpack skills from miss_skills_software_eng list
+    software_eng_miss_1=software_eng_miss_2=software_eng_miss_3=software_eng_miss_4=software_eng_miss_5=software_eng_miss_6=software_eng_miss_7=software_eng_miss_8=software_eng_miss_9=software_eng_miss_10=software_eng_miss_11=software_eng_miss_12=software_eng_miss_13=software_eng_miss_14=software_eng_miss_15=software_eng_miss_16=software_eng_miss_17=software_eng_miss_18=software_eng_miss_19=software_eng_miss_20=software_eng_miss_21=software_eng_miss_22=software_eng_miss_23 = ''
+    front_end_eng_miss_1=front_end_eng_miss_2=front_end_eng_miss_3=front_end_eng_miss_4=front_end_eng_miss_5=front_end_eng_miss_6=front_end_eng_miss_7=front_end_eng_miss_8=front_end_eng_miss_9 = ''
+    back_end_eng_miss_1=back_end_eng_miss_2=back_end_eng_miss_3=back_end_eng_miss_4=back_end_eng_miss_5=back_end_eng_miss_6=back_end_eng_miss_7 = ''
+    android_eng_miss_1=android_eng_miss_2=android_eng_miss_3=android_eng_miss_4=android_eng_miss_5=android_eng_miss_6 = ''
+    ios_eng_miss_1=ios_eng_miss_2=ios_eng_miss_3=ios_eng_miss_4=ios_eng_miss_5 = ''
+
+
     # Connect to 'user_data.db' database
     connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
@@ -989,9 +1072,133 @@ def homepage():
     score_android_eng = data[5]
     score_ios_eng = data[6]
 
-    # Connect to 'user_data.db' database
-    connection = sqlite3.connect(DATABASE)
-    cursor = connection.cursor()
+    software_eng_miss_1 = data[7]
+    software_eng_miss_2 = data[8] 
+    software_eng_miss_3 = data[9] 
+    software_eng_miss_4 = data[10] 
+    software_eng_miss_5 = data[11] 
+    software_eng_miss_6 = data[12] 
+    software_eng_miss_7 = data[13] 
+    software_eng_miss_8 = data[14] 
+    software_eng_miss_9 = data[15] 
+    software_eng_miss_10 = data[16] 
+    software_eng_miss_11 = data[17] 
+    software_eng_miss_12 = data[18] 
+    software_eng_miss_13 = data[19] 
+    software_eng_miss_14 = data[20] 
+    software_eng_miss_15 = data[21] 
+    software_eng_miss_16 = data[22] 
+    software_eng_miss_17 = data[23] 
+    software_eng_miss_18 = data[24] 
+    software_eng_miss_19 = data[25] 
+    software_eng_miss_20 = data[26] 
+    software_eng_miss_21 = data[27] 
+    software_eng_miss_22 = data[28] 
+    software_eng_miss_23 = data[29] 
+
+    front_end_eng_miss_1 = data[30]
+    front_end_eng_miss_2 = data[31]
+    front_end_eng_miss_3 = data[32]
+    front_end_eng_miss_4 = data[33]
+    front_end_eng_miss_5 = data[34]
+    front_end_eng_miss_6 = data[35]
+    front_end_eng_miss_7 = data[36]
+    front_end_eng_miss_8 = data[37]
+    front_end_eng_miss_9 = data[38]
+
+    back_end_eng_miss_1 = data[39]
+    back_end_eng_miss_2 = data[40]
+    back_end_eng_miss_3 = data[41]
+    back_end_eng_miss_4 = data[42]
+    back_end_eng_miss_5 = data[43]
+    back_end_eng_miss_6 = data[44]
+    back_end_eng_miss_7 = data[45]
+
+    android_eng_miss_1 = data[46]
+    android_eng_miss_2 = data[47]
+    android_eng_miss_3 = data[48]
+    android_eng_miss_4 = data[49]
+    android_eng_miss_5 = data[50]
+    android_eng_miss_6 = data[51]
+
+    ios_eng_miss_1 = data[52]
+    ios_eng_miss_2 = data[53]
+    ios_eng_miss_3 = data[54]
+    ios_eng_miss_4 = data[55]
+    ios_eng_miss_5 = data[56]
+
+    software_eng_miss = [software_eng_miss_1,software_eng_miss_2,software_eng_miss_3,software_eng_miss_4,software_eng_miss_5,software_eng_miss_6,software_eng_miss_7,software_eng_miss_8,software_eng_miss_9,software_eng_miss_10,software_eng_miss_11,software_eng_miss_12,software_eng_miss_13,software_eng_miss_14,software_eng_miss_15,software_eng_miss_16,software_eng_miss_17,software_eng_miss_18,software_eng_miss_19,software_eng_miss_20,software_eng_miss_21,software_eng_miss_22,software_eng_miss_23]
+    software_eng_miss_final = ' '.join(software_eng_miss).split()
+    software_eng_miss_count = len(software_eng_miss_final)
+
+    front_end_eng_miss = [front_end_eng_miss_1,front_end_eng_miss_2,front_end_eng_miss_3,front_end_eng_miss_4,front_end_eng_miss_5,front_end_eng_miss_6,front_end_eng_miss_7,front_end_eng_miss_8,front_end_eng_miss_9]
+    front_end_eng_miss_final = ' '.join(front_end_eng_miss).split()
+    front_end_eng_miss_count = len(front_end_eng_miss_final)
+
+    back_end_eng_miss = [back_end_eng_miss_1,back_end_eng_miss_2,back_end_eng_miss_3,back_end_eng_miss_4,back_end_eng_miss_5,back_end_eng_miss_6,back_end_eng_miss_7]
+    back_end_eng_miss_final = ' '.join(back_end_eng_miss).split()
+    back_end_eng_miss_count = len(back_end_eng_miss_final)
+
+    android_eng_miss = [android_eng_miss_1,android_eng_miss_2,android_eng_miss_3,android_eng_miss_4,android_eng_miss_5,android_eng_miss_6]
+    android_eng_miss_final = ' '.join(android_eng_miss).split()
+    android_eng_miss_count = len(android_eng_miss_final)
+
+    ios_eng_miss = [ios_eng_miss_1,ios_eng_miss_2,ios_eng_miss_3,ios_eng_miss_4,ios_eng_miss_5]
+    ios_eng_miss_final = ' '.join(ios_eng_miss).split()
+    ios_eng_miss_count = len(ios_eng_miss_final)
+
+    # Prepare position data
+    if (score_software_eng != 0.0):
+        job_1_title = 'Software Engineer'
+        job_1_score = score_software_eng
+        job_1_miss_count = software_eng_miss_count
+        job_1_miss = str(software_eng_miss_final)
+        job_1 = [job_1_title, job_1_score, job_1_miss_count, job_1_miss]
+    else:
+        job_1 = ''
+    #print(job_1)
+
+    if (score_front_end_eng != 0.0):
+        job_2_title = 'Front-End Engineer'
+        job_2_score = score_front_end_eng
+        job_2_miss_count = front_end_eng_miss_count
+        job_2_miss = str(front_end_eng_miss_final)
+        job_2 = [job_2_title, job_2_score, job_2_miss_count, job_2_miss]
+    else:
+        job_2 = ''
+    #print(job_2)
+
+    if (score_back_end_eng != 0.0):
+        job_3_title = 'Back-End Engineer'
+        job_3_score = score_back_end_eng
+        job_3_miss_count = back_end_eng_miss_count
+        job_3_miss = str(back_end_eng_miss_final)
+        job_3 = [job_3_title, job_3_score, job_3_miss_count, job_3_miss]
+    else:
+        job_3 = ''
+    #print(job_3)
+
+    if (score_android_eng != 0.0):
+        job_4_title = 'Android Engineer'
+        job_4_score = score_android_eng
+        job_4_miss_count = android_eng_miss_count
+        job_4_miss = str(android_eng_miss_final)
+        job_4 = [job_4_title, job_4_score, job_4_miss_count, job_4_miss]
+    else:
+        job_4 = ''
+    #print(job_4)
+
+    if (score_ios_eng != 0.0):
+        job_5_title = 'IOS Engineer'
+        job_5_score = score_ios_eng
+        job_5_miss_count = ios_eng_miss_count
+        job_5_miss = str(ios_eng_miss_final)
+        job_5 = [job_5_title, job_5_score, job_5_miss_count, job_5_miss]
+    else:
+        job_5 = ''
+    #print(job_5)
+
+
 
     # Retrieve stored data from table
     if (score_software_eng != 0.0):
@@ -1050,11 +1257,11 @@ def homepage():
         'session_value': user_id,
         'fname': fname,
         'user_score': user_score,
-        'score_software_eng': score_software_eng,
-        'score_front_end_eng': score_front_end_eng,
-        'score_back_end_eng': score_back_end_eng,
-        'score_android_eng': score_android_eng,
-        'score_ios_eng': score_ios_eng,
+        'job_1': job_1,
+        'job_2': job_2,
+        'job_3': job_3,
+        'job_4': job_4,
+        'job_5': job_5
     })
 
     for combined_data_1 in combined_data:

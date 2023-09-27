@@ -10,7 +10,7 @@ function Home(){
 
     const [sessionVal, setSessionVal] = useState(null)
 
-    // GET session_value from 'Entercv.js' OR 'Entermanual.js'
+    // GET session_value from 'Home.js'
     const location = useLocation();
     const { state } = location;
     const session_value = state.user_id;
@@ -57,10 +57,6 @@ function Home(){
         navigate('/learn',  {state: data});
     }
 
-    const handleclick3 = () => {
-        navigate('/profile',  {state: data});
-    }
-
     const handleclick5 = () => {
         navigate('/');
     }
@@ -75,7 +71,6 @@ function Home(){
                 <ul class="home_topnav">
                 <li><a onClick={handleclick1}>Home</a></li>
                     <li><a onClick={handleclick2}>Learn</a></li>
-                    <li><a onClick={handleclick3}>Profile</a></li>
                     <li style={{float:"right"}}><a onClick={handleclick5}>Log out</a></li>
                 </ul>
             </div>
