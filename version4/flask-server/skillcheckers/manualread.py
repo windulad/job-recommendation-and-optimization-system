@@ -19,12 +19,12 @@ def ManualRead(user_skills):
         "Oracle SQL",
         "Git",
         "GitHub",
-        "GitLab"
+        "GitLab",
         "AWS",
         "Azure",
         "GCP",
         "Postman",
-        "Twilio"
+        "Twilio",
         "Docker",
         "Kubernetes"
     ]

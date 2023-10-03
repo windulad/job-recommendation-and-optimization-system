@@ -6,7 +6,7 @@ const SERVER_URL = 'http://127.0.0.1:5000';
 function Home(){
     const navigate = useNavigate();
 
-    const [responseData, setResponseData] = useState(null);
+    //const [responseData, setResponseData] = useState(null);
 
     const [fname, setFname] = useState('');
     const [user_score, setUser_score] = useState('');
@@ -16,24 +16,32 @@ function Home(){
     const [job_4, setjob_4] = useState('');
     const [job_5, setjob_5] = useState('');
 
-
-    const [job_1_list, setjob_1_list] = useState(null);
-    const [job_2_list, setjob_2_list] = useState(null);
-    const [job_3_list, setjob_3_list] = useState(null);
-    const [job_4_list, setjob_4_list] = useState(null);
-    const [job_5_list, setjob_5_list] = useState(null);
+    const [job_1_list, setjob_1_list] = useState('');
+    const [job_2_list, setjob_2_list] = useState('');
+    const [job_3_list, setjob_3_list] = useState('');
+    const [job_4_list, setjob_4_list] = useState('');
+    const [job_5_list, setjob_5_list] = useState('');
 
     const [renderCard1, setRenderCard1] = useState(false);
     const [renderCard2, setRenderCard2] = useState(false);
     const [renderCard3, setRenderCard3] = useState(false);
     const [renderCard4, setRenderCard4] = useState(false);
     const [renderCard5, setRenderCard5] = useState(false);
-    //const renderCard = props.renderCard;
-
-
-        
 
     const [sessionVal, setSessionVal] = useState(null)
+
+
+    // State for items and current page
+    const [responseData, setResponseData] = useState(null);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10; // Number of items per page
+
+    // State for the list of items and filter criteria
+    const [filteredItems, setFilteredItems] = useState([]);
+    const [filter, setFilter] = useState('');
+
+
 
     // GET session_value from 'Crosscheck.js'
     const location = useLocation();
@@ -94,16 +102,12 @@ function Home(){
                 setRenderCard4(job_4.includes(''));
                 setRenderCard5(job_5.includes(''));
 
-                
-
             } catch (error) {
                 console.error(error);
             }
         };
         fetchData();
     }, []);
-
-    console.log(job_1_list)
 
     const data = { user_id: sessionVal };
 
@@ -123,6 +127,35 @@ function Home(){
     if (responseData === null){
         return <div>Loading...</div>
     }
+
+    // Function to handle page change
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+    };
+
+    // Calculate the items to display on the current page
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = responseData.slice(indexOfFirstItem, indexOfLastItem);
+
+
+
+    useEffect(() => {
+        // Filter items when 'filter' state changes
+        const filtered = responseData.filter((item) =>
+            item.name.toLowerCase().includes(filter.toLowerCase())
+        );
+        setFilteredItems(filtered);
+    }, [responseData, filter]);
+
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value);
+    };
+
+
+
 
     return(
         <div>
@@ -152,19 +185,36 @@ function Home(){
                     </div>
                 </nav>
             </div>
+
             <div className="container-fluid main">
                 <div className="row">
                     <aside class="sidebar sidebar-left col-md-2">
                         <h2 className="sidebar-title">Filter</h2>
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
+                            {/* Filter input */}
+                            <input
+                                type="text"
+                                placeholder="Filter by name"
+                                value={filter}
+                                onChange={handleFilterChange}
+                            />
                     </aside>
+
+
+
                     <main class="col-md-7">
                         <div className="main_box">
-                            {responseData.map((element) => {
+                            
+                            {filteredItems.map((element) => {
+                                return(
+                                    <ul>
+                                        {filteredItems.map((item) => (
+                                        <li key={item.id}>{item.name}</li>
+                                        ))}
+                                    </ul>
+                                )
+                            })}
+
+                            {currentItems.map((element) => {
                                 return(
                                     <div class="card">
                                         <div class="card-body">
@@ -176,8 +226,8 @@ function Home(){
                                             <p class="card-text card-date text-muted mb-auto">{element.post_date}</p><br />
                                         </div>
                                     </div>
-                                );
-                            })};
+                                )
+                            })}
                         </div>
                     </main>
 
@@ -201,8 +251,12 @@ function Home(){
                                     <h3 class="card-title">{job_1[0]}</h3>
                                     <p class="card-text">Matching Score</p>
                                     <h5 class="card-subtitle mb-3">{job_1[1] * 100}%</h5>
-                                    <p class="card-text">{job_1[3]}</p>
-                                    <a href="" class="card-link">Another link</a>
+                                    {job_1_list.map((element) => {
+                                        return(
+                                            <div class="card">{element}</div>
+                                        )
+                                    })}
+                                    <a class="card-link" onClick={handleclick2}>Learn</a>
                                 </div>
                             </div>
                         )}
@@ -216,7 +270,12 @@ function Home(){
                                     <h3 class="card-title">{job_2[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_2[1] * 100}%</h5>
-                                    <a href="" class="card-link">Another link</a>
+                                    {job_2_list.map((element) => {
+                                        return(
+                                            <div class="card">{element}</div>
+                                        )
+                                    })}
+                                    <a class="card-link" onClick={handleclick2}>Learn</a>
                                 </div>
                             </div>
                         )}
@@ -230,7 +289,12 @@ function Home(){
                                     <h3 class="card-title">{job_3[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_3[1] * 100}%</h5>
-                                    <a href="" class="card-link">Another link</a>
+                                    {job_3_list.map((element) => {
+                                        return(
+                                            <div class="card">{element}</div>
+                                        )
+                                    })}
+                                    <a class="card-link" onClick={handleclick2}>Learn</a>
                                 </div>
                             </div>
                         )}
@@ -244,7 +308,12 @@ function Home(){
                                     <h3 class="card-title">{job_4[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_4[1] * 100}%</h5>
-                                    <a href="" class="card-link">Another link</a>
+                                    {job_4_list.map((element) => {
+                                        return(
+                                            <div class="card">{element}</div>
+                                        )
+                                    })}
+                                    <a class="card-link" onClick={handleclick2}>Learn</a>
                                 </div>
                             </div>
                         )}
@@ -253,13 +322,18 @@ function Home(){
                             <p></p>
                         ) : (
                             <div class="card">
-                            <div class="card-body mb-2">
-                                <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
-                                <h3 class="card-title">{job_5[0]}</h3>
-                                <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                <h5 class="card-subtitle mb-3">{job_5[1] * 100}%</h5>
-                                <a href="" class="card-link">Another link</a>
-                            </div>
+                                <div class="card-body mb-2">
+                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                    <h3 class="card-title">{job_5[0]}</h3>
+                                    <p class="card-text">Your user score according to the data you entered is as follows.</p>
+                                    <h5 class="card-subtitle mb-3">{job_5[1] * 100}%</h5>
+                                    {job_5_list.map((element) => {
+                                        return(
+                                            <div class="card">{element}</div>
+                                        )
+                                    })}
+                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                </div>
                             </div>
                         )}
                         
@@ -267,12 +341,23 @@ function Home(){
                 </div>
                 
             </div>
+            {/* Pagination controls */}
+            <div>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === 1}
+                >
+                    Previous Page
+                </button>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={indexOfLastItem >= responseData.length}
+                >
+                    Next Page
+                </button>
+            </div>
         </div>
     );
 }
 
 export default Home;
-
-/*{responseData && (
-                        <pre>{JSON.stringify(responseData, null, 2)}</pre>
-    )}*/

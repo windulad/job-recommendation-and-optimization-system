@@ -816,9 +816,9 @@ def crosscheck_post():
     score_usersCvData = round(score_usersCvData_final, 2)
 
     # Retrieve users_skilldata
-    query = "SELECT * FROM users_skilldata WHERE userid='"+user_id+"'"
-    cursor.execute(query)
-    users_skilldata = cursor.fetchone()
+    # query = "SELECT * FROM users_skilldata WHERE userid='"+user_id+"'"
+    # cursor.execute(query)
+    # users_skilldata = cursor.fetchone()
 
     # print(users_skilldata)
 
@@ -929,6 +929,7 @@ def crosscheck_post():
     if (skill50 == 'True'):
         user_skills.append('Xamarin')
 
+    print(user_skills)
     count_user_skills = len(user_skills)
 
     # Calculate score_usersSkillData
@@ -1003,6 +1004,7 @@ def crosscheck_post():
 
     # Unpack skills from miss_skills_software_eng list
     software_eng_miss_1,software_eng_miss_2,software_eng_miss_3,software_eng_miss_4,software_eng_miss_5,software_eng_miss_6,software_eng_miss_7,software_eng_miss_8,software_eng_miss_9,software_eng_miss_10,software_eng_miss_11,software_eng_miss_12,software_eng_miss_13,software_eng_miss_14,software_eng_miss_15,software_eng_miss_16,software_eng_miss_17,software_eng_miss_18,software_eng_miss_19,software_eng_miss_20,software_eng_miss_21,software_eng_miss_22,software_eng_miss_23 = miss_skills_software_eng
+
 
     # Unpack skills from miss_skills_front_end_eng list
     front_end_eng_miss_1,front_end_eng_miss_2,front_end_eng_miss_3,front_end_eng_miss_4,front_end_eng_miss_5,front_end_eng_miss_6,front_end_eng_miss_7,front_end_eng_miss_8,front_end_eng_miss_9 = miss_skills_front_end_eng
@@ -1128,6 +1130,8 @@ def homepage():
     ios_eng_miss_5 = data[56]
 
     software_eng_miss = [software_eng_miss_1,software_eng_miss_2,software_eng_miss_3,software_eng_miss_4,software_eng_miss_5,software_eng_miss_6,software_eng_miss_7,software_eng_miss_8,software_eng_miss_9,software_eng_miss_10,software_eng_miss_11,software_eng_miss_12,software_eng_miss_13,software_eng_miss_14,software_eng_miss_15,software_eng_miss_16,software_eng_miss_17,software_eng_miss_18,software_eng_miss_19,software_eng_miss_20,software_eng_miss_21,software_eng_miss_22,software_eng_miss_23]
+    print(software_eng_miss)
+    
     software_eng_miss_final = ' '.join(software_eng_miss).split()
     software_eng_miss_count = len(software_eng_miss_final)
 
@@ -1152,7 +1156,7 @@ def homepage():
         job_1_title = 'Software Engineer'
         job_1_score = score_software_eng
         job_1_miss_count = software_eng_miss_count
-        job_1_miss = str(software_eng_miss_final)
+        job_1_miss = software_eng_miss_final
         job_1 = [job_1_title, job_1_score, job_1_miss_count, job_1_miss]
     else:
         job_1 = ''
@@ -1162,7 +1166,7 @@ def homepage():
         job_2_title = 'Front-End Engineer'
         job_2_score = score_front_end_eng
         job_2_miss_count = front_end_eng_miss_count
-        job_2_miss = str(front_end_eng_miss_final)
+        job_2_miss = front_end_eng_miss_final
         job_2 = [job_2_title, job_2_score, job_2_miss_count, job_2_miss]
     else:
         job_2 = ''
@@ -1172,7 +1176,7 @@ def homepage():
         job_3_title = 'Back-End Engineer'
         job_3_score = score_back_end_eng
         job_3_miss_count = back_end_eng_miss_count
-        job_3_miss = str(back_end_eng_miss_final)
+        job_3_miss = back_end_eng_miss_final
         job_3 = [job_3_title, job_3_score, job_3_miss_count, job_3_miss]
     else:
         job_3 = ''
@@ -1182,7 +1186,7 @@ def homepage():
         job_4_title = 'Android Engineer'
         job_4_score = score_android_eng
         job_4_miss_count = android_eng_miss_count
-        job_4_miss = str(android_eng_miss_final)
+        job_4_miss = android_eng_miss_final
         job_4 = [job_4_title, job_4_score, job_4_miss_count, job_4_miss]
     else:
         job_4 = ''
@@ -1192,7 +1196,7 @@ def homepage():
         job_5_title = 'IOS Engineer'
         job_5_score = score_ios_eng
         job_5_miss_count = ios_eng_miss_count
-        job_5_miss = str(ios_eng_miss_final)
+        job_5_miss = ios_eng_miss_final
         job_5 = [job_5_title, job_5_score, job_5_miss_count, job_5_miss]
     else:
         job_5 = ''
@@ -1299,18 +1303,113 @@ def learnpage():
     connection = sqlite3.connect(DATABASE)
     cursor = connection.cursor()
 
-    # Retrieve stored data from 'miss' table
-    query = "SELECT * FROM miss WHERE userid='"+user_id+"'"
+    # Retrieve stored data from 'positions' table
+    query = "SELECT * FROM users_biodata WHERE userid='"+user_id+"'"
     cursor.execute(query)
     data = cursor.fetchone()
 
-    miss_skill_count = int(data[1])
-    user_miss = []
-    for i in range(2,miss_skill_count+2):
-        user_miss.append(data[i])
+    #fname = data[4]
 
-    print('userid:',user_id)
-    print('Missing skills:',user_miss)
+    # Retrieve stored data from 'positions' table
+    query = "SELECT * FROM user_positions WHERE userid='"+user_id+"'"
+    cursor.execute(query)
+    data = cursor.fetchone()
+
+    #user_score = data[1]
+    #score_software_eng = data[2]
+    #score_front_end_eng = data[3]
+    #score_back_end_eng = data[4]
+    #score_android_eng = data[5]
+    #score_ios_eng = data[6]
+
+    software_eng_miss_1 = data[7]
+    software_eng_miss_2 = data[8] 
+    software_eng_miss_3 = data[9] 
+    software_eng_miss_4 = data[10] 
+    software_eng_miss_5 = data[11] 
+    software_eng_miss_6 = data[12] 
+    software_eng_miss_7 = data[13] 
+    software_eng_miss_8 = data[14] 
+    software_eng_miss_9 = data[15] 
+    software_eng_miss_10 = data[16] 
+    software_eng_miss_11 = data[17] 
+    software_eng_miss_12 = data[18] 
+    software_eng_miss_13 = data[19] 
+    software_eng_miss_14 = data[20] 
+    software_eng_miss_15 = data[21] 
+    software_eng_miss_16 = data[22] 
+    software_eng_miss_17 = data[23] 
+    software_eng_miss_18 = data[24] 
+    software_eng_miss_19 = data[25] 
+    software_eng_miss_20 = data[26] 
+    software_eng_miss_21 = data[27] 
+    software_eng_miss_22 = data[28] 
+    software_eng_miss_23 = data[29] 
+
+    front_end_eng_miss_1 = data[30]
+    front_end_eng_miss_2 = data[31]
+    front_end_eng_miss_3 = data[32]
+    front_end_eng_miss_4 = data[33]
+    front_end_eng_miss_5 = data[34]
+    front_end_eng_miss_6 = data[35]
+    front_end_eng_miss_7 = data[36]
+    front_end_eng_miss_8 = data[37]
+    front_end_eng_miss_9 = data[38]
+
+    back_end_eng_miss_1 = data[39]
+    back_end_eng_miss_2 = data[40]
+    back_end_eng_miss_3 = data[41]
+    back_end_eng_miss_4 = data[42]
+    back_end_eng_miss_5 = data[43]
+    back_end_eng_miss_6 = data[44]
+    back_end_eng_miss_7 = data[45]
+
+    android_eng_miss_1 = data[46]
+    android_eng_miss_2 = data[47]
+    android_eng_miss_3 = data[48]
+    android_eng_miss_4 = data[49]
+    android_eng_miss_5 = data[50]
+    android_eng_miss_6 = data[51]
+
+    ios_eng_miss_1 = data[52]
+    ios_eng_miss_2 = data[53]
+    ios_eng_miss_3 = data[54]
+    ios_eng_miss_4 = data[55]
+    ios_eng_miss_5 = data[56]
+
+    software_eng_miss = [software_eng_miss_1,software_eng_miss_2,software_eng_miss_3,software_eng_miss_4,software_eng_miss_5,software_eng_miss_6,software_eng_miss_7,software_eng_miss_8,software_eng_miss_9,software_eng_miss_10,software_eng_miss_11,software_eng_miss_12,software_eng_miss_13,software_eng_miss_14,software_eng_miss_15,software_eng_miss_16,software_eng_miss_17,software_eng_miss_18,software_eng_miss_19,software_eng_miss_20,software_eng_miss_21,software_eng_miss_22,software_eng_miss_23]
+    #software_eng_miss_final = ' '.join(software_eng_miss).split()
+    #software_eng_miss_count = len(software_eng_miss_final)
+
+    front_end_eng_miss = [front_end_eng_miss_1,front_end_eng_miss_2,front_end_eng_miss_3,front_end_eng_miss_4,front_end_eng_miss_5,front_end_eng_miss_6,front_end_eng_miss_7,front_end_eng_miss_8,front_end_eng_miss_9]
+    #front_end_eng_miss_final = ' '.join(front_end_eng_miss).split()
+    #front_end_eng_miss_count = len(front_end_eng_miss_final)
+
+    back_end_eng_miss = [back_end_eng_miss_1,back_end_eng_miss_2,back_end_eng_miss_3,back_end_eng_miss_4,back_end_eng_miss_5,back_end_eng_miss_6,back_end_eng_miss_7]
+    #back_end_eng_miss_final = ' '.join(back_end_eng_miss).split()
+    #back_end_eng_miss_count = len(back_end_eng_miss_final)
+
+    android_eng_miss = [android_eng_miss_1,android_eng_miss_2,android_eng_miss_3,android_eng_miss_4,android_eng_miss_5,android_eng_miss_6]
+    #android_eng_miss_final = ' '.join(android_eng_miss).split()
+    #android_eng_miss_count = len(android_eng_miss_final)
+
+    ios_eng_miss = [ios_eng_miss_1,ios_eng_miss_2,ios_eng_miss_3,ios_eng_miss_4,ios_eng_miss_5]
+    #ios_eng_miss_final = ' '.join(ios_eng_miss).split()
+    #ios_eng_miss_count = len(ios_eng_miss_final)
+
+
+    # # Retrieve stored data from 'miss' table
+    # query = "SELECT * FROM miss WHERE userid='"+user_id+"'"
+    # cursor.execute(query)
+    # data = cursor.fetchone()
+
+    # miss_skill_count = int(data[1])
+    user_miss = []
+    # for i in range(2,miss_skill_count+2):
+    #     user_miss.append(data[i])
+
+    # print('userid:',user_id)
+    # print('Missing skills:',user_miss)
 
     # # Retrieve stored data from 'learn' table
     # query = "SELECT * FROM learn"
@@ -1319,12 +1418,18 @@ def learnpage():
     # print(course)
 
     # Connect to 'user_data.db' database
-    connection = sqlite3.connect(DATABASE)
-    cursor = connection.cursor()
+    # connection = sqlite3.connect(DATABASE)
+    # cursor = connection.cursor()
 
-    #Prepare for database input
-    for skill in range(miss_skill_count,50):
-        user_miss.append('')
+    # #Prepare for database input
+    # for skill in range(miss_skill_count,50):
+    #     user_miss.append('')
+
+    user_miss.extend(software_eng_miss)
+    user_miss.extend(front_end_eng_miss)
+    user_miss.extend(back_end_eng_miss)
+    user_miss.extend(android_eng_miss)
+    user_miss.extend(ios_eng_miss)
 
     miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss
 
@@ -1532,7 +1637,7 @@ def learnpage():
     combined_data.extend(learn_49)
     combined_data.extend(learn_50)
 
-    # print(combined_data)
+    #print(combined_data)
     data = []
 
     data.append({
