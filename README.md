@@ -12,13 +12,16 @@ Sqlite3<br>
 git clone <repo_url><br>
 
 ### Step 2 :- Create virtual environment
-$ pip3 install virtualenv<br>
-$ virtualenv env<br>
+$ ...\version4> cd flask-server<br>
+$ ...\version4\flask-server> pip3 install virtualenv<br>
+$ ...\version4\flask-server> virtualenv env<br>
 
 ### Step 3 :- Install packages
-$ pip3 install flask<br>
-$ pip3 install flask_wtf<br>
-$ pip3 install PyPDF2<br>
+(env) ...\version4\flask-server> pip install -r requirements.txt<br>
 
 ### Step 4 :- Run the Flask application
-$ python app.py<br>
+(env) ...\version4\flask-server> python app.py<br>
+
+### Step 5 :- Run the React application
+$ ...\version4> cd react-client<br>
+$ ...\version4\react-client> npm start<br>
