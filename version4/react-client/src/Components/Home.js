@@ -30,17 +30,14 @@ function Home(){
 
     const [sessionVal, setSessionVal] = useState(null)
 
-
     // State for items and current page
     const [responseData, setResponseData] = useState(null);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10; // Number of items per page
+    const itemsPerPage = 20; // Number of items per page
 
-    // State for the list of items and filter criteria
-    const [filteredItems, setFilteredItems] = useState([]);
-    const [filter, setFilter] = useState('');
-
+    // To store the filter criteria
+    const [filterCriteria, setFilterCriteria] = useState('');
 
 
     // GET session_value from 'Crosscheck.js'
@@ -118,7 +115,7 @@ function Home(){
         navigate('/learn',  {state: data});
     }
     const handleclick3 = () => {
-        navigate('/profile',  {state: data});
+        navigate('/profile/get',  {state: data});
     }
     const handleclick5 = () => {
         navigate('/');
@@ -128,6 +125,12 @@ function Home(){
         return <div>Loading...</div>
     }
 
+    
+    // Function to filter data based on the criteria
+    const filteredData = responseData.filter((item) =>
+        item && item.title && item.title.toLowerCase().includes(filterCriteria.toLowerCase())
+    );
+
     // Function to handle page change
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
@@ -135,27 +138,23 @@ function Home(){
         window.scrollTo(0, 0);
     };
 
-    // Calculate the items to display on the current page
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = responseData.slice(indexOfFirstItem, indexOfLastItem);
+    // // Calculate the items to display on the current page
+    // const indexOfLastItem = currentPage * itemsPerPage;
+    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    // const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+    // Calculate the starting and ending indices for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Get the items to display on the current page
+    const currentItems = filteredData.slice(startIndex, endIndex);
 
 
-
-    useEffect(() => {
-        // Filter items when 'filter' state changes
-        const filtered = responseData.filter((item) =>
-            item.name.toLowerCase().includes(filter.toLowerCase())
-        );
-        setFilteredItems(filtered);
-    }, [responseData, filter]);
-
-    const handleFilterChange = (event) => {
-        setFilter(event.target.value);
-    };
-
-
-
+    
 
     return(
         <div>
@@ -190,30 +189,32 @@ function Home(){
                 <div className="row">
                     <aside class="sidebar sidebar-left col-md-2">
                         <h2 className="sidebar-title">Filter</h2>
-                            {/* Filter input */}
-                            <input
-                                type="text"
-                                placeholder="Filter by name"
-                                value={filter}
-                                onChange={handleFilterChange}
-                            />
+                        {/* Filter input */}
+                        <label>
+                            Filter by Name:
+                            <input type="text" value={filterCriteria} onChange={(e) => setFilterCriteria(e.target.value)}/>
+                        </label>
                     </aside>
 
 
 
                     <main class="col-md-7">
                         <div className="main_box">
-                            
-                            {filteredItems.map((element) => {
+                            {currentItems.map((item) => {
                                 return(
-                                    <ul>
-                                        {filteredItems.map((item) => (
-                                        <li key={item.id}>{item.name}</li>
-                                        ))}
-                                    </ul>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-subtitle mb-2 text-muted">{item.position}</h6>
+                                            <h2 class="card-title mb-2">{item.title}</h2>
+                                            <p class="mb-2">{item.company}, {item.location}</p>
+                                            <p class="card-text mb-3">{item.summary}</p>
+                                            <p class="card-subtitle mb-2">Apply via {item.platform} <a href={item.url} target="_blank" class="card-link">Click here!</a></p>
+                                            <p class="card-text card-date text-muted mb-auto">{item.post_date}</p><br />
+                                        </div>
+                                    </div>
                                 )
                             })}
-
+                            {/*
                             {currentItems.map((element) => {
                                 return(
                                     <div class="card">
@@ -227,7 +228,7 @@ function Home(){
                                         </div>
                                     </div>
                                 )
-                            })}
+                            })}*/}
                         </div>
                     </main>
 
@@ -349,9 +350,17 @@ function Home(){
                 >
                     Previous Page
                 </button>
+                <ul className="pagination">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                        <li key={index} className={currentPage === index + 1 ? 'active' : ''}>
+                            {index + 1}
+                        </li>
+                    ))}
+                    <p>Current Page: {currentPage}</p>
+                </ul>
                 <button
                     onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={indexOfLastItem >= responseData.length}
+                    disabled={endIndex >= filteredData.length}
                 >
                     Next Page
                 </button>

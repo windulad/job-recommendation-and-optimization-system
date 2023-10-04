@@ -11,6 +11,16 @@ function Home(){
 
     const [sessionVal, setSessionVal] = useState(null)
 
+    const [fname, setFname] = useState('');
+    const [user_miss, setUser_miss] = useState('');
+
+    // State for items and current page
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20; // Number of items per page
+
+    // To store the filter criteria
+    const [filterCriteria, setFilterCriteria] = useState('');
+
     // GET session_value from 'Home.js'
     const location = useLocation();
     const { state } = location;
@@ -41,6 +51,12 @@ function Home(){
 
                 setSessionVal(session_value);
 
+                const fname = response.data[0]['fname'];
+                const user_miss = response.data[0]['user_miss'];
+
+                setFname(fname);
+                setUser_miss(user_miss);
+
             } catch (error) {
                 console.error(error);
             }
@@ -57,7 +73,7 @@ function Home(){
         navigate('/learn',  {state: data});
     }
     const handleclick3 = () => {
-        navigate('/profile',  {state: data});
+        navigate('/profile/get',  {state: data});
     }
     const handleclick5 = () => {
         navigate('/');
@@ -66,6 +82,38 @@ function Home(){
     if (responseData === null){
         return <div>Loading...</div>
     }
+
+
+
+    // Function to filter data based on the criteria
+    const filteredData = responseData.filter((item) =>
+        item && item.title && item.title.toLowerCase().includes(filterCriteria.toLowerCase())
+    );
+
+    // Function to handle page change
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+    };
+
+    // // Calculate the items to display on the current page
+    // const indexOfLastItem = currentPage * itemsPerPage;
+    // const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    // const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+    // Calculate the starting and ending indices for the current page
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    // Get the items to display on the current page
+    const currentItems = filteredData.slice(startIndex, endIndex);
+
+
+
 
     return(
         <div>
@@ -100,17 +148,17 @@ function Home(){
                 <div className="row">
                     <aside class="sidebar sidebar-left col-md-2">
                         <h2 className="sidebar-title">Filter</h2>
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
+                        {/* Filter input */}
+                        <label>
+                            Filter by Name:
+                            <input type="text" value={filterCriteria} onChange={(e) => setFilterCriteria(e.target.value)}/>
+                        </label>
                     </aside>
 
-                    <main class="col-md-10">                   
+                    <main class="col-md-8">                   
                         <div className="main_box">
                             <div class="row">
-                                {responseData.map((element) => {
+                                {currentItems.map((element) => {
                                     return(
                                         <div class="col-md-4">
                                             <div class="card" style={{width: "100%"}}>
@@ -129,6 +177,22 @@ function Home(){
                             </div>
                         </div>
                     </main>
+
+                    <aside class="sidebar sidebar-right col-md-2 mt-1">
+                        <div class="card">
+                            <div class="card-body mb-2">
+                                <h3 class="card-title">Hello {fname} !!!</h3>
+                                <h6 class="card-subtitle mb-3 text-muted">Welcome to 'FUTURE'</h6>
+                                <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                {user_miss.map((element) => {
+                                    return(
+                                        <div class="card">{element}</div>
+                                    )
+                                })}
+                                <a class="card-link" onClick={handleclick1}>Learn</a>
+                            </div>
+                        </div>
+                    </aside>
                     
                     {/*<main class="col-md-10">                   
                         <div className="main_box">
@@ -197,6 +261,31 @@ function Home(){
                         </main>*/}
                 </div>
             </div>
+
+            {/* Pagination controls */}
+            <div>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === 1}
+                >
+                    Previous Page
+                </button>
+                <ul className="pagination">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                        <li key={index} className={currentPage === index + 1 ? 'active' : ''}>
+                            {index + 1}
+                        </li>
+                    ))}
+                    <p>Current Page: {currentPage}</p>
+                </ul>
+                <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={endIndex >= filteredData.length}
+                >
+                    Next Page
+                </button>
+            </div>
+
         </div>
     );
 }

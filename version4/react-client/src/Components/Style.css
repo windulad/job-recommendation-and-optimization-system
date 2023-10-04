@@ -5,7 +5,7 @@ body{
 
 /*--Index-----------------*/
 .bg {
-  background-image: url("../assets/header1.png");
+  background-image: url("../assets/index/header1.png");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

@@ -47,13 +47,13 @@ function EnterCV(){
 
             setResponseData(response.data);
 
-            // POST session_value to 'Home.js'
+            // POST session_value to 'Crosscheck.js'
             const data = { user_id: session_value };
 
             if (message === 'error-3'){
                 navigate('/entercv',  {state: data});
             }else if(message === 'success-3'){
-                navigate('/home',  {state: data});
+                navigate('/crosscheck/get',  {state: data});
             }
         })
         .catch(error => {

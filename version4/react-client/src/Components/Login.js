@@ -11,6 +11,9 @@ function Login(){
     });
 
     const [responseData, setResponseData] = useState(null);
+
+    const [message, setMessage] = useState('');
+
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
@@ -40,6 +43,7 @@ function Login(){
             console.log(session_value)
 
             setResponseData(response.data);
+            setMessage(message);
 
             // POST session_value to 'Home.js'
             const data = { user_id: session_value };
@@ -62,6 +66,7 @@ function Login(){
     return(
         <div class="create_acc_login">
             <h1 class="create_title">Log In</h1>
+            <h6>{message}</h6>
             <form onSubmit={handleSubmit}> 
                 <div class="input_field">
                     <input type="text" name='email' placeholder="Email" onChange={handleChange} required/>

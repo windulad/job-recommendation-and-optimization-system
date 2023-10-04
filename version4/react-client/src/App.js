@@ -24,7 +24,7 @@ function App(){
             <Route path="/crosscheck/get" element={<CrossCheck/>}/>
             <Route path="/home" element={<Home/>}/>
             <Route path="/learn" element={<Learn/>}/>
-            <Route path="/profile" element={<Profile/>}/>
+            <Route path="/profile/get" element={<Profile/>}/>
         </Routes>
     );
 }

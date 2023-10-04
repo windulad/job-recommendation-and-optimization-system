@@ -6,6 +6,8 @@ const SERVER_URL = 'http://127.0.0.1:5000';
 function CreateAcc(){
     const [responseData, setResponseData] = useState(null);
 
+    const [message, setMessage] = useState('');
+
     const navigate = useNavigate();
 
     const[email, setEmail] = useState('');
@@ -15,7 +17,7 @@ function CreateAcc(){
     const[phone, setPhone] = useState('');
     const[address, setAddress] = useState('');
     const[postalcode, setPostalCode] = useState('');
-    const [selectedCountry, setSelectedCountry] = useState('');
+    const[selectedCountry, setSelectedCountry] = useState('');
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -77,6 +79,7 @@ function CreateAcc(){
                 console.log(session_value)
 
                 setResponseData(response.data);
+                setMessage(message);
 
                 // POST session_value to 'Entercv.js'
                 const data = { user_id: session_value };
@@ -99,6 +102,7 @@ function CreateAcc(){
     return(
         <div class="create_acc_login">
             <h1 class="create_title">Create an Account</h1>
+            <h6>{message}</h6>
             <form onSubmit={handleSubmit} class="form-inline"> 
                 <div className="row">
                     <div className="col input_data">

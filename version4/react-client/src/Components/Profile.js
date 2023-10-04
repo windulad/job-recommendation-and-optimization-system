@@ -3,61 +3,137 @@ import Axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
+Axios.defaults.withCredentials = true;
+
 function Home(){
-    const navigate = useNavigate();
     const [responseData, setResponseData] = useState(null);
 
-    // GET session_value from 'Home.js'
     const [sessionVal, setSessionVal] = useState(null);
 
+    const navigate = useNavigate();
+
+    // session_value from 'Home.js'
     const location = useLocation();
     const { state } = location;
     const session_value = state.user_id;
+
+    const pass_data = { 
+        value: session_value,
+    };
     //console.log(session_value)
 
     // handle data
+    const [fname, setFname] = useState('');
+    const [lname, setLname] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [country, setCountry] = useState('');
     const [postalcode, setPostalCode] = useState('');
 
-    const pass_data = { 
-        value: session_value,
-    };
+    const currentYear = new Date().getFullYear();
+    const years = Array.from({ length: currentYear - 1899 }, (_, index) => currentYear - index);
+
+    const [selectedQualify1, setSelectedQualify1] = useState('');
+    const [selectedQualify1Syear, setSelectedQualify1Syear] = useState('');
+    const [selectedQualify1Eyear, setSelectedQualify1Eyear] = useState('');
+    const [selectedQualify2, setSelectedQualify2] = useState('');
+    const [selectedQualify2Syear, setSelectedQualify2Syear] = useState('');
+    const [selectedQualify2Eyear, setSelectedQualify2Eyear] = useState('');
+    const [selectedQualify3, setSelectedQualify3] = useState('');
+    const [selectedQualify3Syear, setSelectedQualify3Syear] = useState('');
+    const [selectedQualify3Eyear, setSelectedQualify3Eyear] = useState('');
+
+    const [project1Title, setProject1Title] = useState('');
+    const [project2Title, setProject2Title] = useState('');
+    const [project3Title, setProject3Title] = useState('');
+
+    const [job1, setJob1] = useState('');
+    const [job1Syear, setJob1Syear] = useState('');
+    const [job1Eyear, setJob1Eyear] = useState('');
+    const [job2, setJob2] = useState('');
+    const [job2Syear, setJob2Syear] = useState('');
+    const [job2Eyear, setJob2Eyear] = useState('');
+    const [job3, setJob3] = useState('');
+    const [job3Syear, setJob3Syear] = useState('');
+    const [job3Eyear, setJob3Eyear] = useState('');
+
+    
 
     // page load
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await Axios.post(SERVER_URL+'/profile', pass_data, { withCredentials: true });
+                const response = await Axios.post(SERVER_URL+'/profile/get', pass_data, { withCredentials: true });
                 // GET message from server
-                const message = response.data.message;
+                const message = response.data[0]['message'];
                 console.log(message)
                 setResponseData(response.data);
 
                 // GET session_value from server(user_id)
-                const session_value = response.data.session_value;
+                const session_value = response.data[0]['session_value'];
                 console.log(session_value)
                 setSessionVal(session_value);
 
-                const email = response.data.email;
-                const password = response.data.password;
-                const username = response.data.username;
-                const phone = response.data.phone;
-                const address = response.data.address;
-                const country = response.data.country;
-                const postalcode = response.data.postalcode;
-
+                const fname = response.data[0]['fname'];
+                const lname = response.data[0]['lname'];
+                const email = response.data[0]['email'];
+                const phone = response.data[0]['phone'];
+                const address = response.data[0]['address'];
+                const country = response.data[0]['country'];
+                const postalcode = response.data[0]['postalcode'];
+                const selectedQualify1 = response.data[0]['qualify_1'];
+                const selectedQualify1Syear = response.data[0]['qualify_1_syear'];
+                const selectedQualify1Eyear = response.data[0]['qualify_1_eyear'];
+                const selectedQualify2 = response.data[0]['qualify_2'];
+                const selectedQualify2Syear = response.data[0]['qualify_2_syear'];
+                const selectedQualify2Eyear = response.data[0]['qualify_2_eyear'];
+                const selectedQualify3 = response.data[0]['qualify_3'];
+                const selectedQualify3Syear = response.data[0]['qualify_3_syear'];
+                const selectedQualify3Eyear = response.data[0]['qualify_3_eyear'];
+                const project1Title = response.data[0]['project_1_title'];
+                const project2Title = response.data[0]['project_2_title'];
+                const project3Title = response.data[0]['project_3_title'];
+                const job1 = response.data[0]['job_1'];
+                const job1Syear = response.data[0]['job_1_syear'];
+                const job1Eyear = response.data[0]['job_1_eyear'];
+                const job2 = response.data[0]['job_2'];
+                const job2Syear = response.data[0]['job_2_syear'];
+                const job2Eyear = response.data[0]['job_2_eyear'];
+                const job3 = response.data[0]['job_3'];
+                const job3Syear = response.data[0]['job_3_syear'];
+                const job3Eyear = response.data[0]['job_3_eyear'];
+                
+                setFname(fname);
+                setLname(lname);
                 setEmail(email);
-                setPassword(password);
-                setUsername(username);
                 setPhone(phone);
                 setAddress(address);
                 setCountry(country);
                 setPostalCode(postalcode);
+                setSelectedQualify1(selectedQualify1);
+                setSelectedQualify1Syear(selectedQualify1Syear);
+                setSelectedQualify1Eyear(selectedQualify1Eyear);
+                setSelectedQualify2(selectedQualify2);
+                setSelectedQualify2Syear(selectedQualify2Syear);
+                setSelectedQualify2Eyear(selectedQualify2Eyear);
+                setSelectedQualify3(selectedQualify3);
+                setSelectedQualify3Syear(selectedQualify3Syear);
+                setSelectedQualify3Eyear(selectedQualify3Eyear);
+                setProject1Title(project1Title);
+                setProject2Title(project2Title);
+                setProject3Title(project3Title);
+                setJob1(job1);
+                setJob1Syear(job1Syear);
+                setJob1Eyear(job1Eyear);
+                setJob2(job2);
+                setJob2Syear(job2Syear);
+                setJob2Eyear(job2Eyear);
+                setJob3(job3);
+                setJob3Syear(job3Syear);
+                setJob3Eyear(job3Eyear);
+
+                
 
             } catch (error) {
                 console.error(error);
@@ -65,58 +141,6 @@ function Home(){
         };
         fetchData();
     }, []);
-
-    const submit_data = { 
-        value: session_value,
-        email: email, 
-        password: password,
-        username: username, 
-        phone: phone, 
-        address: address, 
-        country: country, 
-        postalcode: postalcode
-    };
-
-    // form submit reload
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        
-        // POST email, password to 'SERVER_URL' using Axios
-        try {
-            const response = await Axios.post(SERVER_URL+'/profilesubmit', submit_data, { withCredentials: true });
-            // GET message from server
-            const message = response.data.message;
-            console.log(message)
-            console.log('re-load')
-            setResponseData(response.data);
-
-            // GET session_value from server(user_id)
-            const session_value = response.data.session_value;
-            console.log(session_value)
-            setSessionVal(session_value);
-
-            const email = response.data.email;
-            const password = response.data.password;
-            const username = response.data.username;
-            const phone = response.data.phone;
-            const address = response.data.address;
-            const country = response.data.country;
-            const postalcode = response.data.postalcode;
-
-            setEmail(email);
-            setPassword(password);
-            setUsername(username);
-            setPhone(phone);
-            setAddress(address);
-            setCountry(country);
-            setPostalCode(postalcode);
-
-        } catch (error) {
-            console.error(error);
-        }
-        // Reload the page
-        window.location.reload();
-    };
 
     
     // navigation 
@@ -129,54 +153,11 @@ function Home(){
         navigate('/learn',  {state: data});
     }
     const handleclick3 = () => {
-        navigate('/profile',  {state: data});
+        navigate('/profile/get',  {state: data});
     }
     const handleclick5 = () => {
         navigate('/');
     }
-
-    // form data handle
-    const handleChange1 = (event) => {
-        setEmail(event.target.value);
-    };
-    const handleChange2 = (event) => {
-        setPassword(event.target.value);
-    };
-    const handleChange3 = (event) => {
-        if (event.target.value === null){
-            setUsername('');
-        } else {
-            setUsername(event.target.value);
-        }
-    };
-    const handleChange4 = (event) => {
-        if (event.target.value === null){
-            setPhone('');
-        } else {
-            setPhone(event.target.value);
-        }
-    };
-    const handleChange5 = (event) => {
-        if (event.target.value === null){
-            setAddress('');
-        } else {
-            setAddress(event.target.value);
-        }
-    };
-    const handleChange6 = (event) => {
-        if (event.target.value === null){
-            setCountry('');
-        } else {
-            setCountry(event.target.value);
-        }
-    };
-    const handleChange7 = (event) => {
-        if (event.target.value === null){
-            setPostalCode('');
-        } else {
-            setPostalCode(event.target.value);
-        }
-    };
 
 
     if (responseData === null){
@@ -185,81 +166,185 @@ function Home(){
 
     return(
         <div>
-            <div>
-                <ul class="home_topnav">
-                    <li><a onClick={handleclick1}>Home</a></li>
-                    <li><a onClick={handleclick2}>Learn</a></li>
-                    <li><a onClick={handleclick3}>Profile</a></li>
-                    <li style={{float:"right"}}><a onClick={handleclick5}>Log out</a></li>
-                </ul>
-            </div>
-            <div class="profile">
-            <h1 class="profile_title">User Profile</h1>
-                <form onSubmit={handleSubmit}>
-                    <h3>Email</h3>
-                    <input type="text" value={email} onChange={handleChange1} required/>
+        <div>
+            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" onClick={handleclick1}>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onClick={handleclick2}>Learn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onClick={handleclick3}>Profile</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto d-inline-flex justify-content-end">
+                        <li class="nav-item ">
+                            <a class="nav-link" onClick={handleclick5}>Log&nbsp;out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-                    <h3>Username</h3>
-                    <input type="text" value={username} onChange={handleChange3} />
-
-                    <h3>Password</h3>
-                    <input type="password" value={password} onChange={handleChange2} required/>
-
-                    <h3>Phone</h3>
-                    <input type="text" value={phone} onChange={handleChange4} />
-
-                    <h3>Address</h3>
-                    <input type="text" value={address} onChange={handleChange5} />
-
-                    <h3>Country</h3>
-                    <input type="text" value={country} onChange={handleChange6} />
-
-                    <h3>Postal Code</h3>
-                    <input type="text" value={postalcode} onChange={handleChange7} />
-                
-                    <div class="signup_login">
-                        <input type="submit" value="Save Changes"/>
+        <div className="enter_manual">
+            <form id="crossCheckForm">
+                <h2 className="crosscheckl_title">Personal Bio Data</h2>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">First Name</label>
+                        <input type="text" class="form-control" value={fname}/>
                     </div>
-                </form>
-            </div>
+                    <div className="col input_data">
+                        <label className="form-label">Last Name</label>
+                        <input type="text" class="form-control" value={lname}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Email Address</label>
+                        <input type="text" class="form-control" value={email}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Contact Number</label>
+                        <input type="text" class="form-control" value={phone}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Permanent Address</label>
+                        <input type="text" class="form-control" value={address}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Country</label>
+                        <input type="text" class="form-control" value={country}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Postal Code</label>
+                        <input type="text" class="form-control" value={postalcode}/>
+                    </div>
+                </div>
+
+                <h2 className="crosscheckl_title">Educational Qualifications</h2>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Qualification No. 1</label>
+                        <input type="text" class="form-control" value={selectedQualify1}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={selectedQualify1Syear}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={selectedQualify1Eyear}></input>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Qualification No. 2</label>
+                        <input type="text" class="form-control" value={selectedQualify2}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={selectedQualify2Syear}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={selectedQualify2Eyear}></input>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Qualification No. 3</label>
+                        <input type="text" class="form-control" value={selectedQualify3}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={selectedQualify3Syear}></input>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={selectedQualify3Eyear}></input>
+                    </div>
+                </div>
+
+                <h2 className="crosscheckl_title">Project Details</h2>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Project No. 1</label>
+                        <input type="text" class="form-control" value={project1Title}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Project No. 2</label>
+                        <input type="text" class="form-control" value={project2Title}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Project No. 3</label>
+                        <input type="text" class="form-control" value={project3Title}/>
+                    </div>
+                </div>
+
+                <h2 className="crosscheckl_title">Job Experience</h2>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Position No. 1</label>
+                        <input type="text" class="form-control" value={job1}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={job1Syear}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={job1Eyear}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Position No. 2</label>
+                        <input type="text" class="form-control" value={job2}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={job2Syear}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={job2Eyear}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col input_data">
+                        <label className="form-label">Position No. 3</label>
+                        <input type="text" class="form-control" value={job3}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year started</label>
+                        <input type="text" class="form-control" value={job3Syear}/>
+                    </div>
+                    <div className="col input_data">
+                        <label className="form-label">Year Ended</label>
+                        <input type="text" class="form-control" value={job3Eyear}/>
+                    </div>
+                </div>
+
+                
+
+            </form>
+        </div>
         </div>
     );
 }
 
 export default Home;
-
-// <div class="update_profile">
-//     <h1 class="update_profile_title">Edit profile data</h1>
-
-//     <!--Log in form goes here------------------------------------->
-//     <form method="POST">
-//         <div class="input_field">
-//             <span class="update_field_title">Email address</span>
-//             <span><input type="text" name="email"></span>
-//         </div>
-//         <div class="input_field">
-//             <span>Username</span>
-//             <span><input type="text" name="username"></span>
-//         </div>
-//         <div class="input_field">
-//             <span>Phone</span>
-//             <span><input type="text" name="phone"></span>         
-//         </div>
-//         <div class="input_field">
-//             <span>Street Address</span>
-//             <span><input type="text" name="address"></span> 
-//         </div>
-//         <div class="input_field">
-//             <span>Country</span>
-//             <span><input type="text" name="country"></span> 
-//         </div>
-//         <div class="input_field">
-//             <span>Postal Code</span>
-//             <span><input type="text" name="postalcode"></span> 
-//         </div>
-//         <div class="profile_update_submit">
-//             <input type="submit" value="Submit">
-//         </div>
-//     </form>
-
-// </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Style.css';
 import { useNavigate } from 'react-router-dom';
-import index1 from '../assets/index1.png';
-import index2 from '../assets/index2.png';
+import index1 from '../assets/index/index1.png';
+import index2 from '../assets/index/index2.png';
 import SwingCounter from '../items/SwingCounter.js';
 
 function Index(){
