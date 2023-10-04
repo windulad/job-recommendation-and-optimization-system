@@ -21,3 +21,7 @@ $ ...\version4\flask-server> virtualenv env<br>
 
 ### Step 4 :- Run the Flask application
 (env) ...\version4\flask-server> python app.py<br>
+
+### Step 5 :- Run the React application
+$ ...\version4> cd react-client<br>
+$ ...\version4\react-client> npm start<br>
