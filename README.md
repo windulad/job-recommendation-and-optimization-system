@@ -1,6 +1,7 @@
 # job-recommendation-and-optimization-system
 
 ## Introduction
+Please note that the version 4 is the latest stable version of the application.
 
 ## Setting Up
 ### Requirements
