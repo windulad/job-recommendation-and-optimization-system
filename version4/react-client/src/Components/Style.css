@@ -118,104 +118,194 @@ color: #000000
 
 
 
-
-/* Style create an account form */
-.create_acc_login{
-  width: 65%; 
-  margin: 50px auto; 
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 5px;
+/* Style login an account form */
+.container-login{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
 }
-.create_title{
+
+.login{
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 15px;
+}
+
+.login_title{
   text-align: center;
   font-family: sans-serif;
   margin: 4%;
+  margin-bottom: 15%;
+  color: #31437E;
+  font-weight: bold;
 }
-.input_data{
-  margin: 5px;
-}
-.input_label{
-  font-size: 140%;
-  margin: 5px;
-}
-input[type=text] {
+
+.login_submit{
   width: 100%;
-  padding: 12px 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  display: flex;
+  justify-content: left;
 }
+
+#login_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.login_error{
+  color: #ff0000;
+  margin-bottom: 16%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.lostacc{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.lostacc:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Style create account form */
+.container-createacc{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.createacc{
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 15px;
+}
+
+.create_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: -10%;
+  margin-bottom: 5%;
+  color: #31437E;
+  font-weight: bold;
+}
+
 input[type=password] {
   width: 100%;
   padding: 12px 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
-::placeholder{
-  font-size: 16px;
-  text-align: left;
-  color: rgb(0, 0, 0);
-  padding: 5px 0px;
-}
+
 .custom_select{
   position: relative;
   width: 1000%;
 }
-.termsofservice{
-  font-size: 15px;
-  text-align: center;
-  padding: -5%;
-}
-input[type=submit] {
-  color:rgb(255, 255, 255);
-  background-color: black;
-  font-size: 16px;
-  text-align: center;
-  padding: 15px 20px;
-  box-sizing: border-box;
-}
-.signup_login{
+
+.createacc_submit{
   width: 100%;
-  margin: 5% auto;
-  padding: 5px 5px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
+
+#createacc_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.createacc_error{
+  color: #ff0000;
+  margin-bottom: -2px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.createacc_error{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.createacc_error:hover{
+  cursor: pointer;
+}
+
+.acc{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.acc:hover{
+  cursor: pointer;
+}
+
 
 
 
 
 /*Enter skills styles*/
+.container-enterskills{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .enterskills_title{
   text-align: center;
   font-family: sans-serif;
-  padding-top: 20px;
-  padding-bottom: 0px;
+  margin-top: -10%;
+  margin-bottom: -2px;
+  color: #31437E;
+  font-weight: bold;
 }
 
 .enterskills_subtitle{
   text-align: center;
   font-family: sans-serif;
+  margin-bottom: 5%;
+  color: #31437E;
+  font-size: 17px;
+  font-weight: bold;
 }
 
-.card1 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 2%;
-  margin: 1%;
-  margin-left: 3%;
-  width: 40%;
-  transition: 0.3s;
-  text-align: center;
+.card_enterskills{
+  align-items: center; 
 }
 
-.card2 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 2%;
-  margin: 1%;
-  margin-right: 3%;
-  width: 40%;
-  transition: 0.3s;
+.enterskill_itemtitle{
   text-align: center;
+  font-family: sans-serif;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  color: #31437E;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.enterskill_itemcontent{
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: -2px;
+  color: #303030;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .enter_skills{
@@ -226,15 +316,37 @@ input[type=submit] {
   justify-content: center;
 }
 
-input[type=submit] {
-  color:rgb(255, 255, 255);
-  background-color: black;
-  font-size: 16px;
-  text-align: center;
-  padding: 15px 20px;
-  box-sizing: border-box;
+.enter_skills{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
+.enter_skills input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 280px;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.vertical-line {
+  border-right: 1px solid #a3afd8; /* Adjust line thickness and color */
+  height: 150px; /* Adjust line height */
+  
+}
+
+.enterskill_itemor{
+  text-align: center;
+  font-family: sans-serif;
+  color: #31437E;
+  font-size: 17px;
+  font-weight: bold;
+}
 
 
 
@@ -499,6 +611,8 @@ input[type=submit] {
   justify-content: center;
 }
 */
+
+
 
 
 /* Homepage */

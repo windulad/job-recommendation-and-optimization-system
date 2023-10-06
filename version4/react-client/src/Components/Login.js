@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import login_image from '../assets/login/login_image.png';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 function Login(){
@@ -64,24 +65,62 @@ function Login(){
     }
 
     return(
-        <div class="create_acc_login">
-            <h1 class="create_title">Log In</h1>
-            <h6>{message}</h6>
-            <form onSubmit={handleSubmit}> 
-                <div class="input_field">
-                    <input type="text" name='email' placeholder="Email" onChange={handleChange} required/>
+        <div className="container-login">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                        <img 
+                            src={login_image} 
+                            alt="" 
+                            style={{
+                                width: '70%', 
+                                height: 'auto',
+                                margin: '0 auto',
+                                marginLeft: '15%',
+                                marginTop: '8%'
+                            }}
+                        />
+                    </div>
+                    <div className="col-md-6">
+                        <div class="login">
+                            <h1 class="login_title">Log in</h1>
+                            
+                            <form onSubmit={handleSubmit}> 
+                                {/*<div className="row">
+                                    <div className="col input_data">
+                                        <label className="form-label">First Name</label>
+                                        <input type="text" class="form-control"/>
+                                    </div>
+                                    <div className="col input_data">
+                                        <label className="form-label">Last Name</label>
+                                        <input type="text" class="form-control"/>
+                                    </div>
+                                </div>*/}
+                                <div class="form-group">
+                                    <input type="text" name='email' placeholder="Email Address" class="form-control  mb-4" onChange={handleChange} required/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name='password' placeholder="Password" class="form-control mb-5" onChange={handleChange} required/>
+                                </div>
+                                <div className="login_submit" id="login_submit">
+                                    <input type="submit" value="LOGIN"/>
+                                </div>
+                                <div className="login_error">
+                                    <p>{message}</p>
+                                </div>
+                                
+                                <div class="lostacc">
+                                    <p>Don't have an account ? <a onClick={handleclick3}><b style={{ color: '#31437E' }}>Register here</b></a></p>
+                                </div>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="input_field">
-                    <input type="password" name='password' placeholder="Password" onChange={handleChange} required/>
-                </div>
-                <div class="signup_login">
-                    <input type="submit" value="Log in"/>
-                </div>
-                <div class="termsofservice">
-                    <label for="terms">Don't have an account ? <a onClick={handleclick3}><strong>Sign Up</strong></a> here</label>
-                </div>
-            </form>
+            </div>
         </div>
+        
     ) 
 }
 
