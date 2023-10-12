@@ -157,35 +157,33 @@ function Home(){
     
 
     return(
-        <div>
-            <div>
-                <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-                    <a class="navbar-brand" href="">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" onClick={handleclick1}>Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" onClick={handleclick2}>Learn</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" onClick={handleclick3}>Profile</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto d-inline-flex justify-content-end">
-                            <li class="nav-item ">
-                                <a class="nav-link" onClick={handleclick5}>Log&nbsp;out</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+        <div className="container_home">
 
-            <div className="container-fluid main">
+            <nav class="navbar navbar-expand-lg fixed-top main_navbar">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav main_nav">
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick1}>FUTURE</a>
+                        </li>
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick1}>Home</a>
+                        </li>
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick2}>Learn</a>
+                        </li>
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick3}>Profile</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto d-inline-flex justify-content-end main_navend">
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick5}>Log&nbsp;out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div className="container-fluid container_main">
                 <div className="row">
                     <aside class="sidebar sidebar-left col-md-2">
                         <h2 className="sidebar-title">Filter</h2>
@@ -195,8 +193,6 @@ function Home(){
                             <input type="text" value={filterCriteria} onChange={(e) => setFilterCriteria(e.target.value)}/>
                         </label>
                     </aside>
-
-
 
                     <main class="col-md-7">
                         <div className="main_box">
@@ -214,31 +210,22 @@ function Home(){
                                     </div>
                                 )
                             })}
-                            {/*
-                            {currentItems.map((element) => {
-                                return(
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h6 class="card-subtitle mb-2 text-muted">{element.position}</h6>
-                                            <h2 class="card-title mb-2">{element.title}</h2>
-                                            <p class="mb-2">{element.company}, {element.location}</p>
-                                            <p class="card-text mb-3">{element.summary}</p>
-                                            <p class="card-subtitle mb-2">Apply via {element.platform} <a href={element.url} target="_blank" class="card-link">Click here!</a></p>
-                                            <p class="card-text card-date text-muted mb-auto">{element.post_date}</p><br />
-                                        </div>
-                                    </div>
-                                )
-                            })}*/}
                         </div>
                     </main>
 
                     <aside class="sidebar sidebar-right col-md-3 mt-1">
-                        <div class="card">
+                        <div class="card sidecard_right" 
+                        style={{ 
+                            backgroundColor: '#6776AB',
+                            color: 'white'
+                        }}>
                             <div class="card-body mb-2">
                                 <h3 class="card-title">Hello {fname} !!!</h3>
-                                <h6 class="card-subtitle mb-3 text-muted">Welcome to 'FUTURE'</h6>
+                                <h6 class="card-subtitle mb-3">Welcome to 'FUTURE'</h6>
                                 <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                <h5 class="card-subtitle">{user_score}%</h5>
+                                <h3 class="card-title">{user_score}%</h3>
+                                <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                <h6 class="card-subtitle mb-3">Explore the positions open for your expertise level here</h6>
                             </div>
                         </div>
 
@@ -246,17 +233,32 @@ function Home(){
                         {renderCard1 ? (
                             <p></p>
                         ) : (
-                            <div class="card">
-                                <div class="card-body mb-2">
-                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                            <div class="card" 
+                            style={{ 
+                                backgroundColor: '#7796CB',
+                                color: 'white'
+                            }}>
+                                <div class="card-body  mb-2">
+                                    <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_1[0]}</h3>
-                                    <p class="card-text">Matching Score</p>
-                                    <h5 class="card-subtitle mb-3">{job_1[1] * 100}%</h5>
+                                    <p class="card-text">Your position score according to the data you entered is as follows.</p>
+                                    <h3 class="card-title mb-3">{job_1[1] * 100}%</h3>
+                                    <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                    <div className="miss_box">
                                     {job_1_list.map((element) => {
                                         return(
-                                            <div class="card">{element}</div>
+                                            <div class="miss_card"
+                                                style={{
+                                                    backgroundColor: 'black',
+                                                    border: '1px solid white',
+                                                    width: '50%',
+                                                    display: 'flex',
+                                                }}
+                                            >{element}</div>
                                         )
                                     })}
+                                    </div>
+                                    
                                     <a class="card-link" onClick={handleclick2}>Learn</a>
                                 </div>
                             </div>
@@ -265,9 +267,13 @@ function Home(){
                         {renderCard2 ? (
                             <p></p>
                         ) : (
-                            <div class="card">
+                            <div class="card"
+                            style={{ 
+                                backgroundColor: '#7796CB',
+                                color: 'white'
+                            }}>
                                 <div class="card-body mb-2">
-                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                    <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_2[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_2[1] * 100}%</h5>
@@ -284,9 +290,13 @@ function Home(){
                         {renderCard3 ? (
                             <p></p>
                         ) : (
-                            <div class="card">
+                            <div class="card"
+                            style={{ 
+                                backgroundColor: '#7796CB',
+                                color: 'white'
+                            }}>
                                 <div class="card-body mb-2">
-                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                    <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_3[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_3[1] * 100}%</h5>
@@ -303,9 +313,13 @@ function Home(){
                         {renderCard4 ? (
                             <p></p>
                         ) : (
-                            <div class="card">
+                            <div class="card"
+                            style={{ 
+                                backgroundColor: '#7796CB',
+                                color: 'white'
+                            }}>
                                 <div class="card-body mb-2">
-                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                    <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_4[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_4[1] * 100}%</h5>
@@ -322,9 +336,13 @@ function Home(){
                         {renderCard5 ? (
                             <p></p>
                         ) : (
-                            <div class="card">
+                            <div class="card"
+                            style={{ 
+                                backgroundColor: '#7796CB',
+                                color: 'white'
+                            }}>
                                 <div class="card-body mb-2">
-                                    <h6 class="card-subtitle mb-1 text-muted">You are eligible for...</h6>
+                                    <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_5[0]}</h3>
                                     <p class="card-text">Your user score according to the data you entered is as follows.</p>
                                     <h5 class="card-subtitle mb-3">{job_5[1] * 100}%</h5>

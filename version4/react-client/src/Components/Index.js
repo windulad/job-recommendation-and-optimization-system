@@ -53,7 +53,7 @@ function Index(){
 
 
 
-            <div class="container">
+            {/* <div class="container">
                 <div class="row">
                     <div class="four col-md-3">
                         <div class="counter-box colored">
@@ -62,7 +62,7 @@ function Index(){
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 
