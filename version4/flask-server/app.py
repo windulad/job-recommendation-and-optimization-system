@@ -1303,11 +1303,11 @@ def homepage():
     data = cursor.fetchone()
 
     user_score = data[1]
-    score_software_eng = data[2]
-    score_front_end_eng = data[3]
-    score_back_end_eng = data[4]
-    score_android_eng = data[5]
-    score_ios_eng = data[6]
+    score_software_eng = round(data[2] * 100, 2)
+    score_front_end_eng = round(data[3] * 100, 2) 
+    score_back_end_eng = round(data[4] * 100, 2) 
+    score_android_eng = round(data[5] * 100, 2) 
+    score_ios_eng = round(data[6] * 100, 2) 
 
     software_eng_miss_1 = data[7]
     software_eng_miss_2 = data[8] 
@@ -1666,6 +1666,9 @@ def learnpage():
     user_miss.extend(android_eng_miss)
     user_miss.extend(ios_eng_miss)
 
+    user_miss_final = ' '.join(user_miss).split()
+    print(user_miss_final)
+
     miss_1,miss_2,miss_3,miss_4,miss_5,miss_6,miss_7,miss_8,miss_9,miss_10,miss_11,miss_12,miss_13,miss_14,miss_15,miss_16,miss_17,miss_18,miss_19,miss_20,miss_21,miss_22,miss_23,miss_24,miss_25,miss_26,miss_27,miss_28,miss_29,miss_30,miss_31,miss_32,miss_33,miss_34,miss_35,miss_36,miss_37,miss_38,miss_39,miss_40,miss_41,miss_42,miss_43,miss_44,miss_45,miss_46,miss_47,miss_48,miss_49,miss_50 = user_miss
 
     # Retrieve stored data from table
@@ -1879,7 +1882,7 @@ def learnpage():
         'message':'success-6',
         'session_value': user_id,
         'fname': fname,
-        'user_miss': user_miss
+        'user_miss': user_miss_final
     })
 
     for combined_data_1 in combined_data:

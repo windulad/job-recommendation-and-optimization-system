@@ -207,102 +207,7 @@ function EnterManual(){
         setJob3Notes(event.target.value);
     };
 
-    // // Drag N Drop]
-    // const [cards, setCards] = useState([
-    //     { id: 'C', content: 'C' },
-    //     { id: 'Cpp', content: 'C++' },
-    //     { id: 'Csharp', content: 'C#' },
-    //     { id: 'Java', content: 'Java' },
-    //     { id: 'Python', content: 'Python' },
-    //     { id: 'PHP', content: 'PHP' },
-    //     { id: 'Go', content: 'Go' },
-    //     { id: 'SQL', content: 'SQL' },
-    //     { id: 'MySQL', content: 'MySQL' },
-    //     { id: 'PostgreSQL', content: 'PostgreSQL' },
-    //     { id: 'MongoDB', content: 'MongoDB' },
-    //     { id: 'SQL Server', content: 'SQL Server' },
-    //     { id: 'Oracle SQL', content: 'Oracle SQL' },
-    //     { id: 'Git', content: 'Git' },
-    //     { id: 'GitHub', content: 'GitHub' },
-    //     { id: 'GitLab', content: 'GitLab' },
-    //     { id: 'AWS', content: 'AWS' },
-    //     { id: 'Azure', content: 'Azure' },
-    //     { id: 'GCP', content: 'GCP' },
-    //     { id: 'Postman', content: 'Postman' },
-    //     { id: 'Twilio', content: 'Twilio' },
-    //     { id: 'Docker', content: 'Docker' },
-    //     { id: 'Kubernetes', content: 'Kubernetes' },
-    //     { id: 'HTML', content: 'HTML' },
-    //     { id: 'CSS', content: 'CSS' },
-    //     { id: 'Bootstrap', content: 'Bootstrap' },
-    //     { id: 'Tailwind', content: 'Tailwind' },
-    //     { id: 'JavaScript', content: 'JavaScript' },
-    //     { id: 'TypeScript', content: 'TypeScript' },
-    //     { id: 'React', content: 'React' },
-    //     { id: 'Angular', content: 'Angular' },
-    //     { id: 'Vue', content: 'Vue' },
-    //     { id: 'Node', content: 'Node' },
-    //     { id: 'Django', content: 'Django' },
-    //     { id: 'Flask', content: 'Flask' },
-    //     { id: 'Spring Boot', content: 'Spring Boot' },
-    //     { id: 'Laravel', content: 'Laravel' },
-    //     { id: 'Ruby on Rails', content: 'Ruby on Rails' },
-    //     { id: '.NET Core', content: '.NET Core' },
-    //     { id: 'Dart', content: 'Dart' },
-    //     { id: 'Flutter', content: 'Flutter' },
-    //     { id: 'React Native', content: 'React Native' },
-    //     { id: 'Kotlin', content: 'Kotlin' },
-    //     { id: 'Android Jetpack', content: 'Android Jetpack' },
-    //     { id: 'Android Studio', content: 'Android Studio' },
-    //     { id: 'Swift', content: 'Swift' },
-    //     { id: 'SwiftUI', content: 'SwiftUI' },
-    //     { id: 'Ionic', content: 'Ionic' },
-    //     { id: 'Xcode', content: 'Xcode' },
-    //     { id: 'Xamarin', content: 'Xamarin' },
-    // ]);
 
-    // //Output box content in every dnd
-    // const [boxContent, setBoxContent] = useState([]);
-    
-    // const [history, setHistory] = useState([]);
-
-    // const [count, setCount] = useState(0);
-
-    // const [postdata, setPostData] = useState(null);
-
-    //console.log(boxContent);
-
-    // const handleCardDropped = (cardId) => {
-    //     const card = cards.find((c) => c.id === cardId);
-
-    //     if (card) {
-    //         setBoxContent([...boxContent, card]);
-    //         setCards(cards.filter((c) => c.id !== cardId));
-
-    //         setHistory([...history, { cards, boxContent }]);
-
-    //         const cardSubmitData = {
-    //             id: cards.id,
-    //             content: cards.content,
-    //         }
-    //         setPostData(cardSubmitData);
-
-    //         setCount(count + 1);
-    //     }
-    // };
-
-    // const handleUndo = () => {
-    //     if (history.length > 0) {
-    //         const previousState = history[history.length - 1];
-    //         setCards(previousState.cards);
-    //         setBoxContent(previousState.boxContent);
-        
-    //         // Remove the last state from history
-    //         setHistory(history.slice(0, -1));
-
-    //         setCount(count - 1);
-    //     }
-    // };
 
     // Define a state variable to track whether the item is in the box.
     const [item1InBox, setItem1InBox] = useState(false);
@@ -623,7 +528,8 @@ function EnterManual(){
     }
 
     return(
-        <div className="enter_manual">
+        <div className="container_cc">
+        <div className="cc_content">
             <form>
                 <h2 className="enter_manual_title">Personal Bio Data</h2>
                 <form>
@@ -861,36 +767,6 @@ function EnterManual(){
                         </tr>
                     </tbody>
                 </table>
-
-                {/* <div>
-                    <h2 className="enter_manual_title">Technologies</h2>
-                    <p>*Drag and drop the skills you are profficient with</p>
-
-                    <button onClick={handleUndo} className="undo-button">
-                        Undo
-                    </button>
-
-                    <div className="card-container">
-                        {cards.map((card) => (
-                        <Card key={card.id} cardId={card.id}>
-                            {card.content}
-                        </Card>
-                        ))}
-                        <div class="clear"></div>
-                    </div>
-
-                    <Box onCardDropped={handleCardDropped}>
-                        {boxContent.map((card) => (
-                        <div key={card.id} className="box-card">
-                            {card.content}
-                        </div>
-                        ))}
-                        <p style={{ textAlign:'center', padding:'160px 0' }}>
-                            Drop Here
-                        </p>
-                    </Box>   
-                </div>
-                */}
 
                 <div class="row">
                     <h2 className="enter_manual_title">Technologies</h2>
@@ -1221,17 +1097,13 @@ function EnterManual(){
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
-
-
-
 
                 <div class="enter_manual_submit">
                     <input type="submit" value="Next"/>
                 </div>
             </form>
+        </div>
         </div>
     )
 }

@@ -122,7 +122,7 @@ function Home(){
     }
 
     if (responseData === null){
-        return <div>Loading...</div>
+        return <div className="loader"></div>
     }
 
     
@@ -185,12 +185,17 @@ function Home(){
 
             <div className="container-fluid container_main">
                 <div className="row">
-                    <aside class="sidebar sidebar-left col-md-2">
-                        <h2 className="sidebar-title">Filter</h2>
+                    <aside class="sidebar sidebar-left col-md-2" style={{ 
+                            backgroundColor: '#6776AB',
+                            color: 'white'
+                        }}>
+                        <h3 className="card-title mx-3">Filter Results</h3>
                         {/* Filter input */}
                         <label>
-                            Filter by Name:
-                            <input type="text" value={filterCriteria} onChange={(e) => setFilterCriteria(e.target.value)}/>
+                        <p class="card-text mx-3">Refine the search results</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control  mb-4" value={filterCriteria} onChange={(e) => setFilterCriteria(e.target.value)}/>
+                            </div>
                         </label>
                     </aside>
 
@@ -242,24 +247,27 @@ function Home(){
                                     <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_1[0]}</h3>
                                     <p class="card-text">Your position score according to the data you entered is as follows.</p>
-                                    <h3 class="card-title mb-3">{job_1[1] * 100}%</h3>
+                                    <h3 class="card-title mb-3">{job_1[1]}%</h3>
                                     <p class="card-text score_under">Good! Keep on improving your skills!</p>
                                     <div className="miss_box">
-                                    {job_1_list.map((element) => {
-                                        return(
-                                            <div class="miss_card"
-                                                style={{
-                                                    backgroundColor: 'black',
-                                                    border: '1px solid white',
-                                                    width: '50%',
-                                                    display: 'flex',
-                                                }}
-                                            >{element}</div>
-                                        )
-                                    })}
+                                        {job_1_list.map((element) => {
+                                            return(
+                                                <div
+                                                    style={{
+                                                        color: 'black',
+                                                        backgroundColor: 'white',
+                                                        borderRadius: '5px',
+                                                        width: '120px',
+                                                        height: '40px',
+                                                        margin: '2px',
+                                                        padding: '5px',
+                                                        textAlign: 'center'
+                                                    }}
+                                                ><b>{element}</b></div>
+                                            )
+                                        })}
                                     </div>
-                                    
-                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                    <p class="card-text box_under">Visit <a class="card-link" onClick={handleclick2} style={{ color: 'white' }}><b>Learn</b></a> to improve your skills</p>
                                 </div>
                             </div>
                         )}
@@ -267,22 +275,36 @@ function Home(){
                         {renderCard2 ? (
                             <p></p>
                         ) : (
-                            <div class="card"
+                            <div class="card" 
                             style={{ 
                                 backgroundColor: '#7796CB',
                                 color: 'white'
                             }}>
-                                <div class="card-body mb-2">
+                                <div class="card-body  mb-2">
                                     <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_2[0]}</h3>
-                                    <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                    <h5 class="card-subtitle mb-3">{job_2[1] * 100}%</h5>
+                                    <p class="card-text">Your position score according to the data you entered is as follows.</p>
+                                    <h3 class="card-title mb-3">{job_2[1]}%</h3>
+                                    <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                    <div className="miss_box">
                                     {job_2_list.map((element) => {
                                         return(
-                                            <div class="card">{element}</div>
+                                            <div
+                                                style={{
+                                                    color: 'black',
+                                                    backgroundColor: 'white',
+                                                    borderRadius: '5px',
+                                                    width: '120px',
+                                                    height: '40px',
+                                                    margin: '2px',
+                                                    padding: '5px',
+                                                    textAlign: 'center'
+                                                }}
+                                            ><b>{element}</b></div>
                                         )
                                     })}
-                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                    </div>
+                                    <p class="card-text box_under">Visit <a class="card-link" onClick={handleclick2} style={{ color: 'white' }}><b>Learn</b></a> to improve your skills</p>
                                 </div>
                             </div>
                         )}
@@ -290,22 +312,36 @@ function Home(){
                         {renderCard3 ? (
                             <p></p>
                         ) : (
-                            <div class="card"
+                            <div class="card" 
                             style={{ 
                                 backgroundColor: '#7796CB',
                                 color: 'white'
                             }}>
-                                <div class="card-body mb-2">
+                                <div class="card-body  mb-2">
                                     <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_3[0]}</h3>
-                                    <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                    <h5 class="card-subtitle mb-3">{job_3[1] * 100}%</h5>
+                                    <p class="card-text">Your position score according to the data you entered is as follows.</p>
+                                    <h3 class="card-title mb-3">{job_3[1]}%</h3>
+                                    <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                    <div className="miss_box">
                                     {job_3_list.map((element) => {
                                         return(
-                                            <div class="card">{element}</div>
+                                            <div
+                                                style={{
+                                                    color: 'black',
+                                                    backgroundColor: 'white',
+                                                    borderRadius: '5px',
+                                                    width: '120px',
+                                                    height: '40px',
+                                                    margin: '2px',
+                                                    padding: '5px',
+                                                    textAlign: 'center'
+                                                }}
+                                            ><b>{element}</b></div>
                                         )
                                     })}
-                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                    </div>
+                                    <p class="card-text box_under">Visit <a class="card-link" onClick={handleclick2} style={{ color: 'white' }}><b>Learn</b></a> to improve your skills</p>
                                 </div>
                             </div>
                         )}
@@ -313,22 +349,36 @@ function Home(){
                         {renderCard4 ? (
                             <p></p>
                         ) : (
-                            <div class="card"
+                            <div class="card" 
                             style={{ 
                                 backgroundColor: '#7796CB',
                                 color: 'white'
                             }}>
-                                <div class="card-body mb-2">
+                                <div class="card-body  mb-2">
                                     <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_4[0]}</h3>
-                                    <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                    <h5 class="card-subtitle mb-3">{job_4[1] * 100}%</h5>
+                                    <p class="card-text">Your position score according to the data you entered is as follows.</p>
+                                    <h3 class="card-title mb-3">{job_4[1]}%</h3>
+                                    <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                    <div className="miss_box">
                                     {job_4_list.map((element) => {
                                         return(
-                                            <div class="card">{element}</div>
+                                            <div
+                                                style={{
+                                                    color: 'black',
+                                                    backgroundColor: 'white',
+                                                    borderRadius: '5px',
+                                                    width: '120px',
+                                                    height: '40px',
+                                                    margin: '2px',
+                                                    padding: '5px',
+                                                    textAlign: 'center'
+                                                }}
+                                            ><b>{element}</b></div>
                                         )
                                     })}
-                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                    </div>
+                                    <p class="card-text box_under">Visit <a class="card-link" onClick={handleclick2} style={{ color: 'white' }}><b>Learn</b></a> to improve your skills</p>
                                 </div>
                             </div>
                         )}
@@ -336,22 +386,36 @@ function Home(){
                         {renderCard5 ? (
                             <p></p>
                         ) : (
-                            <div class="card"
+                            <div class="card" 
                             style={{ 
                                 backgroundColor: '#7796CB',
                                 color: 'white'
                             }}>
-                                <div class="card-body mb-2">
+                                <div class="card-body  mb-2">
                                     <h6 class="card-subtitle mb-1">You are eligible for...</h6>
                                     <h3 class="card-title">{job_5[0]}</h3>
-                                    <p class="card-text">Your user score according to the data you entered is as follows.</p>
-                                    <h5 class="card-subtitle mb-3">{job_5[1] * 100}%</h5>
+                                    <p class="card-text">Your position score according to the data you entered is as follows.</p>
+                                    <h3 class="card-title mb-3">{job_5[1]}%</h3>
+                                    <p class="card-text score_under">Good! Keep on improving your skills!</p>
+                                    <div className="miss_box">
                                     {job_5_list.map((element) => {
                                         return(
-                                            <div class="card">{element}</div>
+                                            <div
+                                                style={{
+                                                    color: 'black',
+                                                    backgroundColor: 'white',
+                                                    borderRadius: '5px',
+                                                    width: '120px',
+                                                    height: '40px',
+                                                    margin: '2px',
+                                                    padding: '5px',
+                                                    textAlign: 'center'
+                                                }}
+                                            ><b>{element}</b></div>
                                         )
                                     })}
-                                    <a class="card-link" onClick={handleclick2}>Learn</a>
+                                    </div>
+                                    <p class="card-text box_under">Visit <a class="card-link" onClick={handleclick2} style={{ color: 'white' }}><b>Learn</b></a> to improve your skills</p>
                                 </div>
                             </div>
                         )}
@@ -360,28 +424,54 @@ function Home(){
                 </div>
                 
             </div>
+
             {/* Pagination controls */}
-            <div>
-                <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === 1}
-                >
-                    Previous Page
-                </button>
-                <ul className="pagination">
-                    {Array.from({ length: totalPages }, (_, index) => (
-                        <li key={index} className={currentPage === index + 1 ? 'active' : ''}>
-                            {index + 1}
-                        </li>
-                    ))}
-                    <p>Current Page: {currentPage}</p>
-                </ul>
-                <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={endIndex >= filteredData.length}
-                >
-                    Next Page
-                </button>
+            <div className="container">
+                <div className="row pb-4">
+                    <div className="col-md-2">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={currentPage === 1}
+                            
+                        >
+                            Previous Page
+                        </button>
+                    </div>
+
+                    <div className="col-md-8">
+                        <ul className="pagination">
+                            {Array.from({ length: totalPages }, (_, index) => (
+                                <div
+                                    key={index} 
+                                    className={currentPage === index + 1 ? 'active' : ''}
+                                    style={{
+                                        color: 'black',
+                                        backgroundColor: 'white',
+                                        borderRadius: '5px',
+                                        width: '120px',
+                                        height: '40px',
+                                        margin: '2px',
+                                        padding: '5px',
+                                        textAlign: 'center'
+                                    }}
+                                > {index + 1}</div>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="col-md-2">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={endIndex >= filteredData.length}
+                        >
+                            Next Page
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -51,22 +51,7 @@ function Index(){
                 </div>
             </div>
 
-
-
-            {/* <div class="container">
-                <div class="row">
-                    <div class="four col-md-3">
-                        <div class="counter-box colored">
-                            <SwingCounter targetValue={100} duration={5000} />
-                            <p>Students</p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-
-
-            <div class="counter container d-flex w-100 h-100 mx-auto flex-column">
+            <div class="counter container d-flex w-100 h-100 mx-auto flex-column" id="container_index">
                 <div class="row">
                     <div class="col-md-6 float-left">
 					    <h2 className="count-header">Hundreds of<br />JOB<br />Vacancies</h2>
@@ -88,19 +73,9 @@ function Index(){
                 </div>
             </div>
     
-                
-                
-                            
-            <div class="container">
-                <footer class="py-1 my-1">
-                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-                    </ul>
-                    <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+            <div class="container mt-3" id="container_index">
+                <footer>
+                    <p class="text-center text-muted">&copy; 20/21 UOK CS Project - Group 3</p>
                 </footer>
             </div>
                    

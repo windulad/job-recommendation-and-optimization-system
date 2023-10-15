@@ -620,560 +620,561 @@ function CrossCheck(){
  
 
     return(
-        <div className="enter_manual">
-            <form id="crossCheckForm" onSubmit={handleSubmit}>
-                
-                <h2 className="crosscheckl_title">Personal Bio Data</h2>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">First Name</label>
-                        <input type="text" class="form-control" value={fname}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Last Name</label>
-                        <input type="text" class="form-control" value={lname}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Email Address</label>
-                        <input type="text" class="form-control" value={email}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Contact Number</label>
-                        <input type="text" class="form-control" value={phone}/>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Permanent Address</label>
-                        <input type="text" class="form-control" value={address}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Country</label>
-                        <input type="text" class="form-control" value={country}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Postal Code</label>
-                        <input type="text" class="form-control" value={postalcode}/>
-                    </div>
-                </div>
+        <div className="container_cc">
+            <div className="cc_content">
+                <form id="crossCheckForm" onSubmit={handleSubmit}>
+                    <h1 className="cc_title">Cross Check</h1>
 
-                <h2 className="crosscheckl_title">Educational Qualifications</h2>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Qualification No. 1</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify1} onChange={handleChange1}>
-                            <option value="">Select a Qualification</option>
-                            <option value="High school">High school</option>
-                            <option value="Vocational qualification">Vocational qualification</option>
-                            <option value="Bachelor's degree">Bachelor's degree</option>
-                            <option value="Master's degree">Master's degree</option>
-                            <option value="Doctorate or higher">Doctorate or higher</option>
-                        </select>
+                    <h2 className="crosscheckl_title">Personal Bio Data</h2>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">First Name</label>
+                            <input type="text" class="form-control" value={fname}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Last Name</label>
+                            <input type="text" class="form-control" value={lname}/>
+                        </div>
                     </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify1Syear} onChange={handleChange2}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Email Address</label>
+                            <input type="text" class="form-control" value={email}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Contact Number</label>
+                            <input type="text" class="form-control" value={phone}/>
+                        </div>
                     </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify1Eyear} onChange={handleChange3}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
+                    <div className="row mb-5">
+                        <div className="col input_data">
+                            <label className="form-label">Permanent Address</label>
+                            <input type="text" class="form-control" value={address}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Country</label>
+                            <input type="text" class="form-control" value={country}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Postal Code</label>
+                            <input type="text" class="form-control" value={postalcode}/>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Qualification No. 2</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify2} onChange={handleChange5}>
-                            <option value="">Select a Qualification</option>
-                            <option value="High school">High school</option>
-                            <option value="Vocational qualification">Vocational qualification</option>
-                            <option value="Bachelor's degree">Bachelor's degree</option>
-                            <option value="Master's degree">Master's degree</option>
-                            <option value="Doctorate or higher">Doctorate or higher</option>
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify2Syear} onChange={handleChange6}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify2Eyear} onChange={handleChange7}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Qualification No. 3</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify3} onChange={handleChange9}>
-                            <option value="">Select a Qualification</option>
-                            <option value="High school">High school</option>
-                            <option value="Vocational qualification">Vocational qualification</option>
-                            <option value="Bachelor's degree">Bachelor's degree</option>
-                            <option value="Master's degree">Master's degree</option>
-                            <option value="Doctorate or higher">Doctorate or higher</option>
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify3Syear} onChange={handleChange10}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={selectedQualify3Eyear} onChange={handleChange11}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                </div>
 
-                <h2 className="crosscheckl_title">Project Details</h2>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Project No. 1</label>
-                        <input type="text" class="form-control" value={project1Title} onChange={handleChange13}/>
+                    <h2 className="crosscheckl_title">Educational Qualifications</h2>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Qualification No. 1</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify1} onChange={handleChange1}>
+                                <option value="">Select a Qualification</option>
+                                <option value="High school">High school</option>
+                                <option value="Vocational qualification">Vocational qualification</option>
+                                <option value="Bachelor's degree">Bachelor's degree</option>
+                                <option value="Master's degree">Master's degree</option>
+                                <option value="Doctorate or higher">Doctorate or higher</option>
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify1Syear} onChange={handleChange2}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify1Eyear} onChange={handleChange3}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Project No. 2</label>
-                        <input type="text" class="form-control" value={project2Title} onChange={handleChange15}/>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Qualification No. 2</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify2} onChange={handleChange5}>
+                                <option value="">Select a Qualification</option>
+                                <option value="High school">High school</option>
+                                <option value="Vocational qualification">Vocational qualification</option>
+                                <option value="Bachelor's degree">Bachelor's degree</option>
+                                <option value="Master's degree">Master's degree</option>
+                                <option value="Doctorate or higher">Doctorate or higher</option>
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify2Syear} onChange={handleChange6}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify2Eyear} onChange={handleChange7}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Project No. 3</label>
-                        <input type="text" class="form-control" value={project3Title} onChange={handleChange17}/>
+                    <div className="row mb-5">
+                        <div className="col input_data">
+                            <label className="form-label">Qualification No. 3</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify3} onChange={handleChange9}>
+                                <option value="">Select a Qualification</option>
+                                <option value="High school">High school</option>
+                                <option value="Vocational qualification">Vocational qualification</option>
+                                <option value="Bachelor's degree">Bachelor's degree</option>
+                                <option value="Master's degree">Master's degree</option>
+                                <option value="Doctorate or higher">Doctorate or higher</option>
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify3Syear} onChange={handleChange10}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={selectedQualify3Eyear} onChange={handleChange11}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <h2 className="crosscheckl_title">Job Experience</h2>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Position No. 1</label>
-                        <input type="text" class="form-control" value={job1} onChange={handleChange19}/>
+                    <h2 className="crosscheckl_title">Project Details</h2>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Project No. 1</label>
+                            <input type="text" class="form-control" value={project1Title} onChange={handleChange13}/>
+                        </div>
                     </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job1Syear} onChange={handleChange20}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Project No. 2</label>
+                            <input type="text" class="form-control" value={project2Title} onChange={handleChange15}/>
+                        </div>
                     </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job1Eyear} onChange={handleChange21}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Project No. 3</label>
+                            <input type="text" class="form-control" value={project3Title} onChange={handleChange17}/>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Position No. 2</label>
-                        <input type="text" class="form-control" value={job2} onChange={handleChange23}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job2Syear} onChange={handleChange24}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job2Eyear} onChange={handleChange25}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col input_data">
-                        <label className="form-label">Position No. 3</label>
-                        <input type="text" class="form-control" value={job3} onChange={handleChange27}/>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year started</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job3Syear} onChange={handleChange28}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                    <div className="col input_data">
-                        <label className="form-label">Year Ended</label>
-                        <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', borderColor:'black'}} value={job3Eyear} onChange={handleChange29}>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (<option key={year} value={year}>{year}</option>))}
-                        </select>
-                    </div>
-                </div>
 
-                <h2 className="crosscheckl_title">Technologies (Skills)</h2>
-                <div class="row">
-                    <h2 className="enter_manual_title">Technologies</h2>
+                    <h2 className="crosscheckl_title">Job Experience</h2>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Position No. 1</label>
+                            <input type="text" class="form-control" value={job1} onChange={handleChange19}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job1Syear} onChange={handleChange20}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job1Eyear} onChange={handleChange21}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col input_data">
+                            <label className="form-label">Position No. 2</label>
+                            <input type="text" class="form-control" value={job2} onChange={handleChange23}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job2Syear} onChange={handleChange24}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job2Eyear} onChange={handleChange25}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                    </div>
+                    <div className="row mb-5">
+                        <div className="col input_data">
+                            <label className="form-label">Position No. 3</label>
+                            <input type="text" class="form-control" value={job3} onChange={handleChange27}/>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year started</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job3Syear} onChange={handleChange28}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                        <div className="col input_data">
+                            <label className="form-label">Year Ended</label>
+                            <select class="btn dropdown-toggle" style={{ textAlign:"left", width:'100%', height:'50%', backgroundColor: 'white'}} value={job3Eyear} onChange={handleChange29}>
+                                <option value="">Select a year</option>
+                                {years.map((year) => (<option key={year} value={year}>{year}</option>))}
+                            </select>
+                        </div>
+                    </div>
 
-                    <div className="box col-md-6">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <div className="item-skill">
-                                    {item1InBox ? (<p className="p-card">C</p>) : (<p>_</p>)}
+                    <h2 className="crosscheckl_title">Technologies (Skills)</h2>
+                    <div class="row mb-5">
+                        <div className="box col-md-6">
+                            <div className="row">
+                                <div className="col-md-3">
+                                    <div className="item-skill">
+                                        {item1InBox ? (<h6>C</h6>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item2InBox ? (<p>C++</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item3InBox ? (<p>C#</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item4InBox ? (<p>Java</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item5InBox ? (<p>Python</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item6InBox ? (<p>PHP</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item7InBox ? (<p>Go</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item8InBox ? (<p>SQL</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item9InBox ? (<p>MySQL</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item10InBox ? (<p>PostgreSQL</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item11InBox ? (<p>MongoDB</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item12InBox ? (<p>SQL Server</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item13InBox ? (<p>Oracle SQL</p>) : (<p>_</p>)}
+                                    </div> 
                                 </div>
+                                <div className="col-md-3">
                                 <div className="item-skill">
-                                    {item2InBox ? (<p>C++</p>) : (<p>_</p>)}
+                                        {item14InBox ? (<p>Git</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item15InBox ? (<p>GitHub</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item16InBox ? (<p>GitLab</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item17InBox ? (<p>AWS</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item18InBox ? (<p>Azure</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item19InBox ? (<p>GCP</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item20InBox ? (<p>Postman</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item21InBox ? (<p>Twilio</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item22InBox ? (<p>Docker</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item23InBox ? (<p>Kubernetes</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item24InBox ? (<p>HTML</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item25InBox ? (<p>CSS</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item26InBox ? (<p>Bootstrap</p>) : (<p>_</p>)}
+                                    </div> 
                                 </div>
+                                <div className="col-md-3">
                                 <div className="item-skill">
-                                    {item3InBox ? (<p>C#</p>) : (<p>_</p>)}
+                                        {item27InBox ? (<p>Tailwind</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item28InBox ? (<p>JavaScript</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item29InBox ? (<p>TypeScript</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item30InBox ? (<p>React</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item31InBox ? (<p>Angular</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item32InBox ? (<p>Vue</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item33InBox ? (<p>Node</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item34InBox ? (<p>Django</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item35InBox ? (<p>Flask</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item36InBox ? (<p>Spring Boot</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item37InBox ? (<p>Laravel</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item38InBox ? (<p>Ruby on Rails</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item39InBox ? (<p>.NET Core</p>) : (<p>_</p>)}
+                                    </div> 
                                 </div>
+                                <div className="col-md-3">
                                 <div className="item-skill">
-                                    {item4InBox ? (<p>Java</p>) : (<p>_</p>)}
+                                        {item40InBox ? (<p>Dart</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item41InBox ? (<p>Flutter</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item42InBox ? (<p>React Native</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item43InBox ? (<p>Kotlin</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item44InBox ? (<p>Android Jetpack</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item45InBox ? (<p>Android Studio</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item46InBox ? (<p>Swift</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item47InBox ? (<p>SwiftUI</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item48InBox ? (<p>Ionic</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item49InBox ? (<p>Xcode</p>) : (<p>_</p>)}
+                                    </div>
+                                    <div className="item-skill">
+                                        {item50InBox ? (<p>Xamarin</p>) : (<p>_</p>)}
+                                    </div> 
                                 </div>
-                                <div className="item-skill">
-                                    {item5InBox ? (<p>Python</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item6InBox ? (<p>PHP</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item7InBox ? (<p>Go</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item8InBox ? (<p>SQL</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item9InBox ? (<p>MySQL</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item10InBox ? (<p>PostgreSQL</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item11InBox ? (<p>MongoDB</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item12InBox ? (<p>SQL Server</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item13InBox ? (<p>Oracle SQL</p>) : (<p>_</p>)}
-                                </div> 
                             </div>
-                            <div className="col-md-3">
-                            <div className="item-skill">
-                                    {item14InBox ? (<p>Git</p>) : (<p>_</p>)}
+                        </div>
+
+                        <div className="col-md-6">
+                            <div className="row">
+                                <div className="col-md-3">
+                                    {/* Button to toggle the item in and out of the box */}
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem1InBox}>
+                                        {item1InBox ? 'Remove C' : 'C'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem2InBox}>
+                                        {item2InBox ? 'Remove C++' : 'C++'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem3InBox}>
+                                        {item3InBox ? 'Remove C#' : 'C#'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem4InBox}>
+                                        {item4InBox ? 'Remove Java' : 'Java'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem5InBox}>
+                                        {item5InBox ? 'Remove Python' : 'Python'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem6InBox}>
+                                        {item6InBox ? 'Remove PHP' : 'PHP'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem7InBox}>
+                                        {item7InBox ? 'Remove Go' : 'Go'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem8InBox}>
+                                        {item8InBox ? 'Remove SQL' : 'SQL'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem9InBox}>
+                                        {item9InBox ? 'Remove MySQL' : 'MySQL'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem10InBox}>
+                                        {item10InBox ? 'Remove PostgreSQL' : 'PostgreSQL'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem11InBox}>
+                                        {item11InBox ? 'Remove MongoDB' : 'MongoDB'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem12InBox}>
+                                        {item12InBox ? 'Remove SQL Server' : 'SQL Server'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem13InBox}>
+                                        {item13InBox ? 'Remove Oracle SQL' : 'Oracle SQL'}
+                                    </button>
                                 </div>
-                                <div className="item-skill">
-                                    {item15InBox ? (<p>GitHub</p>) : (<p>_</p>)}
+                                <div className="col-md-3">
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem14InBox}>
+                                        {item14InBox ? 'Remove Git' : 'Git'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem15InBox}>
+                                        {item15InBox ? 'Remove GitHub' : 'GitHub'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem16InBox}>
+                                        {item16InBox ? 'Remove GitLab' : 'GitLab'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem17InBox}>
+                                        {item17InBox ? 'Remove AWS' : 'AWS'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem18InBox}>
+                                        {item18InBox ? 'Remove Azure' : 'Azure'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem19InBox}>
+                                        {item19InBox ? 'Remove GCP' : 'GCP'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem20InBox}>
+                                        {item20InBox ? 'Remove Postman' : 'Postman'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem21InBox}>
+                                        {item21InBox ? 'Remove Twilio' : 'Twilio'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem22InBox}>
+                                        {item22InBox ? 'Remove Docker' : 'Docker'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem23InBox}>
+                                        {item23InBox ? 'Remove Kubernetes' : 'Kubernetes'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem24InBox}>
+                                        {item24InBox ? 'Remove HTML' : 'HTML'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem25InBox}>
+                                        {item25InBox ? 'Remove CSS' : 'CSS'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem26InBox}>
+                                        {item26InBox ? 'Remove Bootstrap' : 'Bootstrap'}
+                                    </button>
                                 </div>
-                                <div className="item-skill">
-                                    {item16InBox ? (<p>GitLab</p>) : (<p>_</p>)}
+                                <div className="col-md-3">
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem27InBox}>
+                                        {item27InBox ? 'Remove Tailwind' : 'Tailwind'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem28InBox}>
+                                        {item28InBox ? 'Remove JavaScript' : 'JavaScript'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem29InBox}>
+                                        {item29InBox ? 'Remove TypeScript' : 'TypeScript'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem30InBox}>
+                                        {item30InBox ? 'Remove React' : 'React'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem31InBox}>
+                                        {item31InBox ? 'Remove Angular' : 'Angular'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem32InBox}>
+                                        {item32InBox ? 'Remove Vue' : 'Vue'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem33InBox}>
+                                        {item33InBox ? 'Remove Node' : 'Node'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem34InBox}>
+                                        {item34InBox ? 'Remove Django' : 'Django'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem35InBox}>
+                                        {item35InBox ? 'Remove Flask' : 'Flask'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem36InBox}>
+                                        {item36InBox ? 'Remove Spring Boot' : 'Spring Boot'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem37InBox}>
+                                        {item37InBox ? 'Remove Laravel' : 'Laravel'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem38InBox}>
+                                        {item38InBox ? 'Remove Ruby on Rails' : 'Ruby on Rails'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem39InBox}>
+                                        {item39InBox ? 'Remove .NET Core' : '.NET Core'}
+                                    </button>
                                 </div>
-                                <div className="item-skill">
-                                    {item17InBox ? (<p>AWS</p>) : (<p>_</p>)}
+                                <div className="col-md-3">
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem40InBox}>
+                                        {item40InBox ? 'Remove Dart' : 'Dart'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem41InBox}>
+                                        {item41InBox ? 'Remove Flutter' : 'Flutter'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem42InBox}>
+                                        {item42InBox ? 'Remove React Native' : 'React Native'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem43InBox}>
+                                        {item43InBox ? 'Remove Kotlin' : 'Kotlin'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem44InBox}>
+                                        {item44InBox ? 'Remove Android Jetpack' : 'Android Jetpack'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem45InBox}>
+                                        {item45InBox ? 'Remove Android Studio' : 'Android Studio'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem46InBox}>
+                                        {item46InBox ? 'Remove Swift' : 'Swift'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem47InBox}>
+                                        {item47InBox ? 'Remove SwiftUI' : 'SwiftUI'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem48InBox}>
+                                        {item48InBox ? 'Remove Ionic' : 'Ionic'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem49InBox}>
+                                        {item49InBox ? 'Remove Xcode' : 'Xcode'}
+                                    </button>
+                                    <button type="button" class="btn card_button" style={{ color: 'white', backgroundColor: '#31437E'}} onClick={toggleItem50InBox}>
+                                        {item50InBox ? 'Remove Xamarin' : 'Xamarin'}
+                                    </button>
                                 </div>
-                                <div className="item-skill">
-                                    {item18InBox ? (<p>Azure</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item19InBox ? (<p>GCP</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item20InBox ? (<p>Postman</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item21InBox ? (<p>Twilio</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item22InBox ? (<p>Docker</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item23InBox ? (<p>Kubernetes</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item24InBox ? (<p>HTML</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item25InBox ? (<p>CSS</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item26InBox ? (<p>Bootstrap</p>) : (<p>_</p>)}
-                                </div> 
-                            </div>
-                            <div className="col-md-3">
-                            <div className="item-skill">
-                                    {item27InBox ? (<p>Tailwind</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item28InBox ? (<p>JavaScript</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item29InBox ? (<p>TypeScript</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item30InBox ? (<p>React</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item31InBox ? (<p>Angular</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item32InBox ? (<p>Vue</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item33InBox ? (<p>Node</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item34InBox ? (<p>Django</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item35InBox ? (<p>Flask</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item36InBox ? (<p>Spring Boot</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item37InBox ? (<p>Laravel</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item38InBox ? (<p>Ruby on Rails</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item39InBox ? (<p>.NET Core</p>) : (<p>_</p>)}
-                                </div> 
-                            </div>
-                            <div className="col-md-3">
-                            <div className="item-skill">
-                                    {item40InBox ? (<p>Dart</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item41InBox ? (<p>Flutter</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item42InBox ? (<p>React Native</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item43InBox ? (<p>Kotlin</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item44InBox ? (<p>Android Jetpack</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item45InBox ? (<p>Android Studio</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item46InBox ? (<p>Swift</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item47InBox ? (<p>SwiftUI</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item48InBox ? (<p>Ionic</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item49InBox ? (<p>Xcode</p>) : (<p>_</p>)}
-                                </div>
-                                <div className="item-skill">
-                                    {item50InBox ? (<p>Xamarin</p>) : (<p>_</p>)}
-                                </div> 
                             </div>
                         </div>
                     </div>
 
-                    <div className="col-md-6">
-                        <div className="row">
-                            <div className="col-md-3">
-                                {/* Button to toggle the item in and out of the box */}
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem1InBox}>
-                                    {item1InBox ? 'Remove C' : 'C'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem2InBox}>
-                                    {item2InBox ? 'Remove C++' : 'C++'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem3InBox}>
-                                    {item3InBox ? 'Remove C#' : 'C#'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem4InBox}>
-                                    {item4InBox ? 'Remove Java' : 'Java'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem5InBox}>
-                                    {item5InBox ? 'Remove Python' : 'Python'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem6InBox}>
-                                    {item6InBox ? 'Remove PHP' : 'PHP'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem7InBox}>
-                                    {item7InBox ? 'Remove Go' : 'Go'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem8InBox}>
-                                    {item8InBox ? 'Remove SQL' : 'SQL'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem9InBox}>
-                                    {item9InBox ? 'Remove MySQL' : 'MySQL'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem10InBox}>
-                                    {item10InBox ? 'Remove PostgreSQL' : 'PostgreSQL'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem11InBox}>
-                                    {item11InBox ? 'Remove MongoDB' : 'MongoDB'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem12InBox}>
-                                    {item12InBox ? 'Remove SQL Server' : 'SQL Server'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem13InBox}>
-                                    {item13InBox ? 'Remove Oracle SQL' : 'Oracle SQL'}
-                                </button>
-                            </div>
-                            <div className="col-md-3">
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem14InBox}>
-                                    {item14InBox ? 'Remove Git' : 'Git'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem15InBox}>
-                                    {item15InBox ? 'Remove GitHub' : 'GitHub'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem16InBox}>
-                                    {item16InBox ? 'Remove GitLab' : 'GitLab'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem17InBox}>
-                                    {item17InBox ? 'Remove AWS' : 'AWS'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem18InBox}>
-                                    {item18InBox ? 'Remove Azure' : 'Azure'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem19InBox}>
-                                    {item19InBox ? 'Remove GCP' : 'GCP'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem20InBox}>
-                                    {item20InBox ? 'Remove Postman' : 'Postman'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem21InBox}>
-                                    {item21InBox ? 'Remove Twilio' : 'Twilio'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem22InBox}>
-                                    {item22InBox ? 'Remove Docker' : 'Docker'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem23InBox}>
-                                    {item23InBox ? 'Remove Kubernetes' : 'Kubernetes'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem24InBox}>
-                                    {item24InBox ? 'Remove HTML' : 'HTML'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem25InBox}>
-                                    {item25InBox ? 'Remove CSS' : 'CSS'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem26InBox}>
-                                    {item26InBox ? 'Remove Bootstrap' : 'Bootstrap'}
-                                </button>
-                            </div>
-                            <div className="col-md-3">
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem27InBox}>
-                                    {item27InBox ? 'Remove Tailwind' : 'Tailwind'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem28InBox}>
-                                    {item28InBox ? 'Remove JavaScript' : 'JavaScript'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem29InBox}>
-                                    {item29InBox ? 'Remove TypeScript' : 'TypeScript'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem30InBox}>
-                                    {item30InBox ? 'Remove React' : 'React'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem31InBox}>
-                                    {item31InBox ? 'Remove Angular' : 'Angular'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem32InBox}>
-                                    {item32InBox ? 'Remove Vue' : 'Vue'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem33InBox}>
-                                    {item33InBox ? 'Remove Node' : 'Node'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem34InBox}>
-                                    {item34InBox ? 'Remove Django' : 'Django'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem35InBox}>
-                                    {item35InBox ? 'Remove Flask' : 'Flask'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem36InBox}>
-                                    {item36InBox ? 'Remove Spring Boot' : 'Spring Boot'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem37InBox}>
-                                    {item37InBox ? 'Remove Laravel' : 'Laravel'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem38InBox}>
-                                    {item38InBox ? 'Remove Ruby on Rails' : 'Ruby on Rails'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem39InBox}>
-                                    {item39InBox ? 'Remove .NET Core' : '.NET Core'}
-                                </button>
-                            </div>
-                            <div className="col-md-3">
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem40InBox}>
-                                    {item40InBox ? 'Remove Dart' : 'Dart'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem41InBox}>
-                                    {item41InBox ? 'Remove Flutter' : 'Flutter'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem42InBox}>
-                                    {item42InBox ? 'Remove React Native' : 'React Native'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem43InBox}>
-                                    {item43InBox ? 'Remove Kotlin' : 'Kotlin'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem44InBox}>
-                                    {item44InBox ? 'Remove Android Jetpack' : 'Android Jetpack'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem45InBox}>
-                                    {item45InBox ? 'Remove Android Studio' : 'Android Studio'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem46InBox}>
-                                    {item46InBox ? 'Remove Swift' : 'Swift'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem47InBox}>
-                                    {item47InBox ? 'Remove SwiftUI' : 'SwiftUI'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem48InBox}>
-                                    {item48InBox ? 'Remove Ionic' : 'Ionic'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem49InBox}>
-                                    {item49InBox ? 'Remove Xcode' : 'Xcode'}
-                                </button>
-                                <button type="button" class="btn btn-secondary card_button" onClick={toggleItem50InBox}>
-                                    {item50InBox ? 'Remove Xamarin' : 'Xamarin'}
-                                </button>
-                            </div>
+                    <div className="row mb-5">
+                        <div className="col-md-1 form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" required/>
                         </div>
-                    </div>
-                </div>
 
-                <div className="row">
-                    <div className="col input_data">
-                        <input type="checkbox" value="" id="invalidCheck" required/>
-                        <label class="form-check-label" for="invalidCheck">
-                            I here by consent that all the data mentioned here are correct as my knowledge and understanding. By clicking here, I state that I have read<br/> and understood the terms and conditions.
-                        </label>
-                        <div class="invalid-feedback">
-                            You must agree before submitting.
+                        <div className="col-md-11">
+                            <label class="form-check-label">
+                                I here by consent that all the data mentioned here are correct as my knowledge and understanding. By clicking here, I state that I have read and understood the terms and conditions.
+                            </label>
                         </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col crossCheckSubmit" id="crossCheckSubmit">
-                        <input type="submit" value="Submit"/>
+                    <div className="row mb-5">
+                        <div className="col cc_submit" id="cc_submit">
+                            <input type="submit" value="Submit"/>
+                        </div>
                     </div>
-                </div>
-                
-            </form>
+                    
+                </form>
+            </div>
         </div>
     );
 };

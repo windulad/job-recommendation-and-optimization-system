@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import upload_image from '../assets/entercv/uploadcv.png';
 const SERVER_URL = 'http://127.0.0.1:5000';
 
 Axios.defaults.withCredentials = true;
@@ -63,17 +64,49 @@ function EnterCV(){
     };
 
     return (
-        <div class="enter_cv">
-            <h1 class="enter_cv_title">Upload your CV/Resume</h1>
-            <form onSubmit={handleSubmit}>
-                <div class="input_field">
-                    <input type="file" onChange={handleFileChange} />
+        <div className="container-cv">
+            <div className="container">
+                <div className="row">
+                    <div class="col-md-12 cv">
+                        <h1 class="cv_title">Upload your CV/Resume</h1>
+                        <p className="cv_subtitle">Only '.pdf' format is allowed. Other file formats are not accepted.</p>
+                        <img 
+                            src={upload_image} 
+                            alt="" 
+                            style={{
+                                width: '20%', 
+                                height: 'auto',
+                                margin: '0 auto',
+                                marginTop: '3%',
+                                marginBottom: '3%',
+                                display: 'inline-block'
+                            }}
+                        />
+                    </div>
+                    <div class="col-md-4 cv">
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <input 
+                                    class="form-control" 
+                                    type="file" 
+                                    id="formFile" 
+                                    onChange={handleFileChange}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        marginBottom: '20px'
+                                    }}
+                                />
+                            </div>
+                            <div className="cv_submit" id="cv_submit">
+                                <input type="submit" value="SUBMIT"/>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="signup_login">
-                    <input type="submit" value="Log in"/>
-                </div>
-            </form>
+            </div>
         </div>
+        
     );
 };
 

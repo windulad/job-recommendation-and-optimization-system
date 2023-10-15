@@ -161,41 +161,40 @@ function Home(){
 
 
     if (responseData === null){
-        return <div>Loading...</div>
+        return <div className="loader"></div>
     }
 
     return(
-        <div>
-        <div>
-            <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-                <a class="navbar-brand" href="">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div className="container_home">
+        
+            <nav class="navbar navbar-expand-lg fixed-top main_navbar">
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
+                    <ul class="navbar-nav main_nav">
+                        <li class="nav-item main_navitem">
+                            <a class="nav-link" onClick={handleclick1}>FUTURE</a>
+                        </li>
+                        <li class="nav-item main_navitem">
                             <a class="nav-link" onClick={handleclick1}>Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item main_navitem">
                             <a class="nav-link" onClick={handleclick2}>Learn</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item main_navitem">
                             <a class="nav-link" onClick={handleclick3}>Profile</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto d-inline-flex justify-content-end">
-                        <li class="nav-item ">
+                    <ul class="navbar-nav ms-auto d-inline-flex justify-content-end main_navend">
+                        <li class="nav-item main_navitem">
                             <a class="nav-link" onClick={handleclick5}>Log&nbsp;out</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </div>
+       
 
-        <div className="enter_manual">
-            <form id="crossCheckForm">
-                <h2 className="crosscheckl_title">Personal Bio Data</h2>
+            <div className="profile">            
+                <h2 className="profile_title">Personal Bio Data</h2>
+                
                 <div className="row">
                     <div className="col input_data">
                         <label className="form-label">First Name</label>
@@ -231,7 +230,8 @@ function Home(){
                     </div>
                 </div>
 
-                <h2 className="crosscheckl_title">Educational Qualifications</h2>
+                <h2 className="profile_title">Educational Qualifications</h2>
+                
                 <div className="row">
                     <div className="col input_data">
                         <label className="form-label">Qualification No. 1</label>
@@ -275,7 +275,8 @@ function Home(){
                     </div>
                 </div>
 
-                <h2 className="crosscheckl_title">Project Details</h2>
+                <h2 className="profile_title">Project Details</h2>
+                
                 <div className="row">
                     <div className="col input_data">
                         <label className="form-label">Project No. 1</label>
@@ -295,7 +296,8 @@ function Home(){
                     </div>
                 </div>
 
-                <h2 className="crosscheckl_title">Job Experience</h2>
+                <h2 className="profile_title">Job Experience</h2>
+                
                 <div className="row">
                     <div className="col input_data">
                         <label className="form-label">Position No. 1</label>
@@ -339,10 +341,7 @@ function Home(){
                     </div>
                 </div>
 
-                
-
-            </form>
-        </div>
+            </div>
         </div>
     );
 }

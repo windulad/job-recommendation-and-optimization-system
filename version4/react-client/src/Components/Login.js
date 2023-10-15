@@ -66,7 +66,7 @@ function Login(){
 
     return(
         <div className="container-login">
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-6">
                         <img 
@@ -85,17 +85,7 @@ function Login(){
                         <div class="login">
                             <h1 class="login_title">Log in</h1>
                             
-                            <form onSubmit={handleSubmit}> 
-                                {/*<div className="row">
-                                    <div className="col input_data">
-                                        <label className="form-label">First Name</label>
-                                        <input type="text" class="form-control"/>
-                                    </div>
-                                    <div className="col input_data">
-                                        <label className="form-label">Last Name</label>
-                                        <input type="text" class="form-control"/>
-                                    </div>
-                                </div>*/}
+                            <form onSubmit={handleSubmit}>  
                                 <div class="form-group">
                                     <input type="text" name='email' placeholder="Email Address" class="form-control  mb-4" onChange={handleChange} required/>
                                 </div>
