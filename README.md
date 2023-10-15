@@ -16,6 +16,7 @@ git clone <repo_url><br>
 $ ...\version4> cd flask-server<br>
 $ ...\version4\flask-server> pip3 install virtualenv<br>
 $ ...\version4\flask-server> virtualenv env<br>
+$ ...\version4\flask-server> env/Scripts/Activate<br>
 
 ### Step 3 :- Install packages
 (env) ...\version4\flask-server> pip install -r requirements.txt<br>
