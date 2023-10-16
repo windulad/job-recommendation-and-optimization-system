@@ -1,0 +1,750 @@
+body{
+    font-family: sans-serif;
+    overflow-x:hidden;
+  }
+
+.container{
+  margin-top: 65px;
+}
+
+/*--Index-----------------*/
+.bg {
+  background-image: url("../assets/index/header1.png");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.navbar-nav {
+  float: right;
+  margin: 1%;
+}
+.nav-item a{
+  color: #ffffff;
+}
+.navbar-brand{
+  margin: 1%;
+  margin-left: 3%;
+}
+.nav-item{
+  margin: 5%;
+}
+
+.nav-item:hover{
+  cursor: pointer;
+}
+
+.main-header{
+  margin-top: 19%;
+  margin-bottom: -10px;
+  margin-left: 5%;
+  color: #ffffff;
+  font-size: 500%;
+  text-align: left;
+}
+.main-subheader{
+  margin-top: 0px;
+  margin-left: 5%;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: left;
+  letter-spacing: 0.07em;
+}
+.main-subheader2{
+  margin-top: 14%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-align: left;
+}
+.counter-box {
+display: block;
+background: #f6f6f6;
+padding: 40px 20px 37px;
+text-align: center
+}
+.counter-box p {
+margin: 5px 0 0;
+padding: 0;
+color: #000000;
+font-size: 18px;
+font-weight: 500
+}
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+color: #000000
+}
+.count-header{
+  margin-top: 13%;
+  margin-left: -7%;
+  margin-right: 3%;
+  margin-bottom: -7%;
+  color:black;
+  font-size: 550%;
+  text-align: left;
+  line-height: 1.1em;
+}
+.count-subheader{
+  margin-top: 14%;
+  margin-bottom: 2%;
+  margin-left: -7%;
+  margin-right: 10%;
+  color: #000000;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.count-header2{
+  margin-top: 13%;
+  margin-left: 7%;
+  margin-right: 3%;
+  margin-bottom: -7%;
+  color:black;
+  font-size: 500%;
+  text-align: left;
+  line-height: 1.1em;
+}
+.count-subheader2{
+  margin-top: 14%;
+  margin-bottom: 2%;
+  margin-left: 7%;
+  margin-right: 10%;
+  color: #000000;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.counter-img{
+  position: relative;
+  float: left;
+}
+.count2{
+  margin-left: 3%;
+}
+
+#container_index{
+  margin-top: -0px;
+}
+
+
+
+
+/* Style login an account form */
+.container-login{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login{
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 15px;
+}
+
+.login_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin: 4%;
+  margin-bottom: 15%;
+  color: #31437E;
+  font-weight: bold;
+}
+
+.login_submit{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#login_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.login_error{
+  color: #ff0000;
+  margin-bottom: 16%;
+  text-align: center;
+  font-size: 15px;
+}
+
+.lostacc{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.lostacc:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Style create account form */
+.container-createacc{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.createacc{
+  width: 80%; 
+  margin: 0 auto; 
+  padding: 15px;
+}
+
+.create_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: -10%;
+  margin-bottom: 5%;
+  color: #31437E;
+  font-weight: bold;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+}
+
+.custom_select{
+  position: relative;
+  width: 1000%;
+}
+
+.createacc_submit{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#createacc_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.createacc_error{
+  color: #ff0000;
+  margin-bottom: -2px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.createacc_error{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.createacc_error:hover{
+  cursor: pointer;
+}
+
+.acc{
+  font-size: 15px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.acc:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+/*Enter skills styles*/
+.container-enterskills{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.enterskills_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: -10%;
+  margin-bottom: -2px;
+  color: #31437E;
+  font-weight: bold;
+}
+
+.enterskills_subtitle{
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 5%;
+  color: #31437E;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.card_enterskills{
+  align-items: center; 
+}
+
+.enterskill_itemtitle{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  color: #31437E;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.enterskill_itemcontent{
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: -2px;
+  color: #303030;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.enter_skills{
+  width: 100%;
+  margin: 5% auto;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.enter_skills{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.enter_skills input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 280px;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.vertical-line {
+  border-right: 1px solid #a3afd8; /* Adjust line thickness and color */
+  height: 150px; /* Adjust line height */
+  
+}
+
+.enterskill_itemor{
+  text-align: center;
+  font-family: sans-serif;
+  color: #31437E;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+
+
+
+/*Upload CV*/
+.container-cv{
+  background-color: #DADBEE;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cv{
+  width: 60%; 
+  margin: 0 auto; 
+  text-align: center;
+}
+
+.cv_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 5px;
+  color: #31437E;
+  font-weight: bold;
+}
+
+.cv_subtitle{
+  text-align: center;
+  color: #000000;
+  margin-top: -7px;
+}
+
+.cv_submit{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#cv_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+input[type=submit] {
+  color:rgb(255, 255, 255);
+  background-color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+/* Enter manual */
+.enter_manual{
+  width: 90%; 
+  margin: 50px auto; 
+  padding: 15px;
+}
+
+.enter_manual_title{
+  text-align: center;
+  font-family: sans-serif;
+  margin: 3%;
+}
+
+.enter_manual_subtitle{
+  text-align: left;
+  font-family: sans-serif;
+  margin: 3%;
+}
+
+.enter_manual_skills{
+  display: inline-block;
+  width: 95%; 
+  margin: 5px auto; 
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.enter_manual_label{
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 20px;
+  margin: 10px 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* input[type=checkbox]{
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  padding: 10px 5px;
+  margin: 25px 5px;
+} */
+
+input[type=text] {
+  float: right;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.enter_manual_submit{
+  width: 100%;
+  margin: 30px auto;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-skill {
+  padding: 1px;
+  margin: 1px;
+  cursor: pointer;
+  text-align: center;
+  float: center;
+}
+
+.box {
+  width: 100%;
+  height: 600px;
+  background-color: #a3afd8;
+  border: 1px solid #a3afd8;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 15px;
+  margin: 10px auto;
+  display: flexbox;
+}
+
+.card_button{
+  width: 150px;
+  margin: 1px;
+}
+
+.clear{
+  clear: both;
+}
+
+input[type=submit] {
+  color:rgb(255, 255, 255);
+  background-color: black;
+  font-size: 16px;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 55px;
+  width: 100px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.signup_login{
+  width: 100%;
+  margin: 5px auto;
+  padding: 5px 5px;
+  display: flex;
+}
+
+
+
+
+
+/* CrossCheck */
+.container_cc{
+  background-color: #DADBEE;
+}
+
+.cc_content{
+  width: 90%; 
+  margin: 50px auto; 
+  margin-top: -0px;
+  padding: 15px;
+  margin-bottom: -10px;
+}
+
+.form-label{
+  margin: 10px;
+}
+
+.input_data{
+  margin: 5px;
+}
+
+.cc_title{
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 300%;
+  margin: 2%;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #31437E;
+}
+
+.crosscheckl_title{
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 220%;
+  margin: 2%;
+  margin-left: 10px;
+  font-weight: bold;
+  color:#6776AB;
+}
+
+#crossCheckForm input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.cc_submit{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+#cc_submit input[type=submit]{
+  color:#ffffff;
+  background-color: #6776AB;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.form-control{
+  height: 50%;
+}
+
+.card_button{
+  width: 150px;
+  margin: 1px;
+}
+
+
+
+
+.form-switch input[type=checkbox]{
+  width: 80px;
+  height: 30px;
+  border: 1px solid #7796CB;
+}
+
+/* Style for the form switch container */
+.form-switch {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Homepage */
+.loader {
+  background-color: #DADBEE;
+}
+
+
+.container_home{
+  background-color: #DADBEE;
+}
+
+.main_navbar{
+  color: #ffffff;
+  background-color: #31437E;
+  height: 80px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.main_nav{
+  float: right;
+  margin: 1%;
+  margin-top: 45px;
+}
+
+.main_navend{
+  float: right;
+  margin: 1%;
+  margin-right: 30px;
+}
+
+.main_navitem{
+  margin-bottom: 22%;
+  margin-left: 22%;
+}
+
+.container_main{
+  margin-top: 80px;
+}
+
+.main_box{
+  width: 100%; 
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.card{
+  width: 100%;
+  text-align: left;
+  margin: 5px auto;
+}
+
+.card-body{
+  height: 100%;
+  margin: 10px;
+  margin-bottom: -10px;
+}
+
+.card-text{
+  font-size: 14px;
+}
+
+.sidebar-left {
+  background-color: #6776AB;
+  padding: 20px;
+  padding-left: 20px;
+  height: 60vh;
+  border-radius: 0 0 5px 0;
+}
+
+.sidebar-title{
+  margin-top: 20px;
+}
+
+.score_under{
+  margin-top: -10px;
+}
+
+.miss_box{
+  width: 360px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box_under{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+/*
+Learnpage
+*/
+
+/* Profile */
+.profile_title{
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 220%;
+  margin: 2%;
+  margin-left: 10px;
+  font-weight: bold;
+  color: #31437E;
+}
+
+.profile{
+  width: 90%; 
+  margin: 50px auto; 
+  margin-top: 80px;
+  margin-bottom: -10px;
+  padding: 15px;
+  padding-bottom: 80px;
+}
