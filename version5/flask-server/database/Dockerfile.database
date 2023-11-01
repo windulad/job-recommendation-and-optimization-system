@@ -1,0 +1,20 @@
+# Use an official Ubuntu as a parent image
+FROM ubuntu:latest
+
+# Install SQLite3
+RUN apt-get update && apt-get install -y sqlite3
+
+# Create a directory for your SQLite3 database file
+RUN mkdir /data
+
+# Set the working directory
+WORKDIR C:\Users\Chirantha\Desktop\git\job-recommendation-and-optimization-system\version5\database
+
+# Copy the SQLite3 database file into the container
+COPY $DATABASE_FILE .
+
+# Expose the port (SQLite typically doesn't use ports, so this is optional)
+EXPOSE 5432
+
+# Define the command to start SQLite3
+CMD ["sqlite3", "your-database-file.sqlite"]
