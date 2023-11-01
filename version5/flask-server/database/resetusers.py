@@ -5,15 +5,20 @@ cursor = connection.cursor()
 
 command1 = """DROP TABLE IF EXISTS users_biodata"""
 
-command12 = """DROP TABLE IF EXISTS users_cvdata"""
+command2 = """DROP TABLE IF EXISTS users_cvdata"""
 
-command2 = """DROP TABLE IF EXISTS miss"""
+command3 = """DROP TABLE IF EXISTS user_positions"""
 
-command3 = """DROP TABLE IF EXISTS positions"""
+command4 = """DROP TABLE IF EXISTS users_skilldata"""
 
-command4 = """DROP TABLE IF EXISTS skills"""
+command5 = """DROP TABLE IF EXISTS miss"""
 
-command5 = """CREATE TABLE IF NOT EXISTS users_biodata(
+command6 = """DROP TABLE IF EXISTS positions"""
+
+command7 = """DROP TABLE IF EXISTS skills"""
+
+
+command11 = """CREATE TABLE IF NOT EXISTS users_biodata(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 email TEXT UNIQUE, 
                 password TEXT, 
@@ -26,7 +31,7 @@ command5 = """CREATE TABLE IF NOT EXISTS users_biodata(
                 postalcode TEXT
             )"""
 
-command6 = """CREATE TABLE IF NOT EXISTS users_cvdata(
+command12 = """CREATE TABLE IF NOT EXISTS users_cvdata(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 qualify_1 TEXT,
                 qualify_1_syear INTEGER,
@@ -60,7 +65,124 @@ command6 = """CREATE TABLE IF NOT EXISTS users_cvdata(
                 job_3_notes TEXT
             )"""
 
-command7 = """CREATE TABLE IF NOT EXISTS miss(
+
+command13 = """CREATE TABLE IF NOT EXISTS users_skilldata(
+                userid INTEGER NOT NULL UNIQUE primary key autoincrement,
+                skill_1 TEXT,
+                skill_2 TEXT,
+                skill_3 TEXT,
+                skill_4 TEXT,
+                skill_5 TEXT,
+                skill_6 TEXT,
+                skill_7 TEXT,
+                skill_8 TEXT,
+                skill_9 TEXT,
+                skill_10 TEXT,
+                skill_11 TEXT,
+                skill_12 TEXT,
+                skill_13 TEXT,
+                skill_14 TEXT,
+                skill_15 TEXT,
+                skill_16 TEXT,
+                skill_17 TEXT,
+                skill_18 TEXT,
+                skill_19 TEXT,
+                skill_20 TEXT,
+                skill_21 TEXT,
+                skill_22 TEXT,
+                skill_23 TEXT,
+                skill_24 TEXT,
+                skill_25 TEXT,
+                skill_26 TEXT,
+                skill_27 TEXT,
+                skill_28 TEXT,
+                skill_29 TEXT,
+                skill_30 TEXT,
+                skill_31 TEXT,
+                skill_32 TEXT,
+                skill_33 TEXT,
+                skill_34 TEXT,
+                skill_35 TEXT,
+                skill_36 TEXT,
+                skill_37 TEXT,
+                skill_38 TEXT,
+                skill_39 TEXT,
+                skill_40 TEXT,
+                skill_41 TEXT,
+                skill_42 TEXT,
+                skill_43 TEXT,
+                skill_44 TEXT,
+                skill_45 TEXT,
+                skill_46 TEXT,
+                skill_47 TEXT,
+                skill_48 TEXT,
+                skill_49 TEXT,
+                skill_50 TEXT,
+                foreign key (userid) REFERENCES users(userid)
+            )"""
+
+command14 = """CREATE TABLE IF NOT EXISTS user_positions(
+                userid INTEGER NOT NULL UNIQUE primary key autoincrement,
+                user_score FLOAT,
+                score_software_eng FLOAT,
+                score_front_end_eng FLOAT,
+                score_back_end_eng FLOAT,
+                score_android_eng FLOAT,
+                score_ios_eng FLOAT,
+                software_eng_miss_1 TEXT,
+                software_eng_miss_2 TEXT,
+                software_eng_miss_3 TEXT,
+                software_eng_miss_4 TEXT,
+                software_eng_miss_5 TEXT,
+                software_eng_miss_6 TEXT,
+                software_eng_miss_7 TEXT,
+                software_eng_miss_8 TEXT,
+                software_eng_miss_9 TEXT,
+                software_eng_miss_10 TEXT,
+                software_eng_miss_11 TEXT,
+                software_eng_miss_12 TEXT,
+                software_eng_miss_13 TEXT,
+                software_eng_miss_14 TEXT,
+                software_eng_miss_15 TEXT,
+                software_eng_miss_16 TEXT,
+                software_eng_miss_17 TEXT,
+                software_eng_miss_18 TEXT,
+                software_eng_miss_19 TEXT,
+                software_eng_miss_20 TEXT,
+                software_eng_miss_21 TEXT,
+                software_eng_miss_22 TEXT,
+                software_eng_miss_23 TEXT,
+                front_end_eng_miss_1 TEXT,
+                front_end_eng_miss_2 TEXT,
+                front_end_eng_miss_3 TEXT,
+                front_end_eng_miss_4 TEXT,
+                front_end_eng_miss_5 TEXT,
+                front_end_eng_miss_6 TEXT,
+                front_end_eng_miss_7 TEXT,
+                front_end_eng_miss_8 TEXT,
+                front_end_eng_miss_9 TEXT,
+                back_end_eng_miss_1 TEXT,
+                back_end_eng_miss_2 TEXT,
+                back_end_eng_miss_3 TEXT,
+                back_end_eng_miss_4 TEXT,
+                back_end_eng_miss_5 TEXT,
+                back_end_eng_miss_6 TEXT,
+                back_end_eng_miss_7 TEXT,
+                android_eng_miss_1 TEXT,
+                android_eng_miss_2 TEXT,
+                android_eng_miss_3 TEXT,
+                android_eng_miss_4 TEXT,
+                android_eng_miss_5 TEXT,
+                android_eng_miss_6 TEXT,
+                ios_eng_miss_1 TEXT,
+                ios_eng_miss_2 TEXT,
+                ios_eng_miss_3 TEXT,
+                ios_eng_miss_4 TEXT,
+                ios_eng_miss_5 TEXT,
+                foreign key (userid) REFERENCES users(userid)
+            )"""
+
+command15 = """CREATE TABLE IF NOT EXISTS miss(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 missskillcount INTEGER,
                 miss_1 TEXT,
@@ -117,7 +239,7 @@ command7 = """CREATE TABLE IF NOT EXISTS miss(
             )"""
 
 
-command8 = """CREATE TABLE IF NOT EXISTS positions(
+command16 = """CREATE TABLE IF NOT EXISTS positions(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 positioncount INTEGER,
                 position_1 TEXT,
@@ -129,7 +251,7 @@ command8 = """CREATE TABLE IF NOT EXISTS positions(
             )"""
 
 
-command9 = """CREATE TABLE IF NOT EXISTS skills(
+command17 = """CREATE TABLE IF NOT EXISTS skills(
                 userid INTEGER NOT NULL UNIQUE primary key autoincrement,
                 skillcount INTEGER,
                 skill_1 TEXT,
@@ -188,14 +310,18 @@ command9 = """CREATE TABLE IF NOT EXISTS skills(
 
 
 cursor.execute(command1)
-cursor.execute(command12)
 cursor.execute(command2)
 cursor.execute(command3)
 cursor.execute(command4)
 cursor.execute(command5)
 cursor.execute(command6)
 cursor.execute(command7)
-cursor.execute(command8)
-cursor.execute(command9)
+cursor.execute(command11)
+cursor.execute(command12)
+cursor.execute(command13)
+cursor.execute(command14)
+cursor.execute(command15)
+cursor.execute(command16)
+cursor.execute(command17)
 
 connection.commit()
