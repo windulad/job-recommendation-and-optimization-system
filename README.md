@@ -35,5 +35,13 @@ $ ...\version4\flask-server> env/Scripts/Activate<br>
 $ ...\version4> cd react-client<br>
 $ ...\version4\react-client> npm start<br>
 
-## Contributions Welcomed
-We will be accepting open source contributions soon. Stay tuned!
+## Contributing
+We welcome contributions from the community! If you're interested in contributing, please check out our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+
+Here are some ways you can help:
+- Report bugs and suggest features
+- Review and improve documentation
+- Write and improve code
+- Help with testing
+
+Feel free to browse our [issues](https://github.com/windulad/job-recommendation-and-optimization-system/issues) to find something you’d like to work on.
