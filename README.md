@@ -34,3 +34,7 @@ $ ...\version4\flask-server> env/Scripts/Activate<br>
 ### Step 5 :- Run the React application
 $ ...\version4> cd react-client<br>
 $ ...\version4\react-client> npm start<br>
+
+## Contributions Welcomed
+We will be accepting open source contributions soon. Stay tuned!
+Stay tuned
