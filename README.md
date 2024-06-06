@@ -37,4 +37,3 @@ $ ...\version4\react-client> npm start<br>
 
 ## Contributions Welcomed
 We will be accepting open source contributions soon. Stay tuned!
-Stay tuned
